@@ -115,7 +115,7 @@ namespace smoothsis
         {
             try
             {
-                DialogResult dialogResult = MessageBox.Show("SİLMEK İSTEDİĞİNİZDEN EMİN MİSİNİZ ?", "UYARI", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("SİLMEK İSTEDİĞİNİZDEN EMİN MİSİNİZ?", "UYARI", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     SqlCommand command = new SqlCommand("DELETE FROM STOK WHERE STOK_INCKEY = @stok_inckey", Program.connection);
