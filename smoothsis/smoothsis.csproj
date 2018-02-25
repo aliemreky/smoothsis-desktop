@@ -74,6 +74,18 @@
     <Compile Include="grup.Designer.cs">
       <DependentUpon>grup.cs</DependentUpon>
     </Compile>
+    <Compile Include="kullaniciListeleDuzenle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kullaniciListeleDuzenle.Designer.cs">
+      <DependentUpon>kullaniciListeleDuzenle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kullaniciOlustur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kullaniciOlustur.Designer.cs">
+      <DependentUpon>kullaniciOlustur.cs</DependentUpon>
+    </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +106,18 @@
     <Compile Include="siparisOlustur.Designer.cs">
       <DependentUpon>siparisOlustur.cs</DependentUpon>
     </Compile>
+    <Compile Include="stokListeleDuzenle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="stokListeleDuzenle.Designer.cs">
+      <DependentUpon>stokListeleDuzenle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="stokOlustur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="stokOlustur.Designer.cs">
+      <DependentUpon>stokOlustur.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="cariDuzenle.resx">
       <DependentUpon>cariDuzenle.cs</DependentUpon>
     </EmbeddedResource>
@@ -105,6 +129,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="grup.resx">
       <DependentUpon>grup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kullaniciListeleDuzenle.resx">
+      <DependentUpon>kullaniciListeleDuzenle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kullaniciOlustur.resx">
+      <DependentUpon>kullaniciOlustur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
@@ -123,6 +153,12 @@
     </Compile>
     <EmbeddedResource Include="siparisOlustur.resx">
       <DependentUpon>siparisOlustur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="stokListeleDuzenle.resx">
+      <DependentUpon>stokListeleDuzenle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="stokOlustur.resx">
+      <DependentUpon>stokOlustur.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
