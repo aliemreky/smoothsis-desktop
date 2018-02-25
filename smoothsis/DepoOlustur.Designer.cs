@@ -1,6 +1,6 @@
 ﻿namespace smoothsis
 {
-    partial class stokListeleDuzenle
+    partial class DepoOlustur
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(stokListeleDuzenle));
             this.SuspendLayout();
             // 
-            // stokListeleDuzenle
+            // DepoOlustur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(809, 569);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "stokListeleDuzenle";
-            this.Text = "SMOOTHSIS [ STOK LİSTESİ & DÜZENLE]";
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "DepoOlustur";
+            this.Text = "DepoOlustur";
+            this.Load += new System.EventHandler(this.DepoOlustur_Load);
             this.ResumeLayout(false);
 
         }

@@ -2,18 +2,32 @@
 using System.Windows.Forms;
 using System.Data;
 using System.Data.SqlClient;
+using smoothsis.Services;
 
 namespace smoothsis
 {
-    public partial class kullaniciOlustur : Form
+    public partial class KullaniciOlustur : Form
     {
-        public kullaniciOlustur()
+        public KullaniciOlustur()
         {
             InitializeComponent();
         }
-        
-        private void kullaniciOlustur_Load(object sender, EventArgs e)
+
+        private void KullaniciOlustur_Load(object sender, EventArgs e)
         {
+            cbGrupKey.DataSource = getGrupDataTableForBindToComboBox();
+            cbGrupKey.DisplayMember = "GRUP_ADI";
+            cbGrupKey.ValueMember = "GRUP_INCKEY";
+        }
+
+        public static DataTable getGrupDataTableForBindToComboBox()
+        {
+            string query = "SELECT * FROM GRUP";
+            SqlCommand command = new SqlCommand(query, Program.connection);
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            return dt;
         }
 
         private void kaydetBttn_Click(object sender, EventArgs e)
@@ -66,6 +80,11 @@ namespace smoothsis
             txtSifre.Clear();
             txtTelefon.Clear();
             txtEmail.Clear();
+        }
+
+        private void checkIsTel(object sender, KeyPressEventArgs e)
+        {
+            TextValidate.forceForNumericWithSpace(sender, e);
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace smoothsis
 {
-    partial class StokOlustur
+    partial class StokDuzenle
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnStokKodOlustur = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StokDuzenle));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtBirimFiyat = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -55,7 +55,7 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.kaydetBttn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.temizleBttn = new System.Windows.Forms.ToolStripButton();
+            this.sillBttn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.iptalButton = new System.Windows.Forms.ToolStripButton();
             this.label12 = new System.Windows.Forms.Label();
@@ -63,18 +63,6 @@
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnStokKodOlustur
-            // 
-            this.btnStokKodOlustur.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnStokKodOlustur.Location = new System.Drawing.Point(316, 40);
-            this.btnStokKodOlustur.Name = "btnStokKodOlustur";
-            this.btnStokKodOlustur.Size = new System.Drawing.Size(99, 23);
-            this.btnStokKodOlustur.TabIndex = 13;
-            this.btnStokKodOlustur.TabStop = false;
-            this.btnStokKodOlustur.Text = "KOD OLUSTUR";
-            this.btnStokKodOlustur.UseVisualStyleBackColor = true;
-            this.btnStokKodOlustur.Click += new System.EventHandler(this.btnStokKodOlustur_Click);
             // 
             // groupBox1
             // 
@@ -100,10 +88,10 @@
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtStokAdi);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 69);
+            this.groupBox1.Location = new System.Drawing.Point(10, 76);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(771, 264);
-            this.groupBox1.TabIndex = 17;
+            this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             // 
             // txtBirimFiyat
@@ -325,15 +313,15 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.kaydetBttn,
             this.toolStripSeparator1,
-            this.temizleBttn,
+            this.sillBttn,
             this.toolStripSeparator2,
             this.iptalButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(795, 25);
-            this.toolStrip1.TabIndex = 16;
+            this.toolStrip1.Size = new System.Drawing.Size(791, 25);
+            this.toolStrip1.TabIndex = 19;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // kaydetBttn
@@ -351,14 +339,14 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 23);
             // 
-            // temizleBttn
+            // sillBttn
             // 
-            this.temizleBttn.Image = global::smoothsis.Properties.Resources.ic_delete_forever_black_24dp_1x;
-            this.temizleBttn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.temizleBttn.Name = "temizleBttn";
-            this.temizleBttn.Size = new System.Drawing.Size(76, 20);
-            this.temizleBttn.Text = "Temizle";
-            this.temizleBttn.Click += new System.EventHandler(this.temizleBttn_Click);
+            this.sillBttn.Image = global::smoothsis.Properties.Resources.ic_delete_forever_black_24dp_1x;
+            this.sillBttn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.sillBttn.Name = "sillBttn";
+            this.sillBttn.Size = new System.Drawing.Size(43, 20);
+            this.sillBttn.Text = "Sil";
+            this.sillBttn.Click += new System.EventHandler(this.sillBttn_Click);
             // 
             // toolStripSeparator2
             // 
@@ -378,37 +366,36 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label12.Location = new System.Drawing.Point(41, 43);
+            this.label12.Location = new System.Drawing.Point(39, 45);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(81, 15);
-            this.label12.TabIndex = 14;
+            this.label12.TabIndex = 21;
             this.label12.Text = "STOK KODU *";
             // 
             // txtStokKod
             // 
             this.txtStokKod.Enabled = false;
             this.txtStokKod.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtStokKod.Location = new System.Drawing.Point(124, 40);
+            this.txtStokKod.Location = new System.Drawing.Point(122, 42);
             this.txtStokKod.Multiline = true;
             this.txtStokKod.Name = "txtStokKod";
             this.txtStokKod.ReadOnly = true;
             this.txtStokKod.Size = new System.Drawing.Size(186, 23);
-            this.txtStokKod.TabIndex = 15;
+            this.txtStokKod.TabIndex = 22;
             // 
-            // StokOlustur
+            // StokDuzenle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(795, 362);
-            this.Controls.Add(this.btnStokKodOlustur);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.toolStrip1);
+            this.ClientSize = new System.Drawing.Size(791, 384);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.txtStokKod);
-            this.Name = "StokOlustur";
-            this.Text = "SMOOTHSIS [ STOK KAYDI OLUŞTUR ]";
-            this.Load += new System.EventHandler(this.StokOlustur_Load);
+            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "StokDuzenle";
+            this.Text = "SMOOTHSIS [ STOK DÜZENLE ]";
+            this.Load += new System.EventHandler(this.StokDuzenle_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
@@ -419,8 +406,12 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnStokKodOlustur;
+
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtBirimFiyat;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbMiktarBirim;
+        private System.Windows.Forms.DateTimePicker dtpGelisTarih;
         private System.Windows.Forms.TextBox txtAciklama;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
@@ -442,14 +433,10 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton kaydetBttn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton temizleBttn;
+        private System.Windows.Forms.ToolStripButton sillBttn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton iptalButton;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtStokKod;
-        private System.Windows.Forms.DateTimePicker dtpGelisTarih;
-        private System.Windows.Forms.ComboBox cbMiktarBirim;
-        private System.Windows.Forms.TextBox txtBirimFiyat;
-        private System.Windows.Forms.Label label2;
     }
 }

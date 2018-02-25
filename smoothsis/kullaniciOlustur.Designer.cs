@@ -1,6 +1,6 @@
 ﻿namespace smoothsis
 {
-    partial class kullaniciOlustur
+    partial class KullaniciOlustur
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(kullaniciOlustur));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbGrupKey = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -79,8 +77,6 @@
             this.cbGrupKey.Size = new System.Drawing.Size(291, 23);
             this.cbGrupKey.TabIndex = 18;
             this.cbGrupKey.ValueMember = "GRUP_INCKEY";
-            
-            
             // 
             // label4
             // 
@@ -117,6 +113,7 @@
             this.txtTelefon.Name = "txtTelefon";
             this.txtTelefon.Size = new System.Drawing.Size(291, 23);
             this.txtTelefon.TabIndex = 14;
+            this.txtTelefon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkIsTel);
             // 
             // label1
             // 
@@ -184,7 +181,7 @@
             // 
             // kaydetBttn
             // 
-            this.kaydetBttn.Image = ((System.Drawing.Image)(resources.GetObject("kaydetBttn.Image")));
+            this.kaydetBttn.Image = global::smoothsis.Properties.Resources.ic_save_black_24dp_1x;
             this.kaydetBttn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.kaydetBttn.Name = "kaydetBttn";
             this.kaydetBttn.Size = new System.Drawing.Size(70, 20);
@@ -199,7 +196,7 @@
             // 
             // temizleBttn
             // 
-            this.temizleBttn.Image = ((System.Drawing.Image)(resources.GetObject("temizleBttn.Image")));
+            this.temizleBttn.Image = global::smoothsis.Properties.Resources.ic_delete_forever_black_24dp_1x;
             this.temizleBttn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.temizleBttn.Name = "temizleBttn";
             this.temizleBttn.Size = new System.Drawing.Size(76, 20);
@@ -213,14 +210,14 @@
             // 
             // iptalButton
             // 
-            this.iptalButton.Image = ((System.Drawing.Image)(resources.GetObject("iptalButton.Image")));
+            this.iptalButton.Image = global::smoothsis.Properties.Resources.ic_highlight_off_black_24dp_1x;
             this.iptalButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.iptalButton.Name = "iptalButton";
             this.iptalButton.Size = new System.Drawing.Size(57, 20);
             this.iptalButton.Text = "Çıkış";
             this.iptalButton.Click += new System.EventHandler(this.iptalButton_Click);
             // 
-            // kullaniciOlustur
+            // KullaniciOlustur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -228,10 +225,9 @@
             this.ClientSize = new System.Drawing.Size(463, 265);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBox1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "kullaniciOlustur";
+            this.Name = "KullaniciOlustur";
             this.Text = "SMOOTHSIS [ KULLANICI OLUŞTUR]";
-            this.Load += new System.EventHandler(this.kullaniciOlustur_Load);
+            this.Load += new System.EventHandler(this.KullaniciOlustur_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);

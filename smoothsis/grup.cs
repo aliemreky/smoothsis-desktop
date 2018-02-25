@@ -5,18 +5,18 @@ using System.Data.SqlClient;
 
 namespace smoothsis
 {
-    public partial class grup : Form
+    public partial class Grup : Form
     {
         private int grupId;
         private int rowIndex;
         private Boolean isUpdate = false;
 
-        public grup()
+        public Grup()
         {
             InitializeComponent();
         }
 
-        private void grup_Load(object sender, EventArgs e)
+        private void Grup_Load(object sender, EventArgs e)
         {
             Program.controllerClass.gridViewCommonStyle(grupList);
             listGrup();
@@ -31,6 +31,7 @@ namespace smoothsis
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(grupListDTable);
                 grupList.DataSource = grupListDTable;
+                grupList.Columns[0].Visible = false;
                 grupList.ClearSelection();
             }
             catch (Exception ex)
@@ -125,18 +126,23 @@ namespace smoothsis
             {
                 try
                 {
-                    int deletedGrupId = Int32.Parse(grupList.SelectedRows[0].Cells[0].Value.ToString());
-                    SqlCommand command = new SqlCommand("DELETE FROM GRUP WHERE GRUP_INCKEY = @grup_inckey", Program.connection);
-                    command.Parameters.Add("@grup_inckey", SqlDbType.Int).Value = deletedGrupId;
-                    int affectedRows = command.ExecuteNonQuery();
-                    if (affectedRows > 0)
+                    DialogResult dialogResult = MessageBox.Show("SİLMEK İSTEDİĞİNİZDEN EMİN MİSİNİZ ?", "UYARI", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
                     {
-                        grupList.Rows.RemoveAt(rowIndex);
-                        grupAdTB.Clear();
-                        Program.controllerClass.messageBox("Grup silindi.");
-                    } else
-                    {
-                        Program.controllerClass.messageBoxError("Bir sorun oluştu, grup silinemedi.");
+                        int deletedGrupId = Int32.Parse(grupList.SelectedRows[0].Cells[0].Value.ToString());
+                        SqlCommand command = new SqlCommand("DELETE FROM GRUP WHERE GRUP_INCKEY = @grup_inckey", Program.connection);
+                        command.Parameters.Add("@grup_inckey", SqlDbType.Int).Value = deletedGrupId;
+                        int affectedRows = command.ExecuteNonQuery();
+                        if (affectedRows > 0)
+                        {
+                            grupList.Rows.RemoveAt(rowIndex);
+                            grupAdTB.Clear();
+                            Program.controllerClass.messageBox("Grup silindi.");
+                        }
+                        else
+                        {
+                            Program.controllerClass.messageBoxError("Bir sorun oluştu, grup silinemedi.");
+                        }
                     }
                 }
                 catch (Exception ex)

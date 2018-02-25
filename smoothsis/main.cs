@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace smoothsis
 {
-    public partial class main : Form
+    public partial class Main : Form
     {
-        public main()
+        public Main()
         {
             InitializeComponent();
         }
@@ -22,7 +22,7 @@ namespace smoothsis
             Application.Exit();
         }
 
-        private void main_Load(object sender, EventArgs e)
+        private void Main_Load(object sender, EventArgs e)
         {
             labelKullanici.Text = Program.kullanici.Item2;
             labelSirket.Text = Program.sirket;
@@ -44,37 +44,56 @@ namespace smoothsis
 
         private void cariEkleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            cariOlustur cariKayit = new cariOlustur();
+            CariOlustur cariKayit = new CariOlustur();
             cariKayit.ShowDialog();
         }
 
         private void cariListeleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            cariListesi cariListe = new cariListesi(0);
+            CariListesi cariListe = new CariListesi(0);
             cariListe.ShowDialog();
         }
 
-        private void kullaniciEkleToolStripMenuItem_Click(object sender, EventArgs e)
+        private void kullaniciEklePage(object sender, EventArgs e)
         {
-
+            KullaniciOlustur kullaniciOlustur = new KullaniciOlustur();
+            kullaniciOlustur.ShowDialog();
         }
 
-        private void grupToolStripMenuItem_Click(object sender, EventArgs e)
+        private void kullaniciListesiPage(object sender, EventArgs e)
         {
-            grup grup = new grup();
+            KullaniciListeleDuzenle kullaniciListeleDuzenle = new KullaniciListeleDuzenle();
+            kullaniciListeleDuzenle.ShowDialog();
+        }
+
+        private void grupPage(object sender, EventArgs e)
+        {
+            Grup grup = new Grup();
             grup.ShowDialog();
         }
 
         private void cariDüzenleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            cariDuzenle cariDuzen = new cariDuzenle();
+            CariDuzenle cariDuzen = new CariDuzenle();
             cariDuzen.ShowDialog();
         }
 
         private void siparişEkleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            siparisOlustur siparisEkle = new siparisOlustur();
+            SiparisOlustur siparisEkle = new SiparisOlustur();
             siparisEkle.ShowDialog();
+        }
+
+        private void stokOlusturPage(object sender, EventArgs e)
+        {
+            StokOlustur stokOlustur = new StokOlustur();
+            stokOlustur.ShowDialog();
+        }
+
+        private void stokListeleDuzenlePage(object sender, EventArgs e)
+        {
+            StokListesi stokListeleDuzenle = new StokListesi();
+            stokListeleDuzenle.ShowDialog();
         }
     }
 }

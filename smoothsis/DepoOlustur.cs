@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace smoothsis
 {
-    public partial class stokListeleDuzenle : Form
+    public partial class DepoOlustur : Form
     {
-        public stokListeleDuzenle()
+        public DepoOlustur()
         {
             InitializeComponent();
+        }
+
+        private void DepoOlustur_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

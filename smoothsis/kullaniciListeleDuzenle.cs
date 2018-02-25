@@ -2,22 +2,26 @@
 using System.Data;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using smoothsis.Services;
 
 namespace smoothsis
 {
-    public partial class kullaniciListeleDuzenle : Form
+    public partial class KullaniciListeleDuzenle : Form
     {
-        private int kullaniciInckey;
-        private int rowIndex;
+        // item1 is e.RowIndex, item2 is kullaniciIncKey
+        private Tuple<int, int> selectedItem;
 
-        public kullaniciListeleDuzenle()
+        public KullaniciListeleDuzenle()
         {
             InitializeComponent();
         }
 
-        private void kullaniciListeleDuzenle_Load(object sender, EventArgs e)
+        private void KullaniciListeleDuzenle_Load(object sender, EventArgs e)
         {
             Program.controllerClass.gridViewCommonStyle(kullaniciListesiGridView);
+            cbGrupKey.DataSource = KullaniciOlustur.getGrupDataTableForBindToComboBox();
+            cbGrupKey.DisplayMember = "GRUP_ADI";
+            cbGrupKey.ValueMember = "GRUP_INCKEY";
             listKullanici();
         }
 
@@ -31,11 +35,11 @@ namespace smoothsis
                     "K.KUL_INCKEY AS KULLANICI_ID, G.GRUP_ADI, K.ADSOYAD, K.SIFRE, K.TEL_NO, K.EMAIL " +
                     "FROM KULLANICI K INNER JOIN GRUP G ON " +
                     "K.GRUP_INCKEY = G.GRUP_INCKEY ORDER BY K.KUL_INCKEY DESC";
-
                 SqlCommand command = new SqlCommand(query, Program.connection);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(kullaniciListDTable);
                 kullaniciListesiGridView.DataSource = kullaniciListDTable;
+                kullaniciListesiGridView.Columns[0].Visible = false;
                 kullaniciListesiGridView.ClearSelection();
             }
             catch (Exception ex)
@@ -51,20 +55,24 @@ namespace smoothsis
             {
                 try
                 {
-                    int kullaniciId = Int32.Parse(kullaniciListesiGridView.SelectedRows[0].Cells[0].Value.ToString());
-                    SqlCommand command = new SqlCommand("DELETE FROM KULLANICI WHERE KUL_INCKEY = @kul_inckey", Program.connection);
-                    command.Parameters.Add("@kul_inckey", SqlDbType.Int).Value = kullaniciId;
-                    int affectedRows = command.ExecuteNonQuery();
-                    if (affectedRows > 0)
+                    DialogResult dialogResult = MessageBox.Show("SİLMEK İSTEDİĞİNİZDEN EMİN MİSİNİZ ?", "UYARI", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
                     {
-                        kullaniciListesiGridView.Rows.RemoveAt(rowIndex);
-                        Program.controllerClass.ActionAllControls(this, "clear");
-                        textTemizle();
-                        Program.controllerClass.messageBox("Kullanıcı silindi.");
-                    }
-                    else
-                    {
-                        Program.controllerClass.messageBoxError("Bir sorun oluştu, grup silinemedi.");
+                        int kullaniciId = Int32.Parse(kullaniciListesiGridView.SelectedRows[0].Cells[0].Value.ToString());
+                        SqlCommand command = new SqlCommand("DELETE FROM KULLANICI WHERE KUL_INCKEY = @kul_inckey", Program.connection);
+                        command.Parameters.Add("@kul_inckey", SqlDbType.Int).Value = kullaniciId;
+                        int affectedRows = command.ExecuteNonQuery();
+                        if (affectedRows > 0)
+                        {
+                            kullaniciListesiGridView.Rows.RemoveAt(selectedItem.Item1);
+                            Program.controllerClass.ActionAllControls(this, "clear");
+                            textTemizle();
+                            Program.controllerClass.messageBox("Kullanıcı silindi.");
+                        }
+                        else
+                        {
+                            Program.controllerClass.messageBoxError("Bir sorun oluştu, grup silinemedi.");
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -76,15 +84,14 @@ namespace smoothsis
         
         private void fillDataToTextBoxs(object sender, DataGridViewCellMouseEventArgs e)
         {
-            rowIndex = e.RowIndex;
-            if (rowIndex != -1)
+            if (e.RowIndex != -1)
             {
-                kullaniciInckey = Int32.Parse(kullaniciListesiGridView[0, rowIndex].Value.ToString());
-                cbGrupKey.SelectedIndex = cbGrupKey.FindString(kullaniciListesiGridView[1, rowIndex].Value.ToString());
-                txtAdSoyad.Text = kullaniciListesiGridView[2, rowIndex].Value.ToString();
-                txtSifre.Text = kullaniciListesiGridView[3, rowIndex].Value.ToString();
-                txtTelefon.Text = kullaniciListesiGridView[4, rowIndex].Value.ToString();
-                txtEmail.Text = kullaniciListesiGridView[5, rowIndex].Value.ToString();
+                selectedItem = new Tuple<int, int>(e.RowIndex, Int32.Parse(kullaniciListesiGridView[0, e.RowIndex].Value.ToString()));
+                cbGrupKey.SelectedIndex = cbGrupKey.FindString(kullaniciListesiGridView[1, selectedItem.Item1].Value.ToString());
+                txtAdSoyad.Text = kullaniciListesiGridView[2, selectedItem.Item1].Value.ToString();
+                txtSifre.Text = kullaniciListesiGridView[3, selectedItem.Item1].Value.ToString();
+                txtTelefon.Text = kullaniciListesiGridView[4, selectedItem.Item1].Value.ToString();
+                txtEmail.Text = kullaniciListesiGridView[5, selectedItem.Item1].Value.ToString();
             }
         }
 
@@ -110,16 +117,16 @@ namespace smoothsis
                     command.Parameters.Add("@sifre", SqlDbType.VarChar).Value = sifre;
                     command.Parameters.Add("@tel_no", SqlDbType.VarChar).Value = telefon;
                     command.Parameters.Add("@email", SqlDbType.VarChar).Value = email;
-                    command.Parameters.Add("@kul_inckey", SqlDbType.Int).Value = kullaniciInckey;
+                    command.Parameters.Add("@kul_inckey", SqlDbType.Int).Value = selectedItem.Item2;
                     int affectedRows = command.ExecuteNonQuery();
                     if (affectedRows > 0)
                     {
                         Program.controllerClass.messageBox("Kullanıcı güncellendi.");
-                        kullaniciListesiGridView[1, rowIndex].Value = grupAd;
-                        kullaniciListesiGridView[2, rowIndex].Value = adSoyad;
-                        kullaniciListesiGridView[3, rowIndex].Value = sifre;
-                        kullaniciListesiGridView[4, rowIndex].Value = telefon;
-                        kullaniciListesiGridView[5, rowIndex].Value = email;
+                        kullaniciListesiGridView[1, selectedItem.Item1].Value = grupAd;
+                        kullaniciListesiGridView[2, selectedItem.Item1].Value = adSoyad;
+                        kullaniciListesiGridView[3, selectedItem.Item1].Value = sifre;
+                        kullaniciListesiGridView[4, selectedItem.Item1].Value = telefon;
+                        kullaniciListesiGridView[5, selectedItem.Item1].Value = email;
                     }
                     else
                     {
@@ -148,6 +155,11 @@ namespace smoothsis
         private void iptalButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void checkIsTel(object sender, KeyPressEventArgs e)
+        {
+            TextValidate.forceForNumericWithSpace(sender, e);
         }
     }
 }

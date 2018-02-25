@@ -11,16 +11,16 @@ using System.Data.SqlClient;
 
 namespace smoothsis
 {
-    public partial class siparisOlustur : Form
+    public partial class SiparisOlustur : Form
     {
         private SqlCommand sqlCmd;
 
-        public siparisOlustur()
+        public SiparisOlustur()
         {
             InitializeComponent();
         }
 
-        private void siparisOlustur_Load(object sender, EventArgs e)
+        private void SiparisOlustur_Load(object sender, EventArgs e)
         {
             siparisTipi.SelectedIndex = 0;
             txtSiparisTarih.Text = DateTime.Now.ToString("dd.MM.yyyy");
@@ -95,7 +95,7 @@ namespace smoothsis
         private void btnCariListeAc_Click(object sender, EventArgs e)
         {
 
-            cariListesi cariList = new cariListesi(1);
+            CariListesi cariList = new CariListesi(1);
             cariList.ShowDialog();
             try
             {
@@ -142,5 +142,6 @@ namespace smoothsis
                 if ((sender as TextBox).Text.Count(Char.IsDigit) > 10 && (e.KeyChar != Convert.ToChar(Keys.Back)))
                 e.Handled = true;
         }
+        
     }
 }
