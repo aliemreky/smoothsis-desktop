@@ -28,7 +28,29 @@ namespace smoothsis
 
         private void CariListesi_Load(object sender, EventArgs e)
         {
+            try
+            {
+                DataTable cariList = new DataTable();
+                sqlCmd = new SqlCommand("SELECT CARI_INCKEY, CARI_KOD, ADSOYAD, IL, ILCE, ADRES, TICARI_UNVAN, VERGI_DAIRE, VERGI_NO, TEL_NO, EPOSTA, CEP_TEL, FAX_NO, TC_NO, CARI_DURUM FROM CARI ORDER BY CARI_INCKEY DESC", Program.connection);
+                sqlAdapter = new SqlDataAdapter(sqlCmd);
+                sqlAdapter.Fill(cariList);
 
+                typeof(DataGridView).InvokeMember(
+                   "DoubleBuffered",
+                   BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetProperty,
+                   null,
+                   cariListesiGridView,
+                   new object[] { true });
+
+                cariListesiGridView.DataSource = cariList;
+                Program.controllerClass.gridViewCommonStyle(cariListesiGridView);
+
+                cariListesiGridView.Columns[0].Visible = false;
+
+            }catch(Exception ex)
+            {
+                Program.controllerClass.messageBoxError(ex.Message);
+            }
         }
 
 
