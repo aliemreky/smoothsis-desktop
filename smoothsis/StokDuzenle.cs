@@ -63,7 +63,7 @@ namespace smoothsis
                         "STOK_KOD = @stok_kod, STOK_ADI = @stok_adi, MIKTAR = @miktar, MIKTAR_BIRIM = @miktar_birim, " +
                         "BIRIM_FIYAT = @birim_fiyat, GELIS_TARIH = @gelis_tarih, AMBALAJ_BILGI = @ambalaj_bilgi, " +
                         "MALZ_SERISI = @malz_serisi, MALZ_CINSI = @malz_cinsi, MALZ_OLCU = @malz_olcu, ETIKET_BILGI = @etiket_bilgi, " +
-                        "ACIKLAMA = @aciklama, DUZELTME_YAPAN_KUL = @duzeltme_yapan_kul WHERE STOK_INCKEY = @stok_inckey";
+                        "ACIKLAMA = @aciklama, DUZELTME_YAPAN_KUL = @duzeltme_yapan_kul, DUZELTME_TARIH = @duzeltme_tarih WHERE STOK_INCKEY = @stok_inckey";
                     sqlCmd = new SqlCommand(stokKayitSQL, Program.connection);
                     sqlCmd.Parameters.Add("@stok_inckey", SqlDbType.Int).Value = (int)stokListesi.getSelectedItem().Item2[0].Value;
                     sqlCmd.Parameters.Add("@stok_kod", SqlDbType.VarChar).Value = txtStokKod.Text;
@@ -79,29 +79,17 @@ namespace smoothsis
                     sqlCmd.Parameters.Add("@etiket_bilgi", SqlDbType.VarChar).Value = txtEtiketBilgi.Text;
                     sqlCmd.Parameters.Add("@aciklama", SqlDbType.VarChar).Value = txtAciklama.Text;
                     sqlCmd.Parameters.Add("@duzeltme_yapan_kul", SqlDbType.Int).Value = Program.kullanici.Item1;
-                    DataGridView dataGridView = stokListesi.getDataGrid();
-                    int rowIndex = stokListesi.getSelectedItem().Item1;
-                    dataGridView[1, rowIndex].Value = txtStokKod.Text;
-                    dataGridView[2, rowIndex].Value = txtStokAdi.Text;
-                    dataGridView[3, rowIndex].Value = txtMiktar.Text;
-                    dataGridView[4, rowIndex].Value = cbMiktarBirim.SelectedValue;
-                    dataGridView[5, rowIndex].Value = txtBirimFiyat.Text;
-                    dataGridView[6, rowIndex].Value = dtpGelisTarih.Value;
-                    dataGridView[7, rowIndex].Value = txtAmbalajBilgi.Text;
-                    dataGridView[8, rowIndex].Value = txtMalzSerisi.Text;
-                    dataGridView[9, rowIndex].Value = txtMalzCinsi.Text;
-                    dataGridView[10, rowIndex].Value = txtMalzOlcu.Text;
-                    dataGridView[11, rowIndex].Value = txtEtiketBilgi.Text;
-                    dataGridView[12, rowIndex].Value = txtAciklama.Text;
+                    sqlCmd.Parameters.Add("@duzeltme_tarih", SqlDbType.DateTime).Value = DateTime.Now.ToString();
+
+                    if (sqlCmd.ExecuteNonQuery() > 0)
+                    {
+                        updateItemOnList();
+                        Program.controllerClass.messageBox("STOK BAŞARIYLA GÜNCELLENDİ.");
+                    }
                 }
                 catch (Exception ex)
                 {
                     Program.controllerClass.messageBoxError(ex.Message);
-                }
-
-                if (sqlCmd.ExecuteNonQuery() > 0)
-                {
-                    Program.controllerClass.messageBox("STOK BAŞARIYLA GÜNCELLENDİ.");
                 }
             }
         }
@@ -109,6 +97,26 @@ namespace smoothsis
         private void numericValidate(object sender, KeyPressEventArgs e)
         {
             TextValidate.forceForNumeric(sender, e);
+        }
+
+        public void updateItemOnList()
+        {
+            DataGridView dataGridView = stokListesi.getDataGrid();
+            int rowIndex = stokListesi.getSelectedItem().Item1;
+            dataGridView[1, rowIndex].Value = txtStokKod.Text;
+            dataGridView[2, rowIndex].Value = txtStokAdi.Text;
+            dataGridView[3, rowIndex].Value = txtMiktar.Text;
+            dataGridView[4, rowIndex].Value = cbMiktarBirim.SelectedValue;
+            dataGridView[5, rowIndex].Value = txtBirimFiyat.Text;
+            dataGridView[6, rowIndex].Value = dtpGelisTarih.Value;
+            dataGridView[7, rowIndex].Value = txtAmbalajBilgi.Text;
+            dataGridView[8, rowIndex].Value = txtMalzSerisi.Text;
+            dataGridView[9, rowIndex].Value = txtMalzCinsi.Text;
+            dataGridView[10, rowIndex].Value = txtMalzOlcu.Text;
+            dataGridView[11, rowIndex].Value = txtEtiketBilgi.Text;
+            dataGridView[12, rowIndex].Value = txtAciklama.Text;
+            dataGridView[15, rowIndex].Value = Program.kullanici.Item2;
+            dataGridView[16, rowIndex].Value = DateTime.Now.ToString("dd.MM.yyyy HH:mm");
         }
 
         private void sillBttn_Click(object sender, EventArgs e)

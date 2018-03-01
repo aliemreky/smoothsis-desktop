@@ -86,15 +86,15 @@ namespace smoothsis
                     sqlCmd.Parameters.Add("@etiket_bilgi", SqlDbType.VarChar).Value = txtEtiketBilgi.Text;
                     sqlCmd.Parameters.Add("@aciklama", SqlDbType.VarChar).Value = txtAciklama.Text;
                     sqlCmd.Parameters.Add("@kayit_yapan_kul", SqlDbType.Int).Value = Program.kullanici.Item1;
+
+                    if (sqlCmd.ExecuteNonQuery() > 0)
+                    {
+                        Program.controllerClass.messageBox("STOK BAŞARIYLA OLUŞTURULDU");
+                    }
                 }
                 catch (Exception ex)
                 {
                     Program.controllerClass.messageBoxError(ex.Message);
-                }
-
-                if (sqlCmd.ExecuteNonQuery() > 0)
-                {
-                    Program.controllerClass.messageBox("STOK BAŞARIYLA OLUŞTURULDU");
                 }
             }
         }

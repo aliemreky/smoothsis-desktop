@@ -38,7 +38,12 @@ namespace smoothsis
             try
             {
                 DataTable stokListDTable = new DataTable();
-                string query = "SELECT * FROM STOK ORDER BY STOK_INCKEY DESC";
+                string query = "SELECT "+
+                                  "STOK_INCKEY, STOK_KOD STOK_KODU, STOK_ADI, MIKTAR, MIKTAR_BIRIM, BIRIM_FIYAT, FORMAT(GELIS_TARIH, 'dd.MM.yyyy') GELIS_TARIHI, AMBALAJ_BILGI, MALZ_SERISI MALZEME_SERISI, " +
+                                  "MALZ_CINSI MALZEME_CINSI, MALZ_OLCU MALZEME_OLCU, ETIKET_BILGI, ACIKLAMA, K1.ADSOYAD KAYIT_YAPAN_KULLANICI, KAYIT_TARIH KAYIT_TARIHI, K2.ADSOYAD DUZELTME_YAPAN_KULLANICI, "+
+                                  "DUZELTME_TARIH DUZELTME_TARIHI FROM STOK INNER JOIN KULLANICI K1 ON STOK.KAYIT_YAPAN_KUL = K1.KUL_INCKEY " +
+                                  "LEFT JOIN KULLANICI K2 ON STOK.DUZELTME_YAPAN_KUL = K2.KUL_INCKEY" +
+                                  " ORDER BY STOK_INCKEY DESC";
                 SqlCommand command = new SqlCommand(query, Program.connection);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(stokListDTable);
@@ -66,6 +71,37 @@ namespace smoothsis
                 StokDuzenle stokDuzenle = new StokDuzenle(this);
                 stokDuzenle.ShowDialog();
             }
+        }
+
+        private void searchForStokKodu(object sender, EventArgs e)
+        {
+            if (txtAramaStokKodu.Text.Count() > 1)
+            {
+                Program.controllerClass.gridviewArama(txtAramaStokKodu.Text, "STOK_KODU", stokListGridView);
+            }
+            else
+            {
+                (stokListGridView.DataSource as DataTable).DefaultView.RowFilter = "";
+                stokListGridView.Refresh();
+            }
+        }
+
+        private void searchForStokAdi(object sender, EventArgs e)
+        {
+            if (txtAramaStokAdi.Text.Count() > 1)
+            {
+                Program.controllerClass.gridviewArama(txtAramaStokAdi.Text, "STOK_ADI", stokListGridView);
+            }
+            else
+            {
+                (stokListGridView.DataSource as DataTable).DefaultView.RowFilter = "";
+                stokListGridView.Refresh();
+            }
+        }
+
+        private void searchForGelisTarih(object sender, EventArgs e)
+        {
+            Program.controllerClass.gridviewArama(dtAramaGelisTarih.Value.ToString("dd.MM.yyyy"), "GELIS_TARIHI", stokListGridView);
         }
     }
 }
