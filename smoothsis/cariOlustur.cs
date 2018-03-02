@@ -105,7 +105,13 @@ namespace smoothsis
 
         private void CariOlustur_Load(object sender, EventArgs e)
         {
-
+            if (gercekKisiRadio.Checked)
+            {
+                txtVergiDaire.Enabled = false;
+                txtVergiDaire.ReadOnly = true;
+                txtVergiNo.Enabled = false;
+                txtVergiNo.ReadOnly = true;
+            }
         }
 
         private void btnCariKodOlustur_Click(object sender, EventArgs e)
