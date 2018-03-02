@@ -86,6 +86,10 @@ namespace smoothsis
                         updateItemOnList();
                         Program.controllerClass.messageBox("STOK BAŞARIYLA GÜNCELLENDİ.");
                     }
+                    else
+                    {
+                        Program.controllerClass.messageBoxError("BİR SORUN OLUŞTU, STOK GÜNCELLENEMEDI.");
+                    }
                 }
                 catch (Exception ex)
                 {

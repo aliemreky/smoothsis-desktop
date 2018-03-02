@@ -95,5 +95,17 @@ namespace smoothsis
             StokListesi stokListeleDuzenle = new StokListesi();
             stokListeleDuzenle.ShowDialog();
         }
+
+        private void showDepoOlusturPage(object sender, EventArgs e)
+        {
+            DepoOlustur depoOlustur = new DepoOlustur();
+            depoOlustur.ShowDialog();
+        }
+
+        private void depoListesiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DepoListesi depoListesi = new DepoListesi();
+            depoListesi.ShowDialog();
+        }
     }
 }

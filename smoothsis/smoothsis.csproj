@@ -67,6 +67,18 @@
     <Compile Include="CariOlustur.Designer.cs">
       <DependentUpon>CariOlustur.cs</DependentUpon>
     </Compile>
+    <Compile Include="DepoDuzenle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DepoDuzenle.Designer.cs">
+      <DependentUpon>DepoDuzenle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DepoListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DepoListesi.Designer.cs">
+      <DependentUpon>DepoListesi.cs</DependentUpon>
+    </Compile>
     <Compile Include="DepoOlustur.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +152,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CariOlustur.resx">
       <DependentUpon>CariOlustur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DepoDuzenle.resx">
+      <DependentUpon>DepoDuzenle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DepoListesi.resx">
+      <DependentUpon>DepoListesi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DepoOlustur.resx">
       <DependentUpon>DepoOlustur.cs</DependentUpon>

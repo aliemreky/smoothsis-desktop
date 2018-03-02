@@ -75,7 +75,7 @@ namespace smoothsis
 
         private void searchForStokKodu(object sender, EventArgs e)
         {
-            if (txtAramaStokKodu.Text.Count() > 1)
+            if (txtAramaStokKodu.Text.Count() > 0)
             {
                 Program.controllerClass.gridviewArama(txtAramaStokKodu.Text, "STOK_KODU", stokListGridView);
             }
@@ -88,7 +88,7 @@ namespace smoothsis
 
         private void searchForStokAdi(object sender, EventArgs e)
         {
-            if (txtAramaStokAdi.Text.Count() > 1)
+            if (txtAramaStokAdi.Text.Count() > 0)
             {
                 Program.controllerClass.gridviewArama(txtAramaStokAdi.Text, "STOK_ADI", stokListGridView);
             }
