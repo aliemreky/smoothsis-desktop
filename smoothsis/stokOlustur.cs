@@ -8,21 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
+using smoothsis.Services;
 
 namespace smoothsis
 {
-    public partial class stokOlustur : Form
+    public partial class StokOlustur : Form
     {
         private SqlCommand sqlCmd;
 
-        public stokOlustur()
+        public StokOlustur()
         {
             InitializeComponent();
         }
 
-        private void stokOlustur_Load(object sender, EventArgs e)
+        private void StokOlustur_Load(object sender, EventArgs e)
         {
-            cbMiktarBirim.DataSource = Enum.GetValues(typeof(MalzemeMiktarBirim));
+            cbMiktarBirim.DataSource = Enum.GetNames(typeof(smoothsis.Services.Enums.MalzemeMiktarBirim));
         }
         
         private void btnStokKodOlustur_Click(object sender, EventArgs e)
@@ -74,7 +76,7 @@ namespace smoothsis
                     sqlCmd.Parameters.Add("@stok_kod", SqlDbType.VarChar).Value = txtStokKod.Text;
                     sqlCmd.Parameters.Add("@stok_adi", SqlDbType.VarChar).Value = txtStokAdi.Text;
                     sqlCmd.Parameters.Add("@miktar", SqlDbType.Float).Value = float.Parse(txtMiktar.Text);
-                    sqlCmd.Parameters.Add("@miktar_birim", SqlDbType.Int).Value = cbMiktarBirim.SelectedValue;
+                    sqlCmd.Parameters.Add("@miktar_birim", SqlDbType.VarChar).Value = cbMiktarBirim.SelectedValue;
                     sqlCmd.Parameters.Add("@birim_fiyat", SqlDbType.Float).Value = float.Parse(txtBirimFiyat.Text);
                     sqlCmd.Parameters.Add("@gelis_tarih", SqlDbType.Date).Value = dtpGelisTarih.Value;
                     sqlCmd.Parameters.Add("@ambalaj_bilgi", SqlDbType.VarChar).Value = txtAmbalajBilgi.Text;
@@ -84,18 +86,16 @@ namespace smoothsis
                     sqlCmd.Parameters.Add("@etiket_bilgi", SqlDbType.VarChar).Value = txtEtiketBilgi.Text;
                     sqlCmd.Parameters.Add("@aciklama", SqlDbType.VarChar).Value = txtAciklama.Text;
                     sqlCmd.Parameters.Add("@kayit_yapan_kul", SqlDbType.Int).Value = Program.kullanici.Item1;
+
+                    if (sqlCmd.ExecuteNonQuery() > 0)
+                    {
+                        Program.controllerClass.messageBox("STOK BAŞARIYLA OLUŞTURULDU");
+                    }
                 }
                 catch (Exception ex)
                 {
                     Program.controllerClass.messageBoxError(ex.Message);
                 }
-
-
-                if (sqlCmd.ExecuteNonQuery() > 0)
-                {
-                    Program.controllerClass.messageBox("STOK BAŞARIYLA OLUŞTURULDU");
-                }
-
             }
         }
 
@@ -107,6 +107,11 @@ namespace smoothsis
         private void iptalButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        
+        private void numericValidate(object sender, KeyPressEventArgs e)
+        {
+            TextValidate.forceForNumeric(sender, e);
         }
     }
 }

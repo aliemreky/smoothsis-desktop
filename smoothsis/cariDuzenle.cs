@@ -12,7 +12,7 @@ using System.Reflection;
 
 namespace smoothsis
 {
-    public partial class cariDuzenle : Form
+    public partial class CariDuzenle : Form
     {
 
         private SqlCommand sqlCmd;
@@ -20,7 +20,7 @@ namespace smoothsis
         private DataTable cariListe = new DataTable();
         private Tuple<int, string> secilenCari;
 
-        public cariDuzenle()
+        public CariDuzenle()
         {
             InitializeComponent();
         }
@@ -35,7 +35,7 @@ namespace smoothsis
             Program.controllerClass.ActionAllControls(this, "clear");
         }
 
-        private void cariListeleDuzenle_Load(object sender, EventArgs e)
+        private void CariListeleDuzenle_Load(object sender, EventArgs e)
         {
 
             Program.controllerClass.ActionAllControls(groupBox1, "disable");
@@ -120,7 +120,6 @@ namespace smoothsis
 
                 }
             }
-
         }
 
 
@@ -157,7 +156,7 @@ namespace smoothsis
 
         private void btnCariListeAc_Click(object sender, EventArgs e)
         {
-            cariListesi cariList = new cariListesi(1);
+            CariListesi cariList = new CariListesi(1);
             cariList.ShowDialog();
             secilenCari = cariList.passingCari;
             txtCariKod.Text = secilenCari.Item2;
@@ -229,5 +228,6 @@ namespace smoothsis
                 Program.controllerClass.messageBoxError(ex.Message);
             }
         }
+        
     }
 }

@@ -12,7 +12,7 @@ using System.Reflection;
 
 namespace smoothsis
 {
-    public partial class cariListesi : Form
+    public partial class CariListesi : Form
     {
         private SqlCommand sqlCmd;
         private SqlDataAdapter sqlAdapter;
@@ -20,13 +20,13 @@ namespace smoothsis
         private Tuple<int,string> secilenCari;
         private int listType;
 
-        public cariListesi(int listType)
+        public CariListesi(int listType)
         {
             this.listType = listType;
             InitializeComponent();
         }
 
-        private void cariListesi_Load(object sender, EventArgs e)
+        private void CariListesi_Load(object sender, EventArgs e)
         {
             try
             {
@@ -154,5 +154,6 @@ namespace smoothsis
                 }
             }
         }
+        
     }
 }

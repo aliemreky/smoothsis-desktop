@@ -11,16 +11,16 @@ using System.Data.SqlClient;
 
 namespace smoothsis
 {
-    public partial class login : Form
+    public partial class Login : Form
     {
         private SqlCommand sqlCmd;
 
-        public login()
+        public Login()
         {
             InitializeComponent();
         }
 
-        private void login_Load(object sender, EventArgs e)
+        private void Login_Load(object sender, EventArgs e)
         {
             sirketCombo.Items.Add("SMOOTHSIS2018");
             sirketCombo.SelectedIndex = 0;
@@ -57,7 +57,7 @@ namespace smoothsis
                     }
 
                     Program.sirket = sirketCombo.SelectedItem.ToString();
-                    main anasayfa = new main();
+                    Main anasayfa = new Main();
                     anasayfa.ShowDialog();                    
 
                 }

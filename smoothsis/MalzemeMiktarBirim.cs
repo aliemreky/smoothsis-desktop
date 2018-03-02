@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace smoothsis.Services.Enums
+namespace smoothsis
 {
     public enum MalzemeMiktarBirim
     {
-        Adet = 0,
-        MetreKare = 1
+        MetreKare = 0,
+        Adet = 1,
     }
 }

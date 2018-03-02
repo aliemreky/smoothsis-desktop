@@ -9,9 +9,9 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Diagnostics;
 
-namespace smoothsis
+namespace smoothsis.Services
 {
-    class controller
+    class Controller
     {
 
         public void gridViewCommonStyle(DataGridView gridview)
