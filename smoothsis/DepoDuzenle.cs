@@ -96,7 +96,6 @@ namespace smoothsis
                     if (affectedRows > 0)
                     {
                         depoListesi.getDataGrid().Rows.RemoveAt(depoListesi.getSelectedItem().Item1);
-                        Program.controllerClass.ActionAllControls(this, "clear");
                         Program.controllerClass.messageBox("Depo silindi.");
                         this.Close();
                     }

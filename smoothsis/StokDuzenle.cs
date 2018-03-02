@@ -136,7 +136,6 @@ namespace smoothsis
                     if (affectedRows > 0)
                     {
                         stokListesi.getDataGrid().Rows.RemoveAt(stokListesi.getSelectedItem().Item1);
-                        Program.controllerClass.ActionAllControls(this, "clear");
                         Program.controllerClass.messageBox("Stok silindi.");
                         this.Close();
                     }
