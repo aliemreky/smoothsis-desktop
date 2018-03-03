@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KullaniciOlustur));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbGrupKey = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -61,9 +62,9 @@
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.txtAdSoyad);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(12, 46);
+            this.groupBox1.Location = new System.Drawing.Point(14, 53);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(440, 194);
+            this.groupBox1.Size = new System.Drawing.Size(513, 224);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             // 
@@ -72,9 +73,9 @@
             this.cbGrupKey.DisplayMember = "GRUP_ADI";
             this.cbGrupKey.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cbGrupKey.FormattingEnabled = true;
-            this.cbGrupKey.Location = new System.Drawing.Point(104, 13);
+            this.cbGrupKey.Location = new System.Drawing.Point(121, 15);
             this.cbGrupKey.Name = "cbGrupKey";
-            this.cbGrupKey.Size = new System.Drawing.Size(291, 23);
+            this.cbGrupKey.Size = new System.Drawing.Size(339, 23);
             this.cbGrupKey.TabIndex = 18;
             this.cbGrupKey.ValueMember = "GRUP_INCKEY";
             // 
@@ -82,7 +83,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(53, 16);
+            this.label4.Location = new System.Drawing.Point(62, 18);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 15);
             this.label4.TabIndex = 17;
@@ -90,17 +91,17 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(104, 154);
+            this.txtEmail.Location = new System.Drawing.Point(121, 178);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(291, 23);
+            this.txtEmail.Size = new System.Drawing.Size(339, 26);
             this.txtEmail.TabIndex = 16;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(52, 157);
+            this.label3.Location = new System.Drawing.Point(61, 181);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 15);
             this.label3.TabIndex = 15;
@@ -108,10 +109,10 @@
             // 
             // txtTelefon
             // 
-            this.txtTelefon.Location = new System.Drawing.Point(104, 118);
+            this.txtTelefon.Location = new System.Drawing.Point(121, 136);
             this.txtTelefon.Multiline = true;
             this.txtTelefon.Name = "txtTelefon";
-            this.txtTelefon.Size = new System.Drawing.Size(291, 23);
+            this.txtTelefon.Size = new System.Drawing.Size(339, 26);
             this.txtTelefon.TabIndex = 14;
             this.txtTelefon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkIsTel);
             // 
@@ -119,7 +120,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(35, 121);
+            this.label1.Location = new System.Drawing.Point(41, 140);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 15);
             this.label1.TabIndex = 13;
@@ -127,17 +128,17 @@
             // 
             // txtSifre
             // 
-            this.txtSifre.Location = new System.Drawing.Point(104, 81);
+            this.txtSifre.Location = new System.Drawing.Point(121, 93);
             this.txtSifre.Multiline = true;
             this.txtSifre.Name = "txtSifre";
-            this.txtSifre.Size = new System.Drawing.Size(291, 23);
+            this.txtSifre.Size = new System.Drawing.Size(339, 26);
             this.txtSifre.TabIndex = 3;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label10.Location = new System.Drawing.Point(46, 84);
+            this.label10.Location = new System.Drawing.Point(54, 97);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(45, 15);
             this.label10.TabIndex = 0;
@@ -145,17 +146,17 @@
             // 
             // txtAdSoyad
             // 
-            this.txtAdSoyad.Location = new System.Drawing.Point(104, 47);
+            this.txtAdSoyad.Location = new System.Drawing.Point(121, 54);
             this.txtAdSoyad.Multiline = true;
             this.txtAdSoyad.Name = "txtAdSoyad";
-            this.txtAdSoyad.Size = new System.Drawing.Size(291, 23);
+            this.txtAdSoyad.Size = new System.Drawing.Size(339, 26);
             this.txtAdSoyad.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(22, 50);
+            this.label2.Location = new System.Drawing.Point(26, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 15);
             this.label2.TabIndex = 0;
@@ -175,7 +176,7 @@
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(463, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(540, 25);
             this.toolStrip1.TabIndex = 11;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -219,12 +220,14 @@
             // 
             // KullaniciOlustur
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(463, 265);
+            this.ClientSize = new System.Drawing.Size(540, 306);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBox1);
+            this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "KullaniciOlustur";
             this.Text = "SMOOTHSIS [ KULLANICI OLUŞTUR]";
             this.Load += new System.EventHandler(this.KullaniciOlustur_Load);
