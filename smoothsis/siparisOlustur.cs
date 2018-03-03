@@ -25,6 +25,14 @@ namespace smoothsis
             siparisTipi.SelectedIndex = 0;
             txtSiparisTarih.Text = DateTime.Now.ToString("dd.MM.yyyy");
             txtSiparisTeslimTarih.Text = DateTime.Now.ToString("dd.MM.yyyy");
+
+            siparisListesiGridView.ColumnCount = 5;
+
+            siparisListesiGridView.Columns[0].Name = "STOK_INCKEY";
+            siparisListesiGridView.Columns[1].Name = "STOK_ADI";
+            siparisListesiGridView.Columns[2].Name = "MIKTAR";
+            siparisListesiGridView.Columns[3].Name = "BIRIM_FIYAT";
+            siparisListesiGridView.Columns[4].Name = "TUTAR";
         }
 
         private void iptalButton_Click(object sender, EventArgs e)
@@ -141,6 +149,67 @@ namespace smoothsis
             else
                 if ((sender as TextBox).Text.Count(Char.IsDigit) > 10 && (e.KeyChar != Convert.ToChar(Keys.Back)))
                 e.Handled = true;
+        }
+
+        private void txtStokKodu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                try
+                {
+                    sqlCmd = new SqlCommand("SELECT STOK_INCKEY, STOK_KOD, STOK_ADI, MIKTAR_BIRIM, BIRIM_FIYAT FROM STOK WHERE STOK_KOD=@stok_kod", Program.connection);
+                    sqlCmd.Parameters.AddWithValue("@stok_kod", txtStokKodu.Text.Trim());
+                    SqlDataReader sqlReader = sqlCmd.ExecuteReader();
+                    if (sqlReader.HasRows)
+                    {
+                        sqlReader.Read();
+                        txtStokAdi.Text = sqlReader["STOK_ADI"].ToString().ToUpper();
+                        txtStokBirim.Text = sqlReader["MIKTAR_BIRIM"].ToString().ToUpper();
+                        txtBirimFiyat.Text = sqlReader["BIRIM_FIYAT"].ToString().ToUpper();
+                        sqlReader.Close();
+                    }
+                    else
+                    {
+                        Program.controllerClass.messageBoxError("KAYIT BULUNAMADI");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Program.controllerClass.messageBoxError(ex.Message);
+                }
+            }
+        }
+
+        private void txtStokMiktar_TextChanged(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(txtBirimFiyat.Text) && !String.IsNullOrEmpty(txtStokMiktar.Text))
+            {
+                decimal toplamFiyat = decimal.Parse(txtStokMiktar.Text.Trim()) * decimal.Parse(txtBirimFiyat.Text.Trim());
+                txtToplamFiyat.Text = toplamFiyat.ToString("#.####");
+            }
+        }
+
+        private void txtStokMiktar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != Convert.ToChar(Keys.Back)) && (e.KeyChar != ','))
+                e.Handled = true;
+        }
+
+        private void btnListeyeEkle_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(txtStokKodu.Text))
+            {
+                Program.controllerClass.messageBoxError("STOK SEÇİNİZ");
+            }
+            else
+            {
+                // siparisListesiGridView.Rows.Add();
+            }
+        }
+
+        private void btnStokListesi_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

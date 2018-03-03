@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Reflection;
+using smoothsis.Services;
 
 namespace smoothsis
 {
     public partial class cariDuzenle : Form
     {
-
         private SqlCommand sqlCmd;
         private SqlDataAdapter sqlDataAdapter;
         private DataTable cariListe = new DataTable();
@@ -37,9 +37,7 @@ namespace smoothsis
 
         private void cariListeleDuzenle_Load(object sender, EventArgs e)
         {
-
             Program.controllerClass.ActionAllControls(groupBox1, "disable");
-
         }
 
         private void gercekKisiRadio_CheckedChanged(object sender, EventArgs e)
@@ -77,11 +75,11 @@ namespace smoothsis
             }
             else
             {
-                if (String.IsNullOrEmpty(txtTicariUnvan.Text) ||
-                String.IsNullOrEmpty(txtIl.Text) ||
-                String.IsNullOrEmpty(txtIlce.Text) ||
-                String.IsNullOrEmpty(txtAdSoyad.Text) ||
-                String.IsNullOrEmpty(txtAdres.Text) ||
+                if (String.IsNullOrEmpty(txtTicariUnvan.Text) &&
+                String.IsNullOrEmpty(txtIl.Text) &&
+                String.IsNullOrEmpty(txtIlce.Text) &&
+                String.IsNullOrEmpty(txtAdSoyad.Text) &&
+                String.IsNullOrEmpty(txtAdres.Text) &&
                 String.IsNullOrEmpty(txtTelefonNo.Text))
                 {
                     Program.controllerClass.messageBoxError("LÜTFEN *'LI ALANLARI BOŞ BIRAKMAYINIZ !");
@@ -126,16 +124,12 @@ namespace smoothsis
 
         private void txtTcKimlik_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != Convert.ToChar(Keys.Back)))
-                e.Handled = true;
-            else
-                if ((sender as TextBox).Text.Count(Char.IsDigit) > 11 && (e.KeyChar != Convert.ToChar(Keys.Back)))
-                e.Handled = true;
+            TextValidate.tcKimlikValidate(sender,e);
         }
 
         private void txtVergiNo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && (e.KeyChar != '.') && (e.KeyChar != ',');
+            TextValidate.forceForNumericWithDot(sender,e);
         }
 
         private void kayitSilBtn_Click(object sender, EventArgs e)

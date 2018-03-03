@@ -57,78 +57,59 @@ namespace smoothsis
         private void txtAramaCariKodu_TextChanged(object sender, EventArgs e)
         {
             if (txtAramaCariKodu.Text.Count() > 1)
-                Program.controllerClass.gridviewArama(txtAramaCariKodu.Text, "CARI_KOD", cariListesiGridView);
+                Program.controllerClass.gridviewArama(txtAramaCariKodu.Text, cariListesiGridView, "CARI_KOD");
             else
-            {
-                (cariListesiGridView.DataSource as DataTable).DefaultView.RowFilter = "";
-                cariListesiGridView.Refresh();
-            }
+                Program.controllerClass.gridviewArama("", cariListesiGridView);
         }
 
         private void txtAramaAdiSoyadi_TextChanged(object sender, EventArgs e)
         {
             if (txtAramaAdiSoyadi.Text.Count() > 1)
-                Program.controllerClass.gridviewArama(txtAramaAdiSoyadi.Text, "ADSOYAD", cariListesiGridView);
+                Program.controllerClass.gridviewArama(txtAramaAdiSoyadi.Text, cariListesiGridView, "ADSOYAD");
             else
-            {
-                (cariListesiGridView.DataSource as DataTable).DefaultView.RowFilter = "";
-                cariListesiGridView.Refresh();
-            }
+                Program.controllerClass.gridviewArama("", cariListesiGridView);
         }
 
         private void txtAramaTicariUnvan_TextChanged(object sender, EventArgs e)
         {
             if (txtAramaTicariUnvan.Text.Count() > 1)
-                Program.controllerClass.gridviewArama(txtAramaTicariUnvan.Text, "TICARI_UNVAN", cariListesiGridView);
-            else
-            {
-                (cariListesiGridView.DataSource as DataTable).DefaultView.RowFilter = "";
-                cariListesiGridView.Refresh();
-            }
+                Program.controllerClass.gridviewArama(txtAramaTicariUnvan.Text, cariListesiGridView, "TICARI_UNVAN");
+            else            
+                Program.controllerClass.gridviewArama("", cariListesiGridView);
+            
         }
 
         private void txtAramaVergiNo_TextChanged(object sender, EventArgs e)
         {
             if (txtAramaVergiNo.Text.Count() > 1)
-                Program.controllerClass.gridviewArama(txtAramaVergiNo.Text, "VERGI_NO", cariListesiGridView);
-            else
-            {
-                (cariListesiGridView.DataSource as DataTable).DefaultView.RowFilter = "";
-                cariListesiGridView.Refresh();
-            }
+                Program.controllerClass.gridviewArama(txtAramaVergiNo.Text, cariListesiGridView, "VERGI_NO");
+            else            
+                Program.controllerClass.gridviewArama("", cariListesiGridView);
+            
         }
 
         private void txtAramaVergiDaire_TextChanged(object sender, EventArgs e)
         {
             if (txtAramaVergiDaire.Text.Count() > 1)
-                Program.controllerClass.gridviewArama(txtAramaVergiDaire.Text, "VERGI_DAIRE", cariListesiGridView);
+                Program.controllerClass.gridviewArama(txtAramaVergiDaire.Text,  cariListesiGridView, "VERGI_DAIRE");
             else
-            {
-                (cariListesiGridView.DataSource as DataTable).DefaultView.RowFilter = "";
-                cariListesiGridView.Refresh();
-            }
+                Program.controllerClass.gridviewArama("", cariListesiGridView);
         }
 
         private void txtAramaTcNo_TextChanged(object sender, EventArgs e)
         {
             if (txtAramaTcNo.Text.Count() > 1)
-                Program.controllerClass.gridviewArama(txtAramaTcNo.Text, "TC_NO", cariListesiGridView);
+                Program.controllerClass.gridviewArama(txtAramaTcNo.Text, cariListesiGridView, "TC_NO" );
             else
-            {
-                (cariListesiGridView.DataSource as DataTable).DefaultView.RowFilter = "";
-                cariListesiGridView.Refresh();
-            }
+                Program.controllerClass.gridviewArama("", cariListesiGridView);
         }
 
         private void txtAramaIl_TextChanged(object sender, EventArgs e)
         {
             if (txtAramaIl.Text.Count() > 1)
-                Program.controllerClass.gridviewArama(txtAramaIl.Text, "IL", cariListesiGridView);
+                Program.controllerClass.gridviewArama(txtAramaIl.Text, cariListesiGridView, "IL");
             else
-            {
-                (cariListesiGridView.DataSource as DataTable).DefaultView.RowFilter = "";
-                cariListesiGridView.Refresh();
-            }
+                Program.controllerClass.gridviewArama("", cariListesiGridView);
         }
 
         public Tuple<int, string> passingCari { get { return secilenCari; } }

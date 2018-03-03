@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using smoothsis.Services;
 
 namespace smoothsis
 {
@@ -15,7 +16,7 @@ namespace smoothsis
         private static Boolean connectionBool = false;
         public static Tuple<int, string> kullanici; // KULLANICI TUPLE: ITEM 1= ID, ITEM 2= ADSOYAD
         public static string sirket = "";
-        public static controller controllerClass = new controller();
+        public static Controller controllerClass = new Controller();
 
 
         [STAThread]

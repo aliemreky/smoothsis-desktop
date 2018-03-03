@@ -67,7 +67,6 @@
     <Compile Include="cariOlustur.Designer.cs">
       <DependentUpon>cariOlustur.cs</DependentUpon>
     </Compile>
-    <Compile Include="controller.cs" />
     <Compile Include="grup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +99,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Controller.cs" />
+    <Compile Include="Services\Enums\MalzemeMiktarBirim.cs" />
+    <Compile Include="Services\TextValidate.cs" />
     <Compile Include="siparisOlustur.cs">
       <SubType>Form</SubType>
     </Compile>

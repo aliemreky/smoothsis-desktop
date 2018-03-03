@@ -67,12 +67,33 @@
             this.txtCariIsim = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.tabStok = new System.Windows.Forms.TabPage();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.siparisListesiGridView = new System.Windows.Forms.DataGridView();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnListeyeEkle = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtToplamFiyat = new System.Windows.Forms.TextBox();
+            this.btnStokListesi = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtStokBirim = new System.Windows.Forms.TextBox();
+            this.txtBirimFiyat = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtStokMiktar = new System.Windows.Forms.TextBox();
+            this.txtStokAdi = new System.Windows.Forms.TextBox();
+            this.txtStokKodu = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabSiparis.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.tabStok.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.siparisListesiGridView)).BeginInit();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -444,12 +465,186 @@
             // tabStok
             // 
             this.tabStok.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabStok.Controls.Add(this.groupBox5);
+            this.tabStok.Controls.Add(this.groupBox4);
             this.tabStok.Location = new System.Drawing.Point(4, 24);
             this.tabStok.Name = "tabStok";
             this.tabStok.Padding = new System.Windows.Forms.Padding(3);
             this.tabStok.Size = new System.Drawing.Size(939, 458);
             this.tabStok.TabIndex = 1;
             this.tabStok.Text = "Stok Bilgilsi";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.siparisListesiGridView);
+            this.groupBox5.Location = new System.Drawing.Point(12, 123);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(915, 329);
+            this.groupBox5.TabIndex = 2;
+            this.groupBox5.TabStop = false;
+            // 
+            // siparisListesiGridView
+            // 
+            this.siparisListesiGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.siparisListesiGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.siparisListesiGridView.Location = new System.Drawing.Point(6, 18);
+            this.siparisListesiGridView.MultiSelect = false;
+            this.siparisListesiGridView.Name = "siparisListesiGridView";
+            this.siparisListesiGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.siparisListesiGridView.Size = new System.Drawing.Size(903, 293);
+            this.siparisListesiGridView.TabIndex = 2;
+            this.siparisListesiGridView.TabStop = false;
+            this.siparisListesiGridView.VirtualMode = true;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.btnListeyeEkle);
+            this.groupBox4.Controls.Add(this.label17);
+            this.groupBox4.Controls.Add(this.txtToplamFiyat);
+            this.groupBox4.Controls.Add(this.btnStokListesi);
+            this.groupBox4.Controls.Add(this.label18);
+            this.groupBox4.Controls.Add(this.label16);
+            this.groupBox4.Controls.Add(this.label15);
+            this.groupBox4.Controls.Add(this.label14);
+            this.groupBox4.Controls.Add(this.txtStokBirim);
+            this.groupBox4.Controls.Add(this.txtBirimFiyat);
+            this.groupBox4.Controls.Add(this.label13);
+            this.groupBox4.Controls.Add(this.txtStokMiktar);
+            this.groupBox4.Controls.Add(this.txtStokAdi);
+            this.groupBox4.Controls.Add(this.txtStokKodu);
+            this.groupBox4.Location = new System.Drawing.Point(12, 6);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(915, 111);
+            this.groupBox4.TabIndex = 0;
+            this.groupBox4.TabStop = false;
+            // 
+            // btnListeyeEkle
+            // 
+            this.btnListeyeEkle.Location = new System.Drawing.Point(772, 70);
+            this.btnListeyeEkle.Name = "btnListeyeEkle";
+            this.btnListeyeEkle.Size = new System.Drawing.Size(135, 31);
+            this.btnListeyeEkle.TabIndex = 8;
+            this.btnListeyeEkle.Text = "LİSTEYE EKLE";
+            this.btnListeyeEkle.UseVisualStyleBackColor = true;
+            this.btnListeyeEkle.Click += new System.EventHandler(this.btnListeyeEkle_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(769, 21);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(88, 15);
+            this.label17.TabIndex = 5;
+            this.label17.Text = "TOPLAM FİYAT";
+            // 
+            // txtToplamFiyat
+            // 
+            this.txtToplamFiyat.Enabled = false;
+            this.txtToplamFiyat.Location = new System.Drawing.Point(772, 38);
+            this.txtToplamFiyat.Name = "txtToplamFiyat";
+            this.txtToplamFiyat.ReadOnly = true;
+            this.txtToplamFiyat.Size = new System.Drawing.Size(135, 23);
+            this.txtToplamFiyat.TabIndex = 6;
+            // 
+            // btnStokListesi
+            // 
+            this.btnStokListesi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnStokListesi.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnStokListesi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStokListesi.Image = ((System.Drawing.Image)(resources.GetObject("btnStokListesi.Image")));
+            this.btnStokListesi.Location = new System.Drawing.Point(151, 36);
+            this.btnStokListesi.Name = "btnStokListesi";
+            this.btnStokListesi.Size = new System.Drawing.Size(31, 25);
+            this.btnStokListesi.TabIndex = 4;
+            this.btnStokListesi.UseVisualStyleBackColor = true;
+            this.btnStokListesi.Click += new System.EventHandler(this.btnStokListesi_Click);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(589, 21);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(40, 15);
+            this.label18.TabIndex = 2;
+            this.label18.Text = "BİRİM";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(653, 21);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(77, 15);
+            this.label16.TabIndex = 2;
+            this.label16.Text = "BİRİM FİYATI";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(490, 20);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(50, 15);
+            this.label15.TabIndex = 2;
+            this.label15.Text = "MİKTAR";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(188, 21);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(61, 15);
+            this.label14.TabIndex = 2;
+            this.label14.Text = "STOK ADI";
+            // 
+            // txtStokBirim
+            // 
+            this.txtStokBirim.Enabled = false;
+            this.txtStokBirim.Location = new System.Drawing.Point(592, 38);
+            this.txtStokBirim.Name = "txtStokBirim";
+            this.txtStokBirim.ReadOnly = true;
+            this.txtStokBirim.Size = new System.Drawing.Size(58, 23);
+            this.txtStokBirim.TabIndex = 3;
+            // 
+            // txtBirimFiyat
+            // 
+            this.txtBirimFiyat.Enabled = false;
+            this.txtBirimFiyat.Location = new System.Drawing.Point(656, 38);
+            this.txtBirimFiyat.Name = "txtBirimFiyat";
+            this.txtBirimFiyat.ReadOnly = true;
+            this.txtBirimFiyat.Size = new System.Drawing.Size(110, 23);
+            this.txtBirimFiyat.TabIndex = 3;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(7, 20);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(65, 15);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "STOK KOD";
+            // 
+            // txtStokMiktar
+            // 
+            this.txtStokMiktar.Location = new System.Drawing.Point(493, 38);
+            this.txtStokMiktar.Name = "txtStokMiktar";
+            this.txtStokMiktar.Size = new System.Drawing.Size(93, 23);
+            this.txtStokMiktar.TabIndex = 3;
+            this.txtStokMiktar.TextChanged += new System.EventHandler(this.txtStokMiktar_TextChanged);
+            this.txtStokMiktar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStokMiktar_KeyPress);
+            // 
+            // txtStokAdi
+            // 
+            this.txtStokAdi.Location = new System.Drawing.Point(191, 38);
+            this.txtStokAdi.Name = "txtStokAdi";
+            this.txtStokAdi.Size = new System.Drawing.Size(296, 23);
+            this.txtStokAdi.TabIndex = 3;
+            // 
+            // txtStokKodu
+            // 
+            this.txtStokKodu.Location = new System.Drawing.Point(10, 38);
+            this.txtStokKodu.Name = "txtStokKodu";
+            this.txtStokKodu.Size = new System.Drawing.Size(135, 23);
+            this.txtStokKodu.TabIndex = 3;
+            this.txtStokKodu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStokKodu_KeyPress);
             // 
             // siparisOlustur
             // 
@@ -475,6 +670,11 @@
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.tabStok.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.siparisListesiGridView)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -520,5 +720,22 @@
         private System.Windows.Forms.TextBox txtCariIsim;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnCariListeAc;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtStokKodu;
+        private System.Windows.Forms.Button btnStokListesi;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.DataGridView siparisListesiGridView;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtStokMiktar;
+        private System.Windows.Forms.TextBox txtStokAdi;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox txtToplamFiyat;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txtBirimFiyat;
+        private System.Windows.Forms.Button btnListeyeEkle;
+        private System.Windows.Forms.TextBox txtStokBirim;
     }
 }
