@@ -1,6 +1,6 @@
 ﻿namespace smoothsis
 {
-    partial class kullaniciListeleDuzenle
+    partial class KullaniciListeleDuzenle
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(kullaniciListeleDuzenle));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.kullaniciListesiGridView = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -172,6 +170,7 @@
             this.txtTelefon.Name = "txtTelefon";
             this.txtTelefon.Size = new System.Drawing.Size(291, 23);
             this.txtTelefon.TabIndex = 24;
+            this.txtTelefon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkIsTel);
             // 
             // txtSifre
             // 
@@ -211,7 +210,7 @@
             // 
             // kaydetBttn
             // 
-            this.kaydetBttn.Image = ((System.Drawing.Image)(resources.GetObject("kaydetBttn.Image")));
+            this.kaydetBttn.Image = global::smoothsis.Properties.Resources.ic_save_black_24dp_1x;
             this.kaydetBttn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.kaydetBttn.Name = "kaydetBttn";
             this.kaydetBttn.Size = new System.Drawing.Size(70, 20);
@@ -226,7 +225,7 @@
             // 
             // toolStripButton1
             // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.Image = global::smoothsis.Properties.Resources.ic_delete_forever_black_24dp_1x;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(43, 20);
@@ -240,14 +239,14 @@
             // 
             // iptalButton
             // 
-            this.iptalButton.Image = ((System.Drawing.Image)(resources.GetObject("iptalButton.Image")));
+            this.iptalButton.Image = global::smoothsis.Properties.Resources.ic_highlight_off_black_24dp_1x;
             this.iptalButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.iptalButton.Name = "iptalButton";
             this.iptalButton.Size = new System.Drawing.Size(57, 20);
             this.iptalButton.Text = "Çıkış";
             this.iptalButton.Click += new System.EventHandler(this.iptalButton_Click);
             // 
-            // kullaniciListeleDuzenle
+            // KullaniciListeleDuzenle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -256,10 +255,9 @@
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "kullaniciListeleDuzenle";
+            this.Name = "KullaniciListeleDuzenle";
             this.Text = "SMOOTHSIS [ KULLANICI LİSTESİ & DÜZENLE ]";
-            this.Load += new System.EventHandler(this.kullaniciListeleDuzenle_Load);
+            this.Load += new System.EventHandler(this.KullaniciListeleDuzenle_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kullaniciListesiGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);

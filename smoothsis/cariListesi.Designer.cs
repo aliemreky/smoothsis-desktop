@@ -1,6 +1,6 @@
 ﻿namespace smoothsis
 {
-    partial class cariListesi
+    partial class CariListesi
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cariListesi));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CariListesi));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cariListesiGridView = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -218,7 +218,7 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "CARİ KODU";
             // 
-            // cariListesi
+            // CariListesi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -228,9 +228,9 @@
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "cariListesi";
+            this.Name = "CariListesi";
             this.Text = "SMOOTHSIS [ CARİ LİSTESİ ]";
-            this.Load += new System.EventHandler(this.cariListesi_Load);
+            this.Load += new System.EventHandler(this.CariListesi_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cariListesiGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);

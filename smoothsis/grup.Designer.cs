@@ -1,6 +1,6 @@
 ﻿namespace smoothsis
 {
-    partial class grup
+    partial class Grup
     {
         /// <summary>
         /// Required designer variable.
@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(grup));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Grup));
             this.grupList = new System.Windows.Forms.DataGridView();
             this.grupAdTB = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.kaydetBttn = new System.Windows.Forms.ToolStripButton();
             this.tllStrip = new System.Windows.Forms.ToolStripSeparator();
             this.temizleBttn = new System.Windows.Forms.ToolStripButton();
             this.tllStrip2 = new System.Windows.Forms.ToolStripSeparator();
-            this.silBttn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.iptalButton = new System.Windows.Forms.ToolStripButton();
+            this.kaydetBttn = new System.Windows.Forms.ToolStripButton();
+            this.silBttn = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.grupList)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -119,17 +119,6 @@
             this.toolStrip1.TabIndex = 15;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // kaydetBttn
-            // 
-            this.kaydetBttn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.kaydetBttn.Image = ((System.Drawing.Image)(resources.GetObject("kaydetBttn.Image")));
-            this.kaydetBttn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.kaydetBttn.Name = "kaydetBttn";
-            this.kaydetBttn.Size = new System.Drawing.Size(70, 20);
-            this.kaydetBttn.Text = "Kaydet";
-            this.kaydetBttn.ToolTipText = "Değişiklikleri Kaydet";
-            this.kaydetBttn.Click += new System.EventHandler(this.grupKaydet);
-            // 
             // tllStrip
             // 
             this.tllStrip.Name = "tllStrip";
@@ -138,7 +127,6 @@
             // temizleBttn
             // 
             this.temizleBttn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.temizleBttn.Image = ((System.Drawing.Image)(resources.GetObject("temizleBttn.Image")));
             this.temizleBttn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.temizleBttn.Name = "temizleBttn";
             this.temizleBttn.Size = new System.Drawing.Size(60, 20);
@@ -150,15 +138,6 @@
             this.tllStrip2.Name = "tllStrip2";
             this.tllStrip2.Size = new System.Drawing.Size(6, 23);
             // 
-            // silBttn
-            // 
-            this.silBttn.Image = ((System.Drawing.Image)(resources.GetObject("silBttn.Image")));
-            this.silBttn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.silBttn.Name = "silBttn";
-            this.silBttn.Size = new System.Drawing.Size(43, 20);
-            this.silBttn.Text = "Sil";
-            this.silBttn.Click += new System.EventHandler(this.grupSil);
-            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
@@ -166,14 +145,34 @@
             // 
             // iptalButton
             // 
-            this.iptalButton.Image = ((System.Drawing.Image)(resources.GetObject("iptalButton.Image")));
+            this.iptalButton.Image = global::smoothsis.Properties.Resources.ic_highlight_off_black_24dp_1x;
             this.iptalButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.iptalButton.Name = "iptalButton";
             this.iptalButton.Size = new System.Drawing.Size(57, 20);
             this.iptalButton.Text = "Çıkış";
             this.iptalButton.Click += new System.EventHandler(this.iptalButton_Click);
             // 
-            // grup
+            // kaydetBttn
+            // 
+            this.kaydetBttn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.kaydetBttn.Image = global::smoothsis.Properties.Resources.ic_save_black_24dp_1x;
+            this.kaydetBttn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.kaydetBttn.Name = "kaydetBttn";
+            this.kaydetBttn.Size = new System.Drawing.Size(70, 20);
+            this.kaydetBttn.Text = "Kaydet";
+            this.kaydetBttn.ToolTipText = "Değişiklikleri Kaydet";
+            this.kaydetBttn.Click += new System.EventHandler(this.grupKaydet);
+            // 
+            // silBttn
+            // 
+            this.silBttn.Image = global::smoothsis.Properties.Resources.ic_delete_forever_black_24dp_1x;
+            this.silBttn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.silBttn.Name = "silBttn";
+            this.silBttn.Size = new System.Drawing.Size(43, 20);
+            this.silBttn.Text = "Sil";
+            this.silBttn.Click += new System.EventHandler(this.grupSil);
+            // 
+            // Grup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -183,9 +182,9 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "grup";
+            this.Name = "Grup";
             this.Text = "SMOOTHSIS [ GRUP ]";
-            this.Load += new System.EventHandler(this.grup_Load);
+            this.Load += new System.EventHandler(this.Grup_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grupList)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

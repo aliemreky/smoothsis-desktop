@@ -11,11 +11,11 @@ using System.Data.SqlClient;
 
 namespace smoothsis
 {
-    public partial class cariOlustur : Form
+    public partial class CariOlustur : Form
     {
         private SqlCommand sqlCmd;
 
-        public cariOlustur()
+        public CariOlustur()
         {
             InitializeComponent();
         }
@@ -103,7 +103,7 @@ namespace smoothsis
             }
         }
 
-        private void cariOlustur_Load(object sender, EventArgs e)
+        private void CariOlustur_Load(object sender, EventArgs e)
         {
             if (gercekKisiRadio.Checked)
             {
