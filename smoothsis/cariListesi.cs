@@ -31,7 +31,7 @@ namespace smoothsis
             try
             {
                 DataTable cariList = new DataTable();
-                sqlCmd = new SqlCommand("SELECT CARI_INCKEY, CARI_KOD, ADSOYAD, IL, ILCE, ADRES, TICARI_UNVAN, VERGI_DAIRE, VERGI_NO, TEL_NO, EPOSTA, CEP_TEL, FAX_NO, TC_NO, CARI_DURUM FROM CARI ORDER BY CARI_INCKEY DESC", Program.connection);
+                sqlCmd = new SqlCommand("SELECT CARI_INCKEY, CARI_KOD, TC_NO, ADSOYAD, IL, ILCE, ADRES, TICARI_UNVAN, VERGI_DAIRE, VERGI_NO, TEL_NO, EPOSTA, CEP_TEL, FAX_NO, CARI_DURUM FROM CARI ORDER BY CARI_INCKEY DESC", Program.connection);
                 sqlAdapter = new SqlDataAdapter(sqlCmd);
                 sqlAdapter.Fill(cariList);
 
@@ -44,6 +44,7 @@ namespace smoothsis
 
                 cariListesiGridView.DataSource = cariList;
                 Program.controllerClass.gridViewCommonStyle(cariListesiGridView);
+                Program.controllerClass.gridViewColumnResize(cariListesiGridView);
 
                 cariListesiGridView.Columns[0].Visible = false;
 
@@ -125,6 +126,7 @@ namespace smoothsis
 
         private void cariListesiGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
+            /*
             if (e.ColumnIndex == 14)
             {
                 if (e.Value is bool)
@@ -134,6 +136,7 @@ namespace smoothsis
                     e.FormattingApplied = true;
                 }
             }
+            */
         }
         
     }

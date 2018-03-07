@@ -92,7 +92,7 @@ namespace smoothsis
 
         private void stokListeleDuzenlePage(object sender, EventArgs e)
         {
-            StokListesi stokListeleDuzenle = new StokListesi();
+            StokListesi stokListeleDuzenle = new StokListesi(0);
             stokListeleDuzenle.ShowDialog();
         }
 

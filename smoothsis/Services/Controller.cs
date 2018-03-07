@@ -25,6 +25,17 @@ namespace smoothsis.Services
             gridview.ColumnHeadersDefaultCellStyle.Font = new Font("Calibri", 9);
         }
 
+        public void gridViewColumnResize(DataGridView gridview)
+        {
+            for (int i = 0; i < gridview.Columns.Count; i++)
+            {
+                gridview.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                int colw = gridview.Columns[i].Width;
+                gridview.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                gridview.Columns[i].Width = colw;
+            }
+        }
+
         public void messageBox(string message)
         {
             MessageBox.Show(message, "DURUM", MessageBoxButtons.OK, MessageBoxIcon.Information);

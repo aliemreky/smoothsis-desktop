@@ -16,7 +16,6 @@ namespace smoothsis
     public partial class CariDuzenle : Form
     {
         private SqlCommand sqlCmd;
-        private SqlDataAdapter sqlDataAdapter;
         private DataTable cariListe = new DataTable();
         private Tuple<int, string> secilenCari;
 
@@ -75,11 +74,11 @@ namespace smoothsis
             }
             else
             {
-                if (String.IsNullOrEmpty(txtTicariUnvan.Text) &&
-                String.IsNullOrEmpty(txtIl.Text) &&
-                String.IsNullOrEmpty(txtIlce.Text) &&
-                String.IsNullOrEmpty(txtAdSoyad.Text) &&
-                String.IsNullOrEmpty(txtAdres.Text) &&
+                if (String.IsNullOrEmpty(txtTicariUnvan.Text) ||
+                String.IsNullOrEmpty(txtIl.Text) ||
+                String.IsNullOrEmpty(txtIlce.Text) ||
+                String.IsNullOrEmpty(txtAdSoyad.Text) ||
+                String.IsNullOrEmpty(txtAdres.Text) ||
                 String.IsNullOrEmpty(txtTelefonNo.Text))
                 {
                     Program.controllerClass.messageBoxError("LÜTFEN *'LI ALANLARI BOŞ BIRAKMAYINIZ !");
@@ -123,26 +122,33 @@ namespace smoothsis
 
         private void txtTcKimlik_KeyPress(object sender, KeyPressEventArgs e)
         {
-            TextValidate.tcKimlikValidate(sender,e);
+            TextValidate.tcKimlikValidate(sender, e);
         }
 
         private void txtVergiNo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            TextValidate.forceForNumericWithDot(sender,e);
+            TextValidate.forceForNumericWithDot(sender, e);
         }
 
         private void kayitSilBtn_Click(object sender, EventArgs e)
         {
             if (secilenCari != null)
             {
-                DialogResult dialogResult = MessageBox.Show("SİLMEK İSTEDİĞİNİZDEN EMİN MİSİNİZ ?", "UYARI", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
+                try
                 {
-                    sqlCmd = new SqlCommand("DELETE FROM CARI WHERE CARI_INCKEY=@cari_inckey", Program.connection);
-                    sqlCmd.Parameters.AddWithValue("@cari_inckey", secilenCari.Item1);
-                    if (sqlCmd.ExecuteNonQuery() > 0)
-                        Program.controllerClass.messageBox("CARİ BAŞARIYLA SİLİNDİ");
+                    DialogResult dialogResult = MessageBox.Show("SİLMEK İSTEDİĞİNİZDEN EMİN MİSİNİZ ?", "UYARI", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        sqlCmd = new SqlCommand("DELETE FROM CARI WHERE CARI_INCKEY=@cari_inckey", Program.connection);
+                        sqlCmd.Parameters.AddWithValue("@cari_inckey", secilenCari.Item1);
+                        if (sqlCmd.ExecuteNonQuery() > 0)
+                            Program.controllerClass.messageBox("CARİ BAŞARIYLA SİLİNDİ");
 
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Program.controllerClass.messageBoxError(ex.Message);
                 }
             }
 
@@ -164,8 +170,8 @@ namespace smoothsis
             try
             {
 
-                sqlCmd = new SqlCommand("SELECT * FROM CARI WHERE CARI_KOD=@cari_kod", Program.connection);
-                sqlCmd.Parameters.AddWithValue("@cari_kod", secilenCari.Item1);
+                sqlCmd = new SqlCommand("SELECT * FROM CARI WHERE CARI_INCKEY=@cari_inckey", Program.connection);
+                sqlCmd.Parameters.AddWithValue("@cari_inckey", secilenCari.Item1);
                 SqlDataReader sqlReader = sqlCmd.ExecuteReader();
                 sqlReader.Read();
 
@@ -205,6 +211,7 @@ namespace smoothsis
                 txtTelefonNo.Text = sqlReader["TEL_NO"].ToString();
                 txtFaxNo.Text = sqlReader["FAX_NO"].ToString();
                 txtAdres.Text = sqlReader["ADRES"].ToString();
+
                 if (bool.Parse(sqlReader["CARI_DURUM"].ToString()))
                 {
                     hesapDurumuAktif.Checked = true;
@@ -222,6 +229,6 @@ namespace smoothsis
                 Program.controllerClass.messageBoxError(ex.Message);
             }
         }
-        
+
     }
 }

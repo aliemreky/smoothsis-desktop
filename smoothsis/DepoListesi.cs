@@ -76,7 +76,7 @@ namespace smoothsis
         {
             if (txtAramaDepoAdi.Text.Count() > 0)
             {
-                Program.controllerClass.gridviewArama(txtAramaDepoAdi.Text, "DEPO_ADI", depoListGridView);
+                Program.controllerClass.gridviewArama(txtAramaDepoAdi.Text, depoListGridView, "DEPO_ADI");
             }
             else
             {
@@ -89,7 +89,7 @@ namespace smoothsis
         {
             if (txtAramaDepoLokasyon.Text.Count() > 0)
             {
-                Program.controllerClass.gridviewArama(txtAramaDepoLokasyon.Text, "DEPO_LOKASYON", depoListGridView);
+                Program.controllerClass.gridviewArama(txtAramaDepoLokasyon.Text, depoListGridView, "DEPO_LOKASYON");
             }
             else
             {

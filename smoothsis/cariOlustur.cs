@@ -28,12 +28,12 @@ namespace smoothsis
         private void kaydetBttn_Click(object sender, EventArgs e)
         {
 
-            if (String.IsNullOrEmpty(txtCariKod.Text) &&
-                String.IsNullOrEmpty(txtTicariUnvan.Text) &&
-                String.IsNullOrEmpty(txtIl.Text) &&
-                String.IsNullOrEmpty(txtIlce.Text) &&
-                String.IsNullOrEmpty(txtAdSoyad.Text) &&
-                String.IsNullOrEmpty(txtAdres.Text) &&
+            if (String.IsNullOrEmpty(txtCariKod.Text) ||
+                String.IsNullOrEmpty(txtTicariUnvan.Text) ||
+                String.IsNullOrEmpty(txtIl.Text) ||
+                String.IsNullOrEmpty(txtIlce.Text) ||
+                String.IsNullOrEmpty(txtAdSoyad.Text) ||
+                String.IsNullOrEmpty(txtAdres.Text) ||
                 String.IsNullOrEmpty(txtTelefonNo.Text))
             {
                 Program.controllerClass.messageBoxError("LÜTFEN *'LI ALANLARI BOŞ BIRAKMAYINIZ !");

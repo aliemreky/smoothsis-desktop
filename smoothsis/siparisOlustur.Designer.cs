@@ -127,7 +127,7 @@
             this.siparisTipi.Location = new System.Drawing.Point(9, 298);
             this.siparisTipi.Name = "siparisTipi";
             this.siparisTipi.Size = new System.Drawing.Size(195, 23);
-            this.siparisTipi.TabIndex = 3;
+            this.siparisTipi.TabIndex = 6;
             // 
             // btnCariListeAc
             // 
@@ -138,7 +138,7 @@
             this.btnCariListeAc.Location = new System.Drawing.Point(209, 110);
             this.btnCariListeAc.Name = "btnCariListeAc";
             this.btnCariListeAc.Size = new System.Drawing.Size(31, 25);
-            this.btnCariListeAc.TabIndex = 2;
+            this.btnCariListeAc.TabIndex = 4;
             this.btnCariListeAc.UseVisualStyleBackColor = true;
             this.btnCariListeAc.Click += new System.EventHandler(this.btnCariListeAc_Click);
             // 
@@ -160,7 +160,7 @@
             this.txtSiparisTeslimTarih.Location = new System.Drawing.Point(9, 234);
             this.txtSiparisTeslimTarih.Name = "txtSiparisTeslimTarih";
             this.txtSiparisTeslimTarih.Size = new System.Drawing.Size(195, 23);
-            this.txtSiparisTeslimTarih.TabIndex = 1;
+            this.txtSiparisTeslimTarih.TabIndex = 5;
             this.txtSiparisTeslimTarih.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSiparisTeslimTarih_KeyPress);
             // 
             // label5
@@ -186,7 +186,7 @@
             this.txtSiparisTarih.Location = new System.Drawing.Point(9, 169);
             this.txtSiparisTarih.Name = "txtSiparisTarih";
             this.txtSiparisTarih.Size = new System.Drawing.Size(195, 23);
-            this.txtSiparisTarih.TabIndex = 1;
+            this.txtSiparisTarih.TabIndex = 4;
             this.txtSiparisTarih.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSiparisTarih_KeyPress);
             // 
             // label3
@@ -203,7 +203,7 @@
             this.txtCariKod.Location = new System.Drawing.Point(9, 111);
             this.txtCariKod.Name = "txtCariKod";
             this.txtCariKod.Size = new System.Drawing.Size(195, 23);
-            this.txtCariKod.TabIndex = 1;
+            this.txtCariKod.TabIndex = 3;
             this.txtCariKod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCariKod_KeyPress);
             // 
             // label2
@@ -222,7 +222,8 @@
             this.txtSiparisKodu.Name = "txtSiparisKodu";
             this.txtSiparisKodu.ReadOnly = true;
             this.txtSiparisKodu.Size = new System.Drawing.Size(195, 23);
-            this.txtSiparisKodu.TabIndex = 1;
+            this.txtSiparisKodu.TabIndex = 0;
+            this.txtSiparisKodu.TabStop = false;
             // 
             // label1
             // 
@@ -259,6 +260,7 @@
             this.kaydetBttn.Size = new System.Drawing.Size(70, 20);
             this.kaydetBttn.Text = "Kaydet";
             this.kaydetBttn.ToolTipText = "Değişiklikleri Kaydet";
+            this.kaydetBttn.Click += new System.EventHandler(this.kaydetBttn_Click);
             // 
             // toolStripSeparator1
             // 
@@ -297,6 +299,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(947, 486);
             this.tabControl1.TabIndex = 14;
+            this.tabControl1.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl1_Selecting);
             // 
             // tabSiparis
             // 
@@ -370,28 +373,28 @@
             this.txtAciklama.Multiline = true;
             this.txtAciklama.Name = "txtAciklama";
             this.txtAciklama.Size = new System.Drawing.Size(533, 83);
-            this.txtAciklama.TabIndex = 1;
+            this.txtAciklama.TabIndex = 10;
             // 
             // txtProjeAdi
             // 
             this.txtProjeAdi.Location = new System.Drawing.Point(110, 111);
             this.txtProjeAdi.Name = "txtProjeAdi";
             this.txtProjeAdi.Size = new System.Drawing.Size(533, 23);
-            this.txtProjeAdi.TabIndex = 1;
+            this.txtProjeAdi.TabIndex = 9;
             // 
             // txtOzelKod
             // 
             this.txtOzelKod.Location = new System.Drawing.Point(110, 32);
             this.txtOzelKod.Name = "txtOzelKod";
             this.txtOzelKod.Size = new System.Drawing.Size(533, 23);
-            this.txtOzelKod.TabIndex = 1;
+            this.txtOzelKod.TabIndex = 7;
             // 
             // txtProjeKodu
             // 
             this.txtProjeKodu.Location = new System.Drawing.Point(110, 72);
             this.txtProjeKodu.Name = "txtProjeKodu";
             this.txtProjeKodu.Size = new System.Drawing.Size(533, 23);
-            this.txtProjeKodu.TabIndex = 1;
+            this.txtProjeKodu.TabIndex = 8;
             // 
             // groupBox2
             // 
@@ -415,7 +418,8 @@
             this.txtIlIlce.Name = "txtIlIlce";
             this.txtIlIlce.ReadOnly = true;
             this.txtIlIlce.Size = new System.Drawing.Size(533, 23);
-            this.txtIlIlce.TabIndex = 1;
+            this.txtIlIlce.TabIndex = 0;
+            this.txtIlIlce.TabStop = false;
             // 
             // txtTicariUnvan
             // 
@@ -424,7 +428,8 @@
             this.txtTicariUnvan.Name = "txtTicariUnvan";
             this.txtTicariUnvan.ReadOnly = true;
             this.txtTicariUnvan.Size = new System.Drawing.Size(533, 23);
-            this.txtTicariUnvan.TabIndex = 1;
+            this.txtTicariUnvan.TabIndex = 0;
+            this.txtTicariUnvan.TabStop = false;
             // 
             // label12
             // 
@@ -451,7 +456,8 @@
             this.txtCariIsim.Name = "txtCariIsim";
             this.txtCariIsim.ReadOnly = true;
             this.txtCariIsim.Size = new System.Drawing.Size(533, 23);
-            this.txtCariIsim.TabIndex = 1;
+            this.txtCariIsim.TabIndex = 0;
+            this.txtCariIsim.TabStop = false;
             // 
             // label10
             // 
@@ -494,7 +500,7 @@
             this.siparisListesiGridView.Size = new System.Drawing.Size(903, 293);
             this.siparisListesiGridView.TabIndex = 2;
             this.siparisListesiGridView.TabStop = false;
-            this.siparisListesiGridView.VirtualMode = true;
+            this.siparisListesiGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.siparisListesiGridView_CellDoubleClick);
             // 
             // groupBox4
             // 
@@ -523,7 +529,7 @@
             this.btnListeyeEkle.Location = new System.Drawing.Point(772, 70);
             this.btnListeyeEkle.Name = "btnListeyeEkle";
             this.btnListeyeEkle.Size = new System.Drawing.Size(135, 31);
-            this.btnListeyeEkle.TabIndex = 8;
+            this.btnListeyeEkle.TabIndex = 5;
             this.btnListeyeEkle.Text = "LİSTEYE EKLE";
             this.btnListeyeEkle.UseVisualStyleBackColor = true;
             this.btnListeyeEkle.Click += new System.EventHandler(this.btnListeyeEkle_Click);
@@ -544,7 +550,8 @@
             this.txtToplamFiyat.Name = "txtToplamFiyat";
             this.txtToplamFiyat.ReadOnly = true;
             this.txtToplamFiyat.Size = new System.Drawing.Size(135, 23);
-            this.txtToplamFiyat.TabIndex = 6;
+            this.txtToplamFiyat.TabIndex = 0;
+            this.txtToplamFiyat.TabStop = false;
             // 
             // btnStokListesi
             // 
@@ -555,7 +562,7 @@
             this.btnStokListesi.Location = new System.Drawing.Point(151, 36);
             this.btnStokListesi.Name = "btnStokListesi";
             this.btnStokListesi.Size = new System.Drawing.Size(31, 25);
-            this.btnStokListesi.TabIndex = 4;
+            this.btnStokListesi.TabIndex = 2;
             this.btnStokListesi.UseVisualStyleBackColor = true;
             this.btnStokListesi.Click += new System.EventHandler(this.btnStokListesi_Click);
             // 
@@ -602,7 +609,8 @@
             this.txtStokBirim.Name = "txtStokBirim";
             this.txtStokBirim.ReadOnly = true;
             this.txtStokBirim.Size = new System.Drawing.Size(58, 23);
-            this.txtStokBirim.TabIndex = 3;
+            this.txtStokBirim.TabIndex = 0;
+            this.txtStokBirim.TabStop = false;
             // 
             // txtBirimFiyat
             // 
@@ -611,7 +619,8 @@
             this.txtBirimFiyat.Name = "txtBirimFiyat";
             this.txtBirimFiyat.ReadOnly = true;
             this.txtBirimFiyat.Size = new System.Drawing.Size(110, 23);
-            this.txtBirimFiyat.TabIndex = 3;
+            this.txtBirimFiyat.TabIndex = 0;
+            this.txtBirimFiyat.TabStop = false;
             // 
             // label13
             // 
@@ -627,7 +636,7 @@
             this.txtStokMiktar.Location = new System.Drawing.Point(493, 38);
             this.txtStokMiktar.Name = "txtStokMiktar";
             this.txtStokMiktar.Size = new System.Drawing.Size(93, 23);
-            this.txtStokMiktar.TabIndex = 3;
+            this.txtStokMiktar.TabIndex = 4;
             this.txtStokMiktar.TextChanged += new System.EventHandler(this.txtStokMiktar_TextChanged);
             this.txtStokMiktar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStokMiktar_KeyPress);
             // 
@@ -635,6 +644,7 @@
             // 
             this.txtStokAdi.Location = new System.Drawing.Point(191, 38);
             this.txtStokAdi.Name = "txtStokAdi";
+            this.txtStokAdi.ReadOnly = true;
             this.txtStokAdi.Size = new System.Drawing.Size(296, 23);
             this.txtStokAdi.TabIndex = 3;
             // 
@@ -643,10 +653,10 @@
             this.txtStokKodu.Location = new System.Drawing.Point(10, 38);
             this.txtStokKodu.Name = "txtStokKodu";
             this.txtStokKodu.Size = new System.Drawing.Size(135, 23);
-            this.txtStokKodu.TabIndex = 3;
+            this.txtStokKodu.TabIndex = 1;
             this.txtStokKodu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStokKodu_KeyPress);
             // 
-            // siparisOlustur
+            // SiparisOlustur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
