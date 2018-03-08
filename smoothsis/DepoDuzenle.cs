@@ -60,21 +60,21 @@ namespace smoothsis
                     if (affectedRows > 0)
                     {
                         updateItemOnList();
-                        Program.controllerClass.messageBox("DEPO BAŞARIYLA GÜNCELLENDİ.");
+                        Notification.messageBox("DEPO BAŞARIYLA GÜNCELLENDİ.");
                     }
                     else
                     {
-                        Program.controllerClass.messageBoxError("BİR SORUN OLUŞTU, DEPO GÜNCELLENEMEDİ");
+                        Notification.messageBoxError("BİR SORUN OLUŞTU, DEPO GÜNCELLENEMEDİ");
                     }
                 }
                 catch (Exception ex)
                 {
-                    Program.controllerClass.messageBoxError(ex.Message);
+                    Notification.messageBoxError(ex.Message);
                 }
             }
             else
             {
-                Program.controllerClass.messageBox("Lütfen zorunlu alanları boş geçmeyin.");
+                Notification.messageBox("Lütfen zorunlu alanları boş geçmeyin.");
             }
         }
 
@@ -96,18 +96,18 @@ namespace smoothsis
                     if (affectedRows > 0)
                     {
                         depoListesi.getDataGrid().Rows.RemoveAt(depoListesi.getSelectedItem().Item1);
-                        Program.controllerClass.messageBox("Depo silindi.");
+                        Notification.messageBox("Depo silindi.");
                         this.Close();
                     }
                     else
                     {
-                        Program.controllerClass.messageBoxError("Bir sorun oluştu, depo silinemedi.");
+                        Notification.messageBoxError("Bir sorun oluştu, depo silinemedi.");
                     }
                 }
             }
             catch (Exception ex)
             {
-                Program.controllerClass.messageBoxError(ex.Source);
+                Notification.messageBoxError(ex.Source);
             }
         }
     }

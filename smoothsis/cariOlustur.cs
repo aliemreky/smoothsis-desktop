@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using smoothsis.Services;
 
 namespace smoothsis
 {
@@ -36,7 +37,7 @@ namespace smoothsis
                 String.IsNullOrEmpty(txtAdres.Text) ||
                 String.IsNullOrEmpty(txtTelefonNo.Text))
             {
-                Program.controllerClass.messageBoxError("LÜTFEN *'LI ALANLARI BOŞ BIRAKMAYINIZ !");
+                Notification.messageBoxError("LÜTFEN *'LI ALANLARI BOŞ BIRAKMAYINIZ !");
             }
             else
             {
@@ -65,12 +66,12 @@ namespace smoothsis
                 }
                 catch (Exception ex)
                 {
-                    Program.controllerClass.messageBoxError(ex.Message);
+                    Notification.messageBoxError(ex.Message);
                 }
 
                 if (sqlCmd.ExecuteNonQuery() > 0)
                 {
-                    Program.controllerClass.messageBox("CARİ BAŞARIYLA OLUŞTURULDU");
+                    Notification.messageBox("CARİ BAŞARIYLA OLUŞTURULDU");
                 }
 
             }
@@ -134,14 +135,14 @@ namespace smoothsis
                 }
                 catch (Exception ex)
                 {
-                    Program.controllerClass.messageBoxError(ex.Message);
+                    Notification.messageBoxError(ex.Message);
                 }
             }
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            Program.controllerClass.ActionAllControls(this, "clear");
+            ActionControl.ActionAllControls(this, "clear");
         }
 
         private void txtTcKimlik_KeyPress(object sender, KeyPressEventArgs e)

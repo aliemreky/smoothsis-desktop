@@ -2,6 +2,7 @@
 using System.Data;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using smoothsis.Services;
 
 namespace smoothsis
 {
@@ -18,7 +19,7 @@ namespace smoothsis
 
         private void Grup_Load(object sender, EventArgs e)
         {
-            Program.controllerClass.gridViewCommonStyle(grupList);
+            Styler.gridViewCommonStyle(grupList);
             listGrup();
         }
 
@@ -36,7 +37,7 @@ namespace smoothsis
             }
             catch (Exception ex)
             {
-                Program.controllerClass.messageBoxError(ex.Message);
+                Notification.messageBoxError(ex.Message);
             }
 
         }
@@ -58,7 +59,7 @@ namespace smoothsis
             }
             else
             {
-                Program.controllerClass.messageBox("Lutfen bos gecmeyin.");
+                Notification.messageBox("Lutfen bos gecmeyin.");
             }
             
         }
@@ -76,12 +77,12 @@ namespace smoothsis
                     listGrup();
                 } else
                 {
-                    Program.controllerClass.messageBoxError("Bir sorun oluştu, grup kaydedilemedi.");
+                    Notification.messageBoxError("Bir sorun oluştu, grup kaydedilemedi.");
                 }
             }
             catch (Exception ex)
             {
-                Program.controllerClass.messageBoxError(ex.Message);
+                Notification.messageBoxError(ex.Message);
             }
         }
 
@@ -95,17 +96,17 @@ namespace smoothsis
                 int affectedRows = command.ExecuteNonQuery();
                 if (affectedRows > 0 )
                 {
-                    Program.controllerClass.messageBox("Grup güncellendi.");
+                    Notification.messageBox("Grup güncellendi.");
                     grupList[1, rowIndex].Value = grupAdi;
                     
                 } else
                 {
-                    Program.controllerClass.messageBoxError("Bir sorun oluştu, grup güncellenemedi.");
+                    Notification.messageBoxError("Bir sorun oluştu, grup güncellenemedi.");
                 }
             }
             catch (Exception ex)
             {
-                Program.controllerClass.messageBoxError(ex.Message);
+                Notification.messageBoxError(ex.Message);
             }
         }
 
@@ -137,21 +138,21 @@ namespace smoothsis
                         {
                             grupList.Rows.RemoveAt(rowIndex);
                             grupAdTB.Clear();
-                            Program.controllerClass.messageBox("Grup silindi.");
+                            Notification.messageBox("Grup silindi.");
                         }
                         else
                         {
-                            Program.controllerClass.messageBoxError("Bir sorun oluştu, grup silinemedi.");
+                            Notification.messageBoxError("Bir sorun oluştu, grup silinemedi.");
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    Program.controllerClass.messageBoxError(ex.Message);
+                    Notification.messageBoxError(ex.Message);
                 }
             } else
             {
-                Program.controllerClass.messageBoxError("Geçerli bir kayıt seçmediniz.");
+                Notification.messageBoxError("Geçerli bir kayıt seçmediniz.");
             }
         }
 

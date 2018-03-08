@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Reflection;
+using smoothsis.Services;
 
 namespace smoothsis
 {
@@ -32,13 +33,13 @@ namespace smoothsis
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            Program.controllerClass.ActionAllControls(this, "clear");
+            ActionControl.ActionAllControls(this, "clear");
         }
 
         private void CariListeleDuzenle_Load(object sender, EventArgs e)
         {
 
-            Program.controllerClass.ActionAllControls(groupBox1, "disable");
+            ActionControl.ActionAllControls(groupBox1, "disable");
 
         }
 
@@ -73,7 +74,7 @@ namespace smoothsis
         {
             if (String.IsNullOrEmpty(txtCariKod.Text))
             {
-                Program.controllerClass.messageBoxError("LÜTFEN BİR KAYIT SEÇİNİZ !");
+                Notification.messageBoxError("LÜTFEN BİR KAYIT SEÇİNİZ !");
             }
             else
             {
@@ -84,7 +85,7 @@ namespace smoothsis
                 String.IsNullOrEmpty(txtAdres.Text) ||
                 String.IsNullOrEmpty(txtTelefonNo.Text))
                 {
-                    Program.controllerClass.messageBoxError("LÜTFEN *'LI ALANLARI BOŞ BIRAKMAYINIZ !");
+                    Notification.messageBoxError("LÜTFEN *'LI ALANLARI BOŞ BIRAKMAYINIZ !");
                 }
                 else
                 {
@@ -111,12 +112,12 @@ namespace smoothsis
                     }
                     catch (Exception ex)
                     {
-                        Program.controllerClass.messageBoxError(ex.Message);
+                        Notification.messageBoxError(ex.Message);
                     }
 
 
                     if (sqlCmd.ExecuteNonQuery() > 0)
-                        Program.controllerClass.messageBox("CARİ BAŞARIYLA DÜZENLENDİ");
+                        Notification.messageBox("CARİ BAŞARIYLA DÜZENLENDİ");
 
                 }
             }
@@ -147,7 +148,7 @@ namespace smoothsis
                     sqlCmd = new SqlCommand("DELETE FROM CARI WHERE CARI_INCKEY=@cari_inckey", Program.connection);
                     sqlCmd.Parameters.AddWithValue("@cari_inckey", secilenCari.Item1);
                     if (sqlCmd.ExecuteNonQuery() > 0)
-                        Program.controllerClass.messageBox("CARİ BAŞARIYLA SİLİNDİ");
+                        Notification.messageBox("CARİ BAŞARIYLA SİLİNDİ");
 
                 }
             }
@@ -165,7 +166,7 @@ namespace smoothsis
         private void txtCariKod_TextChanged(object sender, EventArgs e)
         {
 
-            Program.controllerClass.ActionAllControls(groupBox1, "enable");
+            ActionControl.ActionAllControls(groupBox1, "enable");
 
             try
             {
@@ -225,7 +226,7 @@ namespace smoothsis
             }
             catch (Exception ex)
             {
-                Program.controllerClass.messageBoxError(ex.Message);
+                Notification.messageBoxError(ex.Message);
             }
         }
         
