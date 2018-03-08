@@ -52,20 +52,20 @@ namespace smoothsis
                     int affectedRows = command.ExecuteNonQuery();
                     if (affectedRows > 0)
                     {
-                        Program.controllerClass.messageBox("Kullanıcı oluşturuldu.");
+                        Notification.messageBox("Kullanıcı oluşturuldu.");
                         this.Close();
                     } else
                     {
-                        Program.controllerClass.messageBoxError("Bir sorun oluştu, Kullanıcı oluşturulamadı.");
+                        Notification.messageBoxError("Bir sorun oluştu, Kullanıcı oluşturulamadı.");
                     }
                 }
                 catch (Exception ex)
                 {
-                    Program.controllerClass.messageBoxError(ex.Message);
+                    Notification.messageBoxError(ex.Message);
                 }
             } else
             {
-                Program.controllerClass.messageBox("Lütfen zorunlu alanları boş geçmeyin.");
+                Notification.messageBox("Lütfen zorunlu alanları boş geçmeyin.");
             }
         }
 

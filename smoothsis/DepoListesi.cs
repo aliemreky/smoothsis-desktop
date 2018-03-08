@@ -24,7 +24,7 @@ namespace smoothsis
 
         private void DepoListesi_Load(object sender, EventArgs e)
         {
-            Program.controllerClass.gridViewCommonStyle(depoListGridView);
+            Styler.gridViewCommonStyle(depoListGridView);
             listDepo();
         }
 
@@ -47,7 +47,7 @@ namespace smoothsis
             }
             catch (Exception ex)
             {
-                Program.controllerClass.messageBoxError(ex.Message);
+                Notification.messageBoxError(ex.Message);
             }
 
         }
@@ -76,7 +76,7 @@ namespace smoothsis
         {
             if (txtAramaDepoAdi.Text.Count() > 0)
             {
-                Program.controllerClass.gridviewArama(txtAramaDepoAdi.Text, "DEPO_ADI", depoListGridView);
+                Search.gridviewArama(txtAramaDepoAdi.Text, "DEPO_ADI", depoListGridView);
             }
             else
             {
@@ -89,7 +89,7 @@ namespace smoothsis
         {
             if (txtAramaDepoLokasyon.Text.Count() > 0)
             {
-                Program.controllerClass.gridviewArama(txtAramaDepoLokasyon.Text, "DEPO_LOKASYON", depoListGridView);
+                Search.gridviewArama(txtAramaDepoLokasyon.Text, "DEPO_LOKASYON", depoListGridView);
             }
             else
             {

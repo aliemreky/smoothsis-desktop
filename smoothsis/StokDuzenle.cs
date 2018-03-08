@@ -53,7 +53,7 @@ namespace smoothsis
                 String.IsNullOrEmpty(txtMiktar.Text) ||
                 String.IsNullOrEmpty(txtBirimFiyat.Text))
             {
-                Program.controllerClass.messageBoxError("LÜTFEN *'LI ALANLARI BOŞ BIRAKMAYINIZ !");
+                Notification.messageBoxError("LÜTFEN *'LI ALANLARI BOŞ BIRAKMAYINIZ !");
             }
             else
             {
@@ -84,16 +84,16 @@ namespace smoothsis
                     if (sqlCmd.ExecuteNonQuery() > 0)
                     {
                         updateItemOnList();
-                        Program.controllerClass.messageBox("STOK BAŞARIYLA GÜNCELLENDİ.");
+                        Notification.messageBox("STOK BAŞARIYLA GÜNCELLENDİ.");
                     }
                     else
                     {
-                        Program.controllerClass.messageBoxError("BİR SORUN OLUŞTU, STOK GÜNCELLENEMEDI.");
+                        Notification.messageBoxError("BİR SORUN OLUŞTU, STOK GÜNCELLENEMEDI.");
                     }
                 }
                 catch (Exception ex)
                 {
-                    Program.controllerClass.messageBoxError(ex.Message);
+                    Notification.messageBoxError(ex.Message);
                 }
             }
         }
@@ -136,18 +136,18 @@ namespace smoothsis
                     if (affectedRows > 0)
                     {
                         stokListesi.getDataGrid().Rows.RemoveAt(stokListesi.getSelectedItem().Item1);
-                        Program.controllerClass.messageBox("Stok silindi.");
+                        Notification.messageBox("Stok silindi.");
                         this.Close();
                     }
                     else
                     {
-                        Program.controllerClass.messageBoxError("Bir sorun oluştu, stok silinemedi.");
+                        Notification.messageBoxError("Bir sorun oluştu, stok silinemedi.");
                     }
                 }
             }
             catch (Exception ex)
             {
-                Program.controllerClass.messageBoxError(ex.Source);
+                Notification.messageBoxError(ex.Source);
             }
         }
     }

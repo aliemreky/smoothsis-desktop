@@ -24,7 +24,7 @@ namespace smoothsis
 
         private void StokListeleDuzenle_Load(object sender, EventArgs e)
         {
-            Program.controllerClass.gridViewCommonStyle(stokListGridView);
+            Styler.gridViewCommonStyle(stokListGridView);
             listStok();
         }
 
@@ -53,7 +53,7 @@ namespace smoothsis
             }
             catch (Exception ex)
             {
-                Program.controllerClass.messageBoxError(ex.Message);
+                Notification.messageBoxError(ex.Message);
             }
 
         }
@@ -77,7 +77,7 @@ namespace smoothsis
         {
             if (txtAramaStokKodu.Text.Count() > 0)
             {
-                Program.controllerClass.gridviewArama(txtAramaStokKodu.Text, "STOK_KODU", stokListGridView);
+                Search.gridviewArama(txtAramaStokKodu.Text, "STOK_KODU", stokListGridView);
             }
             else
             {
@@ -90,7 +90,7 @@ namespace smoothsis
         {
             if (txtAramaStokAdi.Text.Count() > 0)
             {
-                Program.controllerClass.gridviewArama(txtAramaStokAdi.Text, "STOK_ADI", stokListGridView);
+                Search.gridviewArama(txtAramaStokAdi.Text, "STOK_ADI", stokListGridView);
             }
             else
             {
@@ -101,7 +101,24 @@ namespace smoothsis
 
         private void searchForGelisTarih(object sender, EventArgs e)
         {
-            Program.controllerClass.gridviewArama(dtAramaGelisTarih.Value.ToString("dd.MM.yyyy"), "GELIS_TARIHI", stokListGridView);
+            Search.gridviewArama(dtAramaGelisTarih.Value.ToString("dd.MM.yyyy"), "GELIS_TARIHI", stokListGridView);
+        }
+
+        private void asasaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void stokListGridView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex != -1 && e.ColumnIndex != -1)
+            {
+                if ((e.Button == MouseButtons.Right) && (stokListGridView.SelectedRows.Count == 1))
+                {
+                    stokListGridView.ClearSelection();
+                    this.stokListGridView.Rows[e.RowIndex].Selected = true;
+                }
+            }
         }
     }
 }

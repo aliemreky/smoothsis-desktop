@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using smoothsis.Services;
 
 namespace smoothsis
 {
@@ -34,9 +35,9 @@ namespace smoothsis
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            Program.controllerClass.ActionAllControls(groupBox1, "clear");
-            Program.controllerClass.ActionAllControls(groupBox2, "clear");
-            Program.controllerClass.ActionAllControls(groupBox3, "clear");
+            ActionControl.ActionAllControls(groupBox1, "clear");
+            ActionControl.ActionAllControls(groupBox2, "clear");
+            ActionControl.ActionAllControls(groupBox3, "clear");
         }
 
         private void btnSiparisKoduOlustur_Click(object sender, EventArgs e)
@@ -59,7 +60,7 @@ namespace smoothsis
                 }
                 catch (Exception ex)
                 {
-                    Program.controllerClass.messageBoxError(ex.Message);
+                    Notification.messageBoxError(ex.Message);
                 }
             }
         }
@@ -83,11 +84,11 @@ namespace smoothsis
                     }
                     else
                     {
-                        Program.controllerClass.messageBoxError("KAYIT BULUNAMADI");
+                        Notification.messageBoxError("KAYIT BULUNAMADI");
                     }
                 }catch(Exception ex)
                 {
-                    Program.controllerClass.messageBoxError(ex.Message);
+                    Notification.messageBoxError(ex.Message);
                 }
             }
         }
@@ -121,7 +122,7 @@ namespace smoothsis
                 }
             }catch(Exception ex)
             {
-                Program.controllerClass.messageBoxError(ex.Message);
+                Notification.messageBoxError(ex.Message);
             }
         }
 

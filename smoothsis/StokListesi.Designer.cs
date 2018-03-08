@@ -28,24 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StokListesi));
             this.stokListGridView = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dtAramaGelisTarih = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.txtAramaStokAdi = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtAramaStokKodu = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dtAramaGelisTarih = new System.Windows.Forms.DateTimePicker();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.asasaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.stokListGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // stokListGridView
             // 
             this.stokListGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.stokListGridView.ContextMenuStrip = this.contextMenuStrip1;
             this.stokListGridView.Location = new System.Drawing.Point(6, 22);
             this.stokListGridView.MultiSelect = false;
             this.stokListGridView.Name = "stokListGridView";
@@ -53,6 +58,7 @@
             this.stokListGridView.Size = new System.Drawing.Size(1042, 482);
             this.stokListGridView.TabIndex = 19;
             this.stokListGridView.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.showStok);
+            this.stokListGridView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.stokListGridView_CellMouseDown);
             // 
             // groupBox1
             // 
@@ -78,6 +84,15 @@
             this.groupBox2.TabIndex = 22;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "ARAMA";
+            // 
+            // dtAramaGelisTarih
+            // 
+            this.dtAramaGelisTarih.CustomFormat = "";
+            this.dtAramaGelisTarih.Location = new System.Drawing.Point(9, 177);
+            this.dtAramaGelisTarih.Name = "dtAramaGelisTarih";
+            this.dtAramaGelisTarih.Size = new System.Drawing.Size(195, 23);
+            this.dtAramaGelisTarih.TabIndex = 3;
+            this.dtAramaGelisTarih.ValueChanged += new System.EventHandler(this.searchForGelisTarih);
             // 
             // label3
             // 
@@ -122,14 +137,19 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "STOK KODU";
             // 
-            // dtAramaGelisTarih
+            // contextMenuStrip1
             // 
-            this.dtAramaGelisTarih.CustomFormat = "";
-            this.dtAramaGelisTarih.Location = new System.Drawing.Point(9, 177);
-            this.dtAramaGelisTarih.Name = "dtAramaGelisTarih";
-            this.dtAramaGelisTarih.Size = new System.Drawing.Size(195, 23);
-            this.dtAramaGelisTarih.TabIndex = 3;
-            this.dtAramaGelisTarih.ValueChanged += new System.EventHandler(this.searchForGelisTarih);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.asasaToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(103, 26);
+            // 
+            // asasaToolStripMenuItem
+            // 
+            this.asasaToolStripMenuItem.Name = "asasaToolStripMenuItem";
+            this.asasaToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.asasaToolStripMenuItem.Text = "asasa";
+            this.asasaToolStripMenuItem.Click += new System.EventHandler(this.asasaToolStripMenuItem_Click);
             // 
             // StokListesi
             // 
@@ -149,6 +169,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -163,5 +184,7 @@
         private System.Windows.Forms.TextBox txtAramaStokKodu;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtAramaGelisTarih;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem asasaToolStripMenuItem;
     }
 }

@@ -16,8 +16,7 @@ namespace smoothsis
         private static Boolean connectionBool = false;
         public static Tuple<int, string> kullanici; // KULLANICI TUPLE: ITEM 1= ID, ITEM 2= ADSOYAD
         public static string sirket = "";
-        public static Controller controllerClass = new Controller();
-        
+
         [STAThread]
         static void Main()
         {
@@ -28,7 +27,7 @@ namespace smoothsis
             }
             catch(Exception ex)
             {
-                controllerClass.messageBox(ex.Message);
+                Notification.messageBox(ex.Message);
             }
 
             if (connectionBool)
