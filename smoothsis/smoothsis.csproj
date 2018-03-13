@@ -148,6 +148,12 @@
     <Compile Include="StokOlustur.Designer.cs">
       <DependentUpon>StokOlustur.cs</DependentUpon>
     </Compile>
+    <Compile Include="StokTransfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StokTransfer.Designer.cs">
+      <DependentUpon>StokTransfer.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CariDuzenle.resx">
       <DependentUpon>CariDuzenle.cs</DependentUpon>
     </EmbeddedResource>
@@ -202,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StokOlustur.resx">
       <DependentUpon>StokOlustur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StokTransfer.resx">
+      <DependentUpon>StokTransfer.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

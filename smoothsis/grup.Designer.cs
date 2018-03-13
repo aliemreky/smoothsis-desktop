@@ -50,13 +50,18 @@
             // 
             // grupList
             // 
+            this.grupList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grupList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grupList.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.grupList.Location = new System.Drawing.Point(17, 22);
             this.grupList.MultiSelect = false;
             this.grupList.Name = "grupList";
             this.grupList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grupList.Size = new System.Drawing.Size(379, 226);
             this.grupList.TabIndex = 0;
+            this.grupList.VirtualMode = true;
             this.grupList.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grupList_CellMouseClick);
             // 
             // grupAdTB
@@ -182,6 +187,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Grup";
             this.Text = "SMOOTHSIS [ GRUP ]";

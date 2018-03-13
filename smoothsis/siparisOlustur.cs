@@ -143,6 +143,10 @@ namespace smoothsis
                 if ((sender as TextBox).Text.Count(Char.IsDigit) > 10 && (e.KeyChar != Convert.ToChar(Keys.Back)))
                 e.Handled = true;
         }
-        
+
+        private void kaydetBttn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

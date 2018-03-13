@@ -22,7 +22,7 @@ namespace smoothsis
             InitializeComponent();
         }
 
-        private void StokListeleDuzenle_Load(object sender, EventArgs e)
+        private void StokListele_Load(object sender, EventArgs e)
         {
             Styler.gridViewCommonStyle(stokListGridView);
             listStok();
@@ -39,11 +39,16 @@ namespace smoothsis
             {
                 DataTable stokListDTable = new DataTable();
                 string query = "SELECT "+
-                                  "STOK_INCKEY, STOK_KOD STOK_KODU, STOK_ADI, MIKTAR, MIKTAR_BIRIM, BIRIM_FIYAT, FORMAT(GELIS_TARIH, 'dd.MM.yyyy') GELIS_TARIHI, AMBALAJ_BILGI, MALZ_SERISI MALZEME_SERISI, " +
-                                  "MALZ_CINSI MALZEME_CINSI, MALZ_OLCU MALZEME_OLCU, ETIKET_BILGI, ACIKLAMA, K1.ADSOYAD KAYIT_YAPAN_KULLANICI, KAYIT_TARIH KAYIT_TARIHI, K2.ADSOYAD DUZELTME_YAPAN_KULLANICI, "+
-                                  "DUZELTME_TARIH DUZELTME_TARIHI FROM STOK INNER JOIN KULLANICI K1 ON STOK.KAYIT_YAPAN_KUL = K1.KUL_INCKEY " +
-                                  "LEFT JOIN KULLANICI K2 ON STOK.DUZELTME_YAPAN_KUL = K2.KUL_INCKEY" +
-                                  " ORDER BY STOK_INCKEY DESC";
+                                  "STOK_DEPO.STOK_DEPO_INCKEY, STOK.STOK_KOD STOK_KODU, STOK.STOK_ADI, DEPO.DEPO_ADI, STOK_DEPO.MIKTAR, STOK.MIKTAR_BIRIM, " +
+                                  "STOK.BIRIM_FIYAT, FORMAT(STOK.GELIS_TARIH, 'dd.MM.yyyy') GELIS_TARIHI, STOK.AMBALAJ_BILGI, " +
+                                  "STOK.MALZ_SERISI MALZEME_SERISI, STOK.MALZ_CINSI MALZEME_CINSI, " +
+                                  "STOK.MALZ_OLCU MALZEME_OLCU, STOK.ETIKET_BILGI, STOK.ACIKLAMA, K1.ADSOYAD KAYIT_YAPAN_KULLANICI, STOK.KAYIT_TARIH KAYIT_TARIHI, K2.ADSOYAD DUZELTME_YAPAN_KULLANICI, "+
+                                  "STOK.DUZELTME_TARIH DUZELTME_TARIHI FROM STOK_DEPO " +
+                                  "INNER JOIN STOK ON STOK_DEPO.STOK_INCKEY = STOK.STOK_INCKEY " +
+                                  "INNER JOIN DEPO ON STOK_DEPO.DEPO_INCKEY = DEPO.DEPO_INCKEY " +
+                                  "INNER JOIN KULLANICI K1 ON STOK.KAYIT_YAPAN_KUL = K1.KUL_INCKEY " +
+                                  "LEFT JOIN KULLANICI K2 ON STOK.DUZELTME_YAPAN_KUL = K2.KUL_INCKEY " +
+                                  "ORDER BY STOK_DEPO.STOK_DEPO_INCKEY DESC";
                 SqlCommand command = new SqlCommand(query, Program.connection);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(stokListDTable);
@@ -104,11 +109,6 @@ namespace smoothsis
             Search.gridviewArama(dtAramaGelisTarih.Value.ToString("dd.MM.yyyy"), "GELIS_TARIHI", stokListGridView);
         }
 
-        private void asasaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void stokListGridView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.RowIndex != -1 && e.ColumnIndex != -1)
@@ -118,6 +118,25 @@ namespace smoothsis
                     stokListGridView.ClearSelection();
                     this.stokListGridView.Rows[e.RowIndex].Selected = true;
                 }
+            }
+        }
+
+        private void allStokList_Click(object sender, EventArgs e)
+        {
+            StokListele_Load(sender, e);
+        }
+
+        private void stokTransferToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StokTransfer stokTransfer = new StokTransfer(this);
+            stokTransfer.ShowDialog();
+        }
+        
+        private void selectRowWithRightMenu(object sender, DataGridViewCellContextMenuStripNeededEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                selectedItem = new Tuple<int, DataGridViewCellCollection>(e.RowIndex, stokListGridView.Rows[e.RowIndex].Cells);
             }
         }
     }

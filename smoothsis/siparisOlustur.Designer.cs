@@ -238,6 +238,7 @@
             this.kaydetBttn.Size = new System.Drawing.Size(70, 20);
             this.kaydetBttn.Text = "Kaydet";
             this.kaydetBttn.ToolTipText = "Değişiklikleri Kaydet";
+            this.kaydetBttn.Click += new System.EventHandler(this.kaydetBttn_Click);
             // 
             // toolStripSeparator1
             // 

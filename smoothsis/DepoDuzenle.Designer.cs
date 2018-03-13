@@ -106,16 +106,16 @@
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.txtDepoAdi);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(14, 45);
+            this.groupBox1.Location = new System.Drawing.Point(17, 28);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(513, 188);
+            this.groupBox1.Size = new System.Drawing.Size(513, 141);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             // 
             // txtDepoLokasyon
             // 
             this.txtDepoLokasyon.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtDepoLokasyon.Location = new System.Drawing.Point(152, 89);
+            this.txtDepoLokasyon.Location = new System.Drawing.Point(152, 58);
             this.txtDepoLokasyon.Multiline = true;
             this.txtDepoLokasyon.Name = "txtDepoLokasyon";
             this.txtDepoLokasyon.Size = new System.Drawing.Size(339, 66);
@@ -125,7 +125,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label10.Location = new System.Drawing.Point(13, 95);
+            this.label10.Location = new System.Drawing.Point(13, 64);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(111, 15);
             this.label10.TabIndex = 0;
@@ -133,7 +133,7 @@
             // 
             // txtDepoAdi
             // 
-            this.txtDepoAdi.Location = new System.Drawing.Point(152, 55);
+            this.txtDepoAdi.Location = new System.Drawing.Point(152, 24);
             this.txtDepoAdi.Multiline = true;
             this.txtDepoAdi.Name = "txtDepoAdi";
             this.txtDepoAdi.Size = new System.Drawing.Size(339, 26);
@@ -143,7 +143,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(61, 55);
+            this.label2.Location = new System.Drawing.Point(61, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 15);
             this.label2.TabIndex = 0;
@@ -154,10 +154,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(542, 248);
+            this.ClientSize = new System.Drawing.Size(542, 179);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DepoDuzenle";
             this.Text = "SMOOTHSIS [ DEPO DÜZENLE ]";

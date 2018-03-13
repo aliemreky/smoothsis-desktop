@@ -66,7 +66,11 @@
             // 
             // kullaniciListesiGridView
             // 
+            this.kullaniciListesiGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.kullaniciListesiGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.kullaniciListesiGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.kullaniciListesiGridView.Location = new System.Drawing.Point(12, 36);
             this.kullaniciListesiGridView.MultiSelect = false;
             this.kullaniciListesiGridView.Name = "kullaniciListesiGridView";
@@ -257,6 +261,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "KullaniciListeleDuzenle";
             this.Text = "SMOOTHSIS [ KULLANICI LİSTESİ & DÜZENLE ]";

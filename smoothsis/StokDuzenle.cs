@@ -26,19 +26,23 @@ namespace smoothsis
         private void StokDuzenle_Load(object sender, EventArgs e)
         {
             cbMiktarBirim.DataSource = Enum.GetNames(typeof(smoothsis.Services.Enums.MalzemeMiktarBirim));
+            stokDepoCB.DataSource = StokOlustur.getDepoDataTableForBindToComboBox();
+            stokDepoCB.DisplayMember = "DEPO_ADI";
+            stokDepoCB.ValueMember = "DEPO_INCKEY";
             DataGridViewCellCollection cellsOfSelectedItem = stokListesi.getSelectedItem().Item2;
             txtStokKod.Text = cellsOfSelectedItem[1].Value.ToString();
             txtStokAdi.Text = cellsOfSelectedItem[2].Value.ToString();
-            txtMiktar.Text = cellsOfSelectedItem[3].Value.ToString();
-            cbMiktarBirim.SelectedIndex = cbMiktarBirim.FindString(cellsOfSelectedItem[4].Value.ToString());
-            txtBirimFiyat.Text = cellsOfSelectedItem[5].Value.ToString();
-            dtpGelisTarih.Text = cellsOfSelectedItem[6].Value.ToString();
-            txtAmbalajBilgi.Text = cellsOfSelectedItem[7].Value.ToString();
-            txtMalzSerisi.Text = cellsOfSelectedItem[8].Value.ToString();
-            txtMalzCinsi.Text = cellsOfSelectedItem[9].Value.ToString();
-            txtMalzOlcu.Text = cellsOfSelectedItem[10].Value.ToString();
-            txtEtiketBilgi.Text = cellsOfSelectedItem[11].Value.ToString();
-            txtAciklama.Text = cellsOfSelectedItem[12].Value.ToString();
+            stokDepoCB.SelectedIndex = stokDepoCB.FindString(cellsOfSelectedItem[3].Value.ToString());
+            txtMiktar.Text = cellsOfSelectedItem[4].Value.ToString();
+            cbMiktarBirim.SelectedIndex = cbMiktarBirim.FindString(cellsOfSelectedItem[5].Value.ToString());
+            txtBirimFiyat.Text = cellsOfSelectedItem[6].Value.ToString();
+            dtpGelisTarih.Value = DateTime.Parse(cellsOfSelectedItem[7].Value.ToString());
+            txtAmbalajBilgi.Text = cellsOfSelectedItem[8].Value.ToString();
+            txtMalzSerisi.Text = cellsOfSelectedItem[9].Value.ToString();
+            txtMalzCinsi.Text = cellsOfSelectedItem[10].Value.ToString();
+            txtMalzOlcu.Text = cellsOfSelectedItem[11].Value.ToString();
+            txtEtiketBilgi.Text = cellsOfSelectedItem[12].Value.ToString();
+            txtAciklama.Text = cellsOfSelectedItem[13].Value.ToString();
         }
 
         private void iptalButton_Click(object sender, EventArgs e)
@@ -59,36 +63,46 @@ namespace smoothsis
             {
                 try
                 {
-                    string stokKayitSQL = "UPDATE STOK SET " +
-                        "STOK_KOD = @stok_kod, STOK_ADI = @stok_adi, MIKTAR = @miktar, MIKTAR_BIRIM = @miktar_birim, " +
-                        "BIRIM_FIYAT = @birim_fiyat, GELIS_TARIH = @gelis_tarih, AMBALAJ_BILGI = @ambalaj_bilgi, " +
-                        "MALZ_SERISI = @malz_serisi, MALZ_CINSI = @malz_cinsi, MALZ_OLCU = @malz_olcu, ETIKET_BILGI = @etiket_bilgi, " +
-                        "ACIKLAMA = @aciklama, DUZELTME_YAPAN_KUL = @duzeltme_yapan_kul, DUZELTME_TARIH = @duzeltme_tarih WHERE STOK_INCKEY = @stok_inckey";
-                    sqlCmd = new SqlCommand(stokKayitSQL, Program.connection);
-                    sqlCmd.Parameters.Add("@stok_inckey", SqlDbType.Int).Value = (int)stokListesi.getSelectedItem().Item2[0].Value;
-                    sqlCmd.Parameters.Add("@stok_kod", SqlDbType.VarChar).Value = txtStokKod.Text;
-                    sqlCmd.Parameters.Add("@stok_adi", SqlDbType.VarChar).Value = txtStokAdi.Text;
+                    string stokDepoKayitSQL = "UPDATE STOK_DEPO SET " +
+                        "DEPO_INCKEY = @depo_inckey, MIKTAR = @miktar OUTPUT INSERTED.STOK_INCKEY WHERE STOK_DEPO_INCKEY = @stok_depo_inckey";
+                    sqlCmd = new SqlCommand(stokDepoKayitSQL, Program.connection);
+                    sqlCmd.Parameters.Add("@stok_depo_inckey", SqlDbType.Int).Value = (int)stokListesi.getSelectedItem().Item2[0].Value;
                     sqlCmd.Parameters.Add("@miktar", SqlDbType.Float).Value = float.Parse(txtMiktar.Text);
-                    sqlCmd.Parameters.Add("@miktar_birim", SqlDbType.VarChar).Value = cbMiktarBirim.SelectedValue;
-                    sqlCmd.Parameters.Add("@birim_fiyat", SqlDbType.Float).Value = float.Parse(txtBirimFiyat.Text);
-                    sqlCmd.Parameters.Add("@gelis_tarih", SqlDbType.Date).Value = dtpGelisTarih.Value;
-                    sqlCmd.Parameters.Add("@ambalaj_bilgi", SqlDbType.VarChar).Value = txtAmbalajBilgi.Text;
-                    sqlCmd.Parameters.Add("@malz_serisi", SqlDbType.VarChar).Value = txtMalzSerisi.Text;
-                    sqlCmd.Parameters.Add("@malz_cinsi", SqlDbType.VarChar).Value = txtMalzCinsi.Text;
-                    sqlCmd.Parameters.Add("@malz_olcu", SqlDbType.VarChar).Value = txtMalzOlcu.Text;
-                    sqlCmd.Parameters.Add("@etiket_bilgi", SqlDbType.VarChar).Value = txtEtiketBilgi.Text;
-                    sqlCmd.Parameters.Add("@aciklama", SqlDbType.VarChar).Value = txtAciklama.Text;
-                    sqlCmd.Parameters.Add("@duzeltme_yapan_kul", SqlDbType.Int).Value = Program.kullanici.Item1;
-                    sqlCmd.Parameters.Add("@duzeltme_tarih", SqlDbType.DateTime).Value = DateTime.Now.ToString();
+                    sqlCmd.Parameters.Add("@depo_inckey", SqlDbType.Int).Value = (int)stokDepoCB.SelectedValue;
+                    int stokInckey = (int)sqlCmd.ExecuteScalar();
+                    if (stokInckey > 0)
+                    {
+                        string stokKayitSQL = "UPDATE STOK SET " +
+                            "STOK_KOD = @stok_kod, STOK_ADI = @stok_adi, MIKTAR = @miktar, MIKTAR_BIRIM = @miktar_birim, " +
+                            "BIRIM_FIYAT = @birim_fiyat, GELIS_TARIH = @gelis_tarih, AMBALAJ_BILGI = @ambalaj_bilgi, " +
+                            "MALZ_SERISI = @malz_serisi, MALZ_CINSI = @malz_cinsi, MALZ_OLCU = @malz_olcu, ETIKET_BILGI = @etiket_bilgi, " +
+                            "ACIKLAMA = @aciklama, DUZELTME_YAPAN_KUL = @duzeltme_yapan_kul, DUZELTME_TARIH = @duzeltme_tarih WHERE STOK_INCKEY = @stok_inckey";
+                        sqlCmd = new SqlCommand(stokKayitSQL, Program.connection);
+                        sqlCmd.Parameters.Add("@stok_inckey", SqlDbType.Int).Value = stokInckey;
+                        sqlCmd.Parameters.Add("@stok_kod", SqlDbType.VarChar).Value = txtStokKod.Text;
+                        sqlCmd.Parameters.Add("@stok_adi", SqlDbType.VarChar).Value = txtStokAdi.Text;
+                        sqlCmd.Parameters.Add("@miktar", SqlDbType.Float).Value = float.Parse(txtMiktar.Text);
+                        sqlCmd.Parameters.Add("@miktar_birim", SqlDbType.VarChar).Value = cbMiktarBirim.SelectedValue;
+                        sqlCmd.Parameters.Add("@birim_fiyat", SqlDbType.Float).Value = float.Parse(txtBirimFiyat.Text);
+                        sqlCmd.Parameters.Add("@gelis_tarih", SqlDbType.Date).Value = dtpGelisTarih.Value;
+                        sqlCmd.Parameters.Add("@ambalaj_bilgi", SqlDbType.VarChar).Value = txtAmbalajBilgi.Text;
+                        sqlCmd.Parameters.Add("@malz_serisi", SqlDbType.VarChar).Value = txtMalzSerisi.Text;
+                        sqlCmd.Parameters.Add("@malz_cinsi", SqlDbType.VarChar).Value = txtMalzCinsi.Text;
+                        sqlCmd.Parameters.Add("@malz_olcu", SqlDbType.VarChar).Value = txtMalzOlcu.Text;
+                        sqlCmd.Parameters.Add("@etiket_bilgi", SqlDbType.VarChar).Value = txtEtiketBilgi.Text;
+                        sqlCmd.Parameters.Add("@aciklama", SqlDbType.VarChar).Value = txtAciklama.Text;
+                        sqlCmd.Parameters.Add("@duzeltme_yapan_kul", SqlDbType.Int).Value = Program.kullanici.Item1;
+                        sqlCmd.Parameters.Add("@duzeltme_tarih", SqlDbType.DateTime).Value = DateTime.Now.ToString();
 
-                    if (sqlCmd.ExecuteNonQuery() > 0)
-                    {
-                        updateItemOnList();
-                        Notification.messageBox("STOK BAŞARIYLA GÜNCELLENDİ.");
-                    }
-                    else
-                    {
-                        Notification.messageBoxError("BİR SORUN OLUŞTU, STOK GÜNCELLENEMEDI.");
+                        if (sqlCmd.ExecuteNonQuery() > 0)
+                        {
+                            updateItemOnList();
+                            Notification.messageBox("STOK BAŞARIYLA GÜNCELLENDİ.");
+                        }
+                        else
+                        {
+                            Notification.messageBoxError("BİR SORUN OLUŞTU, STOK GÜNCELLENEMEDI.");
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -109,18 +123,19 @@ namespace smoothsis
             int rowIndex = stokListesi.getSelectedItem().Item1;
             dataGridView[1, rowIndex].Value = txtStokKod.Text;
             dataGridView[2, rowIndex].Value = txtStokAdi.Text;
-            dataGridView[3, rowIndex].Value = txtMiktar.Text;
-            dataGridView[4, rowIndex].Value = cbMiktarBirim.SelectedValue;
-            dataGridView[5, rowIndex].Value = txtBirimFiyat.Text;
-            dataGridView[6, rowIndex].Value = dtpGelisTarih.Value;
-            dataGridView[7, rowIndex].Value = txtAmbalajBilgi.Text;
-            dataGridView[8, rowIndex].Value = txtMalzSerisi.Text;
-            dataGridView[9, rowIndex].Value = txtMalzCinsi.Text;
-            dataGridView[10, rowIndex].Value = txtMalzOlcu.Text;
-            dataGridView[11, rowIndex].Value = txtEtiketBilgi.Text;
-            dataGridView[12, rowIndex].Value = txtAciklama.Text;
-            dataGridView[15, rowIndex].Value = Program.kullanici.Item2;
-            dataGridView[16, rowIndex].Value = DateTime.Now.ToString("dd.MM.yyyy HH:mm");
+            dataGridView[3, rowIndex].Value = stokDepoCB.Text;
+            dataGridView[4, rowIndex].Value = txtMiktar.Text;
+            dataGridView[5, rowIndex].Value = cbMiktarBirim.SelectedValue;
+            dataGridView[6, rowIndex].Value = txtBirimFiyat.Text;
+            dataGridView[7, rowIndex].Value = dtpGelisTarih.Value;
+            dataGridView[8, rowIndex].Value = txtAmbalajBilgi.Text;
+            dataGridView[9, rowIndex].Value = txtMalzSerisi.Text;
+            dataGridView[10, rowIndex].Value = txtMalzCinsi.Text;
+            dataGridView[11, rowIndex].Value = txtMalzOlcu.Text;
+            dataGridView[12, rowIndex].Value = txtEtiketBilgi.Text;
+            dataGridView[13, rowIndex].Value = txtAciklama.Text;
+            dataGridView[16, rowIndex].Value = Program.kullanici.Item2;
+            dataGridView[17, rowIndex].Value = DateTime.Now.ToString("dd.MM.yyyy HH:mm");
         }
 
         private void sillBttn_Click(object sender, EventArgs e)
