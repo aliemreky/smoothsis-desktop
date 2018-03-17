@@ -41,22 +41,22 @@ namespace smoothsis
                     int affectedRows = command.ExecuteNonQuery();
                     if (affectedRows > 0)
                     {
-                        Program.controllerClass.messageBox("Depo oluşturuldu.");
+                        Notification.messageBox("Depo oluşturuldu.");
                         this.Close();
                     }
                     else
                     {
-                        Program.controllerClass.messageBoxError("Bir sorun oluştu, Depo oluşturulamadı.");
+                        Notification.messageBoxError("Bir sorun oluştu, Depo oluşturulamadı.");
                     }
                 }
                 catch (Exception ex)
                 {
-                    Program.controllerClass.messageBoxError(ex.Message);
+                    Notification.messageBoxError(ex.Message);
                 }
             }
             else
             {
-                Program.controllerClass.messageBox("Lütfen zorunlu alanları boş geçmeyin.");
+                Notification.messageBox("Lütfen zorunlu alanları boş geçmeyin.");
             }
         }
 

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using smoothsis.Services;
 
 namespace smoothsis
 {
@@ -31,7 +32,7 @@ namespace smoothsis
             if (String.IsNullOrEmpty(txtKullaniciAdi.Text) ||
                 String.IsNullOrEmpty(txtSifre.Text))
             {
-                Program.controllerClass.messageBoxError("KULLANICI ADI VEYA ŞİFRE ALANLARINI BOŞ BIRAKMAYINIZ !");
+                Notification.messageBoxError("KULLANICI ADI VEYA ŞİFRE ALANLARINI BOŞ BIRAKMAYINIZ !");
 
             }
             else
@@ -53,7 +54,7 @@ namespace smoothsis
                     }
                     catch (Exception ex)
                     {
-                        Program.controllerClass.messageBoxError(ex.Message);
+                        Notification.messageBoxError(ex.Message);
                     }
 
                     Program.sirket = sirketCombo.SelectedItem.ToString();
@@ -62,7 +63,7 @@ namespace smoothsis
 
                 }
                 else
-                    Program.controllerClass.messageBoxError("KULLANICI ADI VEYA ŞİFRE YANLIŞ !");
+                    Notification.messageBoxError("KULLANICI ADI VEYA ŞİFRE YANLIŞ !");
 
 
             }

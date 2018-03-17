@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using smoothsis.Services;
 using System.Collections;
 
 namespace smoothsis
@@ -72,7 +73,7 @@ namespace smoothsis
                 }
                 catch (Exception ex)
                 {
-                    Program.controllerClass.messageBoxError(ex.Message);
+                    Notification.messageBoxError(ex.Message);
                 }
             }
         }
@@ -96,12 +97,12 @@ namespace smoothsis
                     }
                     else
                     {
-                        Program.controllerClass.messageBoxError("KAYIT BULUNAMADI");
+                        Notification.messageBoxError("KAYIT BULUNAMADI");
                     }
                 }
                 catch (Exception ex)
                 {
-                    Program.controllerClass.messageBoxError(ex.Message);
+                    Notification.messageBoxError(ex.Message);
                 }
             }
         }

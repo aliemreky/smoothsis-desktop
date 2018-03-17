@@ -18,7 +18,7 @@ namespace smoothsis
 
         private void KullaniciListeleDuzenle_Load(object sender, EventArgs e)
         {
-            Program.controllerClass.gridViewCommonStyle(kullaniciListesiGridView);
+            Styler.gridViewCommonStyle(kullaniciListesiGridView);
             cbGrupKey.DataSource = KullaniciOlustur.getGrupDataTableForBindToComboBox();
             cbGrupKey.DisplayMember = "GRUP_ADI";
             cbGrupKey.ValueMember = "GRUP_INCKEY";
@@ -44,7 +44,7 @@ namespace smoothsis
             }
             catch (Exception ex)
             {
-                Program.controllerClass.messageBoxError(ex.Message);
+                Notification.messageBoxError(ex.Message);
             }
 
         }
@@ -65,19 +65,19 @@ namespace smoothsis
                         if (affectedRows > 0)
                         {
                             kullaniciListesiGridView.Rows.RemoveAt(selectedItem.Item1);
-                            Program.controllerClass.ActionAllControls(this, "clear");
+                            ActionControl.ActionAllControls(this, "clear");
                             textTemizle();
-                            Program.controllerClass.messageBox("Kullanıcı silindi.");
+                            Notification.messageBox("Kullanıcı silindi.");
                         }
                         else
                         {
-                            Program.controllerClass.messageBoxError("Bir sorun oluştu, grup silinemedi.");
+                            Notification.messageBoxError("Bir sorun oluştu, grup silinemedi.");
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    Program.controllerClass.messageBoxError(ex.Source);
+                    Notification.messageBoxError(ex.Source);
                 }
             }
         }
@@ -121,7 +121,7 @@ namespace smoothsis
                     int affectedRows = command.ExecuteNonQuery();
                     if (affectedRows > 0)
                     {
-                        Program.controllerClass.messageBox("Kullanıcı güncellendi.");
+                        Notification.messageBox("Kullanıcı güncellendi.");
                         kullaniciListesiGridView[1, selectedItem.Item1].Value = grupAd;
                         kullaniciListesiGridView[2, selectedItem.Item1].Value = adSoyad;
                         kullaniciListesiGridView[3, selectedItem.Item1].Value = sifre;
@@ -130,17 +130,17 @@ namespace smoothsis
                     }
                     else
                     {
-                        Program.controllerClass.messageBoxError("Bir sorun oluştu, Kullanıcı güncellenemedi.");
+                        Notification.messageBoxError("Bir sorun oluştu, Kullanıcı güncellenemedi.");
                     }
                 }
                 catch (Exception ex)
                 {
-                    Program.controllerClass.messageBoxError(ex.Message);
+                    Notification.messageBoxError(ex.Message);
                 }
             }
             else
             {
-                Program.controllerClass.messageBox("Lütfen zorunlu alanları boş geçmeyin.");
+                Notification.messageBox("Lütfen zorunlu alanları boş geçmeyin.");
             }
         }
 

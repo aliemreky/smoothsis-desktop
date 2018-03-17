@@ -48,7 +48,7 @@ namespace smoothsis
                 }
                 catch (Exception ex)
                 {
-                    Program.controllerClass.messageBoxError(ex.Message);
+                    Notification.messageBoxError(ex.Message);
                 }
             }
         }
@@ -60,7 +60,7 @@ namespace smoothsis
                 String.IsNullOrEmpty(txtMiktar.Text) ||
                 String.IsNullOrEmpty(txtBirimFiyat.Text) )
             {
-                Program.controllerClass.messageBoxError("LÜTFEN *'LI ALANLARI BOŞ BIRAKMAYINIZ !");
+                Notification.messageBoxError("LÜTFEN *'LI ALANLARI BOŞ BIRAKMAYINIZ !");
             }
             else
             {
@@ -89,19 +89,19 @@ namespace smoothsis
 
                     if (sqlCmd.ExecuteNonQuery() > 0)
                     {
-                        Program.controllerClass.messageBox("STOK BAŞARIYLA OLUŞTURULDU");
+                        Notification.messageBox("STOK BAŞARIYLA OLUŞTURULDU");
                     }
                 }
                 catch (Exception ex)
                 {
-                    Program.controllerClass.messageBoxError(ex.Message);
+                    Notification.messageBoxError(ex.Message);
                 }
             }
         }
 
         private void temizleBttn_Click(object sender, EventArgs e)
         {
-            Program.controllerClass.ActionAllControls(this, "clear");
+           ActionControl.ActionAllControls(this, "clear");
         }
 
         private void iptalButton_Click(object sender, EventArgs e)
