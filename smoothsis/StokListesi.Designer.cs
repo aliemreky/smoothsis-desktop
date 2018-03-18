@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StokListesi));
             this.stokListGridView = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -36,20 +35,19 @@
             this.btnStokListesiGetir = new System.Windows.Forms.Button();
             this.dtAramaGelisTarih = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtMalzemeEtiketBilgi = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtAramaMalzemeCinsi = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtAramaMalzemeSerisi = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.txtAramaStokAdi = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtAramaStokKodu = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtAramaMalzemeSerisi = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtAramaMalzemeCinsi = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtMalzemeEtiketBilgi = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.stokListGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // stokListGridView
@@ -63,7 +61,7 @@
             this.stokListGridView.MultiSelect = false;
             this.stokListGridView.Name = "stokListGridView";
             this.stokListGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.stokListGridView.Size = new System.Drawing.Size(932, 500);
+            this.stokListGridView.Size = new System.Drawing.Size(932, 482);
             this.stokListGridView.TabIndex = 19;
             this.stokListGridView.VirtualMode = true;
             this.stokListGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.stokListGridView_CellDoubleClick);
@@ -76,7 +74,7 @@
             this.groupBox1.Controls.Add(this.stokListGridView);
             this.groupBox1.Location = new System.Drawing.Point(253, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(944, 519);
+            this.groupBox1.Size = new System.Drawing.Size(944, 501);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             // 
@@ -100,7 +98,7 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(235, 519);
+            this.groupBox2.Size = new System.Drawing.Size(235, 501);
             this.groupBox2.TabIndex = 22;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "ARAMA";
@@ -132,6 +130,57 @@
             this.label3.Size = new System.Drawing.Size(79, 15);
             this.label3.TabIndex = 0;
             this.label3.Text = "GELİŞ TARİHİ";
+            // 
+            // txtMalzemeEtiketBilgi
+            // 
+            this.txtMalzemeEtiketBilgi.Location = new System.Drawing.Point(17, 379);
+            this.txtMalzemeEtiketBilgi.Name = "txtMalzemeEtiketBilgi";
+            this.txtMalzemeEtiketBilgi.Size = new System.Drawing.Size(195, 23);
+            this.txtMalzemeEtiketBilgi.TabIndex = 2;
+            this.txtMalzemeEtiketBilgi.TextChanged += new System.EventHandler(this.txtMalzemeEtiketBilgi_TextChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(14, 356);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(76, 15);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "ETİKET BİLGİ";
+            // 
+            // txtAramaMalzemeCinsi
+            // 
+            this.txtAramaMalzemeCinsi.Location = new System.Drawing.Point(17, 313);
+            this.txtAramaMalzemeCinsi.Name = "txtAramaMalzemeCinsi";
+            this.txtAramaMalzemeCinsi.Size = new System.Drawing.Size(195, 23);
+            this.txtAramaMalzemeCinsi.TabIndex = 2;
+            this.txtAramaMalzemeCinsi.TextChanged += new System.EventHandler(this.txtAramaMalzemeCinsi_TextChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(14, 290);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(96, 15);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "MALZEME CİNSİ";
+            // 
+            // txtAramaMalzemeSerisi
+            // 
+            this.txtAramaMalzemeSerisi.Location = new System.Drawing.Point(17, 249);
+            this.txtAramaMalzemeSerisi.Name = "txtAramaMalzemeSerisi";
+            this.txtAramaMalzemeSerisi.Size = new System.Drawing.Size(195, 23);
+            this.txtAramaMalzemeSerisi.TabIndex = 2;
+            this.txtAramaMalzemeSerisi.TextChanged += new System.EventHandler(this.txtAramaMalzemeSerisi_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(14, 226);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(100, 15);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "MALZEME SERİSİ";
             // 
             // txtAramaStokAdi
             // 
@@ -167,64 +216,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "STOK KODU";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(14, 226);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 15);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "MALZEME SERİSİ";
-            // 
-            // txtAramaMalzemeSerisi
-            // 
-            this.txtAramaMalzemeSerisi.Location = new System.Drawing.Point(17, 249);
-            this.txtAramaMalzemeSerisi.Name = "txtAramaMalzemeSerisi";
-            this.txtAramaMalzemeSerisi.Size = new System.Drawing.Size(195, 23);
-            this.txtAramaMalzemeSerisi.TabIndex = 2;
-            this.txtAramaMalzemeSerisi.TextChanged += new System.EventHandler(this.txtAramaMalzemeSerisi_TextChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(14, 290);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(96, 15);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "MALZEME CİNSİ";
-            // 
-            // txtAramaMalzemeCinsi
-            // 
-            this.txtAramaMalzemeCinsi.Location = new System.Drawing.Point(17, 313);
-            this.txtAramaMalzemeCinsi.Name = "txtAramaMalzemeCinsi";
-            this.txtAramaMalzemeCinsi.Size = new System.Drawing.Size(195, 23);
-            this.txtAramaMalzemeCinsi.TabIndex = 2;
-            this.txtAramaMalzemeCinsi.TextChanged += new System.EventHandler(this.txtAramaMalzemeCinsi_TextChanged);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(14, 356);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 15);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "ETİKET BİLGİ";
-            // 
-            // txtMalzemeEtiketBilgi
-            // 
-            this.txtMalzemeEtiketBilgi.Location = new System.Drawing.Point(17, 379);
-            this.txtMalzemeEtiketBilgi.Name = "txtMalzemeEtiketBilgi";
-            this.txtMalzemeEtiketBilgi.Size = new System.Drawing.Size(195, 23);
-            this.txtMalzemeEtiketBilgi.TabIndex = 2;
-            this.txtMalzemeEtiketBilgi.TextChanged += new System.EventHandler(this.txtMalzemeEtiketBilgi_TextChanged);
-            // 
             // StokListesi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1219, 549);
+            this.ClientSize = new System.Drawing.Size(1219, 531);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -236,7 +234,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

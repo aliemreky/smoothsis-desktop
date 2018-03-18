@@ -55,7 +55,7 @@ namespace smoothsis
                    stokListGridView,
                    new object[] { true });
 
-                Program.controllerClass.gridViewCommonStyle(stokListGridView);
+                Styler.gridViewCommonStyle(stokListGridView);
 
                 stokListGridView.DataSource = stokListDTable;
                 stokListGridView.Columns[0].Visible = false;
@@ -94,37 +94,37 @@ namespace smoothsis
                 Search.gridviewArama(txtAramaStokKodu.Text, "STOK_KODU", stokListGridView);
             }
             else
-                Program.controllerClass.gridviewArama("", stokListGridView);
+                Search.gridviewArama("", "", stokListGridView);
         }
 
         private void searchForStokAdi(object sender, EventArgs e)
         {
             if (txtAramaStokAdi.Text.Count() > 1)
-                Program.controllerClass.gridviewArama(txtAramaStokAdi.Text, stokListGridView, "STOK_ADI");
+                Search.gridviewArama(txtAramaStokAdi.Text, "STOK_ADI", stokListGridView);
             else
-                Program.controllerClass.gridviewArama("", stokListGridView);
+                Search.gridviewArama("","", stokListGridView);
 
         }
 
         private void searchForGelisTarih(object sender, EventArgs e)
         {
-            Program.controllerClass.gridviewArama(dtAramaGelisTarih.Value.ToString("dd.MM.yyyy"), stokListGridView, "GELIS_TARIHI");
+            Search.gridviewArama(dtAramaGelisTarih.Value.ToString("dd.MM.yyyy"), "GELIS_TARIHI", stokListGridView);
         }
 
         private void txtAramaMalzemeSerisi_TextChanged(object sender, EventArgs e)
         {
             if (txtAramaMalzemeSerisi.Text.Count() > 1)
-                Program.controllerClass.gridviewArama(txtAramaMalzemeSerisi.Text, stokListGridView, "MALZ_SERISI");
+                Search.gridviewArama(txtAramaMalzemeSerisi.Text, "MALZ_SERISI", stokListGridView);
             else
-                Program.controllerClass.gridviewArama("", stokListGridView);
+                Search.gridviewArama("", "", stokListGridView);
         }
 
         private void txtAramaMalzemeCinsi_TextChanged(object sender, EventArgs e)
         {
             if (txtAramaMalzemeCinsi.Text.Count() > 1)
-                Program.controllerClass.gridviewArama(txtAramaMalzemeCinsi.Text, stokListGridView, "MALZ_CINSI");
+                Search.gridviewArama(txtAramaMalzemeCinsi.Text, "MALZ_CINSI", stokListGridView);
             else
-                Program.controllerClass.gridviewArama("", stokListGridView);
+                Search.gridviewArama("", "", stokListGridView);
         }
 
         private void txtMalzemeEtiketBilgi_TextChanged(object sender, EventArgs e)

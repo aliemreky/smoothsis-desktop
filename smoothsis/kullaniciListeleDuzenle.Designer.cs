@@ -57,9 +57,9 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.kullaniciListesiGridView);
-            this.groupBox2.Location = new System.Drawing.Point(14, 51);
+            this.groupBox2.Location = new System.Drawing.Point(12, 38);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(902, 301);
+            this.groupBox2.Size = new System.Drawing.Size(870, 271);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "KULLANICI LİSTESİ";
@@ -67,11 +67,11 @@
             // kullaniciListesiGridView
             // 
             this.kullaniciListesiGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.kullaniciListesiGridView.Location = new System.Drawing.Point(12, 36);
+            this.kullaniciListesiGridView.Location = new System.Drawing.Point(13, 22);
             this.kullaniciListesiGridView.MultiSelect = false;
             this.kullaniciListesiGridView.Name = "kullaniciListesiGridView";
             this.kullaniciListesiGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.kullaniciListesiGridView.Size = new System.Drawing.Size(878, 233);
+            this.kullaniciListesiGridView.Size = new System.Drawing.Size(836, 233);
             this.kullaniciListesiGridView.TabIndex = 0;
             this.kullaniciListesiGridView.TabStop = false;
             this.kullaniciListesiGridView.VirtualMode = true;
@@ -89,9 +89,9 @@
             this.groupBox1.Controls.Add(this.txtTelefon);
             this.groupBox1.Controls.Add(this.txtSifre);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(14, 378);
+            this.groupBox1.Location = new System.Drawing.Point(12, 319);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(902, 152);
+            this.groupBox1.Size = new System.Drawing.Size(870, 152);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "KULLANICI DÜZENLE";
@@ -99,9 +99,10 @@
             // cbGrupKey
             // 
             this.cbGrupKey.DisplayMember = "GRUP_ADI";
+            this.cbGrupKey.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGrupKey.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cbGrupKey.FormattingEnabled = true;
-            this.cbGrupKey.Location = new System.Drawing.Point(105, 21);
+            this.cbGrupKey.Location = new System.Drawing.Point(92, 25);
             this.cbGrupKey.Name = "cbGrupKey";
             this.cbGrupKey.Size = new System.Drawing.Size(339, 23);
             this.cbGrupKey.TabIndex = 28;
@@ -112,17 +113,17 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(45, 24);
+            this.label4.Location = new System.Drawing.Point(7, 28);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 15);
+            this.label4.Size = new System.Drawing.Size(79, 15);
             this.label4.TabIndex = 27;
-            this.label4.Text = "GRUP";
+            this.label4.Text = "YETKİ GRUBU";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(9, 67);
+            this.label2.Location = new System.Drawing.Point(12, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 15);
             this.label2.TabIndex = 20;
@@ -130,25 +131,25 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(536, 99);
+            this.txtEmail.Location = new System.Drawing.Point(510, 103);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(339, 26);
+            this.txtEmail.Size = new System.Drawing.Size(339, 25);
             this.txtEmail.TabIndex = 26;
             // 
             // txtAdSoyad
             // 
-            this.txtAdSoyad.Location = new System.Drawing.Point(105, 60);
+            this.txtAdSoyad.Location = new System.Drawing.Point(92, 64);
             this.txtAdSoyad.Multiline = true;
             this.txtAdSoyad.Name = "txtAdSoyad";
-            this.txtAdSoyad.Size = new System.Drawing.Size(339, 26);
+            this.txtAdSoyad.Size = new System.Drawing.Size(339, 25);
             this.txtAdSoyad.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(475, 103);
+            this.label3.Location = new System.Drawing.Point(462, 107);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 15);
             this.label3.TabIndex = 25;
@@ -158,7 +159,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label10.Location = new System.Drawing.Point(37, 103);
+            this.label10.Location = new System.Drawing.Point(41, 107);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(45, 15);
             this.label10.TabIndex = 19;
@@ -166,26 +167,26 @@
             // 
             // txtTelefon
             // 
-            this.txtTelefon.Location = new System.Drawing.Point(536, 60);
+            this.txtTelefon.Location = new System.Drawing.Point(510, 64);
             this.txtTelefon.Multiline = true;
             this.txtTelefon.Name = "txtTelefon";
-            this.txtTelefon.Size = new System.Drawing.Size(339, 26);
+            this.txtTelefon.Size = new System.Drawing.Size(339, 25);
             this.txtTelefon.TabIndex = 24;
             this.txtTelefon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkIsTel);
             // 
             // txtSifre
             // 
-            this.txtSifre.Location = new System.Drawing.Point(105, 99);
+            this.txtSifre.Location = new System.Drawing.Point(92, 103);
             this.txtSifre.Multiline = true;
             this.txtSifre.Name = "txtSifre";
-            this.txtSifre.Size = new System.Drawing.Size(339, 26);
+            this.txtSifre.Size = new System.Drawing.Size(339, 25);
             this.txtSifre.TabIndex = 22;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(461, 63);
+            this.label1.Location = new System.Drawing.Point(448, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 15);
             this.label1.TabIndex = 23;
@@ -205,7 +206,7 @@
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(946, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(895, 25);
             this.toolStrip1.TabIndex = 14;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -252,11 +253,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(946, 556);
+            this.ClientSize = new System.Drawing.Size(895, 486);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "KullaniciListeleDuzenle";
             this.Text = "SMOOTHSIS [ KULLANICI LİSTESİ & DÜZENLE ]";

@@ -10,11 +10,19 @@ namespace smoothsis.Services
 {
     class Search
     {
-        public static void gridviewArama(string aramaTextBox, string sutunName, DataGridView dataGridView)
+        public static void gridviewArama(string aramaTextBox, DataGridView dataGridView, string sutunName = "")
         {
-            string rowFilter = string.Format("CONVERT({0}, System.String) like '%{1}%'", sutunName.Trim(), aramaTextBox.Trim());
-            (dataGridView.DataSource as DataTable).DefaultView.RowFilter = rowFilter;
-            dataGridView.Refresh();
+            if (String.IsNullOrEmpty(aramaTextBox))
+            {
+                (dataGridView.DataSource as DataTable).DefaultView.RowFilter = "";
+                dataGridView.Refresh();
+            }
+            else
+            {
+                string rowFilter = string.Format("CONVERT({0}, System.String) like '%{1}%'", sutunName.Trim(), aramaTextBox.Trim());
+                (dataGridView.DataSource as DataTable).DefaultView.RowFilter = rowFilter;
+                dataGridView.Refresh();
+            }
         }
     }
 }

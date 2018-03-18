@@ -121,6 +121,14 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="temizleBttn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACFSURBVEhL7ZVRCoAgEES9YET3v0B1iXLbFmTUxiW/xAcD
+        O+CM5YeGiZct6tDx4XplMH9GrTqWkXJPYcmnHzggtSNgMtBn1AJMBnoKC7gLke4bYIAVeNe7A971GSzg
+        LkS6b4AB80wG+oxagMlAPyByn3/9covfdSwjj8WfB0fKFx0nTYRwA5zcfBEzgFGpAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAAAAAAAEAIABaMQAAZgAAAICAAAABACAAKAgBAMAxAABAQAAAAQAgAChCAADoOQEAMDAAAAEA

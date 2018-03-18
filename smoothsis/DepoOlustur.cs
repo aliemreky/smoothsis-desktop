@@ -19,11 +19,6 @@ namespace smoothsis
             InitializeComponent();
         }
 
-        private void DepoOlustur_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void kaydetBttn_Click(object sender, EventArgs e)
         {
             string depoAdi = txtDepoAdi.Text.Trim();

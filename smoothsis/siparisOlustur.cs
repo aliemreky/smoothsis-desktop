@@ -32,6 +32,7 @@ namespace smoothsis
 
         private void SiparisOlustur_Load(object sender, EventArgs e)
         {
+            kaydetBttn.Enabled = false;
             siparisTipi.SelectedIndex = 0;
             txtSiparisTarih.Text = DateTime.Now.ToString("dd.MM.yyyy");
             txtSiparisTeslimTarih.Text = DateTime.Now.ToString("dd.MM.yyyy");
@@ -48,8 +49,8 @@ namespace smoothsis
 
             siparisListesiGridView.Columns[0].Visible = false;
 
-            Program.controllerClass.gridViewCommonStyle(siparisListesiGridView);
-            Program.controllerClass.gridViewColumnResize(siparisListesiGridView);
+            Styler.gridViewCommonStyle(siparisListesiGridView);
+            Styler.gridViewColumnResize(siparisListesiGridView);
 
         }       
 
@@ -136,7 +137,7 @@ namespace smoothsis
             }
             catch (Exception ex)
             {
-                Program.controllerClass.messageBoxError(ex.Message);
+                Notification.messageBoxError(ex.Message);
             }
         }        
 
@@ -159,12 +160,12 @@ namespace smoothsis
                     }
                     else
                     {
-                        Program.controllerClass.messageBoxError("KAYIT BULUNAMADI");
+                        Notification.messageBoxError("KAYIT BULUNAMADI");
                     }
                 }
                 catch (Exception ex)
                 {
-                    Program.controllerClass.messageBoxError(ex.Message);
+                    Notification.messageBoxError(ex.Message);
                 }
             }
         }
@@ -187,7 +188,7 @@ namespace smoothsis
         {
             if (String.IsNullOrEmpty(txtStokKodu.Text) || String.IsNullOrEmpty(txtBirimFiyat.Text))
             {
-                Program.controllerClass.messageBoxError("LÜTFEN STOK SEÇİNİZ");
+                Notification.messageBoxError("LÜTFEN STOK SEÇİNİZ");
             }
             else
             {
@@ -219,7 +220,7 @@ namespace smoothsis
                         siparisStokList.Add(selectedItem.Item2["STOK_INCKEY"].Value.ToString());
 
                         btnListeyeEkle.Text = "LİSTEYE EKLE";
-                        Program.controllerClass.ActionAllControls(groupBox4, "clear");
+                        ActionControl.ActionAllControls(groupBox4, "clear");
 
                     } else
                     {
@@ -237,11 +238,12 @@ namespace smoothsis
                             siparisStokList.Add(selectedItem.Item2["STOK_INCKEY"].Value.ToString());
                             siparisToplamTutar += decimal.Parse(stokTutar);
 
-                            Program.controllerClass.ActionAllControls(groupBox4, "clear");
+                            kaydetBttn.Enabled = true;
+                            ActionControl.ActionAllControls(groupBox4, "clear");
                         }
                     }
 
-                    Program.controllerClass.gridViewColumnResize(siparisListesiGridView);
+                    Styler.gridViewColumnResize(siparisListesiGridView);
 
                 }
             }
@@ -286,7 +288,7 @@ namespace smoothsis
                 String.IsNullOrEmpty(siparisTipi.SelectedItem.ToString()) ||
                 (siparisListesiGridView.Rows.Count <= 0))
             {
-                Program.controllerClass.messageBoxError("LÜTFEN GEREKLİ İÇERİKLERİ DOLDURUNUZ");
+                Notification.messageBoxError("LÜTFEN GEREKLİ İÇERİKLERİ DOLDURUNUZ");
             }
             else
             {
@@ -324,19 +326,19 @@ namespace smoothsis
                             sqlCmd.ExecuteNonQuery();
                         }
 
-                        Program.controllerClass.messageBox("SİPARİŞ BAŞARIYLA OLUŞTURULDU");
+                        Notification.messageBox("SİPARİŞ BAŞARIYLA OLUŞTURULDU");
                         this.Close();
 
                     }
                     else
                     {
-                        Program.controllerClass.messageBoxError("SİPARİŞ EKLENEMEDİ");
+                        Notification.messageBoxError("SİPARİŞ EKLENEMEDİ");
                     }
 
                 }
                 catch (Exception ex)
                 {
-                    Program.controllerClass.messageBoxError(ex.Message);
+                    Notification.messageBoxError(ex.Message);
                 }
 
             }
@@ -365,10 +367,10 @@ namespace smoothsis
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            Program.controllerClass.ActionAllControls(groupBox1, "clear");
-            Program.controllerClass.ActionAllControls(groupBox2, "clear");
-            Program.controllerClass.ActionAllControls(groupBox3, "clear");
-            Program.controllerClass.ActionAllControls(groupBox4, "clear");
+            ActionControl.ActionAllControls(groupBox1, "clear");
+            ActionControl.ActionAllControls(groupBox2, "clear");
+            ActionControl.ActionAllControls(groupBox3, "clear");
+            ActionControl.ActionAllControls(groupBox4, "clear");
 
             siparisListesiGridView.Rows.Clear();
             siparisStokList.Clear();

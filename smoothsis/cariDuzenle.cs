@@ -134,23 +134,25 @@ namespace smoothsis
 
         private void kayitSilBtn_Click(object sender, EventArgs e)
         {
-            if (secilenCari != null)
+            try
             {
-                DialogResult dialogResult = MessageBox.Show("SİLMEK İSTEDİĞİNİZDEN EMİN MİSİNİZ ?", "UYARI", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
+                if (secilenCari != null)
                 {
-                    sqlCmd = new SqlCommand("DELETE FROM CARI WHERE CARI_INCKEY=@cari_inckey", Program.connection);
-                    sqlCmd.Parameters.AddWithValue("@cari_inckey", secilenCari.Item1);
-                    if (sqlCmd.ExecuteNonQuery() > 0)
-                        Notification.messageBox("CARİ BAŞARIYLA SİLİNDİ");
+                    DialogResult dialogResult = MessageBox.Show("SİLMEK İSTEDİĞİNİZDEN EMİN MİSİNİZ ?", "UYARI", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        sqlCmd = new SqlCommand("DELETE FROM CARI WHERE CARI_INCKEY=@cari_inckey", Program.connection);
+                        sqlCmd.Parameters.AddWithValue("@cari_inckey", secilenCari.Item1);
+                        if (sqlCmd.ExecuteNonQuery() > 0)
+                            Notification.messageBox("CARİ BAŞARIYLA SİLİNDİ");
 
                     }
                 }
-                catch (Exception ex)
-                {
-                    Program.controllerClass.messageBoxError(ex.Message);
-                }
             }
+            catch (Exception ex)
+            {
+                Notification.messageBoxError(ex.Message);
+            }            
 
         }
 

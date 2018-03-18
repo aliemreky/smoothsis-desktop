@@ -51,11 +51,11 @@
             // grupList
             // 
             this.grupList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grupList.Location = new System.Drawing.Point(17, 22);
+            this.grupList.Location = new System.Drawing.Point(9, 22);
             this.grupList.MultiSelect = false;
             this.grupList.Name = "grupList";
             this.grupList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grupList.Size = new System.Drawing.Size(379, 226);
+            this.grupList.Size = new System.Drawing.Size(398, 226);
             this.grupList.TabIndex = 0;
             this.grupList.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grupList_CellMouseClick);
             // 
@@ -72,18 +72,18 @@
             // 
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.grupAdTB);
-            this.groupBox1.Location = new System.Drawing.Point(29, 332);
+            this.groupBox1.Location = new System.Drawing.Point(12, 311);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(415, 66);
+            this.groupBox1.Size = new System.Drawing.Size(418, 66);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "GRUP EKLE/GÜNCELLE/SİL";
+            this.groupBox1.Text = "GRUP EKLE / GÜNCELLE / SİL";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(12, 23);
+            this.label1.Location = new System.Drawing.Point(19, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 17);
             this.label1.TabIndex = 2;
@@ -92,9 +92,9 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.grupList);
-            this.groupBox2.Location = new System.Drawing.Point(29, 36);
+            this.groupBox2.Location = new System.Drawing.Point(12, 34);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(415, 268);
+            this.groupBox2.Size = new System.Drawing.Size(418, 268);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "GRUP LİSTESİ";
@@ -115,7 +115,7 @@
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(472, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(442, 25);
             this.toolStrip1.TabIndex = 15;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -137,10 +137,10 @@
             // 
             // temizleBttn
             // 
-            this.temizleBttn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.temizleBttn.Image = ((System.Drawing.Image)(resources.GetObject("temizleBttn.Image")));
             this.temizleBttn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.temizleBttn.Name = "temizleBttn";
-            this.temizleBttn.Size = new System.Drawing.Size(60, 20);
+            this.temizleBttn.Size = new System.Drawing.Size(76, 20);
             this.temizleBttn.Text = "Temizle";
             this.temizleBttn.Click += new System.EventHandler(this.textTemizle);
             // 
@@ -177,7 +177,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(472, 423);
+            this.ClientSize = new System.Drawing.Size(442, 389);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

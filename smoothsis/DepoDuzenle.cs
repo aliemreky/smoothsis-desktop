@@ -48,9 +48,10 @@ namespace smoothsis
             {
                 try
                 {
-                    SqlCommand command = new SqlCommand("UPDATE DEPO SET " +
+                    string depoGuncelleSQL = "UPDATE DEPO SET " +
                         " DEPO_ADI = @depo_adi, DEPO_LOKASYON = @depo_lokasyon, DUZELTME_YAPAN_KUL = @duzeltme_yapan_kul, DUZELTME_TARIH = @duzeltme_tarih " +
-                        "WHERE DEPO_INCKEY = @depo_inckey", Program.connection);
+                        "WHERE DEPO_INCKEY = @depo_inckey";
+                    SqlCommand command = new SqlCommand(depoGuncelleSQL, Program.connection);
                     command.Parameters.Add("@depo_inckey", SqlDbType.Int).Value = (int)depoListesi.getSelectedItem().Item2[0].Value;
                     command.Parameters.Add("@depo_adi", SqlDbType.VarChar).Value = depoAdi;
                     command.Parameters.Add("@depo_lokasyon", SqlDbType.VarChar).Value = depoLokasyon;

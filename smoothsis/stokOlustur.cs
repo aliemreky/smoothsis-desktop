@@ -25,6 +25,7 @@ namespace smoothsis
         private void StokOlustur_Load(object sender, EventArgs e)
         {
             cbMiktarBirim.DataSource = Enum.GetNames(typeof(smoothsis.Services.Enums.MalzemeMiktarBirim));
+            cbMiktarBirim.SelectedIndex = 0;
         }
         
         private void btnStokKodOlustur_Click(object sender, EventArgs e)
