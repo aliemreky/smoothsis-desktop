@@ -50,7 +50,7 @@ namespace smoothsis
             siparisListesiGridView.Columns[0].Visible = false;
 
             Styler.gridViewCommonStyle(siparisListesiGridView);
-            Styler.gridViewColumnResize(siparisListesiGridView);
+            siparisListesiGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
         }       
 
@@ -192,7 +192,7 @@ namespace smoothsis
             }
             else
             {
-                if (int.Parse(txtToplamFiyat.Text) > 0)
+                if (decimal.Parse(txtToplamFiyat.Text) > 0)
                 {
 
                     string stokInckey= "";
@@ -243,7 +243,7 @@ namespace smoothsis
                         }
                     }
 
-                    Styler.gridViewColumnResize(siparisListesiGridView);
+                    siparisListesiGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
                 }
             }
@@ -270,18 +270,18 @@ namespace smoothsis
             if (e.RowIndex != -1 && e.ColumnIndex != -1)
             {
                 txtStokKodu.Text = siparisListesiGridView["STOK KODU", e.RowIndex].Value.ToString();
-                txtStokAdi.Text = siparisListesiGridView["STOK_ADI", e.RowIndex].Value.ToString();
-                txtStokMiktar.Text = siparisListesiGridView["MIKTAR", e.RowIndex].Value.ToString();
-                txtStokBirim.Text = siparisListesiGridView["BIRIM", e.RowIndex].Value.ToString();
-                txtBirimFiyat.Text = siparisListesiGridView["BIRIM_FIYAT", e.RowIndex].Value.ToString();
+                txtStokAdi.Text = siparisListesiGridView["STOK ADI", e.RowIndex].Value.ToString();
+                txtStokMiktar.Text = siparisListesiGridView["MİKTAR", e.RowIndex].Value.ToString();
+                txtStokBirim.Text = siparisListesiGridView["BİRİM", e.RowIndex].Value.ToString();
+                txtBirimFiyat.Text = siparisListesiGridView["BİRİM FİYAT", e.RowIndex].Value.ToString();
                 txtToplamFiyat.Text = siparisListesiGridView["TUTAR", e.RowIndex].Value.ToString();
 
                 btnListeyeEkle.Text = "GÜNCELLE";
                 stokGuncelle = new Tuple<bool, int>(true, e.RowIndex);
-                selectedStokIncKey = int.Parse(siparisListesiGridView["STOK_INCKEY", e.RowIndex].Value.ToString());
+                selectedStokIncKey = int.Parse(siparisListesiGridView["STOK INCKEY", e.RowIndex].Value.ToString());
 
                 siparisToplamTutar -= decimal.Parse(siparisListesiGridView["TUTAR", e.RowIndex].Value.ToString());
-                siparisStokList.Remove(siparisListesiGridView["STOK_INCKEY", e.RowIndex].Value.ToString());
+                siparisStokList.Remove(siparisListesiGridView["STOK INCKEY", e.RowIndex].Value.ToString());
             }
         }
 
@@ -298,16 +298,16 @@ namespace smoothsis
             {
                 try
                 {
-                    string siparisKaydetSQL = "INSERT INTO SIPARIS (SIPARIS_KOD, CARI_INCKEY, PROJE_KOD, PROJE_ADI, OZEL_KOD, ACIKLAMA, SIPARIS_TIPI, SIPARIS_TARIH, TESLIM_TARIH, SIPARIS_TUTAR, KAYIT_YAPAN_KUL, ACIKLAMA1, ACIKLAMA2) " +
-                        "OUTPUT INSERTED.SIPARIS_INCKEY VALUES (@siparis_kod, @cari_inckey, @proje_kod, @proje_adi, @ozel_kod, @aciklama, @siparis_tipi, @siparis_tarih, @teslim_tarih, @siparis_tutar, @kayit_yapan_kul, @aciklama1, @aciklama2)";
+                    string siparisKaydetSQL = "INSERT INTO SIPARIS (SIPARIS_KOD, CARI_KOD, PROJE_KOD, PROJE_ADI, OZEL_KOD, SIPARIS_TIPI, SIP_TARIH, TESLIM_TARIH, SIPARIS_TUTAR, KAYIT_YAPAN_KUL, ACIKLAMA1, ACIKLAMA2) " +
+                        "OUTPUT INSERTED.SIPARIS_INCKEY VALUES (@siparis_kod, @cari_kod, @proje_kod, @proje_adi, @ozel_kod, @siparis_tipi, @sip_tarih, @teslim_tarih, @siparis_tutar, @kayit_yapan_kul, @aciklama1, @aciklama2)";
                     sqlCmd = new SqlCommand(siparisKaydetSQL, Program.connection);
                     sqlCmd.Parameters.Add("@siparis_kod", SqlDbType.VarChar).Value = txtSiparisKodu.Text;
                     sqlCmd.Parameters.Add("@proje_kod", SqlDbType.VarChar).Value = txtProjeKodu.Text;
                     sqlCmd.Parameters.Add("@proje_adi", SqlDbType.VarChar).Value = txtProjeAdi.Text;
-                    sqlCmd.Parameters.Add("@cari_inckey", SqlDbType.Int).Value = secilenCari.Item1;
+                    sqlCmd.Parameters.Add("@cari_kod", SqlDbType.Int).Value = secilenCari.Item1;
                     sqlCmd.Parameters.Add("@ozel_kod", SqlDbType.VarChar).Value = txtOzelKod.Text;
                     sqlCmd.Parameters.Add("@siparis_tipi", SqlDbType.VarChar).Value = siparisTipi.SelectedItem.ToString();
-                    sqlCmd.Parameters.Add("@siparis_tarih", SqlDbType.Date).Value = DateTime.Parse(txtSiparisTarih.Text);
+                    sqlCmd.Parameters.Add("@sip_tarih", SqlDbType.Date).Value = DateTime.Parse(txtSiparisTarih.Text);
                     sqlCmd.Parameters.Add("@teslim_tarih", SqlDbType.Date).Value = DateTime.Parse(txtSiparisTeslimTarih.Text);
                     sqlCmd.Parameters.Add("@kayit_yapan_kul", SqlDbType.Int).Value = Program.kullanici.Item1;
                     sqlCmd.Parameters.Add("@siparis_tutar", SqlDbType.Decimal).Value = siparisToplamTutar;
@@ -326,8 +326,8 @@ namespace smoothsis
                             sqlCmd = new SqlCommand(siparisStokSQL, Program.connection);
                             sqlCmd.Parameters.Add("@siparis_inckey", SqlDbType.Int).Value = lastSiparisId;
                             sqlCmd.Parameters.Add("@stok_inckey", SqlDbType.Int).Value = row.Cells[0].Value;
-                            sqlCmd.Parameters.Add("@miktar", SqlDbType.Float).Value = row.Cells["MIKTAR"].Value;
-                            sqlCmd.Parameters.Add("@miktar_birim", SqlDbType.VarChar).Value = row.Cells["BIRIM"].Value;
+                            sqlCmd.Parameters.Add("@miktar", SqlDbType.Float).Value = row.Cells["MİKTAR"].Value;
+                            sqlCmd.Parameters.Add("@miktar_birim", SqlDbType.VarChar).Value = row.Cells["BİRİM"].Value;
                             sqlCmd.ExecuteNonQuery();
                         }
 

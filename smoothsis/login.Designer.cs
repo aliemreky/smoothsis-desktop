@@ -33,11 +33,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtKullaniciAdi = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtSifre = new System.Windows.Forms.TextBox();
             this.sirketCombo = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnGirisYap = new System.Windows.Forms.Button();
             this.btnCikisYap = new System.Windows.Forms.Button();
+            this.txtSifre = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,9 +65,8 @@
             // txtKullaniciAdi
             // 
             this.txtKullaniciAdi.Location = new System.Drawing.Point(22, 207);
-            this.txtKullaniciAdi.Multiline = true;
             this.txtKullaniciAdi.Name = "txtKullaniciAdi";
-            this.txtKullaniciAdi.Size = new System.Drawing.Size(300, 25);
+            this.txtKullaniciAdi.Size = new System.Drawing.Size(300, 23);
             this.txtKullaniciAdi.TabIndex = 2;
             this.txtKullaniciAdi.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtKullaniciAdi_KeyDown);
             // 
@@ -80,16 +79,6 @@
             this.label2.Size = new System.Drawing.Size(41, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "ŞİFRE";
-            // 
-            // txtSifre
-            // 
-            this.txtSifre.Location = new System.Drawing.Point(22, 268);
-            this.txtSifre.Multiline = true;
-            this.txtSifre.Name = "txtSifre";
-            this.txtSifre.Size = new System.Drawing.Size(300, 25);
-            this.txtSifre.TabIndex = 3;
-            this.txtSifre.UseSystemPasswordChar = true;
-            this.txtSifre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSifre_KeyDown);
             // 
             // sirketCombo
             // 
@@ -131,16 +120,24 @@
             this.btnCikisYap.UseVisualStyleBackColor = true;
             this.btnCikisYap.Click += new System.EventHandler(this.btnCikisYap_Click);
             // 
+            // txtSifre
+            // 
+            this.txtSifre.Location = new System.Drawing.Point(22, 267);
+            this.txtSifre.Name = "txtSifre";
+            this.txtSifre.Size = new System.Drawing.Size(300, 23);
+            this.txtSifre.TabIndex = 3;
+            this.txtSifre.UseSystemPasswordChar = true;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(348, 377);
+            this.Controls.Add(this.txtSifre);
             this.Controls.Add(this.btnCikisYap);
             this.Controls.Add(this.btnGirisYap);
             this.Controls.Add(this.sirketCombo);
-            this.Controls.Add(this.txtSifre);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtKullaniciAdi);
             this.Controls.Add(this.label3);
@@ -167,11 +164,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtKullaniciAdi;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtSifre;
         private System.Windows.Forms.ComboBox sirketCombo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnGirisYap;
         private System.Windows.Forms.Button btnCikisYap;
+        private System.Windows.Forms.TextBox txtSifre;
     }
 }
 
