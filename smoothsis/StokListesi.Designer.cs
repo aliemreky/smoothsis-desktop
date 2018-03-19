@@ -108,7 +108,8 @@
             this.btnStokListesiGetir.Location = new System.Drawing.Point(17, 34);
             this.btnStokListesiGetir.Name = "btnStokListesiGetir";
             this.btnStokListesiGetir.Size = new System.Drawing.Size(195, 43);
-            this.btnStokListesiGetir.TabIndex = 4;
+            this.btnStokListesiGetir.TabIndex = 0;
+            this.btnStokListesiGetir.TabStop = false;
             this.btnStokListesiGetir.Text = "STOK LİSTESİNİ YENİLE";
             this.btnStokListesiGetir.UseVisualStyleBackColor = true;
             this.btnStokListesiGetir.Click += new System.EventHandler(this.btnStokListesiGetir_Click);
@@ -119,7 +120,7 @@
             this.dtAramaGelisTarih.Location = new System.Drawing.Point(17, 445);
             this.dtAramaGelisTarih.Name = "dtAramaGelisTarih";
             this.dtAramaGelisTarih.Size = new System.Drawing.Size(195, 23);
-            this.dtAramaGelisTarih.TabIndex = 3;
+            this.dtAramaGelisTarih.TabIndex = 6;
             this.dtAramaGelisTarih.ValueChanged += new System.EventHandler(this.searchForGelisTarih);
             // 
             // label3
@@ -136,7 +137,7 @@
             this.txtMalzemeEtiketBilgi.Location = new System.Drawing.Point(17, 379);
             this.txtMalzemeEtiketBilgi.Name = "txtMalzemeEtiketBilgi";
             this.txtMalzemeEtiketBilgi.Size = new System.Drawing.Size(195, 23);
-            this.txtMalzemeEtiketBilgi.TabIndex = 2;
+            this.txtMalzemeEtiketBilgi.TabIndex = 5;
             this.txtMalzemeEtiketBilgi.TextChanged += new System.EventHandler(this.txtMalzemeEtiketBilgi_TextChanged);
             // 
             // label6
@@ -153,7 +154,7 @@
             this.txtAramaMalzemeCinsi.Location = new System.Drawing.Point(17, 313);
             this.txtAramaMalzemeCinsi.Name = "txtAramaMalzemeCinsi";
             this.txtAramaMalzemeCinsi.Size = new System.Drawing.Size(195, 23);
-            this.txtAramaMalzemeCinsi.TabIndex = 2;
+            this.txtAramaMalzemeCinsi.TabIndex = 4;
             this.txtAramaMalzemeCinsi.TextChanged += new System.EventHandler(this.txtAramaMalzemeCinsi_TextChanged);
             // 
             // label5
@@ -170,7 +171,7 @@
             this.txtAramaMalzemeSerisi.Location = new System.Drawing.Point(17, 249);
             this.txtAramaMalzemeSerisi.Name = "txtAramaMalzemeSerisi";
             this.txtAramaMalzemeSerisi.Size = new System.Drawing.Size(195, 23);
-            this.txtAramaMalzemeSerisi.TabIndex = 2;
+            this.txtAramaMalzemeSerisi.TabIndex = 3;
             this.txtAramaMalzemeSerisi.TextChanged += new System.EventHandler(this.txtAramaMalzemeSerisi_TextChanged);
             // 
             // label4

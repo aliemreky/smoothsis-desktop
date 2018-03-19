@@ -17,24 +17,11 @@ namespace smoothsis
             InitializeComponent();
         }
 
-        private void main_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void Main_Load(object sender, EventArgs e)
         {
             labelKullanici.Text = Program.kullanici.Item2;
             labelSirket.Text = Program.sirket;
             labelTarih.Text = DateTime.Now.ToString("dd.MM.yyyy, dddd");
-        }
-
-        private void cikisToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DialogResult dialogResult = MessageBox.Show("KAPATMAK İSTEDİĞİNİZE EMİN MİSİNİZ?", "UYARI", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-                Application.Exit();
-            
         }
 
         private void veritabaniDeğişikliğiToolStripMenuItem_Click(object sender, EventArgs e)
@@ -106,6 +93,26 @@ namespace smoothsis
         {
             DepoListesi depoListesi = new DepoListesi();
             depoListesi.ShowDialog();
+        }
+
+        private void siparişListesiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SiparisListesi siparisListesi = new SiparisListesi();
+            siparisListesi.ShowDialog();
+        }
+
+        private void Main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Kapatmak İstediğinize Emin misiniz ?", "UYARI", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+                Application.Exit();
+        }
+
+        private void cikisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Kapatmak İstediğinize Emin misiniz ?", "UYARI", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+                Application.Exit();
         }
     }
 }

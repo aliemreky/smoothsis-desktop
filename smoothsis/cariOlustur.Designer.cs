@@ -31,15 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CariOlustur));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.kaydetBttn = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.iptalButton = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.tuzelKisiRadio = new System.Windows.Forms.RadioButton();
-            this.gercekKisiRadio = new System.Windows.Forms.RadioButton();
             this.txtAdres = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtIlce = new System.Windows.Forms.TextBox();
@@ -66,32 +61,37 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.txtCariKod = new System.Windows.Forms.TextBox();
-            this.btnCariKodOlustur = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.hesapDurumuAktif = new System.Windows.Forms.RadioButton();
             this.hesapDurumuPasif = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.tuzelKisiRadio = new System.Windows.Forms.RadioButton();
+            this.gercekKisiRadio = new System.Windows.Forms.RadioButton();
+            this.btnCariKodOlustur = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
             // 
-            this.toolStrip1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.toolStrip1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.Window;
+            this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.kaydetBttn,
-            this.toolStripSeparator1,
+            this.toolStripSeparator5,
             this.toolStripButton1,
-            this.toolStripSeparator2,
+            this.toolStripSeparator3,
             this.iptalButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(805, 25);
+            this.toolStrip1.Padding = new System.Windows.Forms.Padding(10, 1, 2, 1);
+            this.toolStrip1.Size = new System.Drawing.Size(805, 32);
             this.toolStrip1.TabIndex = 8;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -100,43 +100,33 @@
             this.kaydetBttn.Image = ((System.Drawing.Image)(resources.GetObject("kaydetBttn.Image")));
             this.kaydetBttn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.kaydetBttn.Name = "kaydetBttn";
-            this.kaydetBttn.Size = new System.Drawing.Size(70, 20);
+            this.kaydetBttn.Size = new System.Drawing.Size(68, 27);
             this.kaydetBttn.Text = "Kaydet";
             this.kaydetBttn.ToolTipText = "Değişiklikleri Kaydet";
             this.kaydetBttn.Click += new System.EventHandler(this.kaydetBttn_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 23);
             // 
             // toolStripButton1
             // 
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(76, 20);
+            this.toolStripButton1.Size = new System.Drawing.Size(71, 27);
             this.toolStripButton1.Text = "Temizle";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 23);
             // 
             // iptalButton
             // 
             this.iptalButton.Image = ((System.Drawing.Image)(resources.GetObject("iptalButton.Image")));
             this.iptalButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.iptalButton.Name = "iptalButton";
-            this.iptalButton.Size = new System.Drawing.Size(57, 20);
+            this.iptalButton.Size = new System.Drawing.Size(54, 27);
             this.iptalButton.Text = "Çıkış";
             this.iptalButton.Click += new System.EventHandler(this.iptalButton_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.panel2);
+            this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.txtAdres);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtIlce);
@@ -169,44 +159,12 @@
             // 
             // label14
             // 
-            this.label14.Location = new System.Drawing.Point(14, 32);
+            this.label14.Location = new System.Drawing.Point(14, 28);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(88, 32);
             this.label14.TabIndex = 3;
             this.label14.Text = "GERÇEK/TÜZEL KİŞİ";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.tuzelKisiRadio);
-            this.panel2.Controls.Add(this.gercekKisiRadio);
-            this.panel2.Location = new System.Drawing.Point(108, 30);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(291, 34);
-            this.panel2.TabIndex = 0;
-            // 
-            // tuzelKisiRadio
-            // 
-            this.tuzelKisiRadio.AutoSize = true;
-            this.tuzelKisiRadio.Location = new System.Drawing.Point(112, 9);
-            this.tuzelKisiRadio.Name = "tuzelKisiRadio";
-            this.tuzelKisiRadio.Size = new System.Drawing.Size(84, 19);
-            this.tuzelKisiRadio.TabIndex = 12;
-            this.tuzelKisiRadio.Text = "TÜZEL KİŞİ";
-            this.tuzelKisiRadio.UseVisualStyleBackColor = true;
-            // 
-            // gercekKisiRadio
-            // 
-            this.gercekKisiRadio.AutoSize = true;
-            this.gercekKisiRadio.Checked = true;
-            this.gercekKisiRadio.Location = new System.Drawing.Point(3, 9);
-            this.gercekKisiRadio.Name = "gercekKisiRadio";
-            this.gercekKisiRadio.Size = new System.Drawing.Size(91, 19);
-            this.gercekKisiRadio.TabIndex = 13;
-            this.gercekKisiRadio.TabStop = true;
-            this.gercekKisiRadio.Text = "GERÇEK KİŞİ";
-            this.gercekKisiRadio.UseVisualStyleBackColor = true;
-            this.gercekKisiRadio.CheckedChanged += new System.EventHandler(this.gercekKisiRadio_CheckedChanged);
             // 
             // txtAdres
             // 
@@ -315,7 +273,7 @@
             // 
             // txtEposta
             // 
-            this.txtEposta.Location = new System.Drawing.Point(484, 38);
+            this.txtEposta.Location = new System.Drawing.Point(484, 31);
             this.txtEposta.Name = "txtEposta";
             this.txtEposta.Size = new System.Drawing.Size(263, 23);
             this.txtEposta.TabIndex = 8;
@@ -330,7 +288,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(423, 43);
+            this.label15.Location = new System.Drawing.Point(423, 36);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(55, 15);
             this.label15.TabIndex = 0;
@@ -418,20 +376,8 @@
             this.txtCariKod.Location = new System.Drawing.Point(120, 41);
             this.txtCariKod.Name = "txtCariKod";
             this.txtCariKod.ReadOnly = true;
-            this.txtCariKod.Size = new System.Drawing.Size(186, 23);
+            this.txtCariKod.Size = new System.Drawing.Size(254, 23);
             this.txtCariKod.TabIndex = 13;
-            // 
-            // btnCariKodOlustur
-            // 
-            this.btnCariKodOlustur.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnCariKodOlustur.Location = new System.Drawing.Point(312, 41);
-            this.btnCariKodOlustur.Name = "btnCariKodOlustur";
-            this.btnCariKodOlustur.Size = new System.Drawing.Size(99, 23);
-            this.btnCariKodOlustur.TabIndex = 14;
-            this.btnCariKodOlustur.TabStop = false;
-            this.btnCariKodOlustur.Text = "KOD OLUSTUR";
-            this.btnCariKodOlustur.UseVisualStyleBackColor = true;
-            this.btnCariKodOlustur.Click += new System.EventHandler(this.btnCariKodOlustur_Click);
             // 
             // label13
             // 
@@ -474,14 +420,72 @@
             this.panel1.Size = new System.Drawing.Size(315, 33);
             this.panel1.TabIndex = 0;
             // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.AutoSize = false;
+            this.toolStripSeparator3.Margin = new System.Windows.Forms.Padding(1);
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(12, 28);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.AutoSize = false;
+            this.toolStripSeparator5.Margin = new System.Windows.Forms.Padding(1);
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(12, 28);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.tuzelKisiRadio);
+            this.panel2.Controls.Add(this.gercekKisiRadio);
+            this.panel2.Location = new System.Drawing.Point(108, 27);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(291, 34);
+            this.panel2.TabIndex = 13;
+            // 
+            // tuzelKisiRadio
+            // 
+            this.tuzelKisiRadio.AutoSize = true;
+            this.tuzelKisiRadio.Location = new System.Drawing.Point(174, 8);
+            this.tuzelKisiRadio.Name = "tuzelKisiRadio";
+            this.tuzelKisiRadio.Size = new System.Drawing.Size(84, 19);
+            this.tuzelKisiRadio.TabIndex = 12;
+            this.tuzelKisiRadio.Text = "TÜZEL KİŞİ";
+            this.tuzelKisiRadio.UseVisualStyleBackColor = true;
+            // 
+            // gercekKisiRadio
+            // 
+            this.gercekKisiRadio.AutoSize = true;
+            this.gercekKisiRadio.Checked = true;
+            this.gercekKisiRadio.Location = new System.Drawing.Point(26, 8);
+            this.gercekKisiRadio.Name = "gercekKisiRadio";
+            this.gercekKisiRadio.Size = new System.Drawing.Size(91, 19);
+            this.gercekKisiRadio.TabIndex = 13;
+            this.gercekKisiRadio.TabStop = true;
+            this.gercekKisiRadio.Text = "GERÇEK KİŞİ";
+            this.gercekKisiRadio.UseVisualStyleBackColor = true;
+            // 
+            // btnCariKodOlustur
+            // 
+            this.btnCariKodOlustur.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCariKodOlustur.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnCariKodOlustur.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCariKodOlustur.Image = ((System.Drawing.Image)(resources.GetObject("btnCariKodOlustur.Image")));
+            this.btnCariKodOlustur.Location = new System.Drawing.Point(380, 40);
+            this.btnCariKodOlustur.Name = "btnCariKodOlustur";
+            this.btnCariKodOlustur.Size = new System.Drawing.Size(31, 25);
+            this.btnCariKodOlustur.TabIndex = 14;
+            this.btnCariKodOlustur.UseVisualStyleBackColor = true;
+            this.btnCariKodOlustur.Click += new System.EventHandler(this.btnCariKodOlustur_Click);
+            // 
             // CariOlustur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(805, 374);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnCariKodOlustur);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.label12);
@@ -496,10 +500,10 @@
             this.toolStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -509,7 +513,6 @@
 
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton kaydetBttn;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton iptalButton;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtAdres;
@@ -536,18 +539,19 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtCariKod;
-        private System.Windows.Forms.Button btnCariKodOlustur;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.RadioButton hesapDurumuAktif;
         private System.Windows.Forms.RadioButton hesapDurumuPasif;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.RadioButton tuzelKisiRadio;
-        private System.Windows.Forms.RadioButton gercekKisiRadio;
         private System.Windows.Forms.TextBox txtEposta;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.RadioButton tuzelKisiRadio;
+        private System.Windows.Forms.RadioButton gercekKisiRadio;
+        private System.Windows.Forms.Button btnCariKodOlustur;
     }
 }

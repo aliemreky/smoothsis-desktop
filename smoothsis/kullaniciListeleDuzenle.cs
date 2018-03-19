@@ -41,7 +41,7 @@ namespace smoothsis
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(kullaniciListDTable);
                 kullaniciListesiGridView.DataSource = kullaniciListDTable;
-                kullaniciListesiGridView.Columns[0].Visible = false;
+                kullaniciListesiGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 kullaniciListesiGridView.ClearSelection();
             }
             catch (Exception ex)

@@ -94,7 +94,6 @@
             // sirketCombo
             // 
             this.sirketCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.sirketCombo.FormattingEnabled = true;
             this.sirketCombo.IntegralHeight = false;
             this.sirketCombo.Location = new System.Drawing.Point(22, 145);
             this.sirketCombo.Name = "sirketCombo";

@@ -54,12 +54,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.kaydetBttn = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.temizleBttn = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.iptalButton = new System.Windows.Forms.ToolStripButton();
             this.label12 = new System.Windows.Forms.Label();
             this.txtStokKod = new System.Windows.Forms.TextBox();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -322,18 +322,18 @@
             // toolStrip1
             // 
             this.toolStrip1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.toolStrip1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.kaydetBttn,
-            this.toolStripSeparator1,
+            this.toolStripSeparator4,
             this.temizleBttn,
-            this.toolStripSeparator2,
+            this.toolStripSeparator3,
             this.iptalButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(927, 25);
+            this.toolStrip1.Padding = new System.Windows.Forms.Padding(10, 1, 2, 1);
+            this.toolStrip1.Size = new System.Drawing.Size(927, 32);
             this.toolStrip1.TabIndex = 16;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -342,36 +342,26 @@
             this.kaydetBttn.Image = global::smoothsis.Properties.Resources.ic_save_black_24dp_1x;
             this.kaydetBttn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.kaydetBttn.Name = "kaydetBttn";
-            this.kaydetBttn.Size = new System.Drawing.Size(70, 20);
+            this.kaydetBttn.Size = new System.Drawing.Size(68, 21);
             this.kaydetBttn.Text = "Kaydet";
             this.kaydetBttn.ToolTipText = "Değişiklikleri Kaydet";
             this.kaydetBttn.Click += new System.EventHandler(this.kaydetBttn_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 23);
             // 
             // temizleBttn
             // 
             this.temizleBttn.Image = global::smoothsis.Properties.Resources.ic_delete_forever_black_24dp_1x;
             this.temizleBttn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.temizleBttn.Name = "temizleBttn";
-            this.temizleBttn.Size = new System.Drawing.Size(76, 20);
+            this.temizleBttn.Size = new System.Drawing.Size(71, 21);
             this.temizleBttn.Text = "Temizle";
             this.temizleBttn.Click += new System.EventHandler(this.temizleBttn_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 23);
             // 
             // iptalButton
             // 
             this.iptalButton.Image = global::smoothsis.Properties.Resources.ic_highlight_off_black_24dp_1x;
             this.iptalButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.iptalButton.Name = "iptalButton";
-            this.iptalButton.Size = new System.Drawing.Size(57, 20);
+            this.iptalButton.Size = new System.Drawing.Size(54, 21);
             this.iptalButton.Text = "Çıkış";
             this.iptalButton.Click += new System.EventHandler(this.iptalButton_Click);
             // 
@@ -395,6 +385,20 @@
             this.txtStokKod.ReadOnly = true;
             this.txtStokKod.Size = new System.Drawing.Size(216, 24);
             this.txtStokKod.TabIndex = 15;
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.AutoSize = false;
+            this.toolStripSeparator3.Margin = new System.Windows.Forms.Padding(1);
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(12, 28);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.AutoSize = false;
+            this.toolStripSeparator4.Margin = new System.Windows.Forms.Padding(1);
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(12, 28);
             // 
             // StokOlustur
             // 
@@ -443,9 +447,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton kaydetBttn;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton temizleBttn;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton iptalButton;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtStokKod;
@@ -453,5 +455,7 @@
         private System.Windows.Forms.ComboBox cbMiktarBirim;
         private System.Windows.Forms.TextBox txtBirimFiyat;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
     }
 }

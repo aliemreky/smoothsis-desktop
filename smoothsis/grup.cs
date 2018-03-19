@@ -32,7 +32,7 @@ namespace smoothsis
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(grupListDTable);
                 grupList.DataSource = grupListDTable;
-                grupList.Columns[0].Visible = false;
+                grupList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 grupList.ClearSelection();
             }
             catch (Exception ex)

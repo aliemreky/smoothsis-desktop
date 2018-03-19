@@ -54,9 +54,9 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.cariListesiGridView);
-            this.groupBox2.Location = new System.Drawing.Point(239, 7);
+            this.groupBox2.Location = new System.Drawing.Point(267, 7);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(903, 475);
+            this.groupBox2.Size = new System.Drawing.Size(979, 475);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
@@ -68,7 +68,7 @@
             this.cariListesiGridView.MultiSelect = false;
             this.cariListesiGridView.Name = "cariListesiGridView";
             this.cariListesiGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.cariListesiGridView.Size = new System.Drawing.Size(888, 447);
+            this.cariListesiGridView.Size = new System.Drawing.Size(964, 447);
             this.cariListesiGridView.TabIndex = 2;
             this.cariListesiGridView.TabStop = false;
             this.cariListesiGridView.VirtualMode = true;
@@ -94,23 +94,23 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(10, 7);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(218, 475);
+            this.groupBox1.Size = new System.Drawing.Size(241, 475);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ARAMA";
             // 
             // txtAramaIl
             // 
-            this.txtAramaIl.Location = new System.Drawing.Point(9, 426);
+            this.txtAramaIl.Location = new System.Drawing.Point(19, 423);
             this.txtAramaIl.Name = "txtAramaIl";
-            this.txtAramaIl.Size = new System.Drawing.Size(195, 23);
+            this.txtAramaIl.Size = new System.Drawing.Size(205, 23);
             this.txtAramaIl.TabIndex = 7;
             this.txtAramaIl.TextChanged += new System.EventHandler(this.txtAramaIl_TextChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 403);
+            this.label7.Location = new System.Drawing.Point(16, 400);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(17, 15);
             this.label7.TabIndex = 0;
@@ -118,16 +118,16 @@
             // 
             // txtAramaTcNo
             // 
-            this.txtAramaTcNo.Location = new System.Drawing.Point(9, 363);
+            this.txtAramaTcNo.Location = new System.Drawing.Point(19, 360);
             this.txtAramaTcNo.Name = "txtAramaTcNo";
-            this.txtAramaTcNo.Size = new System.Drawing.Size(195, 23);
+            this.txtAramaTcNo.Size = new System.Drawing.Size(205, 23);
             this.txtAramaTcNo.TabIndex = 6;
             this.txtAramaTcNo.TextChanged += new System.EventHandler(this.txtAramaTcNo_TextChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 340);
+            this.label6.Location = new System.Drawing.Point(16, 337);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(42, 15);
             this.label6.TabIndex = 0;
@@ -135,16 +135,16 @@
             // 
             // txtAramaVergiDaire
             // 
-            this.txtAramaVergiDaire.Location = new System.Drawing.Point(9, 303);
+            this.txtAramaVergiDaire.Location = new System.Drawing.Point(19, 300);
             this.txtAramaVergiDaire.Name = "txtAramaVergiDaire";
-            this.txtAramaVergiDaire.Size = new System.Drawing.Size(195, 23);
+            this.txtAramaVergiDaire.Size = new System.Drawing.Size(205, 23);
             this.txtAramaVergiDaire.TabIndex = 5;
             this.txtAramaVergiDaire.TextChanged += new System.EventHandler(this.txtAramaVergiDaire_TextChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 280);
+            this.label5.Location = new System.Drawing.Point(16, 277);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(77, 15);
             this.label5.TabIndex = 0;
@@ -152,16 +152,16 @@
             // 
             // txtAramaVergiNo
             // 
-            this.txtAramaVergiNo.Location = new System.Drawing.Point(9, 238);
+            this.txtAramaVergiNo.Location = new System.Drawing.Point(19, 235);
             this.txtAramaVergiNo.Name = "txtAramaVergiNo";
-            this.txtAramaVergiNo.Size = new System.Drawing.Size(195, 23);
+            this.txtAramaVergiNo.Size = new System.Drawing.Size(205, 23);
             this.txtAramaVergiNo.TabIndex = 4;
             this.txtAramaVergiNo.TextChanged += new System.EventHandler(this.txtAramaVergiNo_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 215);
+            this.label4.Location = new System.Drawing.Point(16, 212);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 15);
             this.label4.TabIndex = 0;
@@ -169,16 +169,16 @@
             // 
             // txtAramaTicariUnvan
             // 
-            this.txtAramaTicariUnvan.Location = new System.Drawing.Point(9, 176);
+            this.txtAramaTicariUnvan.Location = new System.Drawing.Point(19, 173);
             this.txtAramaTicariUnvan.Name = "txtAramaTicariUnvan";
-            this.txtAramaTicariUnvan.Size = new System.Drawing.Size(195, 23);
+            this.txtAramaTicariUnvan.Size = new System.Drawing.Size(205, 23);
             this.txtAramaTicariUnvan.TabIndex = 3;
             this.txtAramaTicariUnvan.TextChanged += new System.EventHandler(this.txtAramaTicariUnvan_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 153);
+            this.label3.Location = new System.Drawing.Point(16, 150);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 15);
             this.label3.TabIndex = 0;
@@ -186,16 +186,16 @@
             // 
             // txtAramaAdiSoyadi
             // 
-            this.txtAramaAdiSoyadi.Location = new System.Drawing.Point(9, 115);
+            this.txtAramaAdiSoyadi.Location = new System.Drawing.Point(19, 112);
             this.txtAramaAdiSoyadi.Name = "txtAramaAdiSoyadi";
-            this.txtAramaAdiSoyadi.Size = new System.Drawing.Size(195, 23);
+            this.txtAramaAdiSoyadi.Size = new System.Drawing.Size(205, 23);
             this.txtAramaAdiSoyadi.TabIndex = 2;
             this.txtAramaAdiSoyadi.TextChanged += new System.EventHandler(this.txtAramaAdiSoyadi_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 92);
+            this.label2.Location = new System.Drawing.Point(16, 89);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 15);
             this.label2.TabIndex = 0;
@@ -203,16 +203,16 @@
             // 
             // txtAramaCariKodu
             // 
-            this.txtAramaCariKodu.Location = new System.Drawing.Point(9, 59);
+            this.txtAramaCariKodu.Location = new System.Drawing.Point(19, 56);
             this.txtAramaCariKodu.Name = "txtAramaCariKodu";
-            this.txtAramaCariKodu.Size = new System.Drawing.Size(195, 23);
+            this.txtAramaCariKodu.Size = new System.Drawing.Size(205, 23);
             this.txtAramaCariKodu.TabIndex = 1;
             this.txtAramaCariKodu.TextChanged += new System.EventHandler(this.txtAramaCariKodu_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 36);
+            this.label1.Location = new System.Drawing.Point(16, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 15);
             this.label1.TabIndex = 0;
@@ -223,7 +223,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1156, 499);
+            this.ClientSize = new System.Drawing.Size(1260, 493);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));

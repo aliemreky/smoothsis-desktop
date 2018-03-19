@@ -123,6 +123,12 @@
     <Compile Include="Services\Search.cs" />
     <Compile Include="Services\Styler.cs" />
     <Compile Include="Services\TextValidate.cs" />
+    <Compile Include="SiparisListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SiparisListesi.Designer.cs">
+      <DependentUpon>SiparisListesi.cs</DependentUpon>
+    </Compile>
     <Compile Include="SiparisOlustur.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +196,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SiparisListesi.resx">
+      <DependentUpon>SiparisListesi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SiparisOlustur.resx">
       <DependentUpon>SiparisOlustur.cs</DependentUpon>
     </EmbeddedResource>

@@ -84,6 +84,8 @@
             this.txtStokMiktar = new System.Windows.Forms.TextBox();
             this.txtStokAdi = new System.Windows.Forms.TextBox();
             this.txtStokKodu = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -168,18 +170,18 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(6, 280);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 15);
+            this.label5.Size = new System.Drawing.Size(65, 15);
             this.label5.TabIndex = 0;
-            this.label5.Text = "SİPARİŞ TİPİ";
+            this.label5.Text = "Sipariş Tipi";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(6, 216);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(117, 15);
+            this.label4.Size = new System.Drawing.Size(73, 15);
             this.label4.TabIndex = 0;
-            this.label4.Text = "SİPARİŞ TES. TARİHİ";
+            this.label4.Text = "Teslim Tarihi";
             // 
             // txtSiparisTarih
             // 
@@ -194,9 +196,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(6, 151);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 15);
+            this.label3.Size = new System.Drawing.Size(74, 15);
             this.label3.TabIndex = 0;
-            this.label3.Text = "SİPARİŞ TARİHİ";
+            this.label3.Text = "Sipariş Tarihi";
             // 
             // txtCariKod
             // 
@@ -211,9 +213,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(6, 93);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 15);
+            this.label2.Size = new System.Drawing.Size(51, 15);
             this.label2.TabIndex = 0;
-            this.label2.Text = "CARİ KOD";
+            this.label2.Text = "Cari Kod";
             // 
             // txtSiparisKodu
             // 
@@ -230,9 +232,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 15);
+            this.label1.Size = new System.Drawing.Size(73, 15);
             this.label1.TabIndex = 0;
-            this.label1.Text = "SİPARİŞ KODU";
+            this.label1.Text = "Sipariş Kodu";
             // 
             // toolStrip1
             // 
@@ -316,10 +318,12 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label19);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.textBox1);
             this.groupBox3.Controls.Add(this.txtAciklama);
             this.groupBox3.Controls.Add(this.txtProjeAdi);
             this.groupBox3.Controls.Add(this.txtOzelKod);
@@ -334,45 +338,45 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(17, 157);
+            this.label8.Location = new System.Drawing.Point(34, 157);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(66, 15);
+            this.label8.Size = new System.Drawing.Size(56, 15);
             this.label8.TabIndex = 0;
-            this.label8.Text = "ACIKLAMA";
+            this.label8.Text = "Açıklama";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(17, 119);
+            this.label7.Location = new System.Drawing.Point(35, 114);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 15);
+            this.label7.Size = new System.Drawing.Size(55, 15);
             this.label7.TabIndex = 0;
-            this.label7.Text = "PROJE ADI";
+            this.label7.Text = "Proje Adı";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(17, 35);
+            this.label9.Location = new System.Drawing.Point(35, 35);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(63, 15);
+            this.label9.Size = new System.Drawing.Size(55, 15);
             this.label9.TabIndex = 0;
-            this.label9.Text = "ÖZEL KOD";
+            this.label9.Text = "Özel Kod";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(17, 75);
+            this.label6.Location = new System.Drawing.Point(25, 75);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(77, 15);
+            this.label6.Size = new System.Drawing.Size(65, 15);
             this.label6.TabIndex = 0;
-            this.label6.Text = "PROJE KODU";
+            this.label6.Text = "Proje Kodu";
             // 
             // txtAciklama
             // 
             this.txtAciklama.Location = new System.Drawing.Point(110, 154);
             this.txtAciklama.Multiline = true;
             this.txtAciklama.Name = "txtAciklama";
-            this.txtAciklama.Size = new System.Drawing.Size(533, 83);
+            this.txtAciklama.Size = new System.Drawing.Size(533, 34);
             this.txtAciklama.TabIndex = 10;
             // 
             // txtProjeAdi
@@ -434,20 +438,20 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(17, 111);
+            this.label12.Location = new System.Drawing.Point(46, 111);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(51, 15);
+            this.label12.Size = new System.Drawing.Size(44, 15);
             this.label12.TabIndex = 0;
-            this.label12.Text = "İL / İLÇE";
+            this.label12.Text = "İl / İlçe";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(17, 69);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(88, 15);
+            this.label11.Size = new System.Drawing.Size(73, 15);
             this.label11.TabIndex = 0;
-            this.label11.Text = "TİCARİ ÜNVAN";
+            this.label11.Text = "Ticari Ünvan";
             // 
             // txtCariIsim
             // 
@@ -462,11 +466,11 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(17, 32);
+            this.label10.Location = new System.Drawing.Point(37, 29);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(62, 15);
+            this.label10.Size = new System.Drawing.Size(53, 15);
             this.label10.TabIndex = 0;
-            this.label10.Text = "CARİ İSİM";
+            this.label10.Text = "Cari İsim";
             // 
             // tabStok
             // 
@@ -478,7 +482,7 @@
             this.tabStok.Padding = new System.Windows.Forms.Padding(3);
             this.tabStok.Size = new System.Drawing.Size(939, 458);
             this.tabStok.TabIndex = 1;
-            this.tabStok.Text = "Stok Bilgilsi";
+            this.tabStok.Text = "Kalemler";
             // 
             // groupBox5
             // 
@@ -539,9 +543,9 @@
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(769, 21);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(88, 15);
+            this.label17.Size = new System.Drawing.Size(94, 15);
             this.label17.TabIndex = 5;
-            this.label17.Text = "TOPLAM FİYAT";
+            this.label17.Text = "TOPLAM TUTAR";
             // 
             // txtToplamFiyat
             // 
@@ -571,36 +575,36 @@
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(589, 21);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(40, 15);
+            this.label18.Size = new System.Drawing.Size(35, 15);
             this.label18.TabIndex = 2;
-            this.label18.Text = "BİRİM";
+            this.label18.Text = "Birim";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(653, 21);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(77, 15);
+            this.label16.Size = new System.Drawing.Size(66, 15);
             this.label16.TabIndex = 2;
-            this.label16.Text = "BİRİM FİYATI";
+            this.label16.Text = "Birim Fiyatı";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(490, 20);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(50, 15);
+            this.label15.Size = new System.Drawing.Size(41, 15);
             this.label15.TabIndex = 2;
-            this.label15.Text = "MİKTAR";
+            this.label15.Text = "Miktar";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(188, 21);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(61, 15);
+            this.label14.Size = new System.Drawing.Size(52, 15);
             this.label14.TabIndex = 2;
-            this.label14.Text = "STOK ADI";
+            this.label14.Text = "Stok Adı";
             // 
             // txtStokBirim
             // 
@@ -627,9 +631,9 @@
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(7, 20);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(65, 15);
+            this.label13.Size = new System.Drawing.Size(62, 15);
             this.label13.TabIndex = 2;
-            this.label13.Text = "STOK KOD";
+            this.label13.Text = "Stok Kodu";
             // 
             // txtStokMiktar
             // 
@@ -639,6 +643,7 @@
             this.txtStokMiktar.TabIndex = 4;
             this.txtStokMiktar.TextChanged += new System.EventHandler(this.txtStokMiktar_TextChanged);
             this.txtStokMiktar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStokMiktar_KeyPress);
+            this.txtStokMiktar.Leave += new System.EventHandler(this.txtStokMiktar_Leave);
             // 
             // txtStokAdi
             // 
@@ -655,6 +660,23 @@
             this.txtStokKodu.Size = new System.Drawing.Size(135, 23);
             this.txtStokKodu.TabIndex = 1;
             this.txtStokKodu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStokKodu_KeyPress);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(110, 208);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(533, 34);
+            this.textBox1.TabIndex = 10;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(34, 211);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(56, 15);
+            this.label19.TabIndex = 0;
+            this.label19.Text = "Açıklama";
             // 
             // SiparisOlustur
             // 
@@ -747,5 +769,7 @@
         private System.Windows.Forms.TextBox txtBirimFiyat;
         private System.Windows.Forms.Button btnListeyeEkle;
         private System.Windows.Forms.TextBox txtStokBirim;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
