@@ -23,6 +23,8 @@ namespace smoothsis
             cbGrupKey.DisplayMember = "GRUP_ADI";
             cbGrupKey.ValueMember = "GRUP_INCKEY";
             listKullanici();
+
+            cbGrupKey.SelectedIndex = 0;
         }
 
         private void listKullanici()
@@ -39,7 +41,7 @@ namespace smoothsis
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(kullaniciListDTable);
                 kullaniciListesiGridView.DataSource = kullaniciListDTable;
-                kullaniciListesiGridView.Columns[0].Visible = false;
+                kullaniciListesiGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 kullaniciListesiGridView.ClearSelection();
             }
             catch (Exception ex)
@@ -67,11 +69,11 @@ namespace smoothsis
                             kullaniciListesiGridView.Rows.RemoveAt(selectedItem.Item1);
                             ActionControl.ActionAllControls(this, "clear");
                             textTemizle();
-                            Notification.messageBox("Kullanıcı silindi.");
+                            Notification.messageBox("Kullanıcı Başarıyla Güncellendi");
                         }
                         else
                         {
-                            Notification.messageBoxError("Bir sorun oluştu, grup silinemedi.");
+                            Notification.messageBoxError("BİR SORUN OLUŞTU, KULLANICI SİLİNEMEDİ !");
                         }
                     }
                 }
@@ -119,18 +121,20 @@ namespace smoothsis
                     command.Parameters.Add("@email", SqlDbType.VarChar).Value = email;
                     command.Parameters.Add("@kul_inckey", SqlDbType.Int).Value = selectedItem.Item2;
                     int affectedRows = command.ExecuteNonQuery();
+
                     if (affectedRows > 0)
-                    {
-                        Notification.messageBox("Kullanıcı güncellendi.");
+                    {                        
                         kullaniciListesiGridView[1, selectedItem.Item1].Value = grupAd;
                         kullaniciListesiGridView[2, selectedItem.Item1].Value = adSoyad;
                         kullaniciListesiGridView[3, selectedItem.Item1].Value = sifre;
                         kullaniciListesiGridView[4, selectedItem.Item1].Value = telefon;
                         kullaniciListesiGridView[5, selectedItem.Item1].Value = email;
+
+                        Notification.messageBox("Kullanıcı Başarıyla Güncellendi");
                     }
                     else
                     {
-                        Notification.messageBoxError("Bir sorun oluştu, Kullanıcı güncellenemedi.");
+                        Notification.messageBoxError("Bir Sorun Oluştu, Kullanıcı Güncellenemedi.");
                     }
                 }
                 catch (Exception ex)
@@ -140,7 +144,7 @@ namespace smoothsis
             }
             else
             {
-                Notification.messageBox("Lütfen zorunlu alanları boş geçmeyin.");
+                Notification.messageBox("Lütfen Zorunlu Alanları Boş Bırakmayınız");
             }
         }
 

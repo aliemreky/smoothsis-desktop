@@ -9,16 +9,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using smoothsis.Services;
+using System.Reflection;
 
 namespace smoothsis
 {
     public partial class StokListesi : Form
     {
         // item1 is e.RowIndex, item2 is stokIncKey
-        private  Tuple<int, DataGridViewCellCollection> selectedItem;
+        private Tuple<int, DataGridViewCellCollection> selectedItem;
+        private int listType;
 
-        public StokListesi()
+        public StokListesi(int listType)
         {
+            this.listType = listType;
             InitializeComponent();
         }
 
@@ -38,18 +41,25 @@ namespace smoothsis
             try
             {
                 DataTable stokListDTable = new DataTable();
-                string query = "SELECT "+
+                string query = "SELECT " +
                                   "STOK_INCKEY, STOK_KOD STOK_KODU, STOK_ADI, MIKTAR, MIKTAR_BIRIM, BIRIM_FIYAT, FORMAT(GELIS_TARIH, 'dd.MM.yyyy') GELIS_TARIHI, AMBALAJ_BILGI, MALZ_SERISI MALZEME_SERISI, " +
-                                  "MALZ_CINSI MALZEME_CINSI, MALZ_OLCU MALZEME_OLCU, ETIKET_BILGI, ACIKLAMA, K1.ADSOYAD KAYIT_YAPAN_KULLANICI, KAYIT_TARIH KAYIT_TARIHI, K2.ADSOYAD DUZELTME_YAPAN_KULLANICI, "+
-                                  "DUZELTME_TARIH DUZELTME_TARIHI FROM STOK INNER JOIN KULLANICI K1 ON STOK.KAYIT_YAPAN_KUL = K1.KUL_INCKEY " +
-                                  "LEFT JOIN KULLANICI K2 ON STOK.DUZELTME_YAPAN_KUL = K2.KUL_INCKEY" +
-                                  " ORDER BY STOK_INCKEY DESC";
+                                  "MALZ_CINSI MALZEME_CINSI, MALZ_OLCU MALZEME_OLCU, ETIKET_BILGI, ACIKLAMA, KAYIT_TARIH FROM STOK ORDER BY STOK_INCKEY DESC";
                 SqlCommand command = new SqlCommand(query, Program.connection);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(stokListDTable);
+
+                typeof(DataGridView).InvokeMember(
+                   "DoubleBuffered",
+                   BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetProperty,
+                   null,
+                   stokListGridView,
+                   new object[] { true });
+
+                Styler.gridViewCommonStyle(stokListGridView);
+
                 stokListGridView.DataSource = stokListDTable;
                 stokListGridView.Columns[0].Visible = false;
-                stokListGridView.ClearSelection();
+
             }
             catch (Exception ex)
             {
@@ -58,50 +68,66 @@ namespace smoothsis
 
         }
 
-        public Tuple<int, DataGridViewCellCollection> getSelectedItem()
+        public Tuple<int, DataGridViewCellCollection> getSelectedItem() { return selectedItem; }        
+
+        private void btnStokListesiGetir_Click(object sender, EventArgs e)
         {
-            return selectedItem;
+            listStok();
         }
 
-        private void showStok(object sender, DataGridViewCellMouseEventArgs e)
+        private void stokListGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex != -1)
+            if (listType == 1)
             {
-                selectedItem = new Tuple<int, DataGridViewCellCollection>(e.RowIndex, stokListGridView.Rows[e.RowIndex].Cells);
-                StokDuzenle stokDuzenle = new StokDuzenle(this);
-                stokDuzenle.ShowDialog();
+                if (e.RowIndex != -1 && e.ColumnIndex != -1)
+                {
+                    selectedItem = new Tuple<int, DataGridViewCellCollection>(Convert.ToInt32(stokListGridView["STOK_INCKEY", e.RowIndex].Value.ToString()), stokListGridView.Rows[e.RowIndex].Cells);
+                    this.Close();
+                }
             }
         }
 
         private void searchForStokKodu(object sender, EventArgs e)
         {
-            if (txtAramaStokKodu.Text.Count() > 0)
-            {
-                Search.gridviewArama(txtAramaStokKodu.Text, "STOK_KODU", stokListGridView);
-            }
+            if (txtAramaStokKodu.Text.Count() > 1)            
+                Search.gridviewArama(txtAramaStokKodu.Text, stokListGridView, "STOK_KODU");            
             else
-            {
-                (stokListGridView.DataSource as DataTable).DefaultView.RowFilter = "";
-                stokListGridView.Refresh();
-            }
+                Search.gridviewArama("", stokListGridView);
         }
 
         private void searchForStokAdi(object sender, EventArgs e)
         {
-            if (txtAramaStokAdi.Text.Count() > 0)
-            {
-                Search.gridviewArama(txtAramaStokAdi.Text, "STOK_ADI", stokListGridView);
-            }
+            if (txtAramaStokAdi.Text.Count() > 1)
+                Search.gridviewArama(txtAramaStokAdi.Text, stokListGridView, "STOK_ADI");
             else
-            {
-                (stokListGridView.DataSource as DataTable).DefaultView.RowFilter = "";
-                stokListGridView.Refresh();
-            }
+                Search.gridviewArama("", stokListGridView);
+
         }
 
         private void searchForGelisTarih(object sender, EventArgs e)
         {
-            Search.gridviewArama(dtAramaGelisTarih.Value.ToString("dd.MM.yyyy"), "GELIS_TARIHI", stokListGridView);
+            Search.gridviewArama(dtAramaGelisTarih.Value.ToString("dd.MM.yyyy"), stokListGridView, "GELIS_TARIHI");
+        }
+
+        private void txtAramaMalzemeSerisi_TextChanged(object sender, EventArgs e)
+        {
+            if (txtAramaMalzemeSerisi.Text.Count() > 1)
+                Search.gridviewArama(txtAramaMalzemeSerisi.Text, stokListGridView, "MALZ_SERISI");
+            else
+                Search.gridviewArama("", stokListGridView);
+        }
+
+        private void txtAramaMalzemeCinsi_TextChanged(object sender, EventArgs e)
+        {
+            if (txtAramaMalzemeCinsi.Text.Count() > 1)
+                Search.gridviewArama(txtAramaMalzemeCinsi.Text, stokListGridView, "MALZ_CINSI");
+            else
+                Search.gridviewArama("", stokListGridView);
+        }
+
+        private void txtMalzemeEtiketBilgi_TextChanged(object sender, EventArgs e)
+        {
+            Search.gridviewArama(dtAramaGelisTarih.Value.ToString("dd.MM.yyyy"), stokListGridView, "GELIS_TARIHI");
         }
 
         private void asasaToolStripMenuItem_Click(object sender, EventArgs e)
