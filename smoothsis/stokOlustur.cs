@@ -105,6 +105,7 @@ namespace smoothsis
 
                     if (stokInckey > 0)
                     {
+                        /*
                         int depoInckey = (int)stokDepoCB.SelectedValue;
                         string stokDepoKayitSQL = "INSERT INTO STOK_DEPO(STOK_INCKEY, DEPO_INCKEY, MIKTAR) VALUES(@stok_inckey, @depo_inckey, @miktar)";
                         sqlCmd = new SqlCommand(stokDepoKayitSQL, Program.connection);
@@ -115,6 +116,7 @@ namespace smoothsis
                         if (sqlCmd.ExecuteNonQuery() > 0 ) {
                             Notification.messageBox("STOK BAŞARIYLA OLUŞTURULDU");
                         }
+                        */
                     }
                 }
                 catch (Exception ex)

@@ -79,8 +79,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.stokDepoCB);
             this.groupBox1.Controls.Add(this.btnStokKodOlustur);
             this.groupBox1.Controls.Add(this.txtBirimFiyat);
             this.groupBox1.Controls.Add(this.label2);

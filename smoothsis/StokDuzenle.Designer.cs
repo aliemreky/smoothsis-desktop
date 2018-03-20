@@ -534,12 +534,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtStokAdi;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton kaydetBttn;
-        private System.Windows.Forms.ToolStripButton sillBttn;
-        private System.Windows.Forms.ToolStripButton iptalButton;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txtStokKod;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
     }
