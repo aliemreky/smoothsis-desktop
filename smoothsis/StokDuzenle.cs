@@ -25,6 +25,10 @@ namespace smoothsis
 
         private void StokDuzenle_Load(object sender, EventArgs e)
         {
+
+
+
+
             cbMiktarBirim.DataSource = Enum.GetNames(typeof(smoothsis.Services.Enums.MalzemeMiktarBirim));
             stokDepoCB.DataSource = StokOlustur.getDepoDataTableForBindToComboBox();
             stokDepoCB.DisplayMember = "DEPO_ADI";
