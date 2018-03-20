@@ -42,8 +42,8 @@ namespace smoothsis
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(depoListDTable);
                 depoListGridView.DataSource = depoListDTable;
-                depoListGridView.Columns[0].Visible = false;
-                
+                depoListGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
             }
             catch (Exception ex)
             {
@@ -76,7 +76,7 @@ namespace smoothsis
         {
             if (txtAramaDepoAdi.Text.Count() > 0)
             {
-                Search.gridviewArama(txtAramaDepoAdi.Text, "DEPO_ADI", depoListGridView);
+                Search.gridviewArama(txtAramaDepoAdi.Text, depoListGridView, "DEPO_ADI");
             }
             else
             {
@@ -89,7 +89,7 @@ namespace smoothsis
         {
             if (txtAramaDepoLokasyon.Text.Count() > 0)
             {
-                Search.gridviewArama(txtAramaDepoLokasyon.Text, "DEPO_LOKASYON", depoListGridView);
+                Search.gridviewArama(txtAramaDepoLokasyon.Text, depoListGridView , "DEPO_LOKASYON");
             }
             else
             {

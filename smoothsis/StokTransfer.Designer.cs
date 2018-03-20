@@ -115,6 +115,7 @@
             // cbStokDepo
             // 
             this.cbStokDepo.DisplayMember = "GRUP_ADI";
+            this.cbStokDepo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbStokDepo.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cbStokDepo.FormattingEnabled = true;
             this.cbStokDepo.Location = new System.Drawing.Point(121, 15);

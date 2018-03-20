@@ -32,7 +32,7 @@ namespace smoothsis
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(grupListDTable);
                 grupList.DataSource = grupListDTable;
-                grupList.Columns[0].Visible = false;
+                grupList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 grupList.ClearSelection();
             }
             catch (Exception ex)
@@ -59,7 +59,7 @@ namespace smoothsis
             }
             else
             {
-                Notification.messageBox("Lutfen bos gecmeyin.");
+                Notification.messageBox("LÜTFEN GEREKLİ ALANLARI BOŞ GEÇMEYİNİZ.");
             }
             
         }
@@ -96,7 +96,7 @@ namespace smoothsis
                 int affectedRows = command.ExecuteNonQuery();
                 if (affectedRows > 0 )
                 {
-                    Notification.messageBox("Grup güncellendi.");
+                    Notification.messageBox("GRUP BAŞARIYLA GÜNCELLENDİ.");
                     grupList[1, rowIndex].Value = grupAdi;
                     
                 } else
@@ -138,7 +138,7 @@ namespace smoothsis
                         {
                             grupList.Rows.RemoveAt(rowIndex);
                             grupAdTB.Clear();
-                            Notification.messageBox("Grup silindi.");
+                            Notification.messageBox("GRUP BAŞARIYLA SİLİNDİ.");
                         }
                         else
                         {
@@ -152,7 +152,7 @@ namespace smoothsis
                 }
             } else
             {
-                Notification.messageBoxError("Geçerli bir kayıt seçmediniz.");
+                Notification.messageBoxError("BİR SORUN OLUŞTU, KAYIT SEÇİLEMEDİ !");
             }
         }
 
