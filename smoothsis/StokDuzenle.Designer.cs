@@ -29,12 +29,20 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StokDuzenle));
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.kaydetBttn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.sillBttn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.iptalButton = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtBirimFiyat = new System.Windows.Forms.TextBox();
             this.txtStokKod = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.cbMiktarBirim = new System.Windows.Forms.ComboBox();
+            this.txtStokKod = new System.Windows.Forms.TextBox();
             this.dtpGelisTarih = new System.Windows.Forms.DateTimePicker();
             this.txtAciklama = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -62,7 +70,64 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.toolStrip1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.kaydetBttn,
+            this.toolStripSeparator1,
+            this.sillBttn,
+            this.toolStripSeparator2,
+            this.iptalButton});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.toolStrip1.Size = new System.Drawing.Size(923, 25);
+            this.toolStrip1.TabIndex = 19;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // kaydetBttn
+            // 
+            this.kaydetBttn.Image = global::smoothsis.Properties.Resources.ic_save_black_24dp_1x;
+            this.kaydetBttn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.kaydetBttn.Name = "kaydetBttn";
+            this.kaydetBttn.Size = new System.Drawing.Size(70, 20);
+            this.kaydetBttn.Text = "Kaydet";
+            this.kaydetBttn.ToolTipText = "Değişiklikleri Kaydet";
+            this.kaydetBttn.Click += new System.EventHandler(this.kaydetBttn_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 23);
+            // 
+            // sillBttn
+            // 
+            this.sillBttn.Image = global::smoothsis.Properties.Resources.ic_delete_forever_black_24dp_1x;
+            this.sillBttn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.sillBttn.Name = "sillBttn";
+            this.sillBttn.Size = new System.Drawing.Size(43, 20);
+            this.sillBttn.Text = "Sil";
+            this.sillBttn.Click += new System.EventHandler(this.sillBttn_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 23);
+            // 
+            // iptalButton
+            // 
+            this.iptalButton.Image = global::smoothsis.Properties.Resources.ic_highlight_off_black_24dp_1x;
+            this.iptalButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.iptalButton.Name = "iptalButton";
+            this.iptalButton.Size = new System.Drawing.Size(57, 20);
+            this.iptalButton.Text = "Çıkış";
+            this.iptalButton.Click += new System.EventHandler(this.iptalButton_Click);
             // 
             // groupBox1
             // 
@@ -70,7 +135,9 @@
             this.groupBox1.Controls.Add(this.txtBirimFiyat);
             this.groupBox1.Controls.Add(this.txtStokKod);
             this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.cbMiktarBirim);
+            this.groupBox1.Controls.Add(this.txtStokKod);
             this.groupBox1.Controls.Add(this.dtpGelisTarih);
             this.groupBox1.Controls.Add(this.txtAciklama);
             this.groupBox1.Controls.Add(this.label3);
@@ -138,6 +205,16 @@
             this.label2.TabIndex = 15;
             this.label2.Text = "BİRİM FİYAT *";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label12.Location = new System.Drawing.Point(26, 22);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(81, 15);
+            this.label12.TabIndex = 14;
+            this.label12.Text = "STOK KODU *";
+            // 
             // cbMiktarBirim
             // 
             this.cbMiktarBirim.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -147,6 +224,16 @@
             this.cbMiktarBirim.Name = "cbMiktarBirim";
             this.cbMiktarBirim.Size = new System.Drawing.Size(89, 23);
             this.cbMiktarBirim.TabIndex = 3;
+            // 
+            // txtStokKod
+            // 
+            this.txtStokKod.Enabled = false;
+            this.txtStokKod.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtStokKod.Location = new System.Drawing.Point(131, 18);
+            this.txtStokKod.Name = "txtStokKod";
+            this.txtStokKod.ReadOnly = true;
+            this.txtStokKod.Size = new System.Drawing.Size(306, 23);
+            this.txtStokKod.TabIndex = 15;
             // 
             // dtpGelisTarih
             // 
@@ -398,28 +485,36 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(923, 327);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StokDuzenle";
             this.Text = "SMOOTHSIS [ STOK DÜZENLE ]";
             this.Load += new System.EventHandler(this.StokDuzenle_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton kaydetBttn;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton sillBttn;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton iptalButton;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox stokDepoCB;
         private System.Windows.Forms.TextBox txtBirimFiyat;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox cbMiktarBirim;
+        private System.Windows.Forms.TextBox txtStokKod;
         private System.Windows.Forms.DateTimePicker dtpGelisTarih;
         private System.Windows.Forms.TextBox txtAciklama;
         private System.Windows.Forms.Label label3;

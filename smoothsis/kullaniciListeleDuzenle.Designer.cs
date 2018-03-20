@@ -66,6 +66,9 @@
             // 
             // kullaniciListesiGridView
             // 
+            this.kullaniciListesiGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.kullaniciListesiGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.kullaniciListesiGridView.Location = new System.Drawing.Point(13, 24);
             this.kullaniciListesiGridView.MultiSelect = false;

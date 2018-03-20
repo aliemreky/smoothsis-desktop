@@ -90,6 +90,15 @@
             this.iptalButton.Text = "Çıkış";
             this.iptalButton.Click += new System.EventHandler(this.iptalButton_Click);
             // 
+            // iptalButton
+            // 
+            this.iptalButton.Image = global::smoothsis.Properties.Resources.ic_highlight_off_black_24dp_1x;
+            this.iptalButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.iptalButton.Name = "iptalButton";
+            this.iptalButton.Size = new System.Drawing.Size(57, 20);
+            this.iptalButton.Text = "Çıkış";
+            this.iptalButton.Click += new System.EventHandler(this.iptalButton_Click);
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtDepoLokasyon);
@@ -110,6 +119,15 @@
             this.txtDepoLokasyon.Multiline = true;
             this.txtDepoLokasyon.Name = "txtDepoLokasyon";
             this.txtDepoLokasyon.Size = new System.Drawing.Size(314, 66);
+            this.txtDepoLokasyon.TabIndex = 13;
+            // 
+            // txtDepoLokasyon
+            // 
+            this.txtDepoLokasyon.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtDepoLokasyon.Location = new System.Drawing.Point(152, 89);
+            this.txtDepoLokasyon.Multiline = true;
+            this.txtDepoLokasyon.Name = "txtDepoLokasyon";
+            this.txtDepoLokasyon.Size = new System.Drawing.Size(339, 66);
             this.txtDepoLokasyon.TabIndex = 13;
             // 
             // label10

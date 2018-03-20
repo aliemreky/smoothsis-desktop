@@ -27,7 +27,17 @@ namespace smoothsis
             cbMiktarBirim.DataSource = Enum.GetNames(typeof(smoothsis.Services.Enums.MalzemeMiktarBirim));
             cbMiktarBirim.SelectedIndex = 0;
         }
-        
+
+        public static DataTable getDepoDataTableForBindToComboBox()
+        {
+            string query = "SELECT * FROM DEPO";
+            SqlCommand command = new SqlCommand(query, Program.connection);
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            return dt;
+        }
+
         private void btnStokKodOlustur_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(txtStokKod.Text))
@@ -70,7 +80,7 @@ namespace smoothsis
                     string stokKayitSQL = "INSERT INTO " +
                         "STOK(STOK_KOD, STOK_ADI, MIKTAR, MIKTAR_BIRIM, BIRIM_FIYAT, GELIS_TARIH, AMBALAJ_BILGI," +
                         " MALZ_SERISI, MALZ_CINSI, MALZ_OLCU, ETIKET_BILGI, ACIKLAMA, KAYIT_YAPAN_KUL) " +
-                        "VALUES (@stok_kod, @stok_adi, @miktar, @miktar_birim, @birim_fiyat," +
+                        "OUTPUT INSERTED.STOK_INCKEY VALUES (@stok_kod, @stok_adi, @miktar, @miktar_birim, @birim_fiyat," +
                         " @gelis_tarih, @ambalaj_bilgi, @malz_serisi, @malz_cinsi, @malz_olcu, @etiket_bilgi, " +
                         "@aciklama, @kayit_yapan_kul)";
                     sqlCmd = new SqlCommand(stokKayitSQL, Program.connection);
@@ -88,9 +98,20 @@ namespace smoothsis
                     sqlCmd.Parameters.Add("@aciklama", SqlDbType.VarChar).Value = txtAciklama.Text;
                     sqlCmd.Parameters.Add("@kayit_yapan_kul", SqlDbType.Int).Value = Program.kullanici.Item1;
 
-                    if (sqlCmd.ExecuteNonQuery() > 0)
+                    int stokInckey = (int)sqlCmd.ExecuteScalar();
+
+                    if (stokInckey > 0)
                     {
-                        Notification.messageBox("STOK BAŞARIYLA OLUŞTURULDU");
+                        int depoInckey = (int)stokDepoCB.SelectedValue;
+                        string stokDepoKayitSQL = "INSERT INTO STOK_DEPO(STOK_INCKEY, DEPO_INCKEY, MIKTAR) VALUES(@stok_inckey, @depo_inckey, @miktar)";
+                        sqlCmd = new SqlCommand(stokDepoKayitSQL, Program.connection);
+                        sqlCmd.Parameters.Add("@stok_inckey", SqlDbType.Int).Value = stokInckey;
+                        sqlCmd.Parameters.Add("@depo_inckey", SqlDbType.Int).Value = depoInckey;
+                        sqlCmd.Parameters.Add("@miktar", SqlDbType.Float).Value = float.Parse(txtMiktar.Text);
+
+                        if (sqlCmd.ExecuteNonQuery() > 0 ) {
+                            Notification.messageBox("STOK BAŞARIYLA OLUŞTURULDU");
+                        }
                     }
                 }
                 catch (Exception ex)

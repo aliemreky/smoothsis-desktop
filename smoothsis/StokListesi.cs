@@ -25,7 +25,7 @@ namespace smoothsis
             InitializeComponent();
         }
 
-        private void StokListeleDuzenle_Load(object sender, EventArgs e)
+        private void StokListele_Load(object sender, EventArgs e)
         {
             Styler.gridViewCommonStyle(stokListGridView);
             listStok();
@@ -130,11 +130,6 @@ namespace smoothsis
             Search.gridviewArama(dtAramaGelisTarih.Value.ToString("dd.MM.yyyy"), stokListGridView, "GELIS_TARIHI");
         }
 
-        private void asasaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void stokListGridView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.RowIndex != -1 && e.ColumnIndex != -1)
@@ -144,6 +139,25 @@ namespace smoothsis
                     stokListGridView.ClearSelection();
                     this.stokListGridView.Rows[e.RowIndex].Selected = true;
                 }
+            }
+        }
+
+        private void allStokList_Click(object sender, EventArgs e)
+        {
+            StokListele_Load(sender, e);
+        }
+
+        private void stokTransferToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StokTransfer stokTransfer = new StokTransfer(this);
+            stokTransfer.ShowDialog();
+        }
+        
+        private void selectRowWithRightMenu(object sender, DataGridViewCellContextMenuStripNeededEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                selectedItem = new Tuple<int, DataGridViewCellCollection>(e.RowIndex, stokListGridView.Rows[e.RowIndex].Cells);
             }
         }
     }

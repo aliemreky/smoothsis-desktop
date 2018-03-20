@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StokOlustur));
             this.btnStokKodOlustur = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtBirimFiyat = new System.Windows.Forms.TextBox();
@@ -78,9 +79,14 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.stokDepoCB);
+            this.groupBox1.Controls.Add(this.btnStokKodOlustur);
             this.groupBox1.Controls.Add(this.txtBirimFiyat);
             this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.cbMiktarBirim);
+            this.groupBox1.Controls.Add(this.txtStokKod);
             this.groupBox1.Controls.Add(this.dtpGelisTarih);
             this.groupBox1.Controls.Add(this.txtAciklama);
             this.groupBox1.Controls.Add(this.label3);
@@ -148,7 +154,7 @@
             // txtAciklama
             // 
             this.txtAciklama.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtAciklama.Location = new System.Drawing.Point(579, 164);
+            this.txtAciklama.Location = new System.Drawing.Point(587, 188);
             this.txtAciklama.Multiline = true;
             this.txtAciklama.Name = "txtAciklama";
             this.txtAciklama.Size = new System.Drawing.Size(306, 77);
@@ -180,7 +186,7 @@
             this.txtMiktar.Location = new System.Drawing.Point(131, 66);
             this.txtMiktar.Multiline = true;
             this.txtMiktar.Name = "txtMiktar";
-            this.txtMiktar.Size = new System.Drawing.Size(153, 26);
+            this.txtMiktar.Size = new System.Drawing.Size(153, 23);
             this.txtMiktar.TabIndex = 4;
             this.txtMiktar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numericValidate);
             // 
@@ -227,8 +233,7 @@
             // txtEtiketBilgi
             // 
             this.txtEtiketBilgi.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtEtiketBilgi.Location = new System.Drawing.Point(579, 125);
-            this.txtEtiketBilgi.Multiline = true;
+            this.txtEtiketBilgi.Location = new System.Drawing.Point(587, 149);
             this.txtEtiketBilgi.Name = "txtEtiketBilgi";
             this.txtEtiketBilgi.Size = new System.Drawing.Size(306, 24);
             this.txtEtiketBilgi.TabIndex = 11;
@@ -236,8 +241,7 @@
             // txtMalzOlcu
             // 
             this.txtMalzOlcu.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtMalzOlcu.Location = new System.Drawing.Point(579, 82);
-            this.txtMalzOlcu.Multiline = true;
+            this.txtMalzOlcu.Location = new System.Drawing.Point(587, 106);
             this.txtMalzOlcu.Name = "txtMalzOlcu";
             this.txtMalzOlcu.Size = new System.Drawing.Size(306, 24);
             this.txtMalzOlcu.TabIndex = 10;
@@ -264,8 +268,7 @@
             // txtMalzCinsi
             // 
             this.txtMalzCinsi.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtMalzCinsi.Location = new System.Drawing.Point(579, 40);
-            this.txtMalzCinsi.Multiline = true;
+            this.txtMalzCinsi.Location = new System.Drawing.Point(587, 62);
             this.txtMalzCinsi.Name = "txtMalzCinsi";
             this.txtMalzCinsi.Size = new System.Drawing.Size(306, 24);
             this.txtMalzCinsi.TabIndex = 9;
@@ -379,8 +382,7 @@
             // 
             this.txtStokKod.Enabled = false;
             this.txtStokKod.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtStokKod.Location = new System.Drawing.Point(145, 46);
-            this.txtStokKod.Multiline = true;
+            this.txtStokKod.Location = new System.Drawing.Point(131, 18);
             this.txtStokKod.Name = "txtStokKod";
             this.txtStokKod.ReadOnly = true;
             this.txtStokKod.Size = new System.Drawing.Size(216, 24);
@@ -409,9 +411,9 @@
             this.Controls.Add(this.btnStokKodOlustur);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.txtStokKod);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StokOlustur";
             this.Text = "SMOOTHSIS [ STOK OLUŞTUR ]";
             this.Load += new System.EventHandler(this.StokOlustur_Load);

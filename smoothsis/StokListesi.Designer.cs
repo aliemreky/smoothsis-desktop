@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StokListesi));
             this.stokListGridView = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.stokTransferToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnStokListesiGetir = new System.Windows.Forms.Button();
@@ -46,6 +48,7 @@
             this.txtAramaStokKodu = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.stokListGridView)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +68,20 @@
             this.stokListGridView.TabIndex = 19;
             this.stokListGridView.VirtualMode = true;
             this.stokListGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.stokListGridView_CellDoubleClick);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stokTransferToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(171, 26);
+            // 
+            // stokTransferToolStripMenuItem
+            // 
+            this.stokTransferToolStripMenuItem.Name = "stokTransferToolStripMenuItem";
+            this.stokTransferToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.stokTransferToolStripMenuItem.Text = "Stok Transferi Yap ";
+            this.stokTransferToolStripMenuItem.Click += new System.EventHandler(this.stokTransferToolStripMenuItem_Click);
             // 
             // groupBox1
             // 
@@ -227,11 +244,13 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StokListesi";
             this.Text = "SMOOTHSIS [ STOK LİSTESİ ]";
-            this.Load += new System.EventHandler(this.StokListeleDuzenle_Load);
+            this.Load += new System.EventHandler(this.StokListele_Load);
             ((System.ComponentModel.ISupportInitialize)(this.stokListGridView)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
