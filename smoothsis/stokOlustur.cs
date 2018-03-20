@@ -42,6 +42,9 @@ namespace smoothsis
         {
             if (String.IsNullOrEmpty(txtStokKod.Text))
             {
+
+
+
                 try
                 {
                     sqlCmd = new SqlCommand("SELECT TOP 1 STOK_INCKEY FROM STOK ORDER BY STOK_INCKEY DESC", Program.connection);
