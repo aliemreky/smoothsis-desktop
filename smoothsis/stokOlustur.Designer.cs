@@ -54,12 +54,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.kaydetBttn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.temizleBttn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.iptalButton = new System.Windows.Forms.ToolStripButton();
             this.label12 = new System.Windows.Forms.Label();
             this.txtStokKod = new System.Windows.Forms.TextBox();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -131,7 +131,7 @@
             this.cbMiktarBirim.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMiktarBirim.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cbMiktarBirim.FormattingEnabled = true;
-            this.cbMiktarBirim.Location = new System.Drawing.Point(348, 66);
+            this.cbMiktarBirim.Location = new System.Drawing.Point(344, 69);
             this.cbMiktarBirim.Name = "cbMiktarBirim";
             this.cbMiktarBirim.Size = new System.Drawing.Size(89, 23);
             this.cbMiktarBirim.TabIndex = 14;
@@ -342,26 +342,40 @@
             this.kaydetBttn.Image = global::smoothsis.Properties.Resources.ic_save_black_24dp_1x;
             this.kaydetBttn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.kaydetBttn.Name = "kaydetBttn";
-            this.kaydetBttn.Size = new System.Drawing.Size(68, 21);
+            this.kaydetBttn.Size = new System.Drawing.Size(68, 27);
             this.kaydetBttn.Text = "Kaydet";
             this.kaydetBttn.ToolTipText = "Değişiklikleri Kaydet";
             this.kaydetBttn.Click += new System.EventHandler(this.kaydetBttn_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.AutoSize = false;
+            this.toolStripSeparator4.Margin = new System.Windows.Forms.Padding(1);
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(12, 28);
             // 
             // temizleBttn
             // 
             this.temizleBttn.Image = global::smoothsis.Properties.Resources.ic_delete_forever_black_24dp_1x;
             this.temizleBttn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.temizleBttn.Name = "temizleBttn";
-            this.temizleBttn.Size = new System.Drawing.Size(71, 21);
+            this.temizleBttn.Size = new System.Drawing.Size(71, 27);
             this.temizleBttn.Text = "Temizle";
             this.temizleBttn.Click += new System.EventHandler(this.temizleBttn_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.AutoSize = false;
+            this.toolStripSeparator3.Margin = new System.Windows.Forms.Padding(1);
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(12, 28);
             // 
             // iptalButton
             // 
             this.iptalButton.Image = global::smoothsis.Properties.Resources.ic_highlight_off_black_24dp_1x;
             this.iptalButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.iptalButton.Name = "iptalButton";
-            this.iptalButton.Size = new System.Drawing.Size(54, 21);
+            this.iptalButton.Size = new System.Drawing.Size(54, 27);
             this.iptalButton.Text = "Çıkış";
             this.iptalButton.Click += new System.EventHandler(this.iptalButton_Click);
             // 
@@ -385,20 +399,6 @@
             this.txtStokKod.ReadOnly = true;
             this.txtStokKod.Size = new System.Drawing.Size(216, 24);
             this.txtStokKod.TabIndex = 15;
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.AutoSize = false;
-            this.toolStripSeparator3.Margin = new System.Windows.Forms.Padding(1);
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(12, 28);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.AutoSize = false;
-            this.toolStripSeparator4.Margin = new System.Windows.Forms.Padding(1);
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(12, 28);
             // 
             // StokOlustur
             // 

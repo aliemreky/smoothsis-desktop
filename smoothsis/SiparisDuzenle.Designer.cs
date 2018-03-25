@@ -1,6 +1,6 @@
 ﻿namespace smoothsis
 {
-    partial class SiparisOlustur
+    partial class SiparisDuzenle
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SiparisOlustur));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SiparisDuzenle));
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabSiparis = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtAciklama = new System.Windows.Forms.TextBox();
+            this.txtProjeAdi = new System.Windows.Forms.TextBox();
+            this.txtOzelKod = new System.Windows.Forms.TextBox();
+            this.txtProjeKodu = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtIlIlce = new System.Windows.Forms.TextBox();
+            this.txtTicariUnvan = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtCariIsim = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.siparisTipi = new System.Windows.Forms.ComboBox();
             this.btnCariListeAc = new System.Windows.Forms.Button();
@@ -42,30 +62,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtSiparisKodu = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.kaydetBttn = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.iptalButton = new System.Windows.Forms.ToolStripButton();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabSiparis = new System.Windows.Forms.TabPage();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtAciklama = new System.Windows.Forms.TextBox();
-            this.txtProjeAdi = new System.Windows.Forms.TextBox();
-            this.txtOzelKod = new System.Windows.Forms.TextBox();
-            this.txtProjeKodu = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtIlIlce = new System.Windows.Forms.TextBox();
-            this.txtTicariUnvan = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtCariIsim = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.tabStok = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.siparisListesiGridView = new System.Windows.Forms.DataGridView();
@@ -84,224 +80,33 @@
             this.txtStokMiktar = new System.Windows.Forms.TextBox();
             this.txtStokAdi = new System.Windows.Forms.TextBox();
             this.txtStokKodu = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.kaydetBttn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.iptalButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.tabControl1.SuspendLayout();
             this.tabSiparis.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.tabStok.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.siparisListesiGridView)).BeginInit();
             this.groupBox4.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.siparisTipi);
-            this.groupBox1.Controls.Add(this.btnCariListeAc);
-            this.groupBox1.Controls.Add(this.btnSiparisKoduOlustur);
-            this.groupBox1.Controls.Add(this.txtSiparisTeslimTarih);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txtSiparisTarih);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtCariKod);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtSiparisKodu);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(6, 11);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(247, 434);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "SİPARİŞ İŞLEMLERİ";
-            // 
-            // siparisTipi
-            // 
-            this.siparisTipi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.siparisTipi.FormattingEnabled = true;
-            this.siparisTipi.Items.AddRange(new object[] {
-            "YURT İÇİ",
-            "YURT DIŞI"});
-            this.siparisTipi.Location = new System.Drawing.Point(9, 298);
-            this.siparisTipi.Name = "siparisTipi";
-            this.siparisTipi.Size = new System.Drawing.Size(195, 23);
-            this.siparisTipi.TabIndex = 6;
-            // 
-            // btnCariListeAc
-            // 
-            this.btnCariListeAc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnCariListeAc.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnCariListeAc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCariListeAc.Image = ((System.Drawing.Image)(resources.GetObject("btnCariListeAc.Image")));
-            this.btnCariListeAc.Location = new System.Drawing.Point(209, 110);
-            this.btnCariListeAc.Name = "btnCariListeAc";
-            this.btnCariListeAc.Size = new System.Drawing.Size(31, 25);
-            this.btnCariListeAc.TabIndex = 4;
-            this.btnCariListeAc.UseVisualStyleBackColor = true;
-            this.btnCariListeAc.Click += new System.EventHandler(this.btnCariListeAc_Click);
-            // 
-            // btnSiparisKoduOlustur
-            // 
-            this.btnSiparisKoduOlustur.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnSiparisKoduOlustur.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnSiparisKoduOlustur.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSiparisKoduOlustur.Image = ((System.Drawing.Image)(resources.GetObject("btnSiparisKoduOlustur.Image")));
-            this.btnSiparisKoduOlustur.Location = new System.Drawing.Point(209, 53);
-            this.btnSiparisKoduOlustur.Name = "btnSiparisKoduOlustur";
-            this.btnSiparisKoduOlustur.Size = new System.Drawing.Size(31, 25);
-            this.btnSiparisKoduOlustur.TabIndex = 2;
-            this.btnSiparisKoduOlustur.UseVisualStyleBackColor = true;
-            this.btnSiparisKoduOlustur.Click += new System.EventHandler(this.btnSiparisKoduOlustur_Click);
-            // 
-            // txtSiparisTeslimTarih
-            // 
-            this.txtSiparisTeslimTarih.Location = new System.Drawing.Point(9, 234);
-            this.txtSiparisTeslimTarih.Name = "txtSiparisTeslimTarih";
-            this.txtSiparisTeslimTarih.Size = new System.Drawing.Size(195, 23);
-            this.txtSiparisTeslimTarih.TabIndex = 5;
-            this.txtSiparisTeslimTarih.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSiparisTeslimTarih_KeyPress);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 280);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 15);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Sipariş Tipi";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 216);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 15);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Teslim Tarihi";
-            // 
-            // txtSiparisTarih
-            // 
-            this.txtSiparisTarih.Location = new System.Drawing.Point(9, 169);
-            this.txtSiparisTarih.Name = "txtSiparisTarih";
-            this.txtSiparisTarih.Size = new System.Drawing.Size(195, 23);
-            this.txtSiparisTarih.TabIndex = 4;
-            this.txtSiparisTarih.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSiparisTarih_KeyPress);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 151);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 15);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Sipariş Tarihi";
-            // 
-            // txtCariKod
-            // 
-            this.txtCariKod.Location = new System.Drawing.Point(9, 111);
-            this.txtCariKod.Name = "txtCariKod";
-            this.txtCariKod.Size = new System.Drawing.Size(195, 23);
-            this.txtCariKod.TabIndex = 3;
-            this.txtCariKod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCariKod_KeyPress);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 93);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 15);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Cari Kod";
-            // 
-            // txtSiparisKodu
-            // 
-            this.txtSiparisKodu.Enabled = false;
-            this.txtSiparisKodu.Location = new System.Drawing.Point(9, 54);
-            this.txtSiparisKodu.Name = "txtSiparisKodu";
-            this.txtSiparisKodu.ReadOnly = true;
-            this.txtSiparisKodu.Size = new System.Drawing.Size(195, 23);
-            this.txtSiparisKodu.TabIndex = 0;
-            this.txtSiparisKodu.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Sipariş Kodu";
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.toolStrip1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.kaydetBttn,
-            this.toolStripSeparator1,
-            this.toolStripButton1,
-            this.toolStripSeparator2,
-            this.iptalButton});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(955, 25);
-            this.toolStrip1.TabIndex = 13;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // kaydetBttn
-            // 
-            this.kaydetBttn.Image = ((System.Drawing.Image)(resources.GetObject("kaydetBttn.Image")));
-            this.kaydetBttn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.kaydetBttn.Name = "kaydetBttn";
-            this.kaydetBttn.Size = new System.Drawing.Size(70, 20);
-            this.kaydetBttn.Text = "Kaydet";
-            this.kaydetBttn.ToolTipText = "Değişiklikleri Kaydet";
-            this.kaydetBttn.Click += new System.EventHandler(this.kaydetBttn_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 23);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(76, 20);
-            this.toolStripButton1.Text = "Temizle";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 23);
-            // 
-            // iptalButton
-            // 
-            this.iptalButton.Image = ((System.Drawing.Image)(resources.GetObject("iptalButton.Image")));
-            this.iptalButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.iptalButton.Name = "iptalButton";
-            this.iptalButton.Size = new System.Drawing.Size(57, 20);
-            this.iptalButton.Text = "Çıkış";
-            this.iptalButton.Click += new System.EventHandler(this.iptalButton_Click);
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabSiparis);
             this.tabControl1.Controls.Add(this.tabStok);
-            this.tabControl1.Location = new System.Drawing.Point(8, 30);
+            this.tabControl1.Location = new System.Drawing.Point(14, 33);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(947, 486);
-            this.tabControl1.TabIndex = 14;
-            this.tabControl1.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl1_Selecting);
+            this.tabControl1.TabIndex = 16;
             // 
             // tabSiparis
             // 
@@ -334,6 +139,15 @@
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "EK BİLGİLER";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(34, 211);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(56, 15);
+            this.label19.TabIndex = 0;
+            this.label19.Text = "Açıklama";
             // 
             // label8
             // 
@@ -370,6 +184,14 @@
             this.label6.Size = new System.Drawing.Size(65, 15);
             this.label6.TabIndex = 0;
             this.label6.Text = "Proje Kodu";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(110, 208);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(533, 34);
+            this.textBox1.TabIndex = 10;
             // 
             // txtAciklama
             // 
@@ -472,6 +294,139 @@
             this.label10.TabIndex = 0;
             this.label10.Text = "Cari İsim";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.siparisTipi);
+            this.groupBox1.Controls.Add(this.btnCariListeAc);
+            this.groupBox1.Controls.Add(this.btnSiparisKoduOlustur);
+            this.groupBox1.Controls.Add(this.txtSiparisTeslimTarih);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.txtSiparisTarih);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.txtCariKod);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txtSiparisKodu);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(6, 11);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(247, 434);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "SİPARİŞ İŞLEMLERİ";
+            // 
+            // siparisTipi
+            // 
+            this.siparisTipi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.siparisTipi.FormattingEnabled = true;
+            this.siparisTipi.Items.AddRange(new object[] {
+            "YURT İÇİ",
+            "YURT DIŞI"});
+            this.siparisTipi.Location = new System.Drawing.Point(9, 298);
+            this.siparisTipi.Name = "siparisTipi";
+            this.siparisTipi.Size = new System.Drawing.Size(195, 23);
+            this.siparisTipi.TabIndex = 6;
+            // 
+            // btnCariListeAc
+            // 
+            this.btnCariListeAc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCariListeAc.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnCariListeAc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCariListeAc.Image = ((System.Drawing.Image)(resources.GetObject("btnCariListeAc.Image")));
+            this.btnCariListeAc.Location = new System.Drawing.Point(209, 110);
+            this.btnCariListeAc.Name = "btnCariListeAc";
+            this.btnCariListeAc.Size = new System.Drawing.Size(31, 25);
+            this.btnCariListeAc.TabIndex = 4;
+            this.btnCariListeAc.UseVisualStyleBackColor = true;
+            // 
+            // btnSiparisKoduOlustur
+            // 
+            this.btnSiparisKoduOlustur.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSiparisKoduOlustur.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnSiparisKoduOlustur.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSiparisKoduOlustur.Image = ((System.Drawing.Image)(resources.GetObject("btnSiparisKoduOlustur.Image")));
+            this.btnSiparisKoduOlustur.Location = new System.Drawing.Point(209, 53);
+            this.btnSiparisKoduOlustur.Name = "btnSiparisKoduOlustur";
+            this.btnSiparisKoduOlustur.Size = new System.Drawing.Size(31, 25);
+            this.btnSiparisKoduOlustur.TabIndex = 2;
+            this.btnSiparisKoduOlustur.UseVisualStyleBackColor = true;
+            // 
+            // txtSiparisTeslimTarih
+            // 
+            this.txtSiparisTeslimTarih.Location = new System.Drawing.Point(9, 234);
+            this.txtSiparisTeslimTarih.Name = "txtSiparisTeslimTarih";
+            this.txtSiparisTeslimTarih.Size = new System.Drawing.Size(195, 23);
+            this.txtSiparisTeslimTarih.TabIndex = 5;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 280);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(65, 15);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Sipariş Tipi";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 216);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(73, 15);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Teslim Tarihi";
+            // 
+            // txtSiparisTarih
+            // 
+            this.txtSiparisTarih.Location = new System.Drawing.Point(9, 169);
+            this.txtSiparisTarih.Name = "txtSiparisTarih";
+            this.txtSiparisTarih.Size = new System.Drawing.Size(195, 23);
+            this.txtSiparisTarih.TabIndex = 4;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 151);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(74, 15);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Sipariş Tarihi";
+            // 
+            // txtCariKod
+            // 
+            this.txtCariKod.Location = new System.Drawing.Point(9, 111);
+            this.txtCariKod.Name = "txtCariKod";
+            this.txtCariKod.Size = new System.Drawing.Size(195, 23);
+            this.txtCariKod.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 93);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 15);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Cari Kod";
+            // 
+            // txtSiparisKodu
+            // 
+            this.txtSiparisKodu.Enabled = false;
+            this.txtSiparisKodu.Location = new System.Drawing.Point(9, 54);
+            this.txtSiparisKodu.Name = "txtSiparisKodu";
+            this.txtSiparisKodu.ReadOnly = true;
+            this.txtSiparisKodu.Size = new System.Drawing.Size(195, 23);
+            this.txtSiparisKodu.TabIndex = 0;
+            this.txtSiparisKodu.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Sipariş Kodu";
+            // 
             // tabStok
             // 
             this.tabStok.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -504,7 +459,6 @@
             this.siparisListesiGridView.Size = new System.Drawing.Size(903, 293);
             this.siparisListesiGridView.TabIndex = 2;
             this.siparisListesiGridView.TabStop = false;
-            this.siparisListesiGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.siparisListesiGridView_CellDoubleClick);
             // 
             // groupBox4
             // 
@@ -536,7 +490,6 @@
             this.btnListeyeEkle.TabIndex = 5;
             this.btnListeyeEkle.Text = "LİSTEYE EKLE";
             this.btnListeyeEkle.UseVisualStyleBackColor = true;
-            this.btnListeyeEkle.Click += new System.EventHandler(this.btnListeyeEkle_Click);
             // 
             // label17
             // 
@@ -568,7 +521,6 @@
             this.btnStokListesi.Size = new System.Drawing.Size(31, 25);
             this.btnStokListesi.TabIndex = 2;
             this.btnStokListesi.UseVisualStyleBackColor = true;
-            this.btnStokListesi.Click += new System.EventHandler(this.btnStokListesi_Click);
             // 
             // label18
             // 
@@ -641,9 +593,6 @@
             this.txtStokMiktar.Name = "txtStokMiktar";
             this.txtStokMiktar.Size = new System.Drawing.Size(93, 23);
             this.txtStokMiktar.TabIndex = 4;
-            this.txtStokMiktar.TextChanged += new System.EventHandler(this.txtStokMiktar_TextChanged);
-            this.txtStokMiktar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStokMiktar_KeyPress);
-            this.txtStokMiktar.Leave += new System.EventHandler(this.txtStokMiktar_Leave);
             // 
             // txtStokAdi
             // 
@@ -659,54 +608,90 @@
             this.txtStokKodu.Name = "txtStokKodu";
             this.txtStokKodu.Size = new System.Drawing.Size(135, 23);
             this.txtStokKodu.TabIndex = 1;
-            this.txtStokKodu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStokKodu_KeyPress);
             // 
-            // textBox1
+            // toolStrip1
             // 
-            this.textBox1.Location = new System.Drawing.Point(110, 208);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(533, 34);
-            this.textBox1.TabIndex = 10;
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.kaydetBttn,
+            this.toolStripSeparator3,
+            this.toolStripButton1,
+            this.toolStripSeparator4,
+            this.iptalButton});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Padding = new System.Windows.Forms.Padding(10, 1, 2, 1);
+            this.toolStrip1.Size = new System.Drawing.Size(972, 32);
+            this.toolStrip1.TabIndex = 15;
+            this.toolStrip1.Text = "toolStrip1";
             // 
-            // label19
+            // kaydetBttn
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(34, 211);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(56, 15);
-            this.label19.TabIndex = 0;
-            this.label19.Text = "Açıklama";
+            this.kaydetBttn.Image = ((System.Drawing.Image)(resources.GetObject("kaydetBttn.Image")));
+            this.kaydetBttn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.kaydetBttn.Name = "kaydetBttn";
+            this.kaydetBttn.Size = new System.Drawing.Size(70, 20);
+            this.kaydetBttn.Text = "Kaydet";
+            this.kaydetBttn.ToolTipText = "Değişiklikleri Kaydet";
             // 
-            // SiparisOlustur
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(76, 20);
+            this.toolStripButton1.Text = "Temizle";
+            // 
+            // iptalButton
+            // 
+            this.iptalButton.Image = ((System.Drawing.Image)(resources.GetObject("iptalButton.Image")));
+            this.iptalButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.iptalButton.Name = "iptalButton";
+            this.iptalButton.Size = new System.Drawing.Size(57, 20);
+            this.iptalButton.Text = "Çıkış";
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.AutoSize = false;
+            this.toolStripSeparator4.Margin = new System.Windows.Forms.Padding(1);
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(12, 28);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.AutoSize = false;
+            this.toolStripSeparator3.Margin = new System.Windows.Forms.Padding(1);
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(12, 28);
+            // 
+            // SiparisDuzenle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(955, 528);
+            this.ClientSize = new System.Drawing.Size(972, 530);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "SiparisOlustur";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SMOOTHSIS [ SİPARİŞ OLUŞTUR ]";
-            this.Load += new System.EventHandler(this.SiparisOlustur_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.Name = "SiparisDuzenle";
+            this.Load += new System.EventHandler(this.SiparisDuzenle_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabSiparis.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.tabStok.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.siparisListesiGridView)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -714,22 +699,30 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton kaydetBttn;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripButton iptalButton;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabSiparis;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtAciklama;
+        private System.Windows.Forms.TextBox txtProjeAdi;
+        private System.Windows.Forms.TextBox txtOzelKod;
+        private System.Windows.Forms.TextBox txtProjeKodu;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TabPage tabStok;
-        private System.Windows.Forms.Button btnSiparisKoduOlustur;
-        private System.Windows.Forms.TextBox txtSiparisKodu;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtIlIlce;
+        private System.Windows.Forms.TextBox txtTicariUnvan;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtCariIsim;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox siparisTipi;
+        private System.Windows.Forms.Button btnCariListeAc;
+        private System.Windows.Forms.Button btnSiparisKoduOlustur;
         private System.Windows.Forms.TextBox txtSiparisTeslimTarih;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -737,39 +730,31 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtCariKod;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtAciklama;
-        private System.Windows.Forms.TextBox txtProjeAdi;
-        private System.Windows.Forms.TextBox txtProjeKodu;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtOzelKod;
-        private System.Windows.Forms.TextBox txtIlIlce;
-        private System.Windows.Forms.TextBox txtTicariUnvan;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtCariIsim;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button btnCariListeAc;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtStokKodu;
-        private System.Windows.Forms.Button btnStokListesi;
+        private System.Windows.Forms.TextBox txtSiparisKodu;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TabPage tabStok;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.DataGridView siparisListesiGridView;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txtStokMiktar;
-        private System.Windows.Forms.TextBox txtStokAdi;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button btnListeyeEkle;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtToplamFiyat;
+        private System.Windows.Forms.Button btnStokListesi;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox txtBirimFiyat;
-        private System.Windows.Forms.Button btnListeyeEkle;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtStokBirim;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBirimFiyat;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtStokMiktar;
+        private System.Windows.Forms.TextBox txtStokAdi;
+        private System.Windows.Forms.TextBox txtStokKodu;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton kaydetBttn;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton iptalButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
     }
 }
