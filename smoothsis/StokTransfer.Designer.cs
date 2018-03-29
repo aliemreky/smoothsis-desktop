@@ -163,6 +163,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StokTransfer";
             this.Text = "SMOOTHSIS [ STOK TRANSFER ]";
+            this.Load += new System.EventHandler(this.StokTransfer_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);

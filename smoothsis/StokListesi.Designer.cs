@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StokListesi));
-            this.stokListGridView = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.stokListGridView = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.stokDuzenleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnStokListesiGetir = new System.Windows.Forms.Button();
             this.dtAramaGelisTarih = new System.Windows.Forms.DateTimePicker();
@@ -45,26 +48,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtAramaStokKodu = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.stokListGridView)).BeginInit();
+            this.stokDepoListesiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stokListGridView)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // stokListGridView
-            // 
-            this.stokListGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.stokListGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.stokListGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.stokListGridView.Location = new System.Drawing.Point(6, 13);
-            this.stokListGridView.MultiSelect = false;
-            this.stokListGridView.Name = "stokListGridView";
-            this.stokListGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.stokListGridView.Size = new System.Drawing.Size(932, 482);
-            this.stokListGridView.TabIndex = 19;
-            this.stokListGridView.VirtualMode = true;
-            this.stokListGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.stokListGridView_CellDoubleClick);
             // 
             // groupBox1
             // 
@@ -74,9 +63,42 @@
             this.groupBox1.Controls.Add(this.stokListGridView);
             this.groupBox1.Location = new System.Drawing.Point(253, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(944, 501);
+            this.groupBox1.Size = new System.Drawing.Size(1063, 501);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
+            // 
+            // stokListGridView
+            // 
+            this.stokListGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.stokListGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.stokListGridView.ContextMenuStrip = this.contextMenuStrip1;
+            this.stokListGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.stokListGridView.Location = new System.Drawing.Point(6, 13);
+            this.stokListGridView.MultiSelect = false;
+            this.stokListGridView.Name = "stokListGridView";
+            this.stokListGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.stokListGridView.Size = new System.Drawing.Size(1051, 482);
+            this.stokListGridView.TabIndex = 19;
+            this.stokListGridView.VirtualMode = true;
+            this.stokListGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.stokListGridView_CellDoubleClick);
+            this.stokListGridView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.stokListGridView_CellMouseDown);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stokDuzenleToolStripMenuItem,
+            this.stokDepoListesiToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(164, 70);
+            // 
+            // stokDuzenleToolStripMenuItem
+            // 
+            this.stokDuzenleToolStripMenuItem.Name = "stokDuzenleToolStripMenuItem";
+            this.stokDuzenleToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.stokDuzenleToolStripMenuItem.Text = "Duzenle";
+            this.stokDuzenleToolStripMenuItem.Click += new System.EventHandler(this.stokDuzenleToolStripMenuItem_Click);
             // 
             // groupBox2
             // 
@@ -217,13 +239,20 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "STOK KODU";
             // 
+            // stokDepoListesiToolStripMenuItem
+            // 
+            this.stokDepoListesiToolStripMenuItem.Name = "stokDepoListesiToolStripMenuItem";
+            this.stokDepoListesiToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.stokDepoListesiToolStripMenuItem.Text = "Stok Depo Listesi";
+            this.stokDepoListesiToolStripMenuItem.Click += new System.EventHandler(this.stokDepoListesiToolStripMenuItem_Click);
+            // 
             // StokListesi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1219, 531);
+            this.ClientSize = new System.Drawing.Size(1328, 531);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -232,8 +261,9 @@
             this.Name = "StokListesi";
             this.Text = "SMOOTHSIS [ STOK LİSTESİ ]";
             this.Load += new System.EventHandler(this.StokListele_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.stokListGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.stokListGridView)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -241,7 +271,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView stokListGridView;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label3;
@@ -257,5 +286,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtAramaMalzemeSerisi;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridView stokListGridView;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem stokDuzenleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stokDepoListesiToolStripMenuItem;
     }
 }

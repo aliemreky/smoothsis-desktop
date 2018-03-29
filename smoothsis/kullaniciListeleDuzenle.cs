@@ -69,7 +69,7 @@ namespace smoothsis
                             kullaniciListesiGridView.Rows.RemoveAt(selectedItem.Item1);
                             ActionControl.ActionAllControls(this, "clear");
                             textTemizle();
-                            Notification.messageBox("Kullanıcı Başarıyla Güncellendi");
+                            Notification.messageBox("Kullanıcı Başarıyla Silindi");
                         }
                         else
                         {

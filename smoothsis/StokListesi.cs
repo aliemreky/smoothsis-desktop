@@ -41,25 +41,13 @@ namespace smoothsis
             try
             {
                 DataTable stokListDTable = new DataTable();
-                string query = "SELECT " +
-                                  "STOK_INCKEY, STOK_KOD STOK_KODU, STOK_ADI, MIKTAR, MIKTAR_BIRIM, BIRIM_FIYAT, FORMAT(GELIS_TARIH, 'dd.MM.yyyy') GELIS_TARIHI, AMBALAJ_BILGI, MALZ_SERISI MALZEME_SERISI, " +
-                                  "MALZ_CINSI MALZEME_CINSI, MALZ_OLCU MALZEME_OLCU, ETIKET_BILGI, ACIKLAMA, KAYIT_TARIH FROM STOK ORDER BY STOK_INCKEY DESC";
-                SqlCommand command = new SqlCommand(query, Program.connection);
+                SqlCommand command = new SqlCommand("dbo.Stok_Listesi", Program.connection);
+                command.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(stokListDTable);
-
-                typeof(DataGridView).InvokeMember(
-                   "DoubleBuffered",
-                   BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetProperty,
-                   null,
-                   stokListGridView,
-                   new object[] { true });
-
-                Styler.gridViewCommonStyle(stokListGridView);
-
                 stokListGridView.DataSource = stokListDTable;
                 stokListGridView.Columns[0].Visible = false;
-
+                stokListGridView.ClearSelection();
             }
             catch (Exception ex)
             {
@@ -68,7 +56,10 @@ namespace smoothsis
 
         }
 
-        public Tuple<int, DataGridViewCellCollection> getSelectedItem() { return selectedItem; }        
+        public Tuple<int, DataGridViewCellCollection> getSelectedItem()
+        {
+            return selectedItem;
+        }        
 
         private void btnStokListesiGetir_Click(object sender, EventArgs e)
         {
@@ -112,7 +103,7 @@ namespace smoothsis
         private void txtAramaMalzemeSerisi_TextChanged(object sender, EventArgs e)
         {
             if (txtAramaMalzemeSerisi.Text.Count() > 1)
-                Search.gridviewArama(txtAramaMalzemeSerisi.Text, stokListGridView, "MALZ_SERISI");
+                Search.gridviewArama(txtAramaMalzemeSerisi.Text, stokListGridView, "MALZEME_SERISI");
             else
                 Search.gridviewArama("", stokListGridView);
         }
@@ -120,14 +111,14 @@ namespace smoothsis
         private void txtAramaMalzemeCinsi_TextChanged(object sender, EventArgs e)
         {
             if (txtAramaMalzemeCinsi.Text.Count() > 1)
-                Search.gridviewArama(txtAramaMalzemeCinsi.Text, stokListGridView, "MALZ_CINSI");
+                Search.gridviewArama(txtAramaMalzemeCinsi.Text, stokListGridView, "MALZEME_CINSI");
             else
                 Search.gridviewArama("", stokListGridView);
         }
 
         private void txtMalzemeEtiketBilgi_TextChanged(object sender, EventArgs e)
         {
-            Search.gridviewArama(dtAramaGelisTarih.Value.ToString("dd.MM.yyyy"), stokListGridView, "GELIS_TARIHI");
+            Search.gridviewArama(txtMalzemeEtiketBilgi.Text, stokListGridView, "ETIKET_BILGI");
         }
 
         private void stokListGridView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
@@ -136,6 +127,7 @@ namespace smoothsis
             {
                 if ((e.Button == MouseButtons.Right) && (stokListGridView.SelectedRows.Count == 1))
                 {
+                    selectedItem = new Tuple<int, DataGridViewCellCollection>(e.RowIndex, stokListGridView.Rows[e.RowIndex].Cells);
                     stokListGridView.ClearSelection();
                     this.stokListGridView.Rows[e.RowIndex].Selected = true;
                 }
@@ -146,19 +138,19 @@ namespace smoothsis
         {
             StokListele_Load(sender, e);
         }
-
-        private void stokTransferToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            StokTransfer stokTransfer = new StokTransfer(this);
-            stokTransfer.ShowDialog();
-        }
         
-        private void selectRowWithRightMenu(object sender, DataGridViewCellContextMenuStripNeededEventArgs e)
+        private void stokDuzenleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (e.RowIndex != -1)
-            {
-                selectedItem = new Tuple<int, DataGridViewCellCollection>(e.RowIndex, stokListGridView.Rows[e.RowIndex].Cells);
-            }
+            selectedItem = new Tuple<int, DataGridViewCellCollection>(stokListGridView.SelectedRows[0].Index, stokListGridView.SelectedRows[0].Cells);
+            StokDuzenle stokDuzenle = new StokDuzenle(this);
+            stokDuzenle.ShowDialog();
+        }
+
+        private void stokDepoListesiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            selectedItem = new Tuple<int, DataGridViewCellCollection>(stokListGridView.SelectedRows[0].Index, stokListGridView.SelectedRows[0].Cells);
+            StokDepoListesi stokDepoListesi = new StokDepoListesi(this);
+            stokDepoListesi.ShowDialog();
         }
     }
 }

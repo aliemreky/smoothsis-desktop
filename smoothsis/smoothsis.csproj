@@ -135,6 +135,12 @@
     <Compile Include="SiparisOlustur.Designer.cs">
       <DependentUpon>SiparisOlustur.cs</DependentUpon>
     </Compile>
+    <Compile Include="StokDepoListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StokDepoListesi.Designer.cs">
+      <DependentUpon>StokDepoListesi.cs</DependentUpon>
+    </Compile>
     <Compile Include="StokDuzenle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SiparisOlustur.resx">
       <DependentUpon>SiparisOlustur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StokDepoListesi.resx">
+      <DependentUpon>StokDepoListesi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StokDuzenle.resx">
       <DependentUpon>StokDuzenle.cs</DependentUpon>

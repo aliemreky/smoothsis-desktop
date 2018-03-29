@@ -31,15 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DepoOlustur));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.kaydetBttn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.temizleBttn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.iptalButton = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtDepoLokasyon = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtDepoAdi = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -72,6 +72,13 @@
             this.kaydetBttn.ToolTipText = "Değişiklikleri Kaydet";
             this.kaydetBttn.Click += new System.EventHandler(this.kaydetBttn_Click);
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.AutoSize = false;
+            this.toolStripSeparator2.Margin = new System.Windows.Forms.Padding(1);
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(12, 28);
+            // 
             // temizleBttn
             // 
             this.temizleBttn.Image = global::smoothsis.Properties.Resources.ic_delete_forever_black_24dp_1x;
@@ -80,6 +87,13 @@
             this.temizleBttn.Size = new System.Drawing.Size(71, 27);
             this.temizleBttn.Text = "Temizle";
             this.temizleBttn.Click += new System.EventHandler(this.temizleBttn_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.AutoSize = false;
+            this.toolStripSeparator5.Margin = new System.Windows.Forms.Padding(1);
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(12, 28);
             // 
             // iptalButton
             // 
@@ -90,22 +104,13 @@
             this.iptalButton.Text = "Çıkış";
             this.iptalButton.Click += new System.EventHandler(this.iptalButton_Click);
             // 
-            // iptalButton
-            // 
-            this.iptalButton.Image = global::smoothsis.Properties.Resources.ic_highlight_off_black_24dp_1x;
-            this.iptalButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.iptalButton.Name = "iptalButton";
-            this.iptalButton.Size = new System.Drawing.Size(57, 20);
-            this.iptalButton.Text = "Çıkış";
-            this.iptalButton.Click += new System.EventHandler(this.iptalButton_Click);
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtDepoLokasyon);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.txtDepoAdi);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(12, 39);
+            this.groupBox1.Location = new System.Drawing.Point(13, 38);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(434, 143);
             this.groupBox1.TabIndex = 12;
@@ -115,25 +120,16 @@
             // txtDepoLokasyon
             // 
             this.txtDepoLokasyon.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtDepoLokasyon.Location = new System.Drawing.Point(93, 62);
+            this.txtDepoLokasyon.Location = new System.Drawing.Point(106, 59);
             this.txtDepoLokasyon.Multiline = true;
             this.txtDepoLokasyon.Name = "txtDepoLokasyon";
             this.txtDepoLokasyon.Size = new System.Drawing.Size(314, 66);
             this.txtDepoLokasyon.TabIndex = 13;
             // 
-            // txtDepoLokasyon
-            // 
-            this.txtDepoLokasyon.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtDepoLokasyon.Location = new System.Drawing.Point(152, 89);
-            this.txtDepoLokasyon.Multiline = true;
-            this.txtDepoLokasyon.Name = "txtDepoLokasyon";
-            this.txtDepoLokasyon.Size = new System.Drawing.Size(339, 66);
-            this.txtDepoLokasyon.TabIndex = 13;
-            // 
             // label10
             // 
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label10.Location = new System.Drawing.Point(6, 73);
+            this.label10.Location = new System.Drawing.Point(5, 68);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(95, 43);
             this.label10.TabIndex = 0;
@@ -142,7 +138,7 @@
             // 
             // txtDepoAdi
             // 
-            this.txtDepoAdi.Location = new System.Drawing.Point(93, 28);
+            this.txtDepoAdi.Location = new System.Drawing.Point(106, 28);
             this.txtDepoAdi.Multiline = true;
             this.txtDepoAdi.Name = "txtDepoAdi";
             this.txtDepoAdi.Size = new System.Drawing.Size(314, 25);
@@ -152,25 +148,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(17, 31);
+            this.label2.Location = new System.Drawing.Point(22, 31);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 15);
             this.label2.TabIndex = 0;
             this.label2.Text = "DEPO ADI *";
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.AutoSize = false;
-            this.toolStripSeparator5.Margin = new System.Windows.Forms.Padding(1);
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(12, 28);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.AutoSize = false;
-            this.toolStripSeparator2.Margin = new System.Windows.Forms.Padding(1);
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(12, 28);
             // 
             // DepoOlustur
             // 

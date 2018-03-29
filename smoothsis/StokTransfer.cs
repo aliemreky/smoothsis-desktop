@@ -15,21 +15,21 @@ namespace smoothsis
     public partial class StokTransfer : Form
     {
         private SqlCommand sqlCmd;
-        private StokListesi stokListesi;
+        private StokDepoListesi stokDepoListesi;
 
-        public StokTransfer(StokListesi stokListesi)
+        public StokTransfer(StokDepoListesi stokDepoListesi)
         {
             InitializeComponent();
-            this.stokListesi = stokListesi;
-            DataGridViewCellCollection cellsOfSelectedItem = stokListesi.getSelectedItem().Item2;
+            this.stokDepoListesi = stokDepoListesi;
+            DataGridViewCellCollection cellsOfSelectedItem = stokDepoListesi.getStokDepoSelectedItem().Item2;
 
             string getDepoInckeySQL = "SELECT DEPO_INCKEY, MIKTAR FROM STOK_DEPO WHERE STOK_DEPO_INCKEY = @stok_depo_inckey";
             sqlCmd = new SqlCommand(getDepoInckeySQL, Program.connection);
             sqlCmd.Parameters.Add("@stok_depo_inckey", SqlDbType.Int).Value = Convert.ToInt32(cellsOfSelectedItem[0].Value.ToString());
             SqlDataReader reader = sqlCmd.ExecuteReader();
             reader.Read();
-            int myDepoInckey = Convert.ToInt32(reader["DEPO_INCKEY"]);
-            int miktar = Convert.ToInt32(reader["MIKTAR"]);
+            int myDepoInckey = Convert.ToInt32(reader["DEPO_INCKEY"].ToString());
+            decimal miktar = Convert.ToDecimal(reader["MIKTAR"].ToString());
 
             cbStokDepo.DataSource = getDepoOtherMYDepoDataTableForBindToComboBox(myDepoInckey);
             cbStokDepo.DisplayMember = "DEPO_ADI";
@@ -61,6 +61,11 @@ namespace smoothsis
         private void iptalButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void StokTransfer_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

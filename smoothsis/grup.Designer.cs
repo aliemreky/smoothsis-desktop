@@ -36,12 +36,12 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.kaydetBttn = new System.Windows.Forms.ToolStripButton();
-            this.temizleBttn = new System.Windows.Forms.ToolStripButton();
-            this.silBttn = new System.Windows.Forms.ToolStripButton();
-            this.iptalButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.temizleBttn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.silBttn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.iptalButton = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.grupList)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -134,6 +134,13 @@
             this.kaydetBttn.ToolTipText = "Değişiklikleri Kaydet";
             this.kaydetBttn.Click += new System.EventHandler(this.grupKaydet);
             // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.AutoSize = false;
+            this.toolStripSeparator3.Margin = new System.Windows.Forms.Padding(1);
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(12, 28);
+            // 
             // temizleBttn
             // 
             this.temizleBttn.Image = ((System.Drawing.Image)(resources.GetObject("temizleBttn.Image")));
@@ -142,6 +149,13 @@
             this.temizleBttn.Size = new System.Drawing.Size(71, 27);
             this.temizleBttn.Text = "Temizle";
             this.temizleBttn.Click += new System.EventHandler(this.textTemizle);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.AutoSize = false;
+            this.toolStripSeparator1.Margin = new System.Windows.Forms.Padding(1);
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(12, 28);
             // 
             // silBttn
             // 
@@ -152,6 +166,13 @@
             this.silBttn.Text = "Sil";
             this.silBttn.Click += new System.EventHandler(this.grupSil);
             // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.AutoSize = false;
+            this.toolStripSeparator5.Margin = new System.Windows.Forms.Padding(1);
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(12, 28);
+            // 
             // iptalButton
             // 
             this.iptalButton.Image = global::smoothsis.Properties.Resources.ic_highlight_off_black_24dp_1x;
@@ -160,27 +181,6 @@
             this.iptalButton.Size = new System.Drawing.Size(54, 27);
             this.iptalButton.Text = "Çıkış";
             this.iptalButton.Click += new System.EventHandler(this.iptalButton_Click);
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.AutoSize = false;
-            this.toolStripSeparator5.Margin = new System.Windows.Forms.Padding(1);
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(12, 28);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.AutoSize = false;
-            this.toolStripSeparator1.Margin = new System.Windows.Forms.Padding(1);
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(12, 28);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.AutoSize = false;
-            this.toolStripSeparator3.Margin = new System.Windows.Forms.Padding(1);
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(12, 28);
             // 
             // Grup
             // 
