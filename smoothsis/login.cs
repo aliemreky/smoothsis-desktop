@@ -37,8 +37,10 @@ namespace smoothsis
             }
             else
             {
+                bool loginControl = false;
+
                 try
-                {
+                {                    
                     sqlCmd = new SqlCommand("SELECT * FROM KULLANICI WHERE ADSOYAD=@adsoyad AND SIFRE=@sifre", Program.connection);
                     sqlCmd.Parameters.AddWithValue("@adsoyad", txtKullaniciAdi.Text.ToLower());
                     sqlCmd.Parameters.AddWithValue("@sifre", txtSifre.Text.ToLower());
@@ -52,10 +54,8 @@ namespace smoothsis
                         Program.kullanici = new Tuple<int, string>(Convert.ToInt32(sqlRead["KUL_INCKEY"].ToString()), sqlRead["ADSOYAD"].ToString().ToLower());
                         sqlRead.Close();
 
-
                         Program.sirket = sirketCombo.SelectedItem.ToString();
-                        Main anasayfa = new Main();
-                        anasayfa.ShowDialog();
+                        loginControl = true;
 
                     }
                     else
@@ -67,6 +67,11 @@ namespace smoothsis
                     Notification.messageBoxError(ex.Message);
                 }
 
+                if (loginControl)
+                {
+                    Main anasayfa = new Main();
+                    anasayfa.ShowDialog();
+                }
 
             }
         }

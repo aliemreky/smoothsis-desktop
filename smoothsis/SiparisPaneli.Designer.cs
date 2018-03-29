@@ -1,6 +1,6 @@
 ﻿namespace smoothsis
 {
-    partial class SiparisOlustur
+    partial class SiparisPaneli
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SiparisOlustur));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SiparisPaneli));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.siparisTipi = new System.Windows.Forms.ComboBox();
             this.btnCariListeAc = new System.Windows.Forms.Button();
@@ -51,11 +51,13 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabSiparis = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtAciklama = new System.Windows.Forms.TextBox();
+            this.txtAciklama2 = new System.Windows.Forms.TextBox();
+            this.txtAciklama1 = new System.Windows.Forms.TextBox();
             this.txtProjeAdi = new System.Windows.Forms.TextBox();
             this.txtOzelKod = new System.Windows.Forms.TextBox();
             this.txtProjeKodu = new System.Windows.Forms.TextBox();
@@ -84,8 +86,6 @@
             this.txtStokMiktar = new System.Windows.Forms.TextBox();
             this.txtStokAdi = new System.Windows.Forms.TextBox();
             this.txtStokKodu = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -219,13 +219,13 @@
             // 
             // txtSiparisKodu
             // 
-            this.txtSiparisKodu.Enabled = false;
             this.txtSiparisKodu.Location = new System.Drawing.Point(9, 54);
             this.txtSiparisKodu.Name = "txtSiparisKodu";
-            this.txtSiparisKodu.ReadOnly = true;
             this.txtSiparisKodu.Size = new System.Drawing.Size(195, 23);
             this.txtSiparisKodu.TabIndex = 0;
             this.txtSiparisKodu.TabStop = false;
+            this.txtSiparisKodu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSiparisKodu_KeyPress);
+            this.txtSiparisKodu.Leave += new System.EventHandler(this.txtSiparisKodu_Leave);
             // 
             // label1
             // 
@@ -323,8 +323,8 @@
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.textBox1);
-            this.groupBox3.Controls.Add(this.txtAciklama);
+            this.groupBox3.Controls.Add(this.txtAciklama2);
+            this.groupBox3.Controls.Add(this.txtAciklama1);
             this.groupBox3.Controls.Add(this.txtProjeAdi);
             this.groupBox3.Controls.Add(this.txtOzelKod);
             this.groupBox3.Controls.Add(this.txtProjeKodu);
@@ -334,6 +334,15 @@
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "EK BİLGİLER";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(34, 211);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(56, 15);
+            this.label19.TabIndex = 0;
+            this.label19.Text = "Açıklama";
             // 
             // label8
             // 
@@ -371,13 +380,21 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Proje Kodu";
             // 
-            // txtAciklama
+            // txtAciklama2
             // 
-            this.txtAciklama.Location = new System.Drawing.Point(110, 154);
-            this.txtAciklama.Multiline = true;
-            this.txtAciklama.Name = "txtAciklama";
-            this.txtAciklama.Size = new System.Drawing.Size(533, 34);
-            this.txtAciklama.TabIndex = 10;
+            this.txtAciklama2.Location = new System.Drawing.Point(110, 208);
+            this.txtAciklama2.Multiline = true;
+            this.txtAciklama2.Name = "txtAciklama2";
+            this.txtAciklama2.Size = new System.Drawing.Size(533, 34);
+            this.txtAciklama2.TabIndex = 10;
+            // 
+            // txtAciklama1
+            // 
+            this.txtAciklama1.Location = new System.Drawing.Point(110, 154);
+            this.txtAciklama1.Multiline = true;
+            this.txtAciklama1.Name = "txtAciklama1";
+            this.txtAciklama1.Size = new System.Drawing.Size(533, 34);
+            this.txtAciklama1.TabIndex = 10;
             // 
             // txtProjeAdi
             // 
@@ -505,6 +522,7 @@
             this.siparisListesiGridView.TabIndex = 2;
             this.siparisListesiGridView.TabStop = false;
             this.siparisListesiGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.siparisListesiGridView_CellDoubleClick);
+            this.siparisListesiGridView.CurrentCellChanged += new System.EventHandler(this.siparisListesiGridView_CurrentCellChanged);
             // 
             // groupBox4
             // 
@@ -556,6 +574,7 @@
             this.txtToplamFiyat.Size = new System.Drawing.Size(135, 23);
             this.txtToplamFiyat.TabIndex = 0;
             this.txtToplamFiyat.TabStop = false;
+            this.txtToplamFiyat.TextChanged += new System.EventHandler(this.txtToplamFiyat_TextChanged);
             // 
             // btnStokListesi
             // 
@@ -661,24 +680,7 @@
             this.txtStokKodu.TabIndex = 1;
             this.txtStokKodu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStokKodu_KeyPress);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(110, 208);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(533, 34);
-            this.textBox1.TabIndex = 10;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(34, 211);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(56, 15);
-            this.label19.TabIndex = 0;
-            this.label19.Text = "Açıklama";
-            // 
-            // SiparisOlustur
+            // SiparisPaneli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -688,9 +690,9 @@
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "SiparisOlustur";
+            this.Name = "SiparisPaneli";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SMOOTHSIS [ SİPARİŞ OLUŞTUR ]";
+            this.Text = "SMOOTHSIS [ SİPARİŞ PANELİ ]";
             this.Load += new System.EventHandler(this.SiparisOlustur_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -740,7 +742,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtAciklama;
+        private System.Windows.Forms.TextBox txtAciklama1;
         private System.Windows.Forms.TextBox txtProjeAdi;
         private System.Windows.Forms.TextBox txtProjeKodu;
         private System.Windows.Forms.Label label9;
@@ -770,6 +772,6 @@
         private System.Windows.Forms.Button btnListeyeEkle;
         private System.Windows.Forms.TextBox txtStokBirim;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtAciklama2;
     }
 }

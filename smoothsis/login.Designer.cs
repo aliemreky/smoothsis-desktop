@@ -127,6 +127,7 @@
             this.txtSifre.Size = new System.Drawing.Size(300, 23);
             this.txtSifre.TabIndex = 3;
             this.txtSifre.UseSystemPasswordChar = true;
+            this.txtSifre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSifre_KeyDown);
             // 
             // Login
             // 
