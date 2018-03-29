@@ -129,11 +129,11 @@
     <Compile Include="SiparisListesi.Designer.cs">
       <DependentUpon>SiparisListesi.cs</DependentUpon>
     </Compile>
-    <Compile Include="SiparisOlustur.cs">
+    <Compile Include="SiparisPaneli.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SiparisOlustur.Designer.cs">
-      <DependentUpon>SiparisOlustur.cs</DependentUpon>
+    <Compile Include="SiparisPaneli.Designer.cs">
+      <DependentUpon>SiparisPaneli.cs</DependentUpon>
     </Compile>
     <Compile Include="StokDuzenle.cs">
       <SubType>Form</SubType>
@@ -205,8 +205,8 @@
     <EmbeddedResource Include="SiparisListesi.resx">
       <DependentUpon>SiparisListesi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SiparisOlustur.resx">
-      <DependentUpon>SiparisOlustur.cs</DependentUpon>
+    <EmbeddedResource Include="SiparisPaneli.resx">
+      <DependentUpon>SiparisPaneli.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StokDuzenle.resx">
       <DependentUpon>StokDuzenle.cs</DependentUpon>

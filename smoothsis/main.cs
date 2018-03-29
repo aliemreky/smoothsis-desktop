@@ -67,8 +67,8 @@ namespace smoothsis
 
         private void siparişEkleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SiparisOlustur siparisEkle = new SiparisOlustur();
-            siparisEkle.ShowDialog();
+            SiparisPaneli siparisPaneli = new SiparisPaneli();
+            siparisPaneli.ShowDialog();
         }
 
         private void stokOlusturPage(object sender, EventArgs e)
@@ -101,14 +101,14 @@ namespace smoothsis
             siparisListesi.ShowDialog();
         }
 
-        private void Main_FormClosing(object sender, FormClosingEventArgs e)
+        private void cikisToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Kapatmak İstediğinize Emin misiniz ?", "UYARI", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
                 Application.Exit();
         }
 
-        private void cikisToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Main_FormClosed(object sender, FormClosedEventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Kapatmak İstediğinize Emin misiniz ?", "UYARI", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
