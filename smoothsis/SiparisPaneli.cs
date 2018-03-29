@@ -40,11 +40,7 @@ namespace smoothsis
             siparisTipi.SelectedIndex = 0;
             txtSiparisTarih.Text = DateTime.Now.ToString("dd.MM.yyyy");
             txtSiparisTeslimTarih.Text = DateTime.Now.ToString("dd.MM.yyyy");
-
-
-
             siparisListesiGridView.ColumnCount = 7;
-
             siparisListesiGridView.Columns[0].Name = "STOK_INCKEY";
             siparisListesiGridView.Columns[1].Name = "STOK_KODU";
             siparisListesiGridView.Columns[2].Name = "STOK_ADI";
