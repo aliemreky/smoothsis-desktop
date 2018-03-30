@@ -31,15 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DepoDuzenle));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.kaydetBttn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.sillBttn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.iptalButton = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtDepoLokasyon = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtDepoAdi = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -58,7 +58,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(10, 1, 2, 1);
-            this.toolStrip1.Size = new System.Drawing.Size(454, 32);
+            this.toolStrip1.Size = new System.Drawing.Size(461, 32);
             this.toolStrip1.TabIndex = 15;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -72,6 +72,13 @@
             this.kaydetBttn.ToolTipText = "Değişiklikleri Kaydet";
             this.kaydetBttn.Click += new System.EventHandler(this.kaydetBttn_Click);
             // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.AutoSize = false;
+            this.toolStripSeparator3.Margin = new System.Windows.Forms.Padding(1);
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(12, 28);
+            // 
             // sillBttn
             // 
             this.sillBttn.Image = global::smoothsis.Properties.Resources.ic_delete_forever_black_24dp_1x;
@@ -80,6 +87,13 @@
             this.sillBttn.Size = new System.Drawing.Size(41, 27);
             this.sillBttn.Text = "Sil";
             this.sillBttn.Click += new System.EventHandler(this.sillBttn_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.AutoSize = false;
+            this.toolStripSeparator5.Margin = new System.Windows.Forms.Padding(1);
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(12, 28);
             // 
             // iptalButton
             // 
@@ -96,9 +110,9 @@
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.txtDepoAdi);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(12, 35);
+            this.groupBox1.Location = new System.Drawing.Point(13, 38);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(429, 143);
+            this.groupBox1.Size = new System.Drawing.Size(434, 143);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DEPO BİLGİLERİ";
@@ -106,16 +120,16 @@
             // txtDepoLokasyon
             // 
             this.txtDepoLokasyon.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtDepoLokasyon.Location = new System.Drawing.Point(94, 64);
+            this.txtDepoLokasyon.Location = new System.Drawing.Point(106, 59);
             this.txtDepoLokasyon.Multiline = true;
             this.txtDepoLokasyon.Name = "txtDepoLokasyon";
-            this.txtDepoLokasyon.Size = new System.Drawing.Size(309, 66);
+            this.txtDepoLokasyon.Size = new System.Drawing.Size(314, 66);
             this.txtDepoLokasyon.TabIndex = 13;
             // 
             // label10
             // 
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label10.Location = new System.Drawing.Point(5, 75);
+            this.label10.Location = new System.Drawing.Point(5, 68);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(95, 43);
             this.label10.TabIndex = 0;
@@ -124,42 +138,28 @@
             // 
             // txtDepoAdi
             // 
-            this.txtDepoAdi.Location = new System.Drawing.Point(94, 28);
+            this.txtDepoAdi.Location = new System.Drawing.Point(106, 28);
             this.txtDepoAdi.Multiline = true;
             this.txtDepoAdi.Name = "txtDepoAdi";
-            this.txtDepoAdi.Size = new System.Drawing.Size(309, 25);
+            this.txtDepoAdi.Size = new System.Drawing.Size(314, 25);
             this.txtDepoAdi.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(18, 32);
+            this.label2.Location = new System.Drawing.Point(22, 31);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 15);
             this.label2.TabIndex = 0;
             this.label2.Text = "DEPO ADI *";
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.AutoSize = false;
-            this.toolStripSeparator5.Margin = new System.Windows.Forms.Padding(1);
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(12, 28);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.AutoSize = false;
-            this.toolStripSeparator3.Margin = new System.Windows.Forms.Padding(1);
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(12, 28);
             // 
             // DepoDuzenle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(454, 193);
+            this.ClientSize = new System.Drawing.Size(461, 193);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -183,12 +183,12 @@
         private System.Windows.Forms.ToolStripButton kaydetBttn;
         private System.Windows.Forms.ToolStripButton sillBttn;
         private System.Windows.Forms.ToolStripButton iptalButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtDepoLokasyon;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtDepoAdi;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
     }
 }

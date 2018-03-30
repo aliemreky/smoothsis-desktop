@@ -26,6 +26,9 @@ namespace smoothsis
         {
             cbMiktarBirim.DataSource = Enum.GetNames(typeof(smoothsis.Services.Enums.MalzemeMiktarBirim));
             cbMiktarBirim.SelectedIndex = 0;
+            stokDepoCB.DataSource = getDepoDataTableForBindToComboBox();
+            stokDepoCB.DisplayMember = "DEPO_ADI";
+            stokDepoCB.ValueMember = "DEPO_INCKEY";
         }
 
         public static DataTable getDepoDataTableForBindToComboBox()
@@ -42,9 +45,6 @@ namespace smoothsis
         {
             if (String.IsNullOrEmpty(txtStokKod.Text))
             {
-
-
-
                 try
                 {
                     sqlCmd = new SqlCommand("SELECT TOP 1 STOK_INCKEY FROM STOK ORDER BY STOK_INCKEY DESC", Program.connection);
@@ -52,7 +52,7 @@ namespace smoothsis
                     if (sqlReader.HasRows)
                     {
                         sqlReader.Read();
-                        txtStokKod.Text = "S0000000" + sqlReader["STOK_INCKEY"].ToString();
+                        txtStokKod.Text = "S" + (int.Parse(sqlReader["STOK_INCKEY"].ToString()) + 1).ToString("D8");
                         sqlReader.Close();
                     }
                     else
@@ -89,9 +89,9 @@ namespace smoothsis
                     sqlCmd = new SqlCommand(stokKayitSQL, Program.connection);
                     sqlCmd.Parameters.Add("@stok_kod", SqlDbType.VarChar).Value = txtStokKod.Text;
                     sqlCmd.Parameters.Add("@stok_adi", SqlDbType.VarChar).Value = txtStokAdi.Text;
-                    sqlCmd.Parameters.Add("@miktar", SqlDbType.Float).Value = float.Parse(txtMiktar.Text);
+                    sqlCmd.Parameters.Add("@miktar", SqlDbType.Decimal).Value = decimal.Parse(txtMiktar.Text);
                     sqlCmd.Parameters.Add("@miktar_birim", SqlDbType.VarChar).Value = cbMiktarBirim.SelectedValue;
-                    sqlCmd.Parameters.Add("@birim_fiyat", SqlDbType.Float).Value = float.Parse(txtBirimFiyat.Text);
+                    sqlCmd.Parameters.Add("@birim_fiyat", SqlDbType.Decimal).Value = decimal.Parse(txtBirimFiyat.Text);
                     sqlCmd.Parameters.Add("@gelis_tarih", SqlDbType.Date).Value = dtpGelisTarih.Value;
                     sqlCmd.Parameters.Add("@ambalaj_bilgi", SqlDbType.VarChar).Value = txtAmbalajBilgi.Text;
                     sqlCmd.Parameters.Add("@malz_serisi", SqlDbType.VarChar).Value = txtMalzSerisi.Text;
@@ -105,18 +105,18 @@ namespace smoothsis
 
                     if (stokInckey > 0)
                     {
-                        /*
+                        
                         int depoInckey = (int)stokDepoCB.SelectedValue;
                         string stokDepoKayitSQL = "INSERT INTO STOK_DEPO(STOK_INCKEY, DEPO_INCKEY, MIKTAR) VALUES(@stok_inckey, @depo_inckey, @miktar)";
                         sqlCmd = new SqlCommand(stokDepoKayitSQL, Program.connection);
                         sqlCmd.Parameters.Add("@stok_inckey", SqlDbType.Int).Value = stokInckey;
                         sqlCmd.Parameters.Add("@depo_inckey", SqlDbType.Int).Value = depoInckey;
-                        sqlCmd.Parameters.Add("@miktar", SqlDbType.Float).Value = float.Parse(txtMiktar.Text);
+                        sqlCmd.Parameters.Add("@miktar", SqlDbType.Decimal).Value = decimal.Parse(txtMiktar.Text);
 
                         if (sqlCmd.ExecuteNonQuery() > 0 ) {
                             Notification.messageBox("STOK BAŞARIYLA OLUŞTURULDU");
                         }
-                        */
+                        
                     }
                 }
                 catch (Exception ex)

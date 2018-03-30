@@ -31,14 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StokDuzenle));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.kaydetBttn = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.sillBttn = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.silBttn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.iptalButton = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.txtBirimFiyat = new System.Windows.Forms.TextBox();
-            this.txtStokKod = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.cbMiktarBirim = new System.Windows.Forms.ComboBox();
@@ -47,8 +45,6 @@
             this.txtAciklama = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtMiktar = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtAmbalajBilgi = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -62,13 +58,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtStokAdi = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.kaydetBttn = new System.Windows.Forms.ToolStripButton();
-            this.sillBttn = new System.Windows.Forms.ToolStripButton();
-            this.iptalButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -76,19 +65,19 @@
             // toolStrip1
             // 
             this.toolStrip1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.toolStrip1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.kaydetBttn,
-            this.toolStripSeparator1,
-            this.sillBttn,
-            this.toolStripSeparator2,
+            this.toolStripSeparator4,
+            this.silBttn,
+            this.toolStripSeparator3,
             this.iptalButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(923, 25);
-            this.toolStrip1.TabIndex = 19;
+            this.toolStrip1.Padding = new System.Windows.Forms.Padding(10, 1, 2, 1);
+            this.toolStrip1.Size = new System.Drawing.Size(885, 32);
+            this.toolStrip1.TabIndex = 17;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // kaydetBttn
@@ -96,44 +85,46 @@
             this.kaydetBttn.Image = global::smoothsis.Properties.Resources.ic_save_black_24dp_1x;
             this.kaydetBttn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.kaydetBttn.Name = "kaydetBttn";
-            this.kaydetBttn.Size = new System.Drawing.Size(70, 20);
+            this.kaydetBttn.Size = new System.Drawing.Size(68, 27);
             this.kaydetBttn.Text = "Kaydet";
             this.kaydetBttn.ToolTipText = "Değişiklikleri Kaydet";
             this.kaydetBttn.Click += new System.EventHandler(this.kaydetBttn_Click);
             // 
-            // toolStripSeparator1
+            // toolStripSeparator4
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 23);
+            this.toolStripSeparator4.AutoSize = false;
+            this.toolStripSeparator4.Margin = new System.Windows.Forms.Padding(1);
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(12, 28);
             // 
-            // sillBttn
+            // silBttn
             // 
-            this.sillBttn.Image = global::smoothsis.Properties.Resources.ic_delete_forever_black_24dp_1x;
-            this.sillBttn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.sillBttn.Name = "sillBttn";
-            this.sillBttn.Size = new System.Drawing.Size(43, 20);
-            this.sillBttn.Text = "Sil";
-            this.sillBttn.Click += new System.EventHandler(this.sillBttn_Click);
+            this.silBttn.Image = global::smoothsis.Properties.Resources.ic_delete_forever_black_24dp_1x;
+            this.silBttn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.silBttn.Name = "silBttn";
+            this.silBttn.Size = new System.Drawing.Size(41, 27);
+            this.silBttn.Text = "Sil";
+            this.silBttn.Click += new System.EventHandler(this.silBttn_Click);
             // 
-            // toolStripSeparator2
+            // toolStripSeparator3
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 23);
+            this.toolStripSeparator3.AutoSize = false;
+            this.toolStripSeparator3.Margin = new System.Windows.Forms.Padding(1);
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(12, 28);
             // 
             // iptalButton
             // 
             this.iptalButton.Image = global::smoothsis.Properties.Resources.ic_highlight_off_black_24dp_1x;
             this.iptalButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.iptalButton.Name = "iptalButton";
-            this.iptalButton.Size = new System.Drawing.Size(57, 20);
+            this.iptalButton.Size = new System.Drawing.Size(54, 27);
             this.iptalButton.Text = "Çıkış";
             this.iptalButton.Click += new System.EventHandler(this.iptalButton_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.txtBirimFiyat);
-            this.groupBox1.Controls.Add(this.txtStokKod);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.cbMiktarBirim);
@@ -142,8 +133,6 @@
             this.groupBox1.Controls.Add(this.txtAciklama);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.txtMiktar);
-            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtAmbalajBilgi);
             this.groupBox1.Controls.Add(this.label6);
@@ -157,49 +146,26 @@
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtStokAdi);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 28);
+            this.groupBox1.Location = new System.Drawing.Point(10, 34);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(899, 289);
+            this.groupBox1.Size = new System.Drawing.Size(865, 275);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label12.Location = new System.Drawing.Point(33, 27);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(81, 15);
-            this.label12.TabIndex = 21;
-            this.label12.Text = "STOK KODU *";
             // 
             // txtBirimFiyat
             // 
             this.txtBirimFiyat.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtBirimFiyat.Location = new System.Drawing.Point(131, 136);
-            this.txtBirimFiyat.Multiline = true;
+            this.txtBirimFiyat.Location = new System.Drawing.Point(116, 124);
             this.txtBirimFiyat.Name = "txtBirimFiyat";
-            this.txtBirimFiyat.Size = new System.Drawing.Size(306, 25);
-            this.txtBirimFiyat.TabIndex = 4;
+            this.txtBirimFiyat.Size = new System.Drawing.Size(306, 23);
+            this.txtBirimFiyat.TabIndex = 16;
             this.txtBirimFiyat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numericValidate);
-            // 
-            // txtStokKod
-            // 
-            this.txtStokKod.Enabled = false;
-            this.txtStokKod.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtStokKod.Location = new System.Drawing.Point(131, 22);
-            this.txtStokKod.Multiline = true;
-            this.txtStokKod.Name = "txtStokKod";
-            this.txtStokKod.ReadOnly = true;
-            this.txtStokKod.Size = new System.Drawing.Size(306, 25);
-            this.txtStokKod.TabIndex = 0;
-            this.txtStokKod.TabStop = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(33, 139);
+            this.label2.Location = new System.Drawing.Point(28, 127);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 15);
             this.label2.TabIndex = 15;
@@ -220,44 +186,44 @@
             this.cbMiktarBirim.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMiktarBirim.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cbMiktarBirim.FormattingEnabled = true;
-            this.cbMiktarBirim.Location = new System.Drawing.Point(348, 102);
+            this.cbMiktarBirim.Location = new System.Drawing.Point(116, 88);
             this.cbMiktarBirim.Name = "cbMiktarBirim";
-            this.cbMiktarBirim.Size = new System.Drawing.Size(89, 23);
-            this.cbMiktarBirim.TabIndex = 3;
+            this.cbMiktarBirim.Size = new System.Drawing.Size(306, 23);
+            this.cbMiktarBirim.TabIndex = 14;
             // 
             // txtStokKod
             // 
             this.txtStokKod.Enabled = false;
             this.txtStokKod.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtStokKod.Location = new System.Drawing.Point(131, 18);
+            this.txtStokKod.Location = new System.Drawing.Point(117, 19);
             this.txtStokKod.Name = "txtStokKod";
             this.txtStokKod.ReadOnly = true;
-            this.txtStokKod.Size = new System.Drawing.Size(306, 23);
+            this.txtStokKod.Size = new System.Drawing.Size(305, 23);
             this.txtStokKod.TabIndex = 15;
             // 
             // dtpGelisTarih
             // 
             this.dtpGelisTarih.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dtpGelisTarih.Location = new System.Drawing.Point(131, 171);
+            this.dtpGelisTarih.Location = new System.Drawing.Point(116, 161);
             this.dtpGelisTarih.MinimumSize = new System.Drawing.Size(4, 23);
             this.dtpGelisTarih.Name = "dtpGelisTarih";
             this.dtpGelisTarih.Size = new System.Drawing.Size(306, 23);
-            this.dtpGelisTarih.TabIndex = 5;
+            this.dtpGelisTarih.TabIndex = 13;
             // 
             // txtAciklama
             // 
             this.txtAciklama.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtAciklama.Location = new System.Drawing.Point(579, 186);
+            this.txtAciklama.Location = new System.Drawing.Point(549, 133);
             this.txtAciklama.Multiline = true;
             this.txtAciklama.Name = "txtAciklama";
-            this.txtAciklama.Size = new System.Drawing.Size(306, 83);
-            this.txtAciklama.TabIndex = 11;
+            this.txtAciklama.Size = new System.Drawing.Size(306, 121);
+            this.txtAciklama.TabIndex = 12;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(495, 189);
+            this.label3.Location = new System.Drawing.Point(472, 136);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 15);
             this.label3.TabIndex = 0;
@@ -267,37 +233,17 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(294, 105);
+            this.label5.Location = new System.Drawing.Point(58, 91);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 15);
             this.label5.TabIndex = 0;
             this.label5.Text = "BİRİM *";
             // 
-            // txtMiktar
-            // 
-            this.txtMiktar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtMiktar.Location = new System.Drawing.Point(131, 101);
-            this.txtMiktar.Multiline = true;
-            this.txtMiktar.Name = "txtMiktar";
-            this.txtMiktar.Size = new System.Drawing.Size(153, 24);
-            this.txtMiktar.TabIndex = 2;
-            this.txtMiktar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numericValidate);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(56, 105);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 15);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "MİKTAR *";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label7.Location = new System.Drawing.Point(21, 209);
+            this.label7.Location = new System.Drawing.Point(14, 200);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(93, 15);
             this.label7.TabIndex = 0;
@@ -307,17 +253,16 @@
             // 
             this.txtAmbalajBilgi.AcceptsReturn = true;
             this.txtAmbalajBilgi.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtAmbalajBilgi.Location = new System.Drawing.Point(131, 206);
-            this.txtAmbalajBilgi.Multiline = true;
+            this.txtAmbalajBilgi.Location = new System.Drawing.Point(116, 197);
             this.txtAmbalajBilgi.Name = "txtAmbalajBilgi";
-            this.txtAmbalajBilgi.Size = new System.Drawing.Size(306, 25);
-            this.txtAmbalajBilgi.TabIndex = 6;
+            this.txtAmbalajBilgi.Size = new System.Drawing.Size(306, 23);
+            this.txtAmbalajBilgi.TabIndex = 7;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.Location = new System.Drawing.Point(35, 177);
+            this.label6.Location = new System.Drawing.Point(28, 167);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 15);
             this.label6.TabIndex = 0;
@@ -326,26 +271,24 @@
             // txtEtiketBilgi
             // 
             this.txtEtiketBilgi.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtEtiketBilgi.Location = new System.Drawing.Point(579, 147);
-            this.txtEtiketBilgi.Multiline = true;
+            this.txtEtiketBilgi.Location = new System.Drawing.Point(549, 95);
             this.txtEtiketBilgi.Name = "txtEtiketBilgi";
-            this.txtEtiketBilgi.Size = new System.Drawing.Size(306, 25);
-            this.txtEtiketBilgi.TabIndex = 10;
+            this.txtEtiketBilgi.Size = new System.Drawing.Size(306, 23);
+            this.txtEtiketBilgi.TabIndex = 11;
             // 
             // txtMalzOlcu
             // 
             this.txtMalzOlcu.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtMalzOlcu.Location = new System.Drawing.Point(579, 104);
-            this.txtMalzOlcu.Multiline = true;
+            this.txtMalzOlcu.Location = new System.Drawing.Point(549, 57);
             this.txtMalzOlcu.Name = "txtMalzOlcu";
-            this.txtMalzOlcu.Size = new System.Drawing.Size(306, 25);
-            this.txtMalzOlcu.TabIndex = 9;
+            this.txtMalzOlcu.Size = new System.Drawing.Size(306, 23);
+            this.txtMalzOlcu.TabIndex = 10;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label11.Location = new System.Drawing.Point(485, 151);
+            this.label11.Location = new System.Drawing.Point(462, 95);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(76, 15);
             this.label11.TabIndex = 0;
@@ -354,26 +297,24 @@
             // txtMalzSerisi
             // 
             this.txtMalzSerisi.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtMalzSerisi.Location = new System.Drawing.Point(131, 244);
-            this.txtMalzSerisi.Multiline = true;
+            this.txtMalzSerisi.Location = new System.Drawing.Point(116, 231);
             this.txtMalzSerisi.Name = "txtMalzSerisi";
-            this.txtMalzSerisi.Size = new System.Drawing.Size(306, 25);
-            this.txtMalzSerisi.TabIndex = 7;
+            this.txtMalzSerisi.Size = new System.Drawing.Size(306, 23);
+            this.txtMalzSerisi.TabIndex = 8;
             // 
             // txtMalzCinsi
             // 
             this.txtMalzCinsi.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtMalzCinsi.Location = new System.Drawing.Point(579, 62);
-            this.txtMalzCinsi.Multiline = true;
+            this.txtMalzCinsi.Location = new System.Drawing.Point(549, 19);
             this.txtMalzCinsi.Name = "txtMalzCinsi";
-            this.txtMalzCinsi.Size = new System.Drawing.Size(306, 25);
-            this.txtMalzCinsi.TabIndex = 8;
+            this.txtMalzCinsi.Size = new System.Drawing.Size(306, 23);
+            this.txtMalzCinsi.TabIndex = 9;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label15.Location = new System.Drawing.Point(14, 249);
+            this.label15.Location = new System.Drawing.Point(6, 234);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(100, 15);
             this.label15.TabIndex = 0;
@@ -383,7 +324,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label9.Location = new System.Drawing.Point(466, 110);
+            this.label9.Location = new System.Drawing.Point(443, 60);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(95, 15);
             this.label9.TabIndex = 0;
@@ -393,7 +334,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label8.Location = new System.Drawing.Point(466, 65);
+            this.label8.Location = new System.Drawing.Point(443, 22);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(96, 15);
             this.label8.TabIndex = 0;
@@ -402,88 +343,28 @@
             // txtStokAdi
             // 
             this.txtStokAdi.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtStokAdi.Location = new System.Drawing.Point(131, 60);
-            this.txtStokAdi.Multiline = true;
+            this.txtStokAdi.Location = new System.Drawing.Point(116, 53);
             this.txtStokAdi.Name = "txtStokAdi";
-            this.txtStokAdi.Size = new System.Drawing.Size(306, 25);
+            this.txtStokAdi.Size = new System.Drawing.Size(306, 23);
             this.txtStokAdi.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(45, 66);
+            this.label1.Location = new System.Drawing.Point(38, 56);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "STOK ADI *";
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.kaydetBttn,
-            this.toolStripSeparator4,
-            this.sillBttn,
-            this.toolStripSeparator3,
-            this.iptalButton});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Padding = new System.Windows.Forms.Padding(10, 1, 2, 1);
-            this.toolStrip1.Size = new System.Drawing.Size(923, 32);
-            this.toolStrip1.TabIndex = 19;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // kaydetBttn
-            // 
-            this.kaydetBttn.Image = global::smoothsis.Properties.Resources.ic_save_black_24dp_1x;
-            this.kaydetBttn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.kaydetBttn.Name = "kaydetBttn";
-            this.kaydetBttn.Size = new System.Drawing.Size(68, 27);
-            this.kaydetBttn.Text = "Kaydet";
-            this.kaydetBttn.ToolTipText = "Değişiklikleri Kaydet";
-            this.kaydetBttn.Click += new System.EventHandler(this.kaydetBttn_Click);
-            // 
-            // sillBttn
-            // 
-            this.sillBttn.Image = global::smoothsis.Properties.Resources.ic_delete_forever_black_24dp_1x;
-            this.sillBttn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.sillBttn.Name = "sillBttn";
-            this.sillBttn.Size = new System.Drawing.Size(41, 27);
-            this.sillBttn.Text = "Sil";
-            this.sillBttn.Click += new System.EventHandler(this.sillBttn_Click);
-            // 
-            // iptalButton
-            // 
-            this.iptalButton.Image = global::smoothsis.Properties.Resources.ic_highlight_off_black_24dp_1x;
-            this.iptalButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.iptalButton.Name = "iptalButton";
-            this.iptalButton.Size = new System.Drawing.Size(54, 27);
-            this.iptalButton.Text = "Çıkış";
-            this.iptalButton.Click += new System.EventHandler(this.iptalButton_Click);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.AutoSize = false;
-            this.toolStripSeparator3.Margin = new System.Windows.Forms.Padding(1);
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(12, 28);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.AutoSize = false;
-            this.toolStripSeparator4.Margin = new System.Windows.Forms.Padding(1);
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(12, 28);
             // 
             // StokDuzenle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(923, 327);
+            this.ClientSize = new System.Drawing.Size(885, 320);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -501,15 +382,14 @@
         }
 
         #endregion
+
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton kaydetBttn;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton sillBttn;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripButton silBttn;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton iptalButton;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox stokDepoCB;
         private System.Windows.Forms.TextBox txtBirimFiyat;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label12;
@@ -519,8 +399,6 @@
         private System.Windows.Forms.TextBox txtAciklama;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtMiktar;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtAmbalajBilgi;
         private System.Windows.Forms.Label label6;
@@ -534,7 +412,5 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtStokAdi;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
     }
 }
