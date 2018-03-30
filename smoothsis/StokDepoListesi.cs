@@ -35,14 +35,14 @@ namespace smoothsis
             listStokDepo();
         }
 
-        private void listStokDepo()
+        public void listStokDepo()
         {
             try
             {
                 DataTable stokListDepoTable = new DataTable();
                 string query = "SELECT STOK_DEPO.STOK_DEPO_INCKEY, DEPO.DEPO_ADI, DEPO.DEPO_LOKASYON, STOK_DEPO.MIKTAR FROM STOK_DEPO " +
                     "INNER JOIN DEPO ON STOK_DEPO.DEPO_INCKEY = DEPO.DEPO_INCKEY " +
-                    "WHERE STOK_INCKEY = @stok_inckey";
+                    "WHERE STOK_INCKEY = @stok_inckey ORDER BY STOK_DEPO_INCKEY DESC";
                 sqlCmd = new SqlCommand(query, Program.connection);
                 sqlCmd.Parameters.Add("@stok_inckey", SqlDbType.VarChar).Value = cellsOfSelectedItem[0].Value.ToString();
                 SqlDataAdapter adapter = new SqlDataAdapter(sqlCmd);
