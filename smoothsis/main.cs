@@ -114,5 +114,11 @@ namespace smoothsis
             if (dialogResult == DialogResult.Yes)
                 Application.Exit();
         }
+
+        private void stokTransferleriToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StokTransferListesi stokTransferListesi = new StokTransferListesi();
+            stokTransferListesi.ShowDialog();
+        }
     }
 }

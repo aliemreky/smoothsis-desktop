@@ -116,11 +116,12 @@
             // 
             // stokDepoCB
             // 
+            this.stokDepoCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.stokDepoCB.FormattingEnabled = true;
             this.stokDepoCB.Location = new System.Drawing.Point(114, 90);
             this.stokDepoCB.Name = "stokDepoCB";
             this.stokDepoCB.Size = new System.Drawing.Size(306, 23);
-            this.stokDepoCB.TabIndex = 18;
+            this.stokDepoCB.TabIndex = 2;
             // 
             // label10
             // 
@@ -138,7 +139,7 @@
             this.txtBirimFiyat.Location = new System.Drawing.Point(114, 161);
             this.txtBirimFiyat.Name = "txtBirimFiyat";
             this.txtBirimFiyat.Size = new System.Drawing.Size(306, 23);
-            this.txtBirimFiyat.TabIndex = 16;
+            this.txtBirimFiyat.TabIndex = 5;
             this.txtBirimFiyat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numericValidate);
             // 
             // label2
@@ -169,7 +170,7 @@
             this.cbMiktarBirim.Location = new System.Drawing.Point(331, 125);
             this.cbMiktarBirim.Name = "cbMiktarBirim";
             this.cbMiktarBirim.Size = new System.Drawing.Size(89, 23);
-            this.cbMiktarBirim.TabIndex = 14;
+            this.cbMiktarBirim.TabIndex = 4;
             // 
             // txtStokKod
             // 
@@ -179,7 +180,7 @@
             this.txtStokKod.Name = "txtStokKod";
             this.txtStokKod.ReadOnly = true;
             this.txtStokKod.Size = new System.Drawing.Size(206, 23);
-            this.txtStokKod.TabIndex = 15;
+            this.txtStokKod.TabIndex = 0;
             // 
             // dtpGelisTarih
             // 
@@ -188,7 +189,7 @@
             this.dtpGelisTarih.MinimumSize = new System.Drawing.Size(4, 23);
             this.dtpGelisTarih.Name = "dtpGelisTarih";
             this.dtpGelisTarih.Size = new System.Drawing.Size(306, 23);
-            this.dtpGelisTarih.TabIndex = 13;
+            this.dtpGelisTarih.TabIndex = 6;
             // 
             // txtAciklama
             // 
@@ -225,7 +226,7 @@
             this.txtMiktar.Location = new System.Drawing.Point(114, 125);
             this.txtMiktar.Name = "txtMiktar";
             this.txtMiktar.Size = new System.Drawing.Size(153, 23);
-            this.txtMiktar.TabIndex = 4;
+            this.txtMiktar.TabIndex = 3;
             this.txtMiktar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numericValidate);
             // 
             // label4
