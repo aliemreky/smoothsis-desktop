@@ -124,7 +124,7 @@
             this.txtDepoLokasyon.Multiline = true;
             this.txtDepoLokasyon.Name = "txtDepoLokasyon";
             this.txtDepoLokasyon.Size = new System.Drawing.Size(314, 66);
-            this.txtDepoLokasyon.TabIndex = 13;
+            this.txtDepoLokasyon.TabIndex = 1;
             // 
             // label10
             // 
@@ -142,7 +142,7 @@
             this.txtDepoAdi.Multiline = true;
             this.txtDepoAdi.Name = "txtDepoAdi";
             this.txtDepoAdi.Size = new System.Drawing.Size(314, 25);
-            this.txtDepoAdi.TabIndex = 2;
+            this.txtDepoAdi.TabIndex = 0;
             // 
             // label2
             // 

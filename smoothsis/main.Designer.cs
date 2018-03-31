@@ -64,6 +64,7 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.labelKullanici = new System.Windows.Forms.ToolStripLabel();
+            this.stokTransferleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -208,14 +209,14 @@
             // siparişEkleToolStripMenuItem
             // 
             this.siparişEkleToolStripMenuItem.Name = "siparişEkleToolStripMenuItem";
-            this.siparişEkleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.siparişEkleToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.siparişEkleToolStripMenuItem.Text = "Sipariş Paneli";
             this.siparişEkleToolStripMenuItem.Click += new System.EventHandler(this.siparişEkleToolStripMenuItem_Click);
             // 
             // siparişListesiToolStripMenuItem
             // 
             this.siparişListesiToolStripMenuItem.Name = "siparişListesiToolStripMenuItem";
-            this.siparişListesiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.siparişListesiToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.siparişListesiToolStripMenuItem.Text = "Sipariş Listesi";
             this.siparişListesiToolStripMenuItem.Click += new System.EventHandler(this.siparişListesiToolStripMenuItem_Click);
             // 
@@ -230,7 +231,8 @@
             // 
             this.toolStripDropDownButton3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.stokOluşturToolStripMenuItem,
-            this.stokListeleDüzenleToolStripMenuItem});
+            this.stokListeleDüzenleToolStripMenuItem,
+            this.stokTransferleriToolStripMenuItem});
             this.toolStripDropDownButton3.Image = global::smoothsis.Properties.Resources.ic_dns_black_24dp_1x;
             this.toolStripDropDownButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton3.Name = "toolStripDropDownButton3";
@@ -240,14 +242,14 @@
             // stokOluşturToolStripMenuItem
             // 
             this.stokOluşturToolStripMenuItem.Name = "stokOluşturToolStripMenuItem";
-            this.stokOluşturToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.stokOluşturToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.stokOluşturToolStripMenuItem.Text = "Stok Oluştur";
             this.stokOluşturToolStripMenuItem.Click += new System.EventHandler(this.stokOlusturPage);
             // 
             // stokListeleDüzenleToolStripMenuItem
             // 
             this.stokListeleDüzenleToolStripMenuItem.Name = "stokListeleDüzenleToolStripMenuItem";
-            this.stokListeleDüzenleToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.stokListeleDüzenleToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.stokListeleDüzenleToolStripMenuItem.Text = "Stok Listele";
             this.stokListeleDüzenleToolStripMenuItem.Click += new System.EventHandler(this.stokListeleDuzenlePage);
             // 
@@ -359,6 +361,13 @@
             this.labelKullanici.Size = new System.Drawing.Size(51, 22);
             this.labelKullanici.Text = "kullanici";
             // 
+            // stokTransferleriToolStripMenuItem
+            // 
+            this.stokTransferleriToolStripMenuItem.Name = "stokTransferleriToolStripMenuItem";
+            this.stokTransferleriToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.stokTransferleriToolStripMenuItem.Text = "Stok Transferleri";
+            this.stokTransferleriToolStripMenuItem.Click += new System.EventHandler(this.stokTransferleriToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -423,5 +432,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+        private System.Windows.Forms.ToolStripMenuItem stokTransferleriToolStripMenuItem;
     }
 }

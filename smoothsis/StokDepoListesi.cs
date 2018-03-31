@@ -40,7 +40,7 @@ namespace smoothsis
             try
             {
                 DataTable stokListDepoTable = new DataTable();
-                string query = "SELECT STOK_DEPO.STOK_DEPO_INCKEY, DEPO.DEPO_ADI, DEPO.DEPO_LOKASYON, STOK_DEPO.MIKTAR FROM STOK_DEPO " +
+                string query = "SELECT STOK_DEPO.STOK_DEPO_INCKEY, DEPO.DEPO_ADI, DEPO.DEPO_LOKASYON, STOK_DEPO.MIKTAR, STOK_DEPO.DEPO_INCKEY FROM STOK_DEPO " +
                     "INNER JOIN DEPO ON STOK_DEPO.DEPO_INCKEY = DEPO.DEPO_INCKEY " +
                     "WHERE STOK_INCKEY = @stok_inckey ORDER BY STOK_DEPO_INCKEY DESC";
                 sqlCmd = new SqlCommand(query, Program.connection);
@@ -49,6 +49,7 @@ namespace smoothsis
                 adapter.Fill(stokListDepoTable);
                 stokDepoListGridView.DataSource = stokListDepoTable;
                 stokDepoListGridView.Columns[0].Visible = false;
+                stokDepoListGridView.Columns[4].Visible = false;
                 stokDepoListGridView.ClearSelection();
             }
             catch (Exception ex)

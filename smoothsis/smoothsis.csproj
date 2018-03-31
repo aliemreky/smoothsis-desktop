@@ -85,6 +85,12 @@
     <Compile Include="DepoOlustur.Designer.cs">
       <DependentUpon>DepoOlustur.cs</DependentUpon>
     </Compile>
+    <Compile Include="DepoStokListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DepoStokListesi.Designer.cs">
+      <DependentUpon>DepoStokListesi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Grup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +171,12 @@
     <Compile Include="StokTransfer.Designer.cs">
       <DependentUpon>StokTransfer.cs</DependentUpon>
     </Compile>
+    <Compile Include="StokTransferListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StokTransferListesi.Designer.cs">
+      <DependentUpon>StokTransferListesi.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CariDuzenle.resx">
       <DependentUpon>CariDuzenle.cs</DependentUpon>
     </EmbeddedResource>
@@ -182,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DepoOlustur.resx">
       <DependentUpon>DepoOlustur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DepoStokListesi.resx">
+      <DependentUpon>DepoStokListesi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grup.resx">
       <DependentUpon>Grup.cs</DependentUpon>
@@ -228,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StokTransfer.resx">
       <DependentUpon>StokTransfer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StokTransferListesi.resx">
+      <DependentUpon>StokTransferListesi.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
