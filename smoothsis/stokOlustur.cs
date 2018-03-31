@@ -81,15 +81,14 @@ namespace smoothsis
                 try
                 {
                     string stokKayitSQL = "INSERT INTO " +
-                        "STOK(STOK_KOD, STOK_ADI, MIKTAR, MIKTAR_BIRIM, BIRIM_FIYAT, GELIS_TARIH, AMBALAJ_BILGI," +
+                        "STOK(STOK_KOD, STOK_ADI, MIKTAR_BIRIM, BIRIM_FIYAT, GELIS_TARIH, AMBALAJ_BILGI," +
                         " MALZ_SERISI, MALZ_CINSI, MALZ_OLCU, ETIKET_BILGI, ACIKLAMA, KAYIT_YAPAN_KUL) " +
-                        "OUTPUT INSERTED.STOK_INCKEY VALUES (@stok_kod, @stok_adi, @miktar, @miktar_birim, @birim_fiyat," +
+                        "OUTPUT INSERTED.STOK_INCKEY VALUES (@stok_kod, @stok_adi, @miktar_birim, @birim_fiyat," +
                         " @gelis_tarih, @ambalaj_bilgi, @malz_serisi, @malz_cinsi, @malz_olcu, @etiket_bilgi, " +
                         "@aciklama, @kayit_yapan_kul)";
                     sqlCmd = new SqlCommand(stokKayitSQL, Program.connection);
                     sqlCmd.Parameters.Add("@stok_kod", SqlDbType.VarChar).Value = txtStokKod.Text;
                     sqlCmd.Parameters.Add("@stok_adi", SqlDbType.VarChar).Value = txtStokAdi.Text;
-                    sqlCmd.Parameters.Add("@miktar", SqlDbType.Decimal).Value = decimal.Parse(txtMiktar.Text);
                     sqlCmd.Parameters.Add("@miktar_birim", SqlDbType.VarChar).Value = cbMiktarBirim.SelectedValue;
                     sqlCmd.Parameters.Add("@birim_fiyat", SqlDbType.Decimal).Value = decimal.Parse(txtBirimFiyat.Text);
                     sqlCmd.Parameters.Add("@gelis_tarih", SqlDbType.Date).Value = dtpGelisTarih.Value;
@@ -105,7 +104,6 @@ namespace smoothsis
 
                     if (stokInckey > 0)
                     {
-                        
                         int depoInckey = (int)stokDepoCB.SelectedValue;
                         string stokDepoKayitSQL = "INSERT INTO STOK_DEPO(STOK_INCKEY, DEPO_INCKEY, MIKTAR) VALUES(@stok_inckey, @depo_inckey, @miktar)";
                         sqlCmd = new SqlCommand(stokDepoKayitSQL, Program.connection);
@@ -116,7 +114,6 @@ namespace smoothsis
                         if (sqlCmd.ExecuteNonQuery() > 0 ) {
                             Notification.messageBox("STOK BAŞARIYLA OLUŞTURULDU");
                         }
-                        
                     }
                 }
                 catch (Exception ex)
@@ -138,7 +135,7 @@ namespace smoothsis
         
         private void numericValidate(object sender, KeyPressEventArgs e)
         {
-            TextValidate.forceForNumeric(sender, e);
+            TextValidate.forceForDecimal(sender, e);
         }
     }
 }

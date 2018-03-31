@@ -125,12 +125,16 @@ namespace smoothsis
         {
             if (e.RowIndex != -1 && e.ColumnIndex != -1)
             {
+                contextMenuStrip1.Enabled = true;
                 if ((e.Button == MouseButtons.Right) && (stokListGridView.SelectedRows.Count == 1))
                 {
                     selectedItem = new Tuple<int, DataGridViewCellCollection>(e.RowIndex, stokListGridView.Rows[e.RowIndex].Cells);
                     stokListGridView.ClearSelection();
                     this.stokListGridView.Rows[e.RowIndex].Selected = true;
                 }
+            } else
+            {
+                contextMenuStrip1.Enabled = false;
             }
         }
 

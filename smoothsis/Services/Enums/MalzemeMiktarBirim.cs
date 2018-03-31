@@ -9,6 +9,6 @@ namespace smoothsis.Services.Enums
     public enum MalzemeMiktarBirim
     {
         Adet = 0,
-        MetreKare = 1
+        M2 = 1
     }
 }

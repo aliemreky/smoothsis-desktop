@@ -34,6 +34,7 @@
             this.stokListGridView = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.stokDuzenleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stokDepoListesiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnStokListesiGetir = new System.Windows.Forms.Button();
             this.dtAramaGelisTarih = new System.Windows.Forms.DateTimePicker();
@@ -48,7 +49,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtAramaStokKodu = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.stokDepoListesiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stokListGridView)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -91,7 +91,7 @@
             this.stokDuzenleToolStripMenuItem,
             this.stokDepoListesiToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(164, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(164, 48);
             // 
             // stokDuzenleToolStripMenuItem
             // 
@@ -99,6 +99,13 @@
             this.stokDuzenleToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.stokDuzenleToolStripMenuItem.Text = "Duzenle";
             this.stokDuzenleToolStripMenuItem.Click += new System.EventHandler(this.stokDuzenleToolStripMenuItem_Click);
+            // 
+            // stokDepoListesiToolStripMenuItem
+            // 
+            this.stokDepoListesiToolStripMenuItem.Name = "stokDepoListesiToolStripMenuItem";
+            this.stokDepoListesiToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.stokDepoListesiToolStripMenuItem.Text = "Stok Depo Listesi";
+            this.stokDepoListesiToolStripMenuItem.Click += new System.EventHandler(this.stokDepoListesiToolStripMenuItem_Click);
             // 
             // groupBox2
             // 
@@ -238,13 +245,6 @@
             this.label1.Size = new System.Drawing.Size(73, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "STOK KODU";
-            // 
-            // stokDepoListesiToolStripMenuItem
-            // 
-            this.stokDepoListesiToolStripMenuItem.Name = "stokDepoListesiToolStripMenuItem";
-            this.stokDepoListesiToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
-            this.stokDepoListesiToolStripMenuItem.Text = "Stok Depo Listesi";
-            this.stokDepoListesiToolStripMenuItem.Click += new System.EventHandler(this.stokDepoListesiToolStripMenuItem_Click);
             // 
             // StokListesi
             // 

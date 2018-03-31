@@ -19,6 +19,14 @@ namespace smoothsis.Services
             }
         }
 
+        public static void forceForDecimal(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != Convert.ToChar(Keys.Back)) && (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
+        }
+
         public static void forceForNumericWithSpace(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) &&

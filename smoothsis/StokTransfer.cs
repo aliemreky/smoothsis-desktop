@@ -16,6 +16,7 @@ namespace smoothsis
     {
         private SqlCommand sqlCmd;
         private StokDepoListesi stokDepoListesi;
+        private DepoStokListesi depoStokListesi = null;
         DataGridViewCellCollection cellsOfSelectedItem;
         private int stokInckey;
         private string stokAdi;
@@ -25,6 +26,13 @@ namespace smoothsis
             InitializeComponent();
             this.stokDepoListesi = stokDepoListesi;
             
+        }
+
+        public StokTransfer(DepoStokListesi depoStokListesi)
+        {
+            InitializeComponent();
+            this.depoStokListesi = depoStokListesi;
+
         }
 
         public static DataTable getDepoOtherMYDepoDataTableForBindToComboBox(int myDepoInckey)
@@ -41,50 +49,77 @@ namespace smoothsis
         private void kaydetBttn_Click(object sender, EventArgs e)
         {
             int sourceStokDepoInckey = Convert.ToInt32(cellsOfSelectedItem[0].Value.ToString());
+            int sourceDepoInckey = Convert.ToInt32(cellsOfSelectedItem[4].Value.ToString());
             decimal transferMiktar = Convert.ToDecimal(txtMiktar.Text);
             int transferDepoInckey = Convert.ToInt32(cbStokDepo.SelectedValue);
+            int addedStokDepoInckey = 0;
             decimal remainMiktar = Convert.ToDecimal(cellsOfSelectedItem[3].Value.ToString()) - transferMiktar;
-            if (remainMiktar >= 0) {
-                if (remainMiktar != 0)
+            try
+            {
+                if (remainMiktar >= 0)
                 {
-                    string transferQuery = "INSERT INTO STOK_DEPO(STOK_INCKEY, DEPO_INCKEY, MIKTAR) VALUES(@stok_inckey, @depo_inckey, @miktar)";
-                    sqlCmd = new SqlCommand(transferQuery, Program.connection);
-                    sqlCmd.Parameters.Add("@stok_inckey", SqlDbType.Int).Value = stokInckey;
-                    sqlCmd.Parameters.Add("@depo_inckey", SqlDbType.Int).Value = transferDepoInckey;
-                    sqlCmd.Parameters.Add("@miktar", SqlDbType.Decimal).Value = transferMiktar;
+                    if (remainMiktar != 0)
+                    {
+                        string transferQuery = "INSERT INTO STOK_DEPO(STOK_INCKEY, DEPO_INCKEY, MIKTAR) OUTPUT INSERTED.STOK_DEPO_INCKEY VALUES(@stok_inckey, @depo_inckey, @miktar)";
+                        sqlCmd = new SqlCommand(transferQuery, Program.connection);
+                        sqlCmd.Parameters.Add("@stok_inckey", SqlDbType.Int).Value = stokInckey;
+                        sqlCmd.Parameters.Add("@depo_inckey", SqlDbType.Int).Value = transferDepoInckey;
+                        sqlCmd.Parameters.Add("@miktar", SqlDbType.Decimal).Value = transferMiktar;
+                        addedStokDepoInckey = (int)sqlCmd.ExecuteScalar();
+                        if (addedStokDepoInckey > 0)
+                        {
+                            string updateQuery = "UPDATE STOK_DEPO SET MIKTAR = @miktar WHERE STOK_DEPO_INCKEY = @stok_depo_inckey";
+                            sqlCmd = new SqlCommand(updateQuery, Program.connection);
+                            sqlCmd.Parameters.Add("@miktar", SqlDbType.Decimal).Value = remainMiktar;
+                            sqlCmd.Parameters.Add("@stok_depo_inckey", SqlDbType.Int).Value = sourceStokDepoInckey;
+
+                        }
+                    }
+                    else
+                    {
+                        string updateJustQuery = "UPDATE STOK_DEPO SET MIKTAR = @miktar WHERE STOK_DEPO_INCKEY = @stok_depo_inckey";
+                        sqlCmd = new SqlCommand(updateJustQuery, Program.connection);
+                        sqlCmd.Parameters.Add("@miktar", SqlDbType.Decimal).Value = transferMiktar;
+                        sqlCmd.Parameters.Add("@stok_depo_inckey", SqlDbType.Int).Value = sourceStokDepoInckey;
+                        addedStokDepoInckey = sourceStokDepoInckey;
+                    }
+
                     if (sqlCmd.ExecuteNonQuery() > 0)
                     {
-                        string updateQuery = "UPDATE STOK_DEPO SET MIKTAR = @miktar WHERE STOK_DEPO_INCKEY = @stok_depo_inckey";
-                        sqlCmd = new SqlCommand(updateQuery, Program.connection);
-                        sqlCmd.Parameters.Add("@miktar", SqlDbType.Decimal).Value = remainMiktar;
-                        sqlCmd.Parameters.Add("@stok_depo_inckey", SqlDbType.Int).Value = sourceStokDepoInckey;
-                        
+                        string stokDepoTransferQuery = "INSERT INTO STOK_DEPO_TRANSFER(FROM_DEPO, TO_DEPO, STOK_DEPO_INCKEY, KAYIT_YAPAN_KUL) " +
+                            "VALUES(@from_depo, @to_depo, @stok_depo_inckey, @kayit_yapan_kul)";
+                        sqlCmd = new SqlCommand(stokDepoTransferQuery, Program.connection);
+                        sqlCmd.Parameters.Add("@from_depo", SqlDbType.Int).Value = sourceDepoInckey;
+                        sqlCmd.Parameters.Add("@to_depo", SqlDbType.Int).Value = transferDepoInckey;
+                        sqlCmd.Parameters.Add("@stok_depo_inckey", SqlDbType.Int).Value = addedStokDepoInckey;
+                        sqlCmd.Parameters.Add("@kayit_yapan_kul", SqlDbType.Int).Value = Program.kullanici.Item1;
+                        if (sqlCmd.ExecuteNonQuery() > 0)
+                        {
+                            panel1.Visible = true;
+                            destStokAdiLabel.Text = stokAdi;
+                            destDepoNameLabel.Text = cbStokDepo.GetItemText(cbStokDepo.SelectedItem);
+                            destDepoLokasyonLabel.Text = cellsOfSelectedItem[2].Value.ToString();
+                            destStokMiktar.Text = transferMiktar.ToString();
+                            sourceStokMiktarLabel.Text = remainMiktar.ToString();
+                            Notification.messageBox("Transfer başarıyla tamamlandı.");
+                            if (depoStokListesi == null)
+                            {
+                                stokDepoListesi.listStokDepo();
+                            } else
+                            {
+                                depoStokListesi.listDepoStok();
+                            }
+                        }
                     }
-                } else
-                {
-                    string updateJustQuery = "UPDATE STOK_DEPO SET MIKTAR = @miktar WHERE STOK_DEPO_INCKEY = @stok_depo_inckey";
-                    sqlCmd = new SqlCommand(updateJustQuery, Program.connection);
-                    sqlCmd.Parameters.Add("@miktar", SqlDbType.Decimal).Value = transferMiktar;
-                    sqlCmd.Parameters.Add("@stok_depo_inckey", SqlDbType.Int).Value = sourceStokDepoInckey;
                 }
-
-                if (sqlCmd.ExecuteNonQuery() > 0)
+                else
                 {
-                    panel1.Visible = true;
-                    destStokAdiLabel.Text = stokAdi;
-                    destDepoNameLabel.Text = cbStokDepo.GetItemText(cbStokDepo.SelectedItem);
-                    destDepoLokasyonLabel.Text = cellsOfSelectedItem[2].Value.ToString();
-                    destStokMiktar.Text = transferMiktar.ToString();
-                    sourceStokMiktarLabel.Text = remainMiktar.ToString();
-                    Notification.messageBox("Transfer başarıyla tamamlandı.");
-                    stokDepoListesi.listStokDepo();
+                    Notification.messageBox("Transfer edilecek miktar, asıl miktardan büyük olmamalı.");
                 }
-            }
-            else
+            } catch(Exception ex)
             {
-                Notification.messageBox("Transfer edilecek miktar, asıl miktardan büyük olmamalı.");
+                Notification.messageBoxError(ex.Message);
             }
-
 }
 
         private void temizleBttn_Click(object sender, EventArgs e)
@@ -99,7 +134,13 @@ namespace smoothsis
 
         private void StokTransfer_Load(object sender, EventArgs e)
         {
-            cellsOfSelectedItem = stokDepoListesi.getStokDepoSelectedItem().Item2;
+            if (depoStokListesi == null)
+            {
+                cellsOfSelectedItem = stokDepoListesi.getStokDepoSelectedItem().Item2;
+            } else
+            {
+                cellsOfSelectedItem = depoStokListesi.getDepoStokSelectedItem().Item2;
+            }
 
             string getDepoInckeySQL = "SELECT DEPO_INCKEY, MIKTAR, STOK_ADI, STOK_DEPO.STOK_INCKEY FROM STOK_DEPO " +
                 "INNER JOIN STOK ON STOK.STOK_INCKEY = STOK_DEPO.STOK_INCKEY " +
