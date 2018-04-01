@@ -72,6 +72,9 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.siparisListesiGridView = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.cbStokDepo = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.btnListeyeEkle = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.txtToplamFiyat = new System.Windows.Forms.TextBox();
@@ -504,9 +507,9 @@
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.siparisListesiGridView);
-            this.groupBox5.Location = new System.Drawing.Point(12, 123);
+            this.groupBox5.Location = new System.Drawing.Point(12, 151);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(915, 329);
+            this.groupBox5.Size = new System.Drawing.Size(909, 301);
             this.groupBox5.TabIndex = 2;
             this.groupBox5.TabStop = false;
             // 
@@ -514,18 +517,22 @@
             // 
             this.siparisListesiGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.siparisListesiGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.siparisListesiGridView.Location = new System.Drawing.Point(6, 18);
+            this.siparisListesiGridView.Location = new System.Drawing.Point(9, 18);
             this.siparisListesiGridView.MultiSelect = false;
             this.siparisListesiGridView.Name = "siparisListesiGridView";
             this.siparisListesiGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.siparisListesiGridView.Size = new System.Drawing.Size(903, 293);
+            this.siparisListesiGridView.Size = new System.Drawing.Size(891, 293);
             this.siparisListesiGridView.TabIndex = 2;
             this.siparisListesiGridView.TabStop = false;
             this.siparisListesiGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.siparisListesiGridView_CellDoubleClick);
             this.siparisListesiGridView.CurrentCellChanged += new System.EventHandler(this.siparisListesiGridView_CurrentCellChanged);
+            this.siparisListesiGridView.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.siparisListesiGridView_KeyPress);
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.label21);
+            this.groupBox4.Controls.Add(this.cbStokDepo);
+            this.groupBox4.Controls.Add(this.label20);
             this.groupBox4.Controls.Add(this.btnListeyeEkle);
             this.groupBox4.Controls.Add(this.label17);
             this.groupBox4.Controls.Add(this.txtToplamFiyat);
@@ -542,15 +549,43 @@
             this.groupBox4.Controls.Add(this.txtStokKodu);
             this.groupBox4.Location = new System.Drawing.Point(12, 6);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(915, 111);
+            this.groupBox4.Size = new System.Drawing.Size(909, 139);
             this.groupBox4.TabIndex = 0;
             this.groupBox4.TabStop = false;
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label21.Location = new System.Drawing.Point(406, 93);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(24, 20);
+            this.label21.TabIndex = 8;
+            this.label21.Text = "TL";
+            // 
+            // cbStokDepo
+            // 
+            this.cbStokDepo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbStokDepo.FormattingEnabled = true;
+            this.cbStokDepo.Location = new System.Drawing.Point(10, 93);
+            this.cbStokDepo.Name = "cbStokDepo";
+            this.cbStokDepo.Size = new System.Drawing.Size(172, 23);
+            this.cbStokDepo.TabIndex = 7;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(7, 75);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(36, 15);
+            this.label20.TabIndex = 6;
+            this.label20.Text = "Depo";
+            // 
             // btnListeyeEkle
             // 
-            this.btnListeyeEkle.Location = new System.Drawing.Point(772, 70);
+            this.btnListeyeEkle.Location = new System.Drawing.Point(447, 88);
             this.btnListeyeEkle.Name = "btnListeyeEkle";
-            this.btnListeyeEkle.Size = new System.Drawing.Size(135, 31);
+            this.btnListeyeEkle.Size = new System.Drawing.Size(124, 31);
             this.btnListeyeEkle.TabIndex = 5;
             this.btnListeyeEkle.Text = "LİSTEYE EKLE";
             this.btnListeyeEkle.UseVisualStyleBackColor = true;
@@ -559,7 +594,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(769, 21);
+            this.label17.Location = new System.Drawing.Point(198, 76);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(94, 15);
             this.label17.TabIndex = 5;
@@ -567,11 +602,12 @@
             // 
             // txtToplamFiyat
             // 
+            this.txtToplamFiyat.BackColor = System.Drawing.Color.Honeydew;
             this.txtToplamFiyat.Enabled = false;
-            this.txtToplamFiyat.Location = new System.Drawing.Point(772, 38);
+            this.txtToplamFiyat.Location = new System.Drawing.Point(201, 93);
             this.txtToplamFiyat.Name = "txtToplamFiyat";
             this.txtToplamFiyat.ReadOnly = true;
-            this.txtToplamFiyat.Size = new System.Drawing.Size(135, 23);
+            this.txtToplamFiyat.Size = new System.Drawing.Size(199, 23);
             this.txtToplamFiyat.TabIndex = 0;
             this.txtToplamFiyat.TabStop = false;
             this.txtToplamFiyat.TextChanged += new System.EventHandler(this.txtToplamFiyat_TextChanged);
@@ -592,7 +628,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(589, 21);
+            this.label18.Location = new System.Drawing.Point(666, 21);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(35, 15);
             this.label18.TabIndex = 2;
@@ -601,7 +637,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(653, 21);
+            this.label16.Location = new System.Drawing.Point(760, 21);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(66, 15);
             this.label16.TabIndex = 2;
@@ -610,7 +646,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(490, 20);
+            this.label15.Location = new System.Drawing.Point(530, 20);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(41, 15);
             this.label15.TabIndex = 2;
@@ -619,7 +655,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(188, 21);
+            this.label14.Location = new System.Drawing.Point(198, 21);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(52, 15);
             this.label14.TabIndex = 2;
@@ -628,20 +664,20 @@
             // txtStokBirim
             // 
             this.txtStokBirim.Enabled = false;
-            this.txtStokBirim.Location = new System.Drawing.Point(592, 38);
+            this.txtStokBirim.Location = new System.Drawing.Point(669, 38);
             this.txtStokBirim.Name = "txtStokBirim";
             this.txtStokBirim.ReadOnly = true;
-            this.txtStokBirim.Size = new System.Drawing.Size(58, 23);
+            this.txtStokBirim.Size = new System.Drawing.Size(82, 23);
             this.txtStokBirim.TabIndex = 0;
             this.txtStokBirim.TabStop = false;
             // 
             // txtBirimFiyat
             // 
             this.txtBirimFiyat.Enabled = false;
-            this.txtBirimFiyat.Location = new System.Drawing.Point(656, 38);
+            this.txtBirimFiyat.Location = new System.Drawing.Point(763, 38);
             this.txtBirimFiyat.Name = "txtBirimFiyat";
             this.txtBirimFiyat.ReadOnly = true;
-            this.txtBirimFiyat.Size = new System.Drawing.Size(110, 23);
+            this.txtBirimFiyat.Size = new System.Drawing.Size(134, 23);
             this.txtBirimFiyat.TabIndex = 0;
             this.txtBirimFiyat.TabStop = false;
             // 
@@ -656,9 +692,9 @@
             // 
             // txtStokMiktar
             // 
-            this.txtStokMiktar.Location = new System.Drawing.Point(493, 38);
+            this.txtStokMiktar.Location = new System.Drawing.Point(533, 38);
             this.txtStokMiktar.Name = "txtStokMiktar";
-            this.txtStokMiktar.Size = new System.Drawing.Size(93, 23);
+            this.txtStokMiktar.Size = new System.Drawing.Size(125, 23);
             this.txtStokMiktar.TabIndex = 4;
             this.txtStokMiktar.TextChanged += new System.EventHandler(this.txtStokMiktar_TextChanged);
             this.txtStokMiktar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStokMiktar_KeyPress);
@@ -666,10 +702,10 @@
             // 
             // txtStokAdi
             // 
-            this.txtStokAdi.Location = new System.Drawing.Point(191, 38);
+            this.txtStokAdi.Location = new System.Drawing.Point(201, 38);
             this.txtStokAdi.Name = "txtStokAdi";
             this.txtStokAdi.ReadOnly = true;
-            this.txtStokAdi.Size = new System.Drawing.Size(296, 23);
+            this.txtStokAdi.Size = new System.Drawing.Size(318, 23);
             this.txtStokAdi.TabIndex = 3;
             // 
             // txtStokKodu
@@ -773,5 +809,8 @@
         private System.Windows.Forms.TextBox txtStokBirim;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txtAciklama2;
+        private System.Windows.Forms.ComboBox cbStokDepo;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
     }
 }
