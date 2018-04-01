@@ -71,19 +71,18 @@
             this.depoListGridView.VirtualMode = true;
             this.depoListGridView.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.showDepo);
             this.depoListGridView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.depoListGridView_CellMouseDown);
-            this.depoListGridView.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.depoListGridView_ColumnHeaderMouseClick);
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.stokListesiToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(133, 26);
             // 
             // stokListesiToolStripMenuItem
             // 
             this.stokListesiToolStripMenuItem.Name = "stokListesiToolStripMenuItem";
-            this.stokListesiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.stokListesiToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.stokListesiToolStripMenuItem.Text = "Stok Listesi";
             this.stokListesiToolStripMenuItem.Click += new System.EventHandler(this.stokListesiToolStripMenuItem_Click);
             // 

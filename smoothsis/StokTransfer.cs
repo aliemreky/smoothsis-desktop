@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using smoothsis.Services;
+using smoothsis.Services.Enums;
 using System.Data.SqlClient;
 
 namespace smoothsis
@@ -134,15 +135,21 @@ namespace smoothsis
 
         private void StokTransfer_Load(object sender, EventArgs e)
         {
+            loadTransferStok();
+        }
+
+        private void loadTransferStok()
+        {
             if (depoStokListesi == null)
             {
                 cellsOfSelectedItem = stokDepoListesi.getStokDepoSelectedItem().Item2;
-            } else
+            }
+            else
             {
                 cellsOfSelectedItem = depoStokListesi.getDepoStokSelectedItem().Item2;
             }
 
-            string getDepoInckeySQL = "SELECT DEPO_INCKEY, MIKTAR, STOK_ADI, STOK_DEPO.STOK_INCKEY FROM STOK_DEPO " +
+            string getDepoInckeySQL = "SELECT DEPO_INCKEY, MIKTAR, STOK.MIKTAR_BIRIM, STOK_ADI, STOK_DEPO.STOK_INCKEY FROM STOK_DEPO " +
                 "INNER JOIN STOK ON STOK.STOK_INCKEY = STOK_DEPO.STOK_INCKEY " +
                 "WHERE STOK_DEPO_INCKEY = @stok_depo_inckey";
             sqlCmd = new SqlCommand(getDepoInckeySQL, Program.connection);
@@ -151,17 +158,19 @@ namespace smoothsis
             reader.Read();
             int myDepoInckey = Convert.ToInt32(reader["DEPO_INCKEY"].ToString());
             decimal miktar = Convert.ToDecimal(reader["MIKTAR"].ToString());
+            string birim = reader["MIKTAR_BIRIM"].ToString();
             cbStokDepo.DataSource = getDepoOtherMYDepoDataTableForBindToComboBox(myDepoInckey);
             cbStokDepo.DisplayMember = "DEPO_ADI";
             cbStokDepo.ValueMember = "DEPO_INCKEY";
             sourceDepoNameLabel.Text = cellsOfSelectedItem[1].Value.ToString();
             sourceDepoLokasyonLabel.Text = cellsOfSelectedItem[2].Value.ToString();
-            sourceStokMiktarLabel.Text = cellsOfSelectedItem[3].Value.ToString();
+            sourceStokMiktarLabel.Text = birim.Equals(MalzemeMiktarBirim.Adet.ToString()) ? Convert.ToInt32(cellsOfSelectedItem[3].Value).ToString() : cellsOfSelectedItem[3].Value.ToString();
+            sourceStokBirimLabel.Text = birim;
+            destStokBirim.Text = birim;
             stokAdi = reader["STOK_ADI"].ToString();
             sourceStokAdiLabel.Text = stokAdi;
             stokInckey = Convert.ToInt32(reader["STOK_INCKEY"].ToString());
             panel1.Visible = false;
-
         }
     }
 }

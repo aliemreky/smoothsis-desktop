@@ -41,6 +41,8 @@
             this.txtStokKod = new System.Windows.Forms.TextBox();
             this.txtStokAdi = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtStokBirim = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stokDepoListGridView)).BeginInit();
@@ -134,20 +136,20 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label12.Location = new System.Drawing.Point(15, 46);
+            this.label12.Location = new System.Drawing.Point(15, 49);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(81, 15);
+            this.label12.Size = new System.Drawing.Size(76, 15);
             this.label12.TabIndex = 14;
-            this.label12.Text = "STOK KODU *";
+            this.label12.Text = "STOK KODU ";
             // 
             // txtStokKod
             // 
             this.txtStokKod.Enabled = false;
             this.txtStokKod.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtStokKod.Location = new System.Drawing.Point(106, 43);
+            this.txtStokKod.Location = new System.Drawing.Point(97, 45);
             this.txtStokKod.Name = "txtStokKod";
             this.txtStokKod.ReadOnly = true;
-            this.txtStokKod.Size = new System.Drawing.Size(305, 23);
+            this.txtStokKod.Size = new System.Drawing.Size(157, 23);
             this.txtStokKod.TabIndex = 15;
             // 
             // txtStokAdi
@@ -155,21 +157,42 @@
             this.txtStokAdi.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.txtStokAdi.Enabled = false;
             this.txtStokAdi.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtStokAdi.Location = new System.Drawing.Point(506, 43);
+            this.txtStokAdi.Location = new System.Drawing.Point(381, 46);
             this.txtStokAdi.Name = "txtStokAdi";
             this.txtStokAdi.ReadOnly = true;
-            this.txtStokAdi.Size = new System.Drawing.Size(306, 23);
+            this.txtStokAdi.Size = new System.Drawing.Size(158, 23);
             this.txtStokAdi.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(428, 46);
+            this.label1.Location = new System.Drawing.Point(314, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 15);
+            this.label1.Size = new System.Drawing.Size(61, 15);
             this.label1.TabIndex = 0;
-            this.label1.Text = "STOK ADI *";
+            this.label1.Text = "STOK ADI";
+            // 
+            // txtStokBirim
+            // 
+            this.txtStokBirim.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.txtStokBirim.Enabled = false;
+            this.txtStokBirim.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtStokBirim.Location = new System.Drawing.Point(655, 46);
+            this.txtStokBirim.Name = "txtStokBirim";
+            this.txtStokBirim.ReadOnly = true;
+            this.txtStokBirim.Size = new System.Drawing.Size(158, 23);
+            this.txtStokBirim.TabIndex = 21;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Location = new System.Drawing.Point(609, 49);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 15);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "BIRIM";
             // 
             // StokDepoListesi
             // 
@@ -177,11 +200,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(825, 359);
+            this.Controls.Add(this.txtStokBirim);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label12);
+            this.Controls.Add(this.txtStokAdi);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtStokKod);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.txtStokAdi);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -213,5 +238,7 @@
         private System.Windows.Forms.DataGridView stokDepoListGridView;
         private System.Windows.Forms.ToolStripButton transferYapBttn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.TextBox txtStokBirim;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -91,13 +91,13 @@
             this.stokDuzenleToolStripMenuItem,
             this.stokDepoListesiToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(164, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(164, 70);
             // 
             // stokDuzenleToolStripMenuItem
             // 
             this.stokDuzenleToolStripMenuItem.Name = "stokDuzenleToolStripMenuItem";
             this.stokDuzenleToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
-            this.stokDuzenleToolStripMenuItem.Text = "Duzenle";
+            this.stokDuzenleToolStripMenuItem.Text = "Düzenle";
             this.stokDuzenleToolStripMenuItem.Click += new System.EventHandler(this.stokDuzenleToolStripMenuItem_Click);
             // 
             // stokDepoListesiToolStripMenuItem

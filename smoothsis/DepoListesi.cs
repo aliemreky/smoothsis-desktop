@@ -101,14 +101,16 @@ namespace smoothsis
         
         private void stokListesiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            selectedItem = new Tuple<int, DataGridViewCellCollection>(depoListGridView.SelectedRows[0].Index, depoListGridView.SelectedRows[0].Cells);
-            DepoStokListesi depoStokListesi = new DepoStokListesi(this);
-            depoStokListesi.ShowDialog();
-        }
-
-        private void depoListGridView_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-           
+            if (depoListGridView.SelectedRows.Count == 1)
+            {
+                selectedItem = new Tuple<int, DataGridViewCellCollection>(depoListGridView.SelectedRows[0].Index, depoListGridView.SelectedRows[0].Cells);
+                DepoStokListesi depoStokListesi = new DepoStokListesi(this);
+                depoStokListesi.ShowDialog();
+            }
+            else
+            {
+                Notification.messageBoxError("BİR SORUN OLUŞTU, KAYIT SEÇİLEMEDİ !");
+            }
         }
 
         private void depoListGridView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)

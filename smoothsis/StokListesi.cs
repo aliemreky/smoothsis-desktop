@@ -145,9 +145,16 @@ namespace smoothsis
         
         private void stokDuzenleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            selectedItem = new Tuple<int, DataGridViewCellCollection>(stokListGridView.SelectedRows[0].Index, stokListGridView.SelectedRows[0].Cells);
-            StokDuzenle stokDuzenle = new StokDuzenle(this);
-            stokDuzenle.ShowDialog();
+            if (stokListGridView.SelectedRows.Count == 1)
+            {
+                selectedItem = new Tuple<int, DataGridViewCellCollection>(stokListGridView.SelectedRows[0].Index, stokListGridView.SelectedRows[0].Cells);
+                StokDuzenle stokDuzenle = new StokDuzenle(this);
+                stokDuzenle.ShowDialog();
+            }
+            else
+            {
+                Notification.messageBoxError("BİR SORUN OLUŞTU, KAYIT SEÇİLEMEDİ !");
+            }
         }
 
         private void stokDepoListesiToolStripMenuItem_Click(object sender, EventArgs e)
