@@ -38,7 +38,7 @@ namespace smoothsis
             try
             {
                 DataTable depoStokListTable = new DataTable();
-                string query = "SELECT STOK_DEPO.STOK_DEPO_INCKEY, DEPO.DEPO_ADI, DEPO.DEPO_LOKASYON, STOK_DEPO.MIKTAR, STOK_DEPO.DEPO_INCKEY, STOK.STOK_KOD, STOK.STOK_ADI FROM STOK_DEPO " +
+                string query = "SELECT STOK_DEPO.STOK_DEPO_INCKEY, DEPO.DEPO_ADI, DEPO.DEPO_LOKASYON, STOK_DEPO.MIKTAR, STOK_DEPO.DEPO_INCKEY, STOK.MIKTAR_BIRIM BIRIM, STOK.STOK_KOD, STOK.STOK_ADI FROM STOK_DEPO " +
                     "INNER JOIN DEPO ON STOK_DEPO.DEPO_INCKEY = DEPO.DEPO_INCKEY " +
                     "INNER JOIN STOK ON STOK_DEPO.STOK_INCKEY = STOK.STOK_INCKEY " +
                     "WHERE STOK_DEPO.DEPO_INCKEY = @depo_inckey ORDER BY STOK_DEPO_INCKEY DESC";
@@ -128,9 +128,16 @@ namespace smoothsis
 
         private void transferYapBttn_Click(object sender, EventArgs e)
         {
-            depoStokSelectedItem = new Tuple<int, DataGridViewCellCollection>(depoStokListGridView.SelectedRows[0].Index, depoStokListGridView.SelectedRows[0].Cells);
-            StokTransfer stokTransfer = new StokTransfer(this);
-            stokTransfer.ShowDialog();
+            if (depoStokListGridView.SelectedRows.Count == 1)
+            {
+                depoStokSelectedItem = new Tuple<int, DataGridViewCellCollection>(depoStokListGridView.SelectedRows[0].Index, depoStokListGridView.SelectedRows[0].Cells);
+                StokTransfer stokTransfer = new StokTransfer(this);
+                stokTransfer.ShowDialog();
+            }
+            else
+            {
+                Notification.messageBoxError("BİR SORUN OLUŞTU, KAYIT SEÇİLEMEDİ !");
+            }
         }
 
         private void searchForStokKod(object sender, EventArgs e)
@@ -156,6 +163,11 @@ namespace smoothsis
                 Search.gridviewArama(txtAramaMiktar.Text, depoStokListGridView, "MIKTAR");
             else
                 Search.gridviewArama("", depoStokListGridView);
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

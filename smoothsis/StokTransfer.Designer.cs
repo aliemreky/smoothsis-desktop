@@ -59,6 +59,10 @@
             this.label10 = new System.Windows.Forms.Label();
             this.destDepoNameLabel = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.sourceStokBirimLabel = new System.Windows.Forms.Label();
+            this.destStokBirim = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -128,7 +132,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtMiktar);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(213, 240);
+            this.groupBox1.Location = new System.Drawing.Point(213, 198);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(308, 143);
             this.groupBox1.TabIndex = 12;
@@ -176,6 +180,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.sourceStokBirimLabel);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label5);
@@ -187,7 +193,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.groupBox2.Location = new System.Drawing.Point(14, 32);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(345, 201);
+            this.groupBox2.Size = new System.Drawing.Size(345, 164);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Kaynak Depo";
@@ -206,7 +212,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(5, 107);
+            this.label3.Location = new System.Drawing.Point(5, 82);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 15);
             this.label3.TabIndex = 18;
@@ -216,7 +222,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(22, 149);
+            this.label5.Location = new System.Drawing.Point(21, 112);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(42, 15);
             this.label5.TabIndex = 17;
@@ -226,7 +232,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.Location = new System.Drawing.Point(7, 67);
+            this.label6.Location = new System.Drawing.Point(6, 55);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(57, 15);
             this.label6.TabIndex = 16;
@@ -246,7 +252,7 @@
             // 
             this.sourceDepoLokasyonLabel.AutoSize = true;
             this.sourceDepoLokasyonLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.sourceDepoLokasyonLabel.Location = new System.Drawing.Point(81, 106);
+            this.sourceDepoLokasyonLabel.Location = new System.Drawing.Point(81, 80);
             this.sourceDepoLokasyonLabel.Name = "sourceDepoLokasyonLabel";
             this.sourceDepoLokasyonLabel.Size = new System.Drawing.Size(48, 20);
             this.sourceDepoLokasyonLabel.TabIndex = 14;
@@ -256,7 +262,7 @@
             // 
             this.sourceStokMiktarLabel.AutoSize = true;
             this.sourceStokMiktarLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.sourceStokMiktarLabel.Location = new System.Drawing.Point(81, 148);
+            this.sourceStokMiktarLabel.Location = new System.Drawing.Point(80, 109);
             this.sourceStokMiktarLabel.Name = "sourceStokMiktarLabel";
             this.sourceStokMiktarLabel.Size = new System.Drawing.Size(48, 20);
             this.sourceStokMiktarLabel.TabIndex = 13;
@@ -266,7 +272,7 @@
             // 
             this.sourceDepoNameLabel.AutoSize = true;
             this.sourceDepoNameLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.sourceDepoNameLabel.Location = new System.Drawing.Point(81, 65);
+            this.sourceDepoNameLabel.Location = new System.Drawing.Point(80, 52);
             this.sourceDepoNameLabel.Name = "sourceDepoNameLabel";
             this.sourceDepoNameLabel.Size = new System.Drawing.Size(48, 20);
             this.sourceDepoNameLabel.TabIndex = 0;
@@ -278,13 +284,15 @@
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.groupBox3.Location = new System.Drawing.Point(373, 32);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(331, 201);
+            this.groupBox3.Size = new System.Drawing.Size(331, 164);
             this.groupBox3.TabIndex = 15;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Hedef Depo";
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.destStokBirim);
+            this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.destDepoLokasyonLabel);
             this.panel1.Controls.Add(this.destStokAdiLabel);
@@ -295,7 +303,7 @@
             this.panel1.Controls.Add(this.label9);
             this.panel1.Location = new System.Drawing.Point(8, 22);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(316, 164);
+            this.panel1.Size = new System.Drawing.Size(316, 133);
             this.panel1.TabIndex = 20;
             // 
             // label7
@@ -312,7 +320,7 @@
             // 
             this.destDepoLokasyonLabel.AutoSize = true;
             this.destDepoLokasyonLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.destDepoLokasyonLabel.Location = new System.Drawing.Point(118, 90);
+            this.destDepoLokasyonLabel.Location = new System.Drawing.Point(118, 57);
             this.destDepoLokasyonLabel.Name = "destDepoLokasyonLabel";
             this.destDepoLokasyonLabel.Size = new System.Drawing.Size(48, 20);
             this.destDepoLokasyonLabel.TabIndex = 1;
@@ -332,7 +340,7 @@
             // 
             this.destStokMiktar.AutoSize = true;
             this.destStokMiktar.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.destStokMiktar.Location = new System.Drawing.Point(118, 128);
+            this.destStokMiktar.Location = new System.Drawing.Point(118, 82);
             this.destStokMiktar.Name = "destStokMiktar";
             this.destStokMiktar.Size = new System.Drawing.Size(48, 20);
             this.destStokMiktar.TabIndex = 2;
@@ -342,7 +350,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label8.Location = new System.Drawing.Point(1, 132);
+            this.label8.Location = new System.Drawing.Point(7, 86);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(94, 15);
             this.label8.TabIndex = 6;
@@ -352,7 +360,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label10.Location = new System.Drawing.Point(44, 50);
+            this.label10.Location = new System.Drawing.Point(44, 35);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(57, 15);
             this.label10.TabIndex = 4;
@@ -362,7 +370,7 @@
             // 
             this.destDepoNameLabel.AutoSize = true;
             this.destDepoNameLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.destDepoNameLabel.Location = new System.Drawing.Point(118, 46);
+            this.destDepoNameLabel.Location = new System.Drawing.Point(118, 31);
             this.destDepoNameLabel.Name = "destDepoNameLabel";
             this.destDepoNameLabel.Size = new System.Drawing.Size(48, 20);
             this.destDepoNameLabel.TabIndex = 0;
@@ -372,18 +380,58 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label9.Location = new System.Drawing.Point(44, 92);
+            this.label9.Location = new System.Drawing.Point(44, 59);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(58, 15);
             this.label9.TabIndex = 5;
             this.label9.Text = "Lokasyon";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label11.Location = new System.Drawing.Point(21, 140);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(36, 15);
+            this.label11.TabIndex = 21;
+            this.label11.Text = "Birim";
+            // 
+            // sourceStokBirimLabel
+            // 
+            this.sourceStokBirimLabel.AutoSize = true;
+            this.sourceStokBirimLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.sourceStokBirimLabel.Location = new System.Drawing.Point(80, 135);
+            this.sourceStokBirimLabel.Name = "sourceStokBirimLabel";
+            this.sourceStokBirimLabel.Size = new System.Drawing.Size(48, 20);
+            this.sourceStokBirimLabel.TabIndex = 20;
+            this.sourceStokBirimLabel.Text = "label1";
+            // 
+            // destStokBirim
+            // 
+            this.destStokBirim.AutoSize = true;
+            this.destStokBirim.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.destStokBirim.Location = new System.Drawing.Point(120, 109);
+            this.destStokBirim.Name = "destStokBirim";
+            this.destStokBirim.Size = new System.Drawing.Size(48, 20);
+            this.destStokBirim.TabIndex = 8;
+            this.destStokBirim.Text = "label1";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label14.Location = new System.Drawing.Point(65, 113);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(36, 15);
+            this.label14.TabIndex = 9;
+            this.label14.Text = "Birim";
             // 
             // StokTransfer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(719, 391);
+            this.ClientSize = new System.Drawing.Size(719, 348);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.toolStrip1);
@@ -440,5 +488,9 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label sourceStokBirimLabel;
+        private System.Windows.Forms.Label destStokBirim;
+        private System.Windows.Forms.Label label14;
     }
 }
