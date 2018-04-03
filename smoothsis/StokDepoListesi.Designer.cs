@@ -122,6 +122,7 @@
             this.stokDepoListGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.stokDepoListGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.stokDepoListGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.stokDepoListGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.stokDepoListGridView.Location = new System.Drawing.Point(6, 13);

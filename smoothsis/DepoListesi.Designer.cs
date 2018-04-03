@@ -59,9 +59,10 @@
             this.depoListGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.depoListGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.depoListGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.depoListGridView.ContextMenuStrip = this.contextMenuStrip1;
-            this.depoListGridView.Location = new System.Drawing.Point(8, 18);
+            this.depoListGridView.Location = new System.Drawing.Point(8, 16);
             this.depoListGridView.MultiSelect = false;
             this.depoListGridView.Name = "depoListGridView";
             this.depoListGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

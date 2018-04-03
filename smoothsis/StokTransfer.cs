@@ -96,11 +96,6 @@ namespace smoothsis
                         sqlCmd.Parameters.Add("@kayit_yapan_kul", SqlDbType.Int).Value = Program.kullanici.Item1;
                         if (sqlCmd.ExecuteNonQuery() > 0)
                         {
-                            panel1.Visible = true;
-                            destStokAdiLabel.Text = stokAdi;
-                            destDepoNameLabel.Text = cbStokDepo.GetItemText(cbStokDepo.SelectedItem);
-                            destDepoLokasyonLabel.Text = cellsOfSelectedItem[2].Value.ToString();
-                            destStokMiktar.Text = transferMiktar.ToString();
                             sourceStokMiktarLabel.Text = remainMiktar.ToString();
                             Notification.messageBox("Transfer başarıyla tamamlandı.");
                             if (depoStokListesi == null)
@@ -166,11 +161,10 @@ namespace smoothsis
             sourceDepoLokasyonLabel.Text = cellsOfSelectedItem[2].Value.ToString();
             sourceStokMiktarLabel.Text = birim.Equals(MalzemeMiktarBirim.Adet.ToString()) ? Convert.ToInt32(cellsOfSelectedItem[3].Value).ToString() : cellsOfSelectedItem[3].Value.ToString();
             sourceStokBirimLabel.Text = birim;
-            destStokBirim.Text = birim;
+            destBirimLabel.Text = birim;
             stokAdi = reader["STOK_ADI"].ToString();
             sourceStokAdiLabel.Text = stokAdi;
             stokInckey = Convert.ToInt32(reader["STOK_INCKEY"].ToString());
-            panel1.Visible = false;
         }
     }
 }
