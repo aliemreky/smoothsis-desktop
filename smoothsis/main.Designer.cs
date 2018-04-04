@@ -64,6 +64,8 @@
             this.işlemOluşturToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.işlemListesiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton7 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.operatörOluşturToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.operatörListesiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.labelTarih = new System.Windows.Forms.ToolStripLabel();
@@ -73,8 +75,9 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.labelKullanici = new System.Windows.Forms.ToolStripLabel();
-            this.operatörOluşturToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.operatörListesiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripDropDownButton8 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.raporOluşturToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.raporListesiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -99,7 +102,8 @@
             this.toolStripDropDownButton5,
             this.toolStripSeparator9,
             this.toolStripDropDownButton6,
-            this.toolStripDropDownButton7});
+            this.toolStripDropDownButton7,
+            this.toolStripDropDownButton8});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(5, 0, 1, 0);
@@ -381,6 +385,20 @@
             this.toolStripDropDownButton7.Size = new System.Drawing.Size(91, 27);
             this.toolStripDropDownButton7.Text = "Operatör";
             // 
+            // operatörOluşturToolStripMenuItem
+            // 
+            this.operatörOluşturToolStripMenuItem.Name = "operatörOluşturToolStripMenuItem";
+            this.operatörOluşturToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.operatörOluşturToolStripMenuItem.Text = "Operatör Oluştur";
+            this.operatörOluşturToolStripMenuItem.Click += new System.EventHandler(this.operatörOluşturToolStripMenuItem_Click);
+            // 
+            // operatörListesiToolStripMenuItem
+            // 
+            this.operatörListesiToolStripMenuItem.Name = "operatörListesiToolStripMenuItem";
+            this.operatörListesiToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.operatörListesiToolStripMenuItem.Text = "Operatör Listesi";
+            this.operatörListesiToolStripMenuItem.Click += new System.EventHandler(this.operatörListesiToolStripMenuItem_Click);
+            // 
             // toolStrip2
             // 
             this.toolStrip2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -450,19 +468,30 @@
             this.labelKullanici.Size = new System.Drawing.Size(51, 22);
             this.labelKullanici.Text = "kullanici";
             // 
-            // operatörOluşturToolStripMenuItem
+            // toolStripDropDownButton8
             // 
-            this.operatörOluşturToolStripMenuItem.Name = "operatörOluşturToolStripMenuItem";
-            this.operatörOluşturToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.operatörOluşturToolStripMenuItem.Text = "Operatör Oluştur";
-            this.operatörOluşturToolStripMenuItem.Click += new System.EventHandler(this.operatörOluşturToolStripMenuItem_Click);
+            this.toolStripDropDownButton8.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.raporOluşturToolStripMenuItem,
+            this.raporListesiToolStripMenuItem});
+            this.toolStripDropDownButton8.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton8.Image")));
+            this.toolStripDropDownButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton8.Name = "toolStripDropDownButton8";
+            this.toolStripDropDownButton8.Size = new System.Drawing.Size(73, 27);
+            this.toolStripDropDownButton8.Text = "Rapor";
             // 
-            // operatörListesiToolStripMenuItem
+            // raporOluşturToolStripMenuItem
             // 
-            this.operatörListesiToolStripMenuItem.Name = "operatörListesiToolStripMenuItem";
-            this.operatörListesiToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.operatörListesiToolStripMenuItem.Text = "Operatör Listesi";
-            this.operatörListesiToolStripMenuItem.Click += new System.EventHandler(this.operatörListesiToolStripMenuItem_Click);
+            this.raporOluşturToolStripMenuItem.Name = "raporOluşturToolStripMenuItem";
+            this.raporOluşturToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.raporOluşturToolStripMenuItem.Text = "Rapor Oluştur";
+            this.raporOluşturToolStripMenuItem.Click += new System.EventHandler(this.raporOluşturToolStripMenuItem_Click);
+            // 
+            // raporListesiToolStripMenuItem
+            // 
+            this.raporListesiToolStripMenuItem.Name = "raporListesiToolStripMenuItem";
+            this.raporListesiToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.raporListesiToolStripMenuItem.Text = "Rapor Listesi";
+            this.raporListesiToolStripMenuItem.Click += new System.EventHandler(this.raporListesiToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -539,5 +568,8 @@
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton7;
         private System.Windows.Forms.ToolStripMenuItem operatörOluşturToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem operatörListesiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton8;
+        private System.Windows.Forms.ToolStripMenuItem raporOluşturToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem raporListesiToolStripMenuItem;
     }
 }
