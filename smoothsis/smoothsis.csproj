@@ -196,6 +196,7 @@
       <DependentUpon>RaporOlustur.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\ActionControl.cs" />
+    <Compile Include="Services\Enums\KDV.cs" />
     <Compile Include="Services\Enums\Condition.cs" />
     <Compile Include="Services\Enums\MalzemeMiktarBirim.cs" />
     <Compile Include="Services\Notification.cs" />

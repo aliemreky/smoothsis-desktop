@@ -42,8 +42,10 @@
             this.txtAramaKaynakDepo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.stokTransferListGridView = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stokTransferListGridView)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -64,7 +66,7 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(14, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(274, 522);
+            this.groupBox2.Size = new System.Drawing.Size(274, 539);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "ARAMA";
@@ -174,21 +176,30 @@
             this.stokTransferListGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.stokTransferListGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.stokTransferListGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.stokTransferListGridView.Location = new System.Drawing.Point(295, 12);
+            this.stokTransferListGridView.Location = new System.Drawing.Point(6, 16);
             this.stokTransferListGridView.MultiSelect = false;
             this.stokTransferListGridView.Name = "stokTransferListGridView";
             this.stokTransferListGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.stokTransferListGridView.Size = new System.Drawing.Size(726, 513);
+            this.stokTransferListGridView.Size = new System.Drawing.Size(734, 513);
             this.stokTransferListGridView.TabIndex = 24;
             this.stokTransferListGridView.VirtualMode = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.stokTransferListGridView);
+            this.groupBox1.Location = new System.Drawing.Point(295, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(746, 539);
+            this.groupBox1.TabIndex = 25;
+            this.groupBox1.TabStop = false;
             // 
             // StokTransferListesi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1035, 539);
-            this.Controls.Add(this.stokTransferListGridView);
+            this.ClientSize = new System.Drawing.Size(1052, 547);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -199,6 +210,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stokTransferListGridView)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -218,5 +230,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtAramaKayitYapan;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
