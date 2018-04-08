@@ -61,9 +61,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.stokListGridView);
-            this.groupBox1.Location = new System.Drawing.Point(253, 12);
+            this.groupBox1.Location = new System.Drawing.Point(253, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1063, 501);
+            this.groupBox1.Size = new System.Drawing.Size(1063, 483);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             // 
@@ -79,7 +79,7 @@
             this.stokListGridView.MultiSelect = false;
             this.stokListGridView.Name = "stokListGridView";
             this.stokListGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.stokListGridView.Size = new System.Drawing.Size(1051, 482);
+            this.stokListGridView.Size = new System.Drawing.Size(1051, 464);
             this.stokListGridView.TabIndex = 19;
             this.stokListGridView.VirtualMode = true;
             this.stokListGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.stokListGridView_CellDoubleClick);
@@ -91,7 +91,7 @@
             this.stokDuzenleToolStripMenuItem,
             this.stokDepoListesiToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(164, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(164, 48);
             // 
             // stokDuzenleToolStripMenuItem
             // 
@@ -125,9 +125,9 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.txtAramaStokKodu);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(12, 12);
+            this.groupBox2.Location = new System.Drawing.Point(12, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(235, 501);
+            this.groupBox2.Size = new System.Drawing.Size(235, 483);
             this.groupBox2.TabIndex = 22;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "ARAMA";
@@ -252,7 +252,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1328, 531);
+            this.ClientSize = new System.Drawing.Size(1328, 490);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));

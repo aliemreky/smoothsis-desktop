@@ -157,6 +157,12 @@
     <Compile Include="MakineOlustur.Designer.cs">
       <DependentUpon>MakineOlustur.cs</DependentUpon>
     </Compile>
+    <Compile Include="OperatorBilgileri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OperatorBilgileri.Designer.cs">
+      <DependentUpon>OperatorBilgileri.cs</DependentUpon>
+    </Compile>
     <Compile Include="OperatorDuzenle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +202,8 @@
       <DependentUpon>RaporOlustur.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\ActionControl.cs" />
+    <Compile Include="Services\Enums\Vardiya.cs" />
+    <Compile Include="Services\Enums\KDV.cs" />
     <Compile Include="Services\Enums\Condition.cs" />
     <Compile Include="Services\Enums\MalzemeMiktarBirim.cs" />
     <Compile Include="Services\Notification.cs" />
@@ -309,6 +317,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MakineOlustur.resx">
       <DependentUpon>MakineOlustur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OperatorBilgileri.resx">
+      <DependentUpon>OperatorBilgileri.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OperatorDuzenle.resx">
       <DependentUpon>OperatorDuzenle.cs</DependentUpon>
