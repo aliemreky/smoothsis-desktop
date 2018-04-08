@@ -16,10 +16,20 @@ namespace smoothsis
     public partial class OperatorListesi : Form
     {
         private Tuple<int, DataGridViewCellCollection> selectedItem;
+        private RaporOlustur raporOlustur;
+        private RaporDuzenle raporDuzenle;
 
-        public OperatorListesi()
+        public OperatorListesi(Form rapor = null)
         {
             InitializeComponent();
+            if (rapor is RaporOlustur)
+            {
+                this.raporOlustur = (RaporOlustur)rapor;
+            } else if (rapor is RaporDuzenle)
+            {
+                this.raporDuzenle = (RaporDuzenle)rapor;
+            }
+
         }
 
         private void OperatorListesi_Load(object sender, EventArgs e)
@@ -27,8 +37,6 @@ namespace smoothsis
             Styler.gridViewCommonStyle(operatorListGridView);
             cbOperatorDurum.DataSource = Enum.GetValues(typeof(Condition));
             listOperator();
-            
-
         }
 
         private void listOperator()
@@ -72,7 +80,7 @@ namespace smoothsis
             }
             else
             {
-                Notification.messageBoxError("BİR SORUN OLUŞTU, KAYIT SEÇİLEMEDİ !");
+                Notification.messageBoxError("BİR SORUN OLUŞTU, KAYIT SEÇİLEMEDİ!");
             }
         }
 
@@ -81,8 +89,21 @@ namespace smoothsis
             if (e.RowIndex != -1)
             {
                 selectedItem = new Tuple<int, DataGridViewCellCollection>(e.RowIndex, operatorListGridView.Rows[e.RowIndex].Cells);
-                OperatorDuzenle operatorDuzenle = new OperatorDuzenle(this);
-                operatorDuzenle.ShowDialog();
+                if (raporOlustur != null && raporDuzenle == null)
+                {
+                    raporOlustur.addOperatorToRapor(selectedItem.Item2);
+                    this.Close();
+                }
+                else if (raporOlustur == null && raporDuzenle != null)
+                {
+                    raporDuzenle.addOperatorToRapor(selectedItem.Item2);
+                    this.Close();
+                }
+                else
+                {
+                    OperatorDuzenle operatorDuzenle = new OperatorDuzenle(this);
+                    operatorDuzenle.ShowDialog();
+                }
             }
         }
 

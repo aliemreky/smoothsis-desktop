@@ -36,7 +36,7 @@ namespace smoothsis
             dataGridView[1, rowIndex].Value = txtDepoAdi.Text;
             dataGridView[2, rowIndex].Value = txtDepoLokasyon.Text;
             dataGridView[5, rowIndex].Value = Program.kullanici.Item2;
-            dataGridView[6, rowIndex].Value = DateTime.Now.ToString("dd.MM.yyyy HH:mm");
+            dataGridView[6, rowIndex].Value = DateTime.Now.ToString("dd.MM.yyyy");
         }
 
         private void kaydetBttn_Click(object sender, EventArgs e)

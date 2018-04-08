@@ -17,7 +17,7 @@ namespace smoothsis
     {
         private SqlCommand sqlCmd;
         private StokListesi stokListesi;
-        DataGridViewCellCollection cellsOfSelectedItem;
+        private DataGridViewCellCollection cellsOfSelectedItem;
 
         public StokDuzenle(StokListesi stokListesi)
         {
