@@ -141,7 +141,7 @@ namespace smoothsis
             {
                 int siparisInckey = int.Parse(siparisListGridView["SIPARIS_INCKEY", gridviewClickedRow].Value.ToString());
 
-                string uretimCheckSQL = "SELECT COUNT(*) FROM SIP_DETAY WHERE SIPARIS_INCKEY = @siparis_inckey";
+                string uretimCheckSQL = "SELECT COUNT(*) FROM SIPARIS_DETAY WHERE SIPARIS_INCKEY = @siparis_inckey";
                 sqlCmd = new SqlCommand(uretimCheckSQL, Program.connection);
                 sqlCmd.Parameters.AddWithValue("@siparis_inckey", siparisInckey);
                 if ((int)sqlCmd.ExecuteScalar() > 0)
