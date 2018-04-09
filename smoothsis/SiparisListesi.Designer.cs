@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SiparisListesi));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cmbAramaSiparisTipi = new System.Windows.Forms.ComboBox();
@@ -48,9 +49,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.siparisListGridView = new System.Windows.Forms.DataGridView();
+            this.siparisListesiMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.UretimKaydiOlusturToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.siparisListGridView)).BeginInit();
+            this.siparisListesiMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -245,6 +249,7 @@
             // siparisListGridView
             // 
             this.siparisListGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.siparisListGridView.ContextMenuStrip = this.siparisListesiMenu;
             this.siparisListGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.siparisListGridView.Location = new System.Drawing.Point(6, 13);
             this.siparisListGridView.MultiSelect = false;
@@ -253,6 +258,22 @@
             this.siparisListGridView.Size = new System.Drawing.Size(932, 513);
             this.siparisListGridView.TabIndex = 19;
             this.siparisListGridView.VirtualMode = true;
+            this.siparisListGridView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.siparisListGridView_CellMouseDown);
+            // 
+            // siparisListesiMenu
+            // 
+            this.siparisListesiMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.UretimKaydiOlusturToolStripMenuItem});
+            this.siparisListesiMenu.Name = "siparisListesiMenu";
+            this.siparisListesiMenu.Size = new System.Drawing.Size(185, 26);
+            this.siparisListesiMenu.Opening += new System.ComponentModel.CancelEventHandler(this.siparisListesiMenu_Opening);
+            // 
+            // UretimKaydiOlusturToolStripMenuItem
+            // 
+            this.UretimKaydiOlusturToolStripMenuItem.Name = "UretimKaydiOlusturToolStripMenuItem";
+            this.UretimKaydiOlusturToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.UretimKaydiOlusturToolStripMenuItem.Text = "Üretim Kaydı Oluştur";
+            this.UretimKaydiOlusturToolStripMenuItem.Click += new System.EventHandler(this.UretimKaydiOlusturToolStripMenuItem_Click);
             // 
             // SiparisListesi
             // 
@@ -271,6 +292,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.siparisListGridView)).EndInit();
+            this.siparisListesiMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -296,5 +318,7 @@
         private System.Windows.Forms.ComboBox cmbAramaSiparisDurumu;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ContextMenuStrip siparisListesiMenu;
+        private System.Windows.Forms.ToolStripMenuItem UretimKaydiOlusturToolStripMenuItem;
     }
 }

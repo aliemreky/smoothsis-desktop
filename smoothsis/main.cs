@@ -168,5 +168,11 @@ namespace smoothsis
             RaporListesi raporListesi = new RaporListesi();
             raporListesi.ShowDialog();
         }
+
+        private void üretimListesiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UretimListesi urListesi = new UretimListesi();
+            urListesi.ShowDialog();
+        }
     }
 }

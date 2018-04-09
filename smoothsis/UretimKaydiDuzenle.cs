@@ -12,50 +12,31 @@ using smoothsis.Services;
 
 namespace smoothsis
 {
-    public partial class UretimKaydiOlustur : Form
+    public partial class UretimKaydiDuzenle : Form
     {
         private SqlCommand SqlCmd;
         private SqlDataAdapter dataAdapter;
-        private int siparisIncKey, secilenSiparisDetayIncKey = -1;
+        private int uretimIncKey, secilenSiparisDetayIncKey = -1;
 
-        public UretimKaydiOlustur(int siparisIncKey)
+        public UretimKaydiDuzenle(int uretimIncKey)
         {
-            this.siparisIncKey = siparisIncKey;
+            this.uretimIncKey = uretimIncKey;
             InitializeComponent();
         }
 
-        private void UretimKaydiOlustur_Load(object sender, EventArgs e)
+        private void UretimKaydiDuzenle_Load(object sender, EventArgs e)
         {
-            txtUretimMik.Text = "0,000";
-
-            uretimListesiGridView.ColumnCount = 8;
-            uretimListesiGridView.Columns[0].Name = "SIP_DETAY_INCKEY";
-            uretimListesiGridView.Columns[1].Name = "ISLEM";
-            uretimListesiGridView.Columns[2].Name = "MAKINE";
-            uretimListesiGridView.Columns[3].Name = "ISLEM_NO";
-            uretimListesiGridView.Columns[4].Name = "MIKTAR";
-            uretimListesiGridView.Columns[5].Name = "BIRIM";
-            uretimListesiGridView.Columns[6].Name = "URETIM_TARIH";
-            uretimListesiGridView.Columns[7].Name = "ACIKLAMA";
-
-            uretimListesiGridView.Columns[0].Visible = false;
-
-            Styler.gridViewCommonStyle(uretimListesiGridView);
-            Styler.gridViewCommonStyle(stokListGridView);
-            uretimListesiGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            stokListGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-            uretimListesiGridView.Rows.Clear();
-            uretimListesiGridView.Refresh();
-
-            stokListGridView.Rows.Clear();
-            stokListGridView.Refresh();
+            txtUretimMik.Text = "0,000";           
 
             try
             {
-                string siparisBilgileriSQL = "SELECT SIPARIS_KOD, PROJE_KOD, PROJE_ADI, SIP_TARIH, TESLIM_TARIH, SIPARIS_TIPI, C.CARI_KOD, ADSOYAD, CONCAT(C.IL,' / ',C.ILCE) AS IL_ILCE FROM SIPARIS SP JOIN CARI C ON C.CARI_INCKEY = SP.CARI_KOD WHERE SP.SIPARIS_INCKEY=@siparis_inckey";
+                string siparisBilgileriSQL = "SELECT SIPARIS_KOD, PROJE_KOD, PROJE_ADI, SIP_TARIH, TESLIM_TARIH, SIPARIS_TIPI, C.CARI_KOD, ADSOYAD, CONCAT(C.IL,' / ',C.ILCE) AS IL_ILCE FROM SIPARIS SP " +
+                                             "JOIN CARI C ON C.CARI_INCKEY = SP.CARI_KOD " +
+                                             "JOIN SIPARIS_DETAY SPDT ON SPDT.SIPARIS_INCKEY= SP.SIPARIS_INCKEY " +
+                                             "JOIN URETIM UR ON UR.SIP_DETAY_INCKEY=SPDT.SIP_DETAY_INCKEY " +
+                                             "WHERE UR.UR_INCKEY=@uretim_inckey";
                 SqlCmd = new SqlCommand(siparisBilgileriSQL, Program.connection);
-                SqlCmd.Parameters.AddWithValue("@siparis_inckey", siparisIncKey);
+                SqlCmd.Parameters.AddWithValue("@uretim_inckey", uretimIncKey);
                 SqlDataReader dataReader = SqlCmd.ExecuteReader();
 
                 if (dataReader.HasRows)
@@ -74,9 +55,14 @@ namespace smoothsis
                     cbBirim.DataSource = Enum.GetNames(typeof(Services.Enums.MalzemeMiktarBirim));
                     cbBirim.SelectedIndex = 0;
 
-                    string stokListSQL = "SELECT SIPDT.SIP_DETAY_INCKEY, STOK_KOD, STOK_ADI, DEPO_ADI, CONCAT(SIPDT.MIKTAR, ' ', SIPDT.MIKTAR_BIRIM) AS MIKTAR FROM STOK_DEPO STD JOIN STOK ST ON ST.STOK_INCKEY = STD.STOK_INCKEY JOIN SIPARIS_DETAY SIPDT ON SIPDT.STOK_DEPO_INCKEY = STD.STOK_DEPO_INCKEY JOIN DEPO D ON D.DEPO_INCKEY = STD.DEPO_INCKEY WHERE SIPDT.SIPARIS_INCKEY = @siparis_inckey";
+                    string stokListSQL = "SELECT SPDT.SIP_DETAY_INCKEY, STOK_KOD, STOK_ADI, DEPO_ADI, CONCAT(SPDT.MIKTAR, ' ', SPDT.MIKTAR_BIRIM) AS MIKTAR FROM STOK_DEPO STD " +
+                        "JOIN STOK ST ON ST.STOK_INCKEY = STD.STOK_INCKEY " +
+                        "JOIN SIPARIS_DETAY SPDT ON SPDT.STOK_DEPO_INCKEY = STD.STOK_DEPO_INCKEY " +
+                        "JOIN DEPO D ON D.DEPO_INCKEY = STD.DEPO_INCKEY " +
+                        "JOIN URETIM UR ON UR.SIP_DETAY_INCKEY = SPDT.SIP_DETAY_INCKEY " +
+                        "WHERE UR.UR_INCKEY = @uretim_inckey";
                     SqlCmd = new SqlCommand(stokListSQL, Program.connection);
-                    SqlCmd.Parameters.AddWithValue("@siparis_inckey", siparisIncKey);
+                    SqlCmd.Parameters.AddWithValue("@uretim_inckey", uretimIncKey);
                     DataTable stokListTable = new DataTable();
                     dataAdapter = new SqlDataAdapter(SqlCmd);
                     dataAdapter.Fill(stokListTable);
@@ -85,6 +71,10 @@ namespace smoothsis
                     stokListGridView.Columns[0].Visible = false;
                     Styler.gridViewCommonStyle(stokListGridView);
 
+                    stokListGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                    stokListGridView.Rows.Clear();
+                    stokListGridView.Refresh();
 
                     string makineListesiSQL = "SELECT CONCAT(MAK_INCKEY, ' - ', MAK_ADI) AS MAKINE FROM MAKINE";
                     SqlCmd = new SqlCommand(makineListesiSQL, Program.connection);
@@ -104,6 +94,22 @@ namespace smoothsis
                     cbMakine.SelectedIndex = 0;
                     cbIslem.SelectedIndex = 0;
 
+                    string uretimListesiSQL = "SELECT SIP_DETAY_INCKEY, ISL.ISLEM_ADI, MAK.MAK_ADI, ISLEM_NO, PLAN_URET_MIK, BIRIM, URET_TARIH, UR.ACIKLAMA FROM URETIM UR" +
+                        "JOIN ISLEM ISL ON ISL.ISLEM_INCKEY = UR.ISLEM_INCKEY " +
+                        "JOIN MAKINE MAK ON MAK.MAK_INCKEY = UR.MAKINE_INCKEY " +
+                        "WHERE UR.UR_INCKEY = @uretim_inckey";
+                    SqlCmd = new SqlCommand(uretimListesiSQL, Program.connection);
+                    SqlCmd.Parameters.AddWithValue("@uretim_inckey", uretimIncKey);
+
+                    DataTable uretimListDataTable = new DataTable();
+                    dataAdapter = new SqlDataAdapter(SqlCmd);
+                    dataAdapter.Fill(uretimListDataTable);
+
+                    uretimListesiGridView.DataSource = uretimListDataTable;
+                    uretimListesiGridView.Columns[0].Visible = false;
+                    Styler.gridViewCommonStyle(uretimListesiGridView);
+
+                    uretimListesiGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 }
             }
             catch (Exception ex)
@@ -111,7 +117,7 @@ namespace smoothsis
                 Notification.messageBoxError(ex.Message);
                 this.Close();
             }
-        }
+        }        
 
         private void txtUretimMik_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -214,6 +220,8 @@ namespace smoothsis
         {
             this.Close();
         }
+
+        
 
         private void stokListGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {

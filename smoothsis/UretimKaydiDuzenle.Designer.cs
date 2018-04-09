@@ -1,6 +1,6 @@
 ﻿namespace smoothsis
 {
-    partial class UretimKaydiOlustur
+    partial class UretimKaydiDuzenle
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UretimKaydiOlustur));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UretimKaydiDuzenle));
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.uretimListesiGridView = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -514,7 +514,7 @@
             this.iptalButton.Text = "Çıkış";
             this.iptalButton.Click += new System.EventHandler(this.iptalButton_Click);
             // 
-            // UretimKaydiOlustur
+            // UretimKaydiDuzenle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -527,9 +527,9 @@
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "UretimKaydiOlustur";
-            this.Text = "SMOOTHSIS [ ÜRETİM KAYDI OLUŞTUR ]";
-            this.Load += new System.EventHandler(this.UretimKaydiOlustur_Load);
+            this.Name = "UretimKaydiDuzenle";
+            this.Text = "SMOOTHSIS [ ÜRETİM KAYDI DÜZENLE ]";
+            this.Load += new System.EventHandler(this.UretimKaydiDuzenle_Load);
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.uretimListesiGridView)).EndInit();
             this.groupBox3.ResumeLayout(false);

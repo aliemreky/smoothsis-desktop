@@ -17,7 +17,9 @@ namespace smoothsis
     {
         private SqlCommand sqlCmd;
         private SqlDataAdapter sqlDataAdapter;
-        
+
+        int gridviewClickedRow, gridviewClickedColumn;
+
 
         public SiparisListesi()
         {
@@ -109,6 +111,49 @@ namespace smoothsis
                 Search.gridviewArama(cmbAramaSiparisDurumu.SelectedItem.ToString(), siparisListGridView, "SIP_DURUM");
             else
                 Search.gridviewArama("", siparisListGridView);
+        }
+
+        private void siparisListesiMenu_Opening(object sender, CancelEventArgs e)
+        {
+            e.Cancel = this.siparisListGridView.Rows.Count <= 0;
+        }        
+
+        private void siparisListGridView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex != -1 && e.ColumnIndex != -1)
+            {
+                if ((e.Button == MouseButtons.Right) && (siparisListGridView.SelectedRows.Count == 1))
+                {
+
+                    gridviewClickedRow = e.RowIndex;
+                    gridviewClickedColumn = e.ColumnIndex;
+
+                    siparisListGridView.ClearSelection();
+                    this.siparisListGridView.Rows[e.RowIndex].Selected = true;
+
+                }
+            }
+        }
+
+        private void UretimKaydiOlusturToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(siparisListGridView.SelectedRows.Count == 1)
+            {
+                int siparisInckey = int.Parse(siparisListGridView["SIPARIS_INCKEY", gridviewClickedRow].Value.ToString());
+
+                string uretimCheckSQL = "SELECT COUNT(*) FROM SIP_DETAY WHERE SIPARIS_INCKEY = @siparis_inckey";
+                sqlCmd = new SqlCommand(uretimCheckSQL, Program.connection);
+                sqlCmd.Parameters.AddWithValue("@siparis_inckey", siparisInckey);
+                if ((int)sqlCmd.ExecuteScalar() > 0)
+                {
+                    UretimKaydiOlustur uretimKaydiOlustur = new UretimKaydiOlustur(siparisInckey);
+                    uretimKaydiOlustur.ShowDialog();
+                }
+                else
+                {
+                    Notification.messageBox("BU SİPARİŞE AİT ÜRETİM KAYDI MEVCUTTUR !");
+                }
+            }
         }
     }
 }
