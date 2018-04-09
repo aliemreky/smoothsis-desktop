@@ -30,13 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RaporDuzenle));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbRaporVardiya = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnOperator = new System.Windows.Forms.Button();
             this.txtOperator = new System.Windows.Forms.TextBox();
             this.txtBeslenenMiktar = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.btnUretim = new System.Windows.Forms.Button();
-            this.txtUretim = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtFireMiktar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -59,7 +57,6 @@
             this.sillBttn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.iptalButton = new System.Windows.Forms.ToolStripButton();
-            this.cbRaporVardiya = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -71,9 +68,6 @@
             this.groupBox1.Controls.Add(this.btnOperator);
             this.groupBox1.Controls.Add(this.txtOperator);
             this.groupBox1.Controls.Add(this.txtBeslenenMiktar);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.btnUretim);
-            this.groupBox1.Controls.Add(this.txtUretim);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.txtFireMiktar);
             this.groupBox1.Controls.Add(this.label2);
@@ -92,15 +86,24 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 31);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(883, 322);
+            this.groupBox1.Size = new System.Drawing.Size(883, 293);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
+            // 
+            // cbRaporVardiya
+            // 
+            this.cbRaporVardiya.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbRaporVardiya.FormattingEnabled = true;
+            this.cbRaporVardiya.Location = new System.Drawing.Point(125, 83);
+            this.cbRaporVardiya.Name = "cbRaporVardiya";
+            this.cbRaporVardiya.Size = new System.Drawing.Size(306, 23);
+            this.cbRaporVardiya.TabIndex = 27;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(43, 56);
+            this.label5.Location = new System.Drawing.Point(43, 21);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 15);
             this.label5.TabIndex = 26;
@@ -112,7 +115,7 @@
             this.btnOperator.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.btnOperator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOperator.Image = ((System.Drawing.Image)(resources.GetObject("btnOperator.Image")));
-            this.btnOperator.Location = new System.Drawing.Point(400, 52);
+            this.btnOperator.Location = new System.Drawing.Point(400, 17);
             this.btnOperator.Name = "btnOperator";
             this.btnOperator.Size = new System.Drawing.Size(31, 23);
             this.btnOperator.TabIndex = 25;
@@ -121,7 +124,7 @@
             // 
             // txtOperator
             // 
-            this.txtOperator.Location = new System.Drawing.Point(125, 52);
+            this.txtOperator.Location = new System.Drawing.Point(125, 17);
             this.txtOperator.Name = "txtOperator";
             this.txtOperator.ReadOnly = true;
             this.txtOperator.Size = new System.Drawing.Size(269, 23);
@@ -131,48 +134,16 @@
             // txtBeslenenMiktar
             // 
             this.txtBeslenenMiktar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtBeslenenMiktar.Location = new System.Drawing.Point(125, 150);
+            this.txtBeslenenMiktar.Location = new System.Drawing.Point(125, 115);
             this.txtBeslenenMiktar.Name = "txtBeslenenMiktar";
             this.txtBeslenenMiktar.Size = new System.Drawing.Size(306, 23);
             this.txtBeslenenMiktar.TabIndex = 23;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label12.Location = new System.Drawing.Point(58, 23);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(61, 15);
-            this.label12.TabIndex = 22;
-            this.label12.Text = " ÜRETİM *";
-            // 
-            // btnUretim
-            // 
-            this.btnUretim.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnUretim.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnUretim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUretim.Image = ((System.Drawing.Image)(resources.GetObject("btnUretim.Image")));
-            this.btnUretim.Location = new System.Drawing.Point(400, 19);
-            this.btnUretim.Name = "btnUretim";
-            this.btnUretim.Size = new System.Drawing.Size(31, 23);
-            this.btnUretim.TabIndex = 21;
-            this.btnUretim.UseVisualStyleBackColor = true;
-            this.btnUretim.Click += new System.EventHandler(this.btnUretim_Click);
-            // 
-            // txtUretim
-            // 
-            this.txtUretim.Location = new System.Drawing.Point(125, 19);
-            this.txtUretim.Name = "txtUretim";
-            this.txtUretim.ReadOnly = true;
-            this.txtUretim.Size = new System.Drawing.Size(269, 23);
-            this.txtUretim.TabIndex = 20;
-            this.txtUretim.TabStop = false;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label10.Location = new System.Drawing.Point(2, 153);
+            this.label10.Location = new System.Drawing.Point(2, 118);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(117, 15);
             this.label10.TabIndex = 17;
@@ -181,7 +152,7 @@
             // txtFireMiktar
             // 
             this.txtFireMiktar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtFireMiktar.Location = new System.Drawing.Point(125, 216);
+            this.txtFireMiktar.Location = new System.Drawing.Point(125, 181);
             this.txtFireMiktar.Name = "txtFireMiktar";
             this.txtFireMiktar.Size = new System.Drawing.Size(306, 23);
             this.txtFireMiktar.TabIndex = 5;
@@ -190,7 +161,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(31, 219);
+            this.label2.Location = new System.Drawing.Point(31, 184);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 15);
             this.label2.TabIndex = 15;
@@ -199,7 +170,7 @@
             // dtpRaporTarih
             // 
             this.dtpRaporTarih.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dtpRaporTarih.Location = new System.Drawing.Point(125, 82);
+            this.dtpRaporTarih.Location = new System.Drawing.Point(125, 47);
             this.dtpRaporTarih.MinimumSize = new System.Drawing.Size(4, 23);
             this.dtpRaporTarih.Name = "dtpRaporTarih";
             this.dtpRaporTarih.Size = new System.Drawing.Size(306, 23);
@@ -227,7 +198,7 @@
             // txtUretilenMiktar
             // 
             this.txtUretilenMiktar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtUretilenMiktar.Location = new System.Drawing.Point(125, 185);
+            this.txtUretilenMiktar.Location = new System.Drawing.Point(125, 150);
             this.txtUretilenMiktar.Name = "txtUretilenMiktar";
             this.txtUretilenMiktar.Size = new System.Drawing.Size(306, 23);
             this.txtUretilenMiktar.TabIndex = 3;
@@ -236,7 +207,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(5, 188);
+            this.label4.Location = new System.Drawing.Point(5, 153);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(114, 15);
             this.label4.TabIndex = 0;
@@ -246,7 +217,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label7.Location = new System.Drawing.Point(41, 258);
+            this.label7.Location = new System.Drawing.Point(41, 223);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(76, 15);
             this.label7.TabIndex = 0;
@@ -256,7 +227,7 @@
             // 
             this.txtFireNedeni.AcceptsReturn = true;
             this.txtFireNedeni.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtFireNedeni.Location = new System.Drawing.Point(125, 255);
+            this.txtFireNedeni.Location = new System.Drawing.Point(125, 220);
             this.txtFireNedeni.Multiline = true;
             this.txtFireNedeni.Name = "txtFireNedeni";
             this.txtFireNedeni.Size = new System.Drawing.Size(306, 58);
@@ -266,7 +237,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.Location = new System.Drawing.Point(23, 88);
+            this.label6.Location = new System.Drawing.Point(23, 53);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(94, 15);
             this.label6.TabIndex = 0;
@@ -313,7 +284,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(12, 124);
+            this.label1.Location = new System.Drawing.Point(12, 89);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(105, 15);
             this.label1.TabIndex = 0;
@@ -379,21 +350,12 @@
             this.iptalButton.Text = "Çıkış";
             this.iptalButton.Click += new System.EventHandler(this.iptalButton_Click);
             // 
-            // cbRaporVardiya
-            // 
-            this.cbRaporVardiya.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbRaporVardiya.FormattingEnabled = true;
-            this.cbRaporVardiya.Location = new System.Drawing.Point(125, 118);
-            this.cbRaporVardiya.Name = "cbRaporVardiya";
-            this.cbRaporVardiya.Size = new System.Drawing.Size(306, 23);
-            this.cbRaporVardiya.TabIndex = 27;
-            // 
             // RaporDuzenle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(905, 361);
+            this.ClientSize = new System.Drawing.Size(905, 330);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -418,9 +380,6 @@
         private System.Windows.Forms.Button btnOperator;
         private System.Windows.Forms.TextBox txtOperator;
         private System.Windows.Forms.TextBox txtBeslenenMiktar;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button btnUretim;
-        private System.Windows.Forms.TextBox txtUretim;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtFireMiktar;
         private System.Windows.Forms.Label label2;

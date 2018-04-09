@@ -156,19 +156,7 @@ namespace smoothsis
             OperatorListesi operatorListesi = new OperatorListesi();
             operatorListesi.ShowDialog();
         }
-
-        private void raporOluşturToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            RaporOlustur raporOlustur = new RaporOlustur();
-            raporOlustur.ShowDialog();
-        }
-
-        private void raporListesiToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            RaporListesi raporListesi = new RaporListesi();
-            raporListesi.ShowDialog();
-        }
-
+        
         private void üretimListesiToolStripMenuItem_Click(object sender, EventArgs e)
         {
             UretimListesi urListesi = new UretimListesi();
