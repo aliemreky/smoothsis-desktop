@@ -120,5 +120,11 @@ namespace smoothsis
             StokTransferListesi stokTransferListesi = new StokTransferListesi();
             stokTransferListesi.ShowDialog();
         }
+
+        private void üretimListesiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UretimListesi urListesi = new UretimListesi();
+            urListesi.ShowDialog();
+        }
     }
 }

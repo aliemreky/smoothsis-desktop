@@ -265,7 +265,7 @@
             this.siparisListesiMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.UretimKaydiOlusturToolStripMenuItem});
             this.siparisListesiMenu.Name = "siparisListesiMenu";
-            this.siparisListesiMenu.Size = new System.Drawing.Size(185, 48);
+            this.siparisListesiMenu.Size = new System.Drawing.Size(185, 26);
             this.siparisListesiMenu.Opening += new System.ComponentModel.CancelEventHandler(this.siparisListesiMenu_Opening);
             // 
             // UretimKaydiOlusturToolStripMenuItem

@@ -183,6 +183,12 @@
     <Compile Include="StokTransferListesi.Designer.cs">
       <DependentUpon>StokTransferListesi.cs</DependentUpon>
     </Compile>
+    <Compile Include="UretimListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UretimListesi.Designer.cs">
+      <DependentUpon>UretimListesi.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CariDuzenle.resx">
       <DependentUpon>CariDuzenle.cs</DependentUpon>
     </EmbeddedResource>
@@ -255,6 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StokTransferListesi.resx">
       <DependentUpon>StokTransferListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UretimListesi.resx">
+      <DependentUpon>UretimListesi.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
