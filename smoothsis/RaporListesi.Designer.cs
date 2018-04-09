@@ -36,8 +36,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtAramaRaporVardiya = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtAramaOperatorAdi = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.raporListGridView = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -60,8 +58,6 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.txtAramaRaporVardiya);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.txtAramaOperatorAdi);
-            this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(11, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(235, 496);
@@ -83,7 +79,7 @@
             // dtAramaRaporTarih
             // 
             this.dtAramaRaporTarih.CustomFormat = "";
-            this.dtAramaRaporTarih.Location = new System.Drawing.Point(17, 258);
+            this.dtAramaRaporTarih.Location = new System.Drawing.Point(17, 200);
             this.dtAramaRaporTarih.Name = "dtAramaRaporTarih";
             this.dtAramaRaporTarih.Size = new System.Drawing.Size(195, 23);
             this.dtAramaRaporTarih.TabIndex = 6;
@@ -92,7 +88,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 234);
+            this.label3.Location = new System.Drawing.Point(14, 176);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 15);
             this.label3.TabIndex = 0;
@@ -100,7 +96,7 @@
             // 
             // txtAramaRaporVardiya
             // 
-            this.txtAramaRaporVardiya.Location = new System.Drawing.Point(17, 188);
+            this.txtAramaRaporVardiya.Location = new System.Drawing.Point(17, 130);
             this.txtAramaRaporVardiya.Name = "txtAramaRaporVardiya";
             this.txtAramaRaporVardiya.Size = new System.Drawing.Size(195, 23);
             this.txtAramaRaporVardiya.TabIndex = 2;
@@ -109,28 +105,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 165);
+            this.label2.Location = new System.Drawing.Point(14, 107);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 15);
             this.label2.TabIndex = 0;
             this.label2.Text = "VARDIYA";
-            // 
-            // txtAramaOperatorAdi
-            // 
-            this.txtAramaOperatorAdi.Location = new System.Drawing.Point(17, 120);
-            this.txtAramaOperatorAdi.Name = "txtAramaOperatorAdi";
-            this.txtAramaOperatorAdi.Size = new System.Drawing.Size(195, 23);
-            this.txtAramaOperatorAdi.TabIndex = 1;
-            this.txtAramaOperatorAdi.TextChanged += new System.EventHandler(this.searchForOperatorAdi);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 97);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "OPERATÖR ADI";
             // 
             // groupBox1
             // 
@@ -168,7 +147,7 @@
             this.üretimBilgileriToolStripMenuItem,
             this.operatörBilgıleriToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(164, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(164, 70);
             // 
             // düzenleToolStripMenuItem
             // 
@@ -222,8 +201,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtAramaRaporVardiya;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtAramaOperatorAdi;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView raporListGridView;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;

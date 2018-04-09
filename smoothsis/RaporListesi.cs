@@ -24,7 +24,6 @@ namespace smoothsis
 
         private void RaporListesi_Load(object sender, EventArgs e)
         {
-
             Styler.gridViewCommonStyle(raporListGridView);
             listRapor();
         }
@@ -41,23 +40,12 @@ namespace smoothsis
                 raporListGridView.DataSource = raporListDTable;
                 raporListGridView.Columns[0].Visible = false;
                 raporListGridView.Columns[1].Visible = false;
-                raporListGridView.Columns[2].Visible = false;
-                raporListGridView.Columns[3].Visible = false;
                 raporListGridView.ClearSelection();
             }
             catch (Exception ex)
             {
                 Notification.messageBoxError(ex.Message);
             }
-
-        }
-
-        private void searchForOperatorAdi(object sender, EventArgs e)
-        {
-            if (txtAramaOperatorAdi.Text.Count() > 1)
-                Search.gridviewArama(txtAramaOperatorAdi.Text, raporListGridView, "OPERATOR_ADI");
-            else
-                Search.gridviewArama("", raporListGridView);
 
         }
 
@@ -130,19 +118,14 @@ namespace smoothsis
 
         private void operatorBilgileriToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string query = "SELECT OP_INCKEY, ADSOYAD ADI_SOYADI, CASE WHEN OP_DURUMU = 1 THEN 'Aktif' ELSE 'Pasif' END AS OPERATOR_DURUMU, FORMAT(ISE_BAS_TARIH, 'dd.MM.yyyy') ISE_BASLAMA_TARIHI FROM OPERATOR " +
-                " WHERE OP_INCKEY = @op_inckey";
-            sqlCmd = new SqlCommand(query, Program.connection);
-            sqlCmd.Parameters.Add("@op_inckey", SqlDbType.Int).Value = Convert.ToInt32(selectedItem.Item2[2].Value.ToString());
-            SqlDataReader reader = sqlCmd.ExecuteReader();
-            reader.Read();
-            OperatorBilgileri operatorBilgileri = new OperatorBilgileri(new string[]{
-                    reader["OP_INCKEY"].ToString(),
-                    reader["ADI_SOYADI"].ToString(),
-                    reader["OPERATOR_DURUMU"].ToString(),
-                    reader["ISE_BASLAMA_TARIHI"].ToString()
-            });
-            operatorBilgileri.ShowDialog();
+            string query = "SELECT OPERATOR.OP_INCKEY, OPERATOR.ADSOYAD ADI_SOYADI, CASE WHEN OPERATOR.OP_DURUMU = 1 THEN 'Aktif' ELSE 'Pasif' END AS OPERATOR_DURUMU, " +
+                        "FORMAT(OPERATOR.ISE_BAS_TARIH, 'dd.MM.yyyy') ISE_BASLAMA_TARIHI FROM OPERATOR_TO_RAPOR " +
+                        "INNER JOIN OPERATOR ON OPERATOR_TO_RAPOR.OP_INCKEY = OPERATOR.OP_INCKEY " +
+                        "WHERE OPERATOR_TO_RAPOR.RAPOR_INCKEY = " + Convert.ToInt32(selectedItem.Item2[0].Value.ToString()) + " ORDER BY OPERATOR.OP_INCKEY DESC";
+            OperatorListesi operatorListesi = new OperatorListesi();
+            operatorListesi.Text = "SMOOTHSIS [ " + selectedItem.Item2[3].Value.ToString() + " VARDİYA RAPORU OPERATÖR LİSTESİ ]";
+            operatorListesi.ShowDialog();
+            operatorListesi.listOperator(query);
         }
     }
 }

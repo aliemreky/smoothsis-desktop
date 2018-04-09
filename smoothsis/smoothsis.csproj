@@ -207,6 +207,7 @@
     <Compile Include="Services\Enums\Condition.cs" />
     <Compile Include="Services\Enums\MalzemeMiktarBirim.cs" />
     <Compile Include="Services\Notification.cs" />
+    <Compile Include="Services\Operator.cs" />
     <Compile Include="Services\Search.cs" />
     <Compile Include="Services\Styler.cs" />
     <Compile Include="Services\TextValidate.cs" />

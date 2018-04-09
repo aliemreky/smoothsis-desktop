@@ -39,12 +39,17 @@ namespace smoothsis
             listOperator();
         }
 
-        private void listOperator()
+        public void listOperator(string query = null)
         {
             try
             {
                 DataTable operatorListDTable = new DataTable();
-                string query = "SELECT OP_INCKEY, ADSOYAD ADI_SOYADI, CASE WHEN OP_DURUMU = 1 THEN 'Aktif' ELSE 'Pasif' END AS OPERATOR_DURUMU, FORMAT(ISE_BAS_TARIH, 'dd.MM.yyyy') ISE_BASLAMA_TARIHI FROM OPERATOR ORDER BY OP_INCKEY DESC";
+                if (query == null)
+                {
+                    query = "SELECT OP_INCKEY, ADSOYAD ADI_SOYADI, FORMAT(ISE_BAS_TARIH, 'dd.MM.yyyy') ISE_BASLAMA_TARIHI, CASE WHEN OP_DURUMU = 1 THEN 'Aktif' ELSE 'Pasif' END AS OPERATOR_DURUMU " +
+                        "FROM OPERATOR " +
+                        "ORDER BY OP_INCKEY DESC";
+                }
                 SqlCommand command = new SqlCommand(query, Program.connection);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(operatorListDTable);
@@ -92,12 +97,10 @@ namespace smoothsis
                 if (raporOlustur != null && raporDuzenle == null)
                 {
                     raporOlustur.addOperatorToRapor(selectedItem.Item2);
-                    this.Close();
                 }
                 else if (raporOlustur == null && raporDuzenle != null)
                 {
                     raporDuzenle.addOperatorToRapor(selectedItem.Item2);
-                    this.Close();
                 }
                 else
                 {
@@ -153,6 +156,19 @@ namespace smoothsis
             if (!String.IsNullOrEmpty(cbOperatorDurum.SelectedValue.ToString()) && operatorListGridView.DataSource != null)
             {
                 Search.gridviewArama(cbOperatorDurum.SelectedValue.ToString(), operatorListGridView, "OPERATOR_DURUMU");
+            }
+        }
+
+        private void RaporaEkleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            selectedItem = new Tuple<int, DataGridViewCellCollection>(operatorListGridView.SelectedRows[0].Index, operatorListGridView.SelectedRows[0].Cells);
+            if (raporOlustur != null && raporDuzenle == null)
+            {
+                raporOlustur.addOperatorToRapor(selectedItem.Item2);
+            }
+            else if (raporOlustur == null && raporDuzenle != null)
+            {
+                raporDuzenle.addOperatorToRapor(selectedItem.Item2);
             }
         }
     }
