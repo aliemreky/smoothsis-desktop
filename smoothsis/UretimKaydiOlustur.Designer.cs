@@ -32,6 +32,7 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.uretimListesiGridView = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnListeyeEkle = new System.Windows.Forms.Button();
             this.dateTimeUretimTarih = new System.Windows.Forms.DateTimePicker();
             this.txtAciklama = new System.Windows.Forms.TextBox();
             this.txtUretimMik = new System.Windows.Forms.TextBox();
@@ -83,7 +84,7 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.uretimListesiGridView);
-            this.groupBox4.Location = new System.Drawing.Point(12, 548);
+            this.groupBox4.Location = new System.Drawing.Point(12, 547);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(915, 181);
             this.groupBox4.TabIndex = 7;
@@ -100,10 +101,11 @@
             this.uretimListesiGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.uretimListesiGridView.Size = new System.Drawing.Size(884, 147);
             this.uretimListesiGridView.TabIndex = 20;
-            this.uretimListesiGridView.VirtualMode = true;
+            this.uretimListesiGridView.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.uretimListesiGridView_KeyPress);
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnListeyeEkle);
             this.groupBox3.Controls.Add(this.dateTimeUretimTarih);
             this.groupBox3.Controls.Add(this.txtAciklama);
             this.groupBox3.Controls.Add(this.txtUretimMik);
@@ -116,49 +118,61 @@
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.cbMakine);
             this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Location = new System.Drawing.Point(12, 417);
+            this.groupBox3.Location = new System.Drawing.Point(12, 385);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(915, 120);
+            this.groupBox3.Size = new System.Drawing.Size(915, 156);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Üretim Detayları";
             // 
+            // btnListeyeEkle
+            // 
+            this.btnListeyeEkle.Location = new System.Drawing.Point(693, 96);
+            this.btnListeyeEkle.Name = "btnListeyeEkle";
+            this.btnListeyeEkle.Size = new System.Drawing.Size(203, 37);
+            this.btnListeyeEkle.TabIndex = 7;
+            this.btnListeyeEkle.Text = "LİSTEYE EKLE";
+            this.btnListeyeEkle.UseVisualStyleBackColor = true;
+            this.btnListeyeEkle.Click += new System.EventHandler(this.btnListeyeEkle_Click);
+            // 
             // dateTimeUretimTarih
             // 
-            this.dateTimeUretimTarih.Location = new System.Drawing.Point(693, 31);
+            this.dateTimeUretimTarih.Location = new System.Drawing.Point(693, 26);
             this.dateTimeUretimTarih.Name = "dateTimeUretimTarih";
             this.dateTimeUretimTarih.Size = new System.Drawing.Size(203, 23);
-            this.dateTimeUretimTarih.TabIndex = 4;
+            this.dateTimeUretimTarih.TabIndex = 3;
             // 
             // txtAciklama
             // 
-            this.txtAciklama.Location = new System.Drawing.Point(693, 65);
+            this.txtAciklama.Location = new System.Drawing.Point(71, 93);
             this.txtAciklama.Multiline = true;
             this.txtAciklama.Name = "txtAciklama";
-            this.txtAciklama.Size = new System.Drawing.Size(203, 42);
-            this.txtAciklama.TabIndex = 3;
+            this.txtAciklama.Size = new System.Drawing.Size(538, 48);
+            this.txtAciklama.TabIndex = 6;
             // 
             // txtUretimMik
             // 
-            this.txtUretimMik.Location = new System.Drawing.Point(430, 31);
+            this.txtUretimMik.Location = new System.Drawing.Point(443, 26);
             this.txtUretimMik.Name = "txtUretimMik";
-            this.txtUretimMik.Size = new System.Drawing.Size(157, 23);
-            this.txtUretimMik.TabIndex = 3;
+            this.txtUretimMik.Size = new System.Drawing.Size(166, 23);
+            this.txtUretimMik.TabIndex = 2;
+            this.txtUretimMik.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUretimMik_KeyPress);
+            this.txtUretimMik.Leave += new System.EventHandler(this.txtUretimMik_Leave);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(389, 68);
+            this.label13.Location = new System.Drawing.Point(394, 63);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(35, 15);
+            this.label13.Size = new System.Drawing.Size(43, 15);
             this.label13.TabIndex = 1;
-            this.label13.Text = "Birim";
+            this.label13.Text = "Birim *";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(612, 68);
+            this.label15.Location = new System.Drawing.Point(9, 96);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(56, 15);
             this.label15.TabIndex = 1;
@@ -169,15 +183,15 @@
             // 
             this.cbBirim.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBirim.FormattingEnabled = true;
-            this.cbBirim.Location = new System.Drawing.Point(430, 65);
+            this.cbBirim.Location = new System.Drawing.Point(443, 60);
             this.cbBirim.Name = "cbBirim";
-            this.cbBirim.Size = new System.Drawing.Size(157, 23);
-            this.cbBirim.TabIndex = 2;
+            this.cbBirim.Size = new System.Drawing.Size(166, 23);
+            this.cbBirim.TabIndex = 5;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(612, 34);
+            this.label14.Location = new System.Drawing.Point(615, 29);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(72, 15);
             this.label14.TabIndex = 1;
@@ -188,69 +202,73 @@
             // 
             this.cbIslem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbIslem.FormattingEnabled = true;
-            this.cbIslem.Location = new System.Drawing.Point(61, 65);
+            this.cbIslem.Location = new System.Drawing.Point(71, 60);
             this.cbIslem.Name = "cbIslem";
             this.cbIslem.Size = new System.Drawing.Size(252, 23);
-            this.cbIslem.TabIndex = 2;
+            this.cbIslem.TabIndex = 4;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(334, 34);
+            this.label12.Location = new System.Drawing.Point(339, 29);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(90, 15);
+            this.label12.Size = new System.Drawing.Size(98, 15);
             this.label12.TabIndex = 1;
-            this.label12.Text = "Plan. Ür. Miktarı";
+            this.label12.Text = "Plan. Ür. Miktarı *";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(19, 68);
+            this.label11.Location = new System.Drawing.Point(21, 63);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(36, 15);
+            this.label11.Size = new System.Drawing.Size(44, 15);
             this.label11.TabIndex = 1;
-            this.label11.Text = "İşlem";
+            this.label11.Text = "İşlem *";
             // 
             // cbMakine
             // 
             this.cbMakine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMakine.FormattingEnabled = true;
-            this.cbMakine.Location = new System.Drawing.Point(61, 31);
+            this.cbMakine.Location = new System.Drawing.Point(71, 26);
             this.cbMakine.Name = "cbMakine";
             this.cbMakine.Size = new System.Drawing.Size(252, 23);
-            this.cbMakine.TabIndex = 2;
+            this.cbMakine.TabIndex = 1;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(9, 34);
+            this.label10.Location = new System.Drawing.Point(11, 29);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(46, 15);
+            this.label10.Size = new System.Drawing.Size(54, 15);
             this.label10.TabIndex = 1;
-            this.label10.Text = "Makine";
+            this.label10.Text = "Makine *";
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.stokListGridView);
-            this.groupBox2.Location = new System.Drawing.Point(12, 192);
+            this.groupBox2.Location = new System.Drawing.Point(12, 187);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(915, 212);
+            this.groupBox2.Size = new System.Drawing.Size(915, 187);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Stok Bilgileri";
             // 
             // stokListGridView
             // 
+            this.stokListGridView.AllowUserToAddRows = false;
+            this.stokListGridView.AllowUserToDeleteRows = false;
             this.stokListGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.stokListGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.stokListGridView.Location = new System.Drawing.Point(12, 22);
+            this.stokListGridView.Location = new System.Drawing.Point(12, 20);
             this.stokListGridView.MultiSelect = false;
             this.stokListGridView.Name = "stokListGridView";
+            this.stokListGridView.ReadOnly = true;
             this.stokListGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.stokListGridView.Size = new System.Drawing.Size(884, 175);
+            this.stokListGridView.Size = new System.Drawing.Size(884, 159);
             this.stokListGridView.TabIndex = 20;
             this.stokListGridView.VirtualMode = true;
+            this.stokListGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.stokListGridView_CellDoubleClick);
             // 
             // groupBox1
             // 
@@ -455,7 +473,7 @@
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(942, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(944, 25);
             this.toolStrip1.TabIndex = 14;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -467,6 +485,7 @@
             this.kaydetBttn.Size = new System.Drawing.Size(70, 20);
             this.kaydetBttn.Text = "Kaydet";
             this.kaydetBttn.ToolTipText = "Değişiklikleri Kaydet";
+            this.kaydetBttn.Click += new System.EventHandler(this.kaydetBttn_Click);
             // 
             // toolStripSeparator1
             // 
@@ -493,20 +512,20 @@
             this.iptalButton.Name = "iptalButton";
             this.iptalButton.Size = new System.Drawing.Size(57, 20);
             this.iptalButton.Text = "Çıkış";
+            this.iptalButton.Click += new System.EventHandler(this.iptalButton_Click);
             // 
             // UretimKaydiOlustur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(942, 741);
+            this.ClientSize = new System.Drawing.Size(944, 739);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UretimKaydiOlustur";
             this.Text = "SMOOTHSIS [ ÜRETİM KAYDI OLUŞTUR ]";
@@ -570,5 +589,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton iptalButton;
+        private System.Windows.Forms.Button btnListeyeEkle;
     }
 }
