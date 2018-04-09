@@ -98,7 +98,7 @@ namespace smoothsis
 
         private void numericValidate(object sender, KeyPressEventArgs e)
         {
-            TextValidate.forceForNumeric(sender, e);
+            TextValidate.forceForDecimal(sender, e);
         }
 
         public void updateItemOnList()

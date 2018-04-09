@@ -158,7 +158,7 @@
             this.txtBirimFiyat.Location = new System.Drawing.Point(116, 124);
             this.txtBirimFiyat.Name = "txtBirimFiyat";
             this.txtBirimFiyat.Size = new System.Drawing.Size(306, 23);
-            this.txtBirimFiyat.TabIndex = 16;
+            this.txtBirimFiyat.TabIndex = 3;
             this.txtBirimFiyat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numericValidate);
             // 
             // label2
@@ -189,7 +189,7 @@
             this.cbMiktarBirim.Location = new System.Drawing.Point(116, 88);
             this.cbMiktarBirim.Name = "cbMiktarBirim";
             this.cbMiktarBirim.Size = new System.Drawing.Size(306, 23);
-            this.cbMiktarBirim.TabIndex = 14;
+            this.cbMiktarBirim.TabIndex = 2;
             // 
             // txtStokKod
             // 
@@ -199,7 +199,7 @@
             this.txtStokKod.Name = "txtStokKod";
             this.txtStokKod.ReadOnly = true;
             this.txtStokKod.Size = new System.Drawing.Size(305, 23);
-            this.txtStokKod.TabIndex = 15;
+            this.txtStokKod.TabIndex = 0;
             // 
             // dtpGelisTarih
             // 
@@ -208,7 +208,7 @@
             this.dtpGelisTarih.MinimumSize = new System.Drawing.Size(4, 23);
             this.dtpGelisTarih.Name = "dtpGelisTarih";
             this.dtpGelisTarih.Size = new System.Drawing.Size(306, 23);
-            this.dtpGelisTarih.TabIndex = 13;
+            this.dtpGelisTarih.TabIndex = 4;
             // 
             // txtAciklama
             // 
@@ -217,7 +217,7 @@
             this.txtAciklama.Multiline = true;
             this.txtAciklama.Name = "txtAciklama";
             this.txtAciklama.Size = new System.Drawing.Size(306, 121);
-            this.txtAciklama.TabIndex = 12;
+            this.txtAciklama.TabIndex = 10;
             // 
             // label3
             // 
@@ -256,7 +256,7 @@
             this.txtAmbalajBilgi.Location = new System.Drawing.Point(116, 197);
             this.txtAmbalajBilgi.Name = "txtAmbalajBilgi";
             this.txtAmbalajBilgi.Size = new System.Drawing.Size(306, 23);
-            this.txtAmbalajBilgi.TabIndex = 7;
+            this.txtAmbalajBilgi.TabIndex = 5;
             // 
             // label6
             // 
@@ -274,7 +274,7 @@
             this.txtEtiketBilgi.Location = new System.Drawing.Point(549, 95);
             this.txtEtiketBilgi.Name = "txtEtiketBilgi";
             this.txtEtiketBilgi.Size = new System.Drawing.Size(306, 23);
-            this.txtEtiketBilgi.TabIndex = 11;
+            this.txtEtiketBilgi.TabIndex = 9;
             // 
             // txtMalzOlcu
             // 
@@ -282,7 +282,7 @@
             this.txtMalzOlcu.Location = new System.Drawing.Point(549, 57);
             this.txtMalzOlcu.Name = "txtMalzOlcu";
             this.txtMalzOlcu.Size = new System.Drawing.Size(306, 23);
-            this.txtMalzOlcu.TabIndex = 10;
+            this.txtMalzOlcu.TabIndex = 8;
             // 
             // label11
             // 
@@ -300,7 +300,7 @@
             this.txtMalzSerisi.Location = new System.Drawing.Point(116, 231);
             this.txtMalzSerisi.Name = "txtMalzSerisi";
             this.txtMalzSerisi.Size = new System.Drawing.Size(306, 23);
-            this.txtMalzSerisi.TabIndex = 8;
+            this.txtMalzSerisi.TabIndex = 6;
             // 
             // txtMalzCinsi
             // 
@@ -308,7 +308,7 @@
             this.txtMalzCinsi.Location = new System.Drawing.Point(549, 19);
             this.txtMalzCinsi.Name = "txtMalzCinsi";
             this.txtMalzCinsi.Size = new System.Drawing.Size(306, 23);
-            this.txtMalzCinsi.TabIndex = 9;
+            this.txtMalzCinsi.TabIndex = 7;
             // 
             // label15
             // 

@@ -42,6 +42,7 @@ namespace smoothsis
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(depoListDTable);
                 depoListGridView.DataSource = depoListDTable;
+                depoListGridView.Columns[0].Visible = false;
                 depoListGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             }
@@ -95,6 +96,36 @@ namespace smoothsis
             {
                 (depoListGridView.DataSource as DataTable).DefaultView.RowFilter = "";
                 depoListGridView.Refresh();
+            }
+        }
+        
+        private void stokListesiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            selectedItem = new Tuple<int, DataGridViewCellCollection>(depoListGridView.SelectedRows[0].Index, depoListGridView.SelectedRows[0].Cells);
+            DepoStokListesi depoStokListesi = new DepoStokListesi(this);
+            depoStokListesi.ShowDialog();
+        }
+
+        private void depoListGridView_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+           
+        }
+
+        private void depoListGridView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex != -1 && e.ColumnIndex != -1)
+            {
+                contextMenuStrip1.Enabled = true;
+                if ((e.Button == MouseButtons.Right) && (depoListGridView.SelectedRows.Count == 1))
+                {
+                    selectedItem = new Tuple<int, DataGridViewCellCollection>(e.RowIndex, depoListGridView.Rows[e.RowIndex].Cells);
+                    depoListGridView.ClearSelection();
+                    this.depoListGridView.Rows[e.RowIndex].Selected = true;
+                }
+                
+            } else
+            {
+                contextMenuStrip1.Enabled = false;
             }
         }
     }
