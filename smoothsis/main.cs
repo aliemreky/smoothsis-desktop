@@ -121,6 +121,54 @@ namespace smoothsis
             stokTransferListesi.ShowDialog();
         }
 
+        private void makinaOlusturToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MakineOlustur makineOlustur = new MakineOlustur();
+            makineOlustur.ShowDialog();
+        }
+
+        private void makinaListesiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MakineListesi makineListesi = new MakineListesi();
+            makineListesi.ShowDialog();
+        }
+
+        private void işlemOluşturToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IslemOlustur islemOlustur = new IslemOlustur();
+            islemOlustur.ShowDialog();
+        }
+
+        private void işlemListesiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IslemListesi islemListesi = new IslemListesi();
+            islemListesi.ShowDialog();
+        }
+
+        private void operatörOluşturToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OperatorOlustur operatorOlustur = new OperatorOlustur();
+            operatorOlustur.ShowDialog();
+        }
+
+        private void operatörListesiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OperatorListesi operatorListesi = new OperatorListesi();
+            operatorListesi.ShowDialog();
+        }
+
+        private void raporOluşturToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RaporOlustur raporOlustur = new RaporOlustur();
+            raporOlustur.ShowDialog();
+        }
+
+        private void raporListesiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RaporListesi raporListesi = new RaporListesi();
+            raporListesi.ShowDialog();
+        }
+
         private void üretimListesiToolStripMenuItem_Click(object sender, EventArgs e)
         {
             UretimListesi urListesi = new UretimListesi();

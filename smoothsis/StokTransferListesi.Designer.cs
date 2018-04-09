@@ -30,20 +30,22 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StokTransferListesi));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtAramaKayitYapan = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtAramaStokAdi = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtAramaHedefDepo = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnStokTransferListesiGetir = new System.Windows.Forms.Button();
             this.dtAramaKayitTarih = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.txtAramaKaynakDepo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.stokTransferListGridView = new System.Windows.Forms.DataGridView();
-            this.txtAramaHedefDepo = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtAramaStokAdi = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtAramaKayitYapan = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stokTransferListGridView)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -64,10 +66,61 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(14, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(274, 522);
+            this.groupBox2.Size = new System.Drawing.Size(274, 539);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "ARAMA";
+            // 
+            // txtAramaKayitYapan
+            // 
+            this.txtAramaKayitYapan.Location = new System.Drawing.Point(19, 297);
+            this.txtAramaKayitYapan.Name = "txtAramaKayitYapan";
+            this.txtAramaKayitYapan.Size = new System.Drawing.Size(227, 23);
+            this.txtAramaKayitYapan.TabIndex = 12;
+            this.txtAramaKayitYapan.TextChanged += new System.EventHandler(this.searchForKayitYapan);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(17, 279);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(104, 15);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "TRANSFER YAPAN";
+            // 
+            // txtAramaStokAdi
+            // 
+            this.txtAramaStokAdi.Location = new System.Drawing.Point(19, 235);
+            this.txtAramaStokAdi.Name = "txtAramaStokAdi";
+            this.txtAramaStokAdi.Size = new System.Drawing.Size(227, 23);
+            this.txtAramaStokAdi.TabIndex = 10;
+            this.txtAramaStokAdi.TextChanged += new System.EventHandler(this.searchForStokAdi);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(17, 217);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(61, 15);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "STOK ADI";
+            // 
+            // txtAramaHedefDepo
+            // 
+            this.txtAramaHedefDepo.Location = new System.Drawing.Point(19, 177);
+            this.txtAramaHedefDepo.Name = "txtAramaHedefDepo";
+            this.txtAramaHedefDepo.Size = new System.Drawing.Size(227, 23);
+            this.txtAramaHedefDepo.TabIndex = 8;
+            this.txtAramaHedefDepo.TextChanged += new System.EventHandler(this.searchForHedefDepo);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(16, 159);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 15);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "HEDEF DEPO";
             // 
             // btnStokTransferListesiGetir
             // 
@@ -120,75 +173,33 @@
             this.stokTransferListGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.stokTransferListGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.stokTransferListGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.stokTransferListGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.stokTransferListGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.stokTransferListGridView.Location = new System.Drawing.Point(295, 12);
+            this.stokTransferListGridView.Location = new System.Drawing.Point(6, 16);
             this.stokTransferListGridView.MultiSelect = false;
             this.stokTransferListGridView.Name = "stokTransferListGridView";
             this.stokTransferListGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.stokTransferListGridView.Size = new System.Drawing.Size(726, 513);
+            this.stokTransferListGridView.Size = new System.Drawing.Size(734, 513);
             this.stokTransferListGridView.TabIndex = 24;
             this.stokTransferListGridView.VirtualMode = true;
             // 
-            // txtAramaHedefDepo
+            // groupBox1
             // 
-            this.txtAramaHedefDepo.Location = new System.Drawing.Point(19, 177);
-            this.txtAramaHedefDepo.Name = "txtAramaHedefDepo";
-            this.txtAramaHedefDepo.Size = new System.Drawing.Size(227, 23);
-            this.txtAramaHedefDepo.TabIndex = 8;
-            this.txtAramaHedefDepo.TextChanged += new System.EventHandler(this.searchForHedefDepo);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 159);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 15);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "HEDEF DEPO";
-            // 
-            // txtAramaStokAdi
-            // 
-            this.txtAramaStokAdi.Location = new System.Drawing.Point(19, 235);
-            this.txtAramaStokAdi.Name = "txtAramaStokAdi";
-            this.txtAramaStokAdi.Size = new System.Drawing.Size(227, 23);
-            this.txtAramaStokAdi.TabIndex = 10;
-            this.txtAramaStokAdi.TextChanged += new System.EventHandler(this.searchForStokAdi);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 217);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 15);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "STOK ADI";
-            // 
-            // txtAramaKayitYapan
-            // 
-            this.txtAramaKayitYapan.Location = new System.Drawing.Point(19, 297);
-            this.txtAramaKayitYapan.Name = "txtAramaKayitYapan";
-            this.txtAramaKayitYapan.Size = new System.Drawing.Size(227, 23);
-            this.txtAramaKayitYapan.TabIndex = 12;
-            this.txtAramaKayitYapan.TextChanged += new System.EventHandler(this.searchForKayitYapan);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(17, 279);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(104, 15);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "TRANSFER YAPAN";
+            this.groupBox1.Controls.Add(this.stokTransferListGridView);
+            this.groupBox1.Location = new System.Drawing.Point(295, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(746, 539);
+            this.groupBox1.TabIndex = 25;
+            this.groupBox1.TabStop = false;
             // 
             // StokTransferListesi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1035, 539);
-            this.Controls.Add(this.stokTransferListGridView);
+            this.ClientSize = new System.Drawing.Size(1052, 547);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -199,6 +210,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stokTransferListGridView)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -218,5 +230,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtAramaKayitYapan;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

@@ -38,18 +38,23 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.depoStokListGridView = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtAramaStokAdi = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.txtAramaMiktar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtAramaStokKod = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtAramaStokAdi = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dtAramaGelisTarih = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnStokListesiGetir = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.depoStokListGridView)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -117,7 +122,7 @@
             this.groupBox1.Controls.Add(this.depoStokListGridView);
             this.groupBox1.Location = new System.Drawing.Point(251, 35);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(719, 325);
+            this.groupBox1.Size = new System.Drawing.Size(719, 441);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             // 
@@ -126,12 +131,13 @@
             this.depoStokListGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.depoStokListGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.depoStokListGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.depoStokListGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.depoStokListGridView.Location = new System.Drawing.Point(6, 13);
             this.depoStokListGridView.Name = "depoStokListGridView";
             this.depoStokListGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.depoStokListGridView.Size = new System.Drawing.Size(707, 306);
+            this.depoStokListGridView.Size = new System.Drawing.Size(707, 422);
             this.depoStokListGridView.TabIndex = 0;
             this.depoStokListGridView.VirtualMode = true;
             // 
@@ -140,6 +146,9 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.btnStokListesiGetir);
+            this.groupBox2.Controls.Add(this.dtAramaGelisTarih);
+            this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.txtAramaStokAdi);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.txtAramaMiktar);
@@ -148,24 +157,40 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(12, 161);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(222, 199);
+            this.groupBox2.Size = new System.Drawing.Size(222, 315);
             this.groupBox2.TabIndex = 24;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "ARAMA";
             // 
+            // txtAramaStokAdi
+            // 
+            this.txtAramaStokAdi.Location = new System.Drawing.Point(16, 159);
+            this.txtAramaStokAdi.Name = "txtAramaStokAdi";
+            this.txtAramaStokAdi.Size = new System.Drawing.Size(189, 23);
+            this.txtAramaStokAdi.TabIndex = 2;
+            this.txtAramaStokAdi.TextChanged += new System.EventHandler(this.searchForStokAdi);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(13, 141);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 15);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "STOK ADI";
+            // 
             // txtAramaMiktar
             // 
-            this.txtAramaMiktar.Location = new System.Drawing.Point(15, 162);
-            this.txtAramaMiktar.Multiline = true;
+            this.txtAramaMiktar.Location = new System.Drawing.Point(16, 215);
             this.txtAramaMiktar.Name = "txtAramaMiktar";
-            this.txtAramaMiktar.Size = new System.Drawing.Size(189, 25);
+            this.txtAramaMiktar.Size = new System.Drawing.Size(189, 23);
             this.txtAramaMiktar.TabIndex = 3;
             this.txtAramaMiktar.TextChanged += new System.EventHandler(this.searchForMiktar);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 144);
+            this.label2.Location = new System.Drawing.Point(13, 197);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 15);
             this.label2.TabIndex = 0;
@@ -173,68 +198,88 @@
             // 
             // txtAramaStokKod
             // 
-            this.txtAramaStokKod.Location = new System.Drawing.Point(15, 47);
-            this.txtAramaStokKod.Multiline = true;
+            this.txtAramaStokKod.Location = new System.Drawing.Point(16, 100);
             this.txtAramaStokKod.Name = "txtAramaStokKod";
-            this.txtAramaStokKod.Size = new System.Drawing.Size(189, 25);
+            this.txtAramaStokKod.Size = new System.Drawing.Size(189, 23);
             this.txtAramaStokKod.TabIndex = 1;
             this.txtAramaStokKod.TextChanged += new System.EventHandler(this.searchForStokKod);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 29);
+            this.label1.Location = new System.Drawing.Point(13, 82);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "STOK KODU";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(97, 66);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 20);
-            this.label3.TabIndex = 25;
-            this.label3.Text = "label3";
-            // 
             // label4
             // 
-            this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(96, 112);
+            this.label4.Location = new System.Drawing.Point(5, 63);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 20);
+            this.label4.Size = new System.Drawing.Size(216, 20);
             this.label4.TabIndex = 26;
             this.label4.Text = "label4";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtAramaStokAdi
+            // label3
             // 
-            this.txtAramaStokAdi.Location = new System.Drawing.Point(15, 106);
-            this.txtAramaStokAdi.Multiline = true;
-            this.txtAramaStokAdi.Name = "txtAramaStokAdi";
-            this.txtAramaStokAdi.Size = new System.Drawing.Size(189, 25);
-            this.txtAramaStokAdi.TabIndex = 2;
-            this.txtAramaStokAdi.TextChanged += new System.EventHandler(this.searchForStokAdi);
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(4, 23);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(216, 20);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "label3";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label5
+            // groupBox3
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 88);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 15);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "STOK ADI";
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Location = new System.Drawing.Point(12, 34);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(222, 116);
+            this.groupBox3.TabIndex = 28;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "DEPO BİLGİLERİ";
+            // 
+            // dtAramaGelisTarih
+            // 
+            this.dtAramaGelisTarih.CustomFormat = "";
+            this.dtAramaGelisTarih.Location = new System.Drawing.Point(16, 273);
+            this.dtAramaGelisTarih.Name = "dtAramaGelisTarih";
+            this.dtAramaGelisTarih.Size = new System.Drawing.Size(189, 23);
+            this.dtAramaGelisTarih.TabIndex = 8;
+            this.dtAramaGelisTarih.ValueChanged += new System.EventHandler(this.searchForGelisTarih);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(13, 253);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(79, 15);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "GELİŞ TARİHİ";
+            // 
+            // btnStokListesiGetir
+            // 
+            this.btnStokListesiGetir.Location = new System.Drawing.Point(16, 22);
+            this.btnStokListesiGetir.Name = "btnStokListesiGetir";
+            this.btnStokListesiGetir.Size = new System.Drawing.Size(189, 43);
+            this.btnStokListesiGetir.TabIndex = 9;
+            this.btnStokListesiGetir.TabStop = false;
+            this.btnStokListesiGetir.Text = "STOK LİSTESİNİ YENİLE";
+            this.btnStokListesiGetir.UseVisualStyleBackColor = true;
+            this.btnStokListesiGetir.Click += new System.EventHandler(this.btnStokListesiGetir_Click);
             // 
             // DepoStokListesi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(982, 370);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.ClientSize = new System.Drawing.Size(982, 489);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.toolStrip1);
@@ -250,6 +295,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.depoStokListGridView)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,9 +316,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtAramaStokKod;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtAramaStokAdi;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.DateTimePicker dtAramaGelisTarih;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnStokListesiGetir;
     }
 }

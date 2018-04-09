@@ -59,9 +59,10 @@
             this.depoListGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.depoListGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.depoListGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.depoListGridView.ContextMenuStrip = this.contextMenuStrip1;
-            this.depoListGridView.Location = new System.Drawing.Point(8, 18);
+            this.depoListGridView.Location = new System.Drawing.Point(8, 16);
             this.depoListGridView.MultiSelect = false;
             this.depoListGridView.Name = "depoListGridView";
             this.depoListGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -71,19 +72,18 @@
             this.depoListGridView.VirtualMode = true;
             this.depoListGridView.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.showDepo);
             this.depoListGridView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.depoListGridView_CellMouseDown);
-            this.depoListGridView.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.depoListGridView_ColumnHeaderMouseClick);
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.stokListesiToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(133, 26);
             // 
             // stokListesiToolStripMenuItem
             // 
             this.stokListesiToolStripMenuItem.Name = "stokListesiToolStripMenuItem";
-            this.stokListesiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.stokListesiToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.stokListesiToolStripMenuItem.Text = "Stok Listesi";
             this.stokListesiToolStripMenuItem.Click += new System.EventHandler(this.stokListesiToolStripMenuItem_Click);
             // 

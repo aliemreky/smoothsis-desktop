@@ -31,6 +31,7 @@ namespace smoothsis
             cellsOfSelectedItem = stokListesi.getSelectedItem().Item2;
             txtStokKod.Text = cellsOfSelectedItem[1].Value.ToString();
             txtStokAdi.Text = cellsOfSelectedItem[2].Value.ToString();
+            txtStokBirim.Text = cellsOfSelectedItem[3].Value.ToString();
             Styler.gridViewCommonStyle(stokDepoListGridView);
             listStokDepo();
         }
@@ -40,9 +41,10 @@ namespace smoothsis
             try
             {
                 DataTable stokListDepoTable = new DataTable();
-                string query = "SELECT STOK_DEPO.STOK_DEPO_INCKEY, DEPO.DEPO_ADI, DEPO.DEPO_LOKASYON, STOK_DEPO.MIKTAR, STOK_DEPO.DEPO_INCKEY FROM STOK_DEPO " +
+                string query = "SELECT STOK_DEPO.STOK_DEPO_INCKEY, DEPO.DEPO_ADI, DEPO.DEPO_LOKASYON, " +
+                    "STOK_DEPO.MIKTAR, STOK_DEPO.DEPO_INCKEY FROM STOK_DEPO " +
                     "INNER JOIN DEPO ON STOK_DEPO.DEPO_INCKEY = DEPO.DEPO_INCKEY " +
-                    "WHERE STOK_INCKEY = @stok_inckey ORDER BY STOK_DEPO_INCKEY DESC";
+                    "WHERE STOK_DEPO.STOK_INCKEY = @stok_inckey ORDER BY STOK_DEPO_INCKEY DESC";
                 sqlCmd = new SqlCommand(query, Program.connection);
                 sqlCmd.Parameters.Add("@stok_inckey", SqlDbType.VarChar).Value = cellsOfSelectedItem[0].Value.ToString();
                 SqlDataAdapter adapter = new SqlDataAdapter(sqlCmd);
@@ -71,9 +73,16 @@ namespace smoothsis
 
         private void transferYapBttn_Click(object sender, EventArgs e)
         {
-            stokDepoSelectedItem = new Tuple<int, DataGridViewCellCollection>(stokDepoListGridView.SelectedRows[0].Index, stokDepoListGridView.SelectedRows[0].Cells);
-            StokTransfer stokTransfer = new StokTransfer(this);
-            stokTransfer.ShowDialog();
+            if (stokDepoListGridView.SelectedRows.Count == 1)
+            {
+                stokDepoSelectedItem = new Tuple<int, DataGridViewCellCollection>(stokDepoListGridView.SelectedRows[0].Index, stokDepoListGridView.SelectedRows[0].Cells);
+                StokTransfer stokTransfer = new StokTransfer(this);
+                stokTransfer.ShowDialog();
+            }
+            else
+            {
+                Notification.messageBoxError("BİR SORUN OLUŞTU, KAYIT SEÇİLEMEDİ !");
+            }
         }
 
         private void silBttn_Click(object sender, EventArgs e)
