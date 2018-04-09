@@ -16,7 +16,7 @@ namespace smoothsis
     public partial class RaporOlustur : Form
     {
         private SqlCommand sqlCmd;
-        private string[] selectedOperator;
+        private List<Operator> selectedOperators = new List<Operator>();
         private string[] selectedUretim;
 
         public RaporOlustur()
@@ -32,16 +32,25 @@ namespace smoothsis
 
         public void addOperatorToRapor(DataGridViewCellCollection selectedOperator)
         {
-            this.selectedOperator = new string[]{
+            if (selectedOperator[3].Value.ToString().Equals("Aktif"))
+            {
+                Operator oprtr = new Operator(
                     selectedOperator[0].Value.ToString(),
                     selectedOperator[1].Value.ToString(),
                     selectedOperator[2].Value.ToString(),
                     selectedOperator[3].Value.ToString()
-            };
+                );
 
-            if (this.selectedOperator[2].Equals("Aktif"))
-            {
-                txtOperator.Text = this.selectedOperator[1];
+                if (!selectedOperators.Contains(oprtr))
+                {
+                    selectedOperators.Add(oprtr);
+                    txtOperator.Text += selectedOperator[1].Value.ToString() + ", ";
+
+                }
+                else
+                {
+                    Notification.messageBoxError("BU OPERATÖR EKLENMİŞ DURUMDA.");
+                }
             }
             else
             {
@@ -86,54 +95,55 @@ namespace smoothsis
             }
             else
             {
-                if (selectedOperator[2].Equals("Aktif"))
+                try
                 {
-                    try
+                    sqlCmd = Program.connection.CreateCommand();
+                    sqlCmd.CommandText = "INSERT INTO " +
+                        "RAPOR(UR_INCKEY, RAPOR_TARIH, RAPOR_VARDIYA, " +
+                        "BESLENEN_MIK, URETILEN_MIK, FIRE_MIK, FIRE_NEDENI, ISKARTA_MIK, " +
+                        "ISKARTA_NEDENI, KAYIT_YAPAN_KUL, ACIKLAMA) " +
+                        "OUTPUT INSERTED.RAPOR_INCKEY " +
+                        "VALUES(@ur_inckey, @rapor_tarih, @rapor_vardiya, " +
+                        "@beslenen_mik, @uretilen_mik, @fire_mik, @fire_nedeni, @iskarta_mik, " +
+                        "@iskarta_nedeni, @kayit_yapan_kul, @aciklama)";
+                    sqlCmd.Parameters.Add("@ur_inckey", SqlDbType.Int).Value = Convert.ToInt32(selectedUretim[0]);
+                    sqlCmd.Parameters.Add("@rapor_tarih", SqlDbType.Date).Value = dtpRaporTarih.Value;
+                    sqlCmd.Parameters.Add("@rapor_vardiya", SqlDbType.VarChar).Value = cbRaporVardiya.SelectedValue.ToString();
+                    sqlCmd.Parameters.Add("@beslenen_mik", SqlDbType.Decimal).Value = decimal.Parse(txtBeslenenMiktar.Text);
+                    sqlCmd.Parameters.Add("@uretilen_mik", SqlDbType.Decimal).Value = decimal.Parse(txtUretilenMiktar.Text);
+                    sqlCmd.Parameters.Add("@fire_mik", SqlDbType.Decimal).Value = decimal.Parse(txtFireMiktar.Text);
+                    sqlCmd.Parameters.Add("@fire_nedeni", SqlDbType.VarChar).Value = txtFireNedeni.Text;
+                    sqlCmd.Parameters.Add("@iskarta_mik", SqlDbType.Decimal).Value = decimal.Parse(txtIskartaMiktar.Text);
+                    sqlCmd.Parameters.Add("@iskarta_nedeni", SqlDbType.VarChar).Value = txtIskartaNedeni.Text;
+                    sqlCmd.Parameters.Add("@kayit_yapan_kul", SqlDbType.Int).Value = Program.kullanici.Item1;
+                    sqlCmd.Parameters.Add("@aciklama", SqlDbType.VarChar).Value = txtAciklama.Text;
+
+                    int raporInckey = (int)sqlCmd.ExecuteScalar();
+
+                    if (raporInckey > 0)
                     {
-                        sqlCmd = Program.connection.CreateCommand();
-                        sqlCmd.CommandText = "INSERT INTO " +
-                            "RAPOR(UR_INCKEY, RAPOR_TARIH, RAPOR_VARDIYA, " +
-                            "BESLENEN_MIK, URETILEN_MIK, FIRE_MIK, FIRE_NEDENI, ISKARTA_MIK, " +
-                            "ISKARTA_NEDENI, KAYIT_YAPAN_KUL, ACIKLAMA) " +
-                            "OUTPUT INSERTED.RAPOR_INCKEY " +
-                            "VALUES(@ur_inckey, @rapor_tarih, @rapor_vardiya, " +
-                            "@beslenen_mik, @uretilen_mik, @fire_mik, @fire_nedeni, @iskarta_mik, " +
-                            "@iskarta_nedeni, @kayit_yapan_kul, @aciklama)";
-                        sqlCmd.Parameters.Add("@ur_inckey", SqlDbType.Int).Value = Convert.ToInt32(selectedUretim[0]);
-                        sqlCmd.Parameters.Add("@rapor_tarih", SqlDbType.Date).Value = dtpRaporTarih.Value;
-                        sqlCmd.Parameters.Add("@rapor_vardiya", SqlDbType.VarChar).Value = cbRaporVardiya.SelectedValue.ToString();
-                        sqlCmd.Parameters.Add("@beslenen_mik", SqlDbType.Decimal).Value = decimal.Parse(txtBeslenenMiktar.Text);
-                        sqlCmd.Parameters.Add("@uretilen_mik", SqlDbType.Decimal).Value = decimal.Parse(txtUretilenMiktar.Text);
-                        sqlCmd.Parameters.Add("@fire_mik", SqlDbType.Decimal).Value = decimal.Parse(txtFireMiktar.Text);
-                        sqlCmd.Parameters.Add("@fire_nedeni", SqlDbType.VarChar).Value = txtFireNedeni.Text;
-                        sqlCmd.Parameters.Add("@iskarta_mik", SqlDbType.Decimal).Value = decimal.Parse(txtIskartaMiktar.Text);
-                        sqlCmd.Parameters.Add("@iskarta_nedeni", SqlDbType.VarChar).Value = txtIskartaNedeni.Text;
-                        sqlCmd.Parameters.Add("@kayit_yapan_kul", SqlDbType.Int).Value = Program.kullanici.Item1;
-                        sqlCmd.Parameters.Add("@aciklama", SqlDbType.VarChar).Value = txtAciklama.Text;
-
-                        int raporInckey = (int)sqlCmd.ExecuteScalar();
-
-                        if (raporInckey > 0)
+                        List<int> okeys = new List<int>();
+                        foreach (Operator selectedOperator in selectedOperators)
                         {
-                            sqlCmd.CommandText = "INSERT INTO OPERATOR_TO_RAPOR(OP_INCKEY, RAPOR_INCKEY) " +
+                            string query = "INSERT INTO OPERATOR_TO_RAPOR(OP_INCKEY, RAPOR_INCKEY) " +
                                 "VALUES(@op_inckey, @rapor_inckey)";
-                            sqlCmd.Parameters.Add("@op_inckey", SqlDbType.Int).Value = Convert.ToInt32(selectedOperator[0]);
+                            sqlCmd = new SqlCommand(query, Program.connection);
+                            sqlCmd.Parameters.Add("@op_inckey", SqlDbType.Int).Value = Convert.ToInt32(selectedOperator.getOpInckey());
                             sqlCmd.Parameters.Add("@rapor_inckey", SqlDbType.Int).Value = raporInckey;
-
-                            if (sqlCmd.ExecuteNonQuery() > 0)
-                            {
-                                Notification.messageBox("RAPOR BAŞARILI BİR ŞEKİLDE OLUŞTURULDU.");
-                            }
+                            int state = sqlCmd.ExecuteNonQuery();
+                            okeys.Add(state);
                         }
 
+                        if (!okeys.Contains(0))
+                        {
+                            Notification.messageBox("RAPOR BAŞARILI BİR ŞEKİLDE OLUŞTURULDU.");
+                        }
                     }
-                    catch (Exception ex)
-                    {
-                        Notification.messageBoxError(ex.Message);
-                    }
-                } else
+
+                }
+                catch (Exception ex)
                 {
-                    Notification.messageBoxError("ÜZERİNE RAPOR OLUŞTURULAN OPERATÖR AKTiF DEĞİL.");
+                    Notification.messageBoxError(ex.Message);
                 }
             }
         }

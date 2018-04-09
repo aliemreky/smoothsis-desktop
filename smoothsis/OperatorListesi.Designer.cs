@@ -42,6 +42,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtAramaAdiSoyadi = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.raporaEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.operatorListGridView)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -79,14 +80,15 @@
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.duzenleToolStripMenuItem});
+            this.duzenleToolStripMenuItem,
+            this.raporaEkleToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(117, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 70);
             // 
             // duzenleToolStripMenuItem
             // 
             this.duzenleToolStripMenuItem.Name = "duzenleToolStripMenuItem";
-            this.duzenleToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.duzenleToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.duzenleToolStripMenuItem.Text = "Düzenle";
             this.duzenleToolStripMenuItem.Click += new System.EventHandler(this.operatorDuzenleToolStripMenuItem_Click);
             // 
@@ -175,6 +177,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ADI SOYADI";
             // 
+            // raporaEkleToolStripMenuItem
+            // 
+            this.raporaEkleToolStripMenuItem.Name = "raporaEkleToolStripMenuItem";
+            this.raporaEkleToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.raporaEkleToolStripMenuItem.Text = "Rapor\'a Ekle";
+            this.raporaEkleToolStripMenuItem.Click += new System.EventHandler(this.RaporaEkleToolStripMenuItem_Click);
+            // 
             // OperatorListesi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -212,5 +221,6 @@
         private System.Windows.Forms.DateTimePicker dtpIseBaslamaTarihi;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnOperatorListesiGetir;
+        private System.Windows.Forms.ToolStripMenuItem raporaEkleToolStripMenuItem;
     }
 }

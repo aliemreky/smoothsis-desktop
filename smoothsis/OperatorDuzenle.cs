@@ -28,8 +28,8 @@ namespace smoothsis
             cbOperatorDurum.DataSource = Enum.GetValues(typeof(Condition));
             DataGridViewCellCollection cellsOfSelectedItem = operatorListesi.getSelectedItem().Item2;
             txtOperatorAdiSoyadi.Text = cellsOfSelectedItem[1].Value.ToString();
-            cbOperatorDurum.SelectedIndex = cbOperatorDurum.FindString(cellsOfSelectedItem[2].Value.ToString());
-            dtpIseBaslamaTarih.Value = DateTime.Parse(cellsOfSelectedItem[3].Value.ToString());
+            cbOperatorDurum.SelectedIndex = cbOperatorDurum.FindString(cellsOfSelectedItem[3].Value.ToString());
+            dtpIseBaslamaTarih.Value = DateTime.Parse(cellsOfSelectedItem[2].Value.ToString());
         }
 
         public void updateItemOnList()
@@ -37,8 +37,8 @@ namespace smoothsis
             DataGridView dataGridView = operatorListesi.getDataGrid();
             int rowIndex = operatorListesi.getSelectedItem().Item1;
             dataGridView[1, rowIndex].Value = txtOperatorAdiSoyadi.Text;
-            dataGridView[2, rowIndex].Value = cbOperatorDurum.SelectedValue;
-            dataGridView[3, rowIndex].Value = dtpIseBaslamaTarih.Value;
+            dataGridView[2, rowIndex].Value = dtpIseBaslamaTarih.Value;
+            dataGridView[3, rowIndex].Value = cbOperatorDurum.SelectedValue;
         }
 
         private void kaydetBttn_Click(object sender, EventArgs e)
