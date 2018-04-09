@@ -171,6 +171,12 @@
     <Compile Include="StokTransfer.Designer.cs">
       <DependentUpon>StokTransfer.cs</DependentUpon>
     </Compile>
+    <Compile Include="UretimKaydiDuzenle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UretimKaydiDuzenle.Designer.cs">
+      <DependentUpon>UretimKaydiDuzenle.cs</DependentUpon>
+    </Compile>
     <Compile Include="UretimKaydiOlustur.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -255,6 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StokTransfer.resx">
       <DependentUpon>StokTransfer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UretimKaydiDuzenle.resx">
+      <DependentUpon>UretimKaydiDuzenle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UretimKaydiOlustur.resx">
       <DependentUpon>UretimKaydiOlustur.cs</DependentUpon>
