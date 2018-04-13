@@ -1,6 +1,6 @@
 ﻿namespace smoothsis
 {
-    partial class UretimKaydiDuzenle
+    partial class UretimKayitPaneli
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UretimKaydiDuzenle));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UretimKayitPaneli));
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.uretimListesiGridView = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -101,7 +101,8 @@
             this.uretimListesiGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.uretimListesiGridView.Size = new System.Drawing.Size(884, 129);
             this.uretimListesiGridView.TabIndex = 20;
-            this.uretimListesiGridView.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.uretimListesiGridView_KeyPress);
+            this.uretimListesiGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.uretimListesiGridView_CellDoubleClick);
+            this.uretimListesiGridView.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.uretimListesiGridView_UserDeletingRow);
             // 
             // groupBox3
             // 
@@ -514,7 +515,7 @@
             this.iptalButton.Text = "Çıkış";
             this.iptalButton.Click += new System.EventHandler(this.iptalButton_Click);
             // 
-            // UretimKaydiDuzenle
+            // UretimKayitPaneli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -527,9 +528,9 @@
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "UretimKaydiDuzenle";
-            this.Text = "SMOOTHSIS [ ÜRETİM KAYDI DÜZENLE ]";
-            this.Load += new System.EventHandler(this.UretimKaydiDuzenle_Load);
+            this.Name = "UretimKayitPaneli";
+            this.Text = "SMOOTHSIS [ ÜRETİM KAYDI OLUŞTUR ]";
+            this.Load += new System.EventHandler(this.UretimKaydiOlustur_Load);
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.uretimListesiGridView)).EndInit();
             this.groupBox3.ResumeLayout(false);

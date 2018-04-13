@@ -141,17 +141,18 @@ namespace smoothsis
             {
                 int siparisInckey = int.Parse(siparisListGridView["SIPARIS_INCKEY", gridviewClickedRow].Value.ToString());
 
-                string uretimCheckSQL = "SELECT COUNT(*) FROM SIPARIS_DETAY WHERE SIPARIS_INCKEY = @siparis_inckey";
+                string uretimCheckSQL = "SELECT COUNT(*) FROM URETIM U JOIN SIPARIS_DETAY S ON S.SIP_DETAY_INCKEY = U.SIP_DETAY_INCKEY WHERE S.SIPARIS_INCKEY = @siparis_inckey";
                 sqlCmd = new SqlCommand(uretimCheckSQL, Program.connection);
                 sqlCmd.Parameters.AddWithValue("@siparis_inckey", siparisInckey);
                 if ((int)sqlCmd.ExecuteScalar() > 0)
                 {
-                    UretimKaydiOlustur uretimKaydiOlustur = new UretimKaydiOlustur(siparisInckey);
+                    UretimKayitPaneli uretimKaydiOlustur = new UretimKayitPaneli(siparisInckey, true);
                     uretimKaydiOlustur.ShowDialog();
                 }
                 else
                 {
-                    Notification.messageBox("BU SİPARİŞE AİT ÜRETİM KAYDI MEVCUTTUR !");
+                    UretimKayitPaneli uretimKaydiOlustur = new UretimKayitPaneli(siparisInckey, false);
+                    uretimKaydiOlustur.ShowDialog();
                 }
             }
         }
