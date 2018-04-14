@@ -17,11 +17,14 @@ namespace smoothsis
     {
         private SqlCommand sqlCmd;
         private List<Operator> selectedOperators = new List<Operator>();
-        private string[] selectedUretim;
+        private DataGridViewCellCollection selectedUretim;
+        private UretimListesi uretimListesi;
 
-        public RaporOlustur()
+        public RaporOlustur(UretimListesi uretimListesi)
         {
             InitializeComponent();
+            this.uretimListesi = uretimListesi;
+            selectedUretim = this.uretimListesi.getSelectedItem().Item2;
         }
 
         private void btnOperator_Click(object sender, EventArgs e)
@@ -58,23 +61,6 @@ namespace smoothsis
             }
         }
 
-        public void addUretimToRapor(DataGridViewCellCollection selectedUretim)
-        {
-
-        }
-
-        private void btnUretim_Click(object sender, EventArgs e)
-        {
-            this.selectedUretim = new string[]{
-                "3",
-                "1",
-                "1",
-                "1",
-                "123"
-            };
-            txtUretim.Text = selectedUretim[4];
-        }
-
         private void decimalValidate(object sender, KeyPressEventArgs e)
         {
             TextValidate.forceForDecimal(sender, e);
@@ -82,8 +68,7 @@ namespace smoothsis
 
         private void kaydetBttn_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(txtUretim.Text) ||
-                String.IsNullOrEmpty(txtOperator.Text) ||
+            if (String.IsNullOrEmpty(txtOperator.Text) ||
                 String.IsNullOrEmpty(cbRaporVardiya.SelectedValue.ToString()) ||
                 String.IsNullOrEmpty(txtBeslenenMiktar.Text) ||
                 String.IsNullOrEmpty(txtUretilenMiktar.Text) ||
@@ -106,7 +91,7 @@ namespace smoothsis
                         "VALUES(@ur_inckey, @rapor_tarih, @rapor_vardiya, " +
                         "@beslenen_mik, @uretilen_mik, @fire_mik, @fire_nedeni, @iskarta_mik, " +
                         "@iskarta_nedeni, @kayit_yapan_kul, @aciklama)";
-                    sqlCmd.Parameters.Add("@ur_inckey", SqlDbType.Int).Value = Convert.ToInt32(selectedUretim[0]);
+                    sqlCmd.Parameters.Add("@ur_inckey", SqlDbType.Int).Value = Convert.ToInt32(selectedUretim[0].Value.ToString());
                     sqlCmd.Parameters.Add("@rapor_tarih", SqlDbType.Date).Value = dtpRaporTarih.Value;
                     sqlCmd.Parameters.Add("@rapor_vardiya", SqlDbType.VarChar).Value = cbRaporVardiya.SelectedValue.ToString();
                     sqlCmd.Parameters.Add("@beslenen_mik", SqlDbType.Decimal).Value = decimal.Parse(txtBeslenenMiktar.Text);
@@ -150,7 +135,6 @@ namespace smoothsis
 
         private void temizleBttn_Click(object sender, EventArgs e)
         {
-            txtUretim.Clear();
             txtOperator.Clear();
             txtBeslenenMiktar.Clear();
             txtUretilenMiktar.Clear();

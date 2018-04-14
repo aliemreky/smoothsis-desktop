@@ -17,6 +17,7 @@ namespace smoothsis
     {
         private SqlCommand sqlCmd;
         private SqlDataAdapter sqlDataAdapter;
+        private Tuple<int, DataGridViewCellCollection> selectedItem;
 
         public UretimListesi()
         {
@@ -85,6 +86,57 @@ namespace smoothsis
         private void btnUretimListesiGetir_Click(object sender, EventArgs e)
         {
             getUretimListesi();
+        }
+
+        private void uretimListGridView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex != -1 && e.ColumnIndex != -1)
+            {
+                contextMenuStrip1.Enabled = true;
+                if ((e.Button == MouseButtons.Right) && (uretimListGridView.SelectedRows.Count == 1))
+                {
+                    selectedItem = new Tuple<int, DataGridViewCellCollection>(e.RowIndex, uretimListGridView.Rows[e.RowIndex].Cells);
+                    uretimListGridView.ClearSelection();
+                    this.uretimListGridView.Rows[e.RowIndex].Selected = true;
+                }
+            }
+            else
+            {
+                contextMenuStrip1.Enabled = false;
+            }
+        }
+
+        private void raporOlusturToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (uretimListGridView.SelectedRows.Count == 1)
+            {
+                selectedItem = new Tuple<int, DataGridViewCellCollection>(uretimListGridView.SelectedRows[0].Index, uretimListGridView.SelectedRows[0].Cells);
+                RaporOlustur raporOlustur = new RaporOlustur(this);
+                raporOlustur.ShowDialog();
+            }
+            else
+            {
+                Notification.messageBoxError("BİR SORUN OLUŞTU, KAYIT SEÇİLEMEDİ !");
+            }
+        }
+
+        public Tuple<int, DataGridViewCellCollection> getSelectedItem()
+        {
+            return selectedItem;
+        }
+
+        private void raporListesiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (uretimListGridView.SelectedRows.Count == 1)
+            {
+                selectedItem = new Tuple<int, DataGridViewCellCollection>(uretimListGridView.SelectedRows[0].Index, uretimListGridView.SelectedRows[0].Cells);
+                RaporListesi raporListesi = new RaporListesi(Convert.ToInt32(selectedItem.Item2[0].Value.ToString()));
+                raporListesi.ShowDialog();
+            }
+            else
+            {
+                Notification.messageBoxError("BİR SORUN OLUŞTU, KAYIT SEÇİLEMEDİ !");
+            }
         }
     }
 }

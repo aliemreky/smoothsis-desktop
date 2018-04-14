@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UretimListesi));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnUretimListesiGetir = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.txtAramaStokAdi = new System.Windows.Forms.TextBox();
             this.txtAramaMakine = new System.Windows.Forms.TextBox();
@@ -40,10 +42,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.uretimListGridView = new System.Windows.Forms.DataGridView();
-            this.btnUretimListesiGetir = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.raporOluşturToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.raporListesiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uretimListGridView)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -64,6 +69,17 @@
             this.groupBox2.TabIndex = 26;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "ARAMA";
+            // 
+            // btnUretimListesiGetir
+            // 
+            this.btnUretimListesiGetir.Location = new System.Drawing.Point(18, 31);
+            this.btnUretimListesiGetir.Name = "btnUretimListesiGetir";
+            this.btnUretimListesiGetir.Size = new System.Drawing.Size(195, 43);
+            this.btnUretimListesiGetir.TabIndex = 6;
+            this.btnUretimListesiGetir.TabStop = false;
+            this.btnUretimListesiGetir.Text = "LİSTEYİ YENİLE";
+            this.btnUretimListesiGetir.UseVisualStyleBackColor = true;
+            this.btnUretimListesiGetir.Click += new System.EventHandler(this.btnUretimListesiGetir_Click);
             // 
             // label8
             // 
@@ -145,6 +161,7 @@
             // uretimListGridView
             // 
             this.uretimListGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.uretimListGridView.ContextMenuStrip = this.contextMenuStrip1;
             this.uretimListGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.uretimListGridView.Location = new System.Drawing.Point(6, 13);
             this.uretimListGridView.MultiSelect = false;
@@ -154,16 +171,27 @@
             this.uretimListGridView.TabIndex = 19;
             this.uretimListGridView.VirtualMode = true;
             // 
-            // btnUretimListesiGetir
+            // contextMenuStrip1
             // 
-            this.btnUretimListesiGetir.Location = new System.Drawing.Point(18, 31);
-            this.btnUretimListesiGetir.Name = "btnUretimListesiGetir";
-            this.btnUretimListesiGetir.Size = new System.Drawing.Size(195, 43);
-            this.btnUretimListesiGetir.TabIndex = 6;
-            this.btnUretimListesiGetir.TabStop = false;
-            this.btnUretimListesiGetir.Text = "LİSTEYİ YENİLE";
-            this.btnUretimListesiGetir.UseVisualStyleBackColor = true;
-            this.btnUretimListesiGetir.Click += new System.EventHandler(this.btnUretimListesiGetir_Click);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.raporOluşturToolStripMenuItem,
+            this.raporListesiToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 70);
+            // 
+            // raporOluşturToolStripMenuItem
+            // 
+            this.raporOluşturToolStripMenuItem.Name = "raporOluşturToolStripMenuItem";
+            this.raporOluşturToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.raporOluşturToolStripMenuItem.Text = "Rapor Oluştur";
+            this.raporOluşturToolStripMenuItem.Click += new System.EventHandler(this.raporOlusturToolStripMenuItem_Click);
+            // 
+            // raporListesiToolStripMenuItem
+            // 
+            this.raporListesiToolStripMenuItem.Name = "raporListesiToolStripMenuItem";
+            this.raporListesiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.raporListesiToolStripMenuItem.Text = "Rapor Listesi";
+            this.raporListesiToolStripMenuItem.Click += new System.EventHandler(this.raporListesiToolStripMenuItem_Click);
             // 
             // UretimListesi
             // 
@@ -182,6 +210,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.uretimListGridView)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -200,5 +229,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView uretimListGridView;
         private System.Windows.Forms.Button btnUretimListesiGetir;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem raporOluşturToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem raporListesiToolStripMenuItem;
     }
 }

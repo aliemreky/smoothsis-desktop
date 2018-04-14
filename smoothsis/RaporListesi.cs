@@ -16,10 +16,12 @@ namespace smoothsis
     {
         private SqlCommand sqlCmd;
         private Tuple<int, DataGridViewCellCollection> selectedItem;
+        private int uretimInckey;
 
-        public RaporListesi()
+        public RaporListesi(int uretimInckey = -1)
         {
             InitializeComponent();
+            this.uretimInckey = uretimInckey;
         }
 
         private void RaporListesi_Load(object sender, EventArgs e)
@@ -33,8 +35,25 @@ namespace smoothsis
             try
             {
                 DataTable raporListDTable = new DataTable();
-                sqlCmd = new SqlCommand("dbo.Rapor_Listesi", Program.connection);
-                sqlCmd.CommandType = CommandType.StoredProcedure;
+                if (this.uretimInckey == -1)
+                {
+                    sqlCmd = new SqlCommand("dbo.Rapor_Listesi", Program.connection);
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
+                } else
+                {
+                    string query = "SELECT RAPOR.RAPOR_INCKEY, URETIM.UR_INCKEY, FORMAT(RAPOR.RAPOR_TARIH, 'dd.MM.yyyy') RAPOR_TARIHI, " +
+                                    "RAPOR.RAPOR_VARDIYA, RAPOR.BESLENEN_MIK BESLENEN_MIKTAR, RAPOR.URETILEN_MIK URETILEN_MIKTAR, RAPOR.FIRE_MIK FIRE_MIKTAR, " +
+                                    "RAPOR.FIRE_NEDENI, RAPOR.ISKARTA_MIK ISKARTA_MIKTAR, RAPOR.ISKARTA_NEDENI, RAPOR.ACIKLAMA, K1.ADSOYAD KAYIT_YAPAN_KULLANICI, " +
+                                    "FORMAT(RAPOR.KAYIT_TARIH, 'dd.MM.yyyy') KAYIT_TARIHI, K2.ADSOYAD DUZELTME_YAPAN_KULLANICI, FORMAT(RAPOR.DUZELTME_TARIH, 'dd.MM.yyyy') DUZELTME_TARIHI " +
+                                    "FROM RAPOR "+
+                                    "INNER JOIN URETIM ON RAPOR.UR_INCKEY = URETIM.UR_INCKEY " +
+                                    "INNER JOIN KULLANICI K1 ON RAPOR.KAYIT_YAPAN_KUL = K1.KUL_INCKEY " +
+                                    "LEFT JOIN KULLANICI K2 ON RAPOR.DUZELTME_YAPAN_KUL = K2.KUL_INCKEY " +
+                                    "WHERE RAPOR.UR_INCKEY = @ur_inckey "+
+                                    "ORDER BY RAPOR.RAPOR_INCKEY DESC";
+                    sqlCmd = new SqlCommand(query, Program.connection);
+                    sqlCmd.Parameters.Add("@ur_inckey", SqlDbType.Int).Value = this.uretimInckey;
+                }
                 SqlDataAdapter adapter = new SqlDataAdapter(sqlCmd);
                 adapter.Fill(raporListDTable);
                 raporListGridView.DataSource = raporListDTable;

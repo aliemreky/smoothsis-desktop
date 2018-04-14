@@ -20,7 +20,6 @@ namespace smoothsis
         private DataGridViewCellCollection cellsOfSelectedItem;
         private List<Operator> selectedOperators = new List<Operator>();
         private List<Operator> deletedOperators = new List<Operator>();
-        private string[] selectedUretim;
         private bool isFirstAdding = true;
 
         public RaporDuzenle(RaporListesi raporListesi)
@@ -34,14 +33,12 @@ namespace smoothsis
             RaporOlustur.loadVardiyaComboBox(cbRaporVardiya);
             this.cellsOfSelectedItem = raporListesi.getSelectedItem().Item2;
             initializeOperator();
-            initializeUretim();
             loadRaporInfos();
             deletedOperators.AddRange(selectedOperators);
         }
 
         private void loadRaporInfos()
         {
-            txtUretim.Text = selectedUretim[4];
             foreach(Operator oprtr in selectedOperators)
             {
                 txtOperator.Text += oprtr.getAdSoyad() + ", ";
@@ -75,23 +72,6 @@ namespace smoothsis
                     reader["OPERATOR_DURUMU"].ToString()
                 ));
             }
-        }
-
-        private void initializeUretim()
-        {
-            string query = "SELECT * FROM URETIM " +
-                " WHERE UR_INCKEY = @ur_inckey";
-            sqlCmd = new SqlCommand(query, Program.connection);
-            sqlCmd.Parameters.Add("@ur_inckey", SqlDbType.Int).Value = Convert.ToInt32(cellsOfSelectedItem[1].Value.ToString());
-            SqlDataReader reader = sqlCmd.ExecuteReader();
-            reader.Read();
-            this.selectedUretim = new string[]{
-                    reader["UR_INCKEY"].ToString(),
-                    reader["SIP_DETAY_INCKEY"].ToString(),
-                    reader["ISLEM_INCKEY"].ToString(),
-                    reader["MAKINE_INCKEY"].ToString(),
-                    reader["ISLEM_NO"].ToString()
-            };
         }
 
         private void btnOperator_Click(object sender, EventArgs e)
@@ -159,23 +139,6 @@ namespace smoothsis
             }
         }
 
-        public void addUretimToRapor(DataGridViewCellCollection selectedUretim)
-        {
-
-        }
-
-        private void btnUretim_Click(object sender, EventArgs e)
-        {
-            this.selectedUretim = new string[]{
-                "3",
-                "1",
-                "1",
-                "1",
-                "123"
-            };
-            txtUretim.Text = selectedUretim[4];
-        }
-
         private void sillBttn_Click(object sender, EventArgs e)
         {
             try
@@ -212,8 +175,7 @@ namespace smoothsis
         private void kaydetBttn_Click(object sender, EventArgs e)
         {
 
-            if (String.IsNullOrEmpty(txtUretim.Text) ||
-                String.IsNullOrEmpty(txtOperator.Text) ||
+            if (String.IsNullOrEmpty(txtOperator.Text) ||
                 String.IsNullOrEmpty(cbRaporVardiya.SelectedValue.ToString()) ||
                 String.IsNullOrEmpty(txtBeslenenMiktar.Text) ||
                 String.IsNullOrEmpty(txtUretilenMiktar.Text) ||
@@ -229,13 +191,12 @@ namespace smoothsis
                 {
                     sqlCmd = Program.connection.CreateCommand();
                     sqlCmd.CommandText = "UPDATE RAPOR SET " +
-                        "UR_INCKEY = @ur_inckey, RAPOR_TARIH = @rapor_tarih, RAPOR_VARDIYA = @rapor_vardiya, " +
+                        "RAPOR_TARIH = @rapor_tarih, RAPOR_VARDIYA = @rapor_vardiya, " +
                         "BESLENEN_MIK = @beslenen_mik, URETILEN_MIK = @uretilen_mik, FIRE_MIK = @fire_mik, " +
                         "FIRE_NEDENI = @fire_nedeni, ISKARTA_MIK = @iskarta_mik, " +
                         "ISKARTA_NEDENI = @iskarta_nedeni, DUZELTME_YAPAN_KUL = @duzeltme_yapan_kul, DUZELTME_TARIH = @duzeltme_tarih, ACIKLAMA = @aciklama " +
                         "WHERE RAPOR_INCKEY = @rapor_inckey";
                     sqlCmd.Parameters.Add("@rapor_inckey", SqlDbType.Int).Value = Convert.ToInt32(cellsOfSelectedItem[0].Value.ToString());
-                    sqlCmd.Parameters.Add("@ur_inckey", SqlDbType.Int).Value = Convert.ToInt32(selectedUretim[0]);
                     sqlCmd.Parameters.Add("@rapor_tarih", SqlDbType.Date).Value = dtpRaporTarih.Value;
                     sqlCmd.Parameters.Add("@rapor_vardiya", SqlDbType.VarChar).Value = cbRaporVardiya.SelectedValue.ToString();
                     sqlCmd.Parameters.Add("@beslenen_mik", SqlDbType.Decimal).Value = decimal.Parse(txtBeslenenMiktar.Text);
@@ -282,7 +243,6 @@ namespace smoothsis
         {
             DataGridView dataGridView = raporListesi.getDataGrid();
             int rowIndex = raporListesi.getSelectedItem().Item1;
-            dataGridView[1, rowIndex].Value = selectedUretim[0];
             dataGridView[2, rowIndex].Value = dtpRaporTarih.Value;
             dataGridView[3, rowIndex].Value = cbRaporVardiya.SelectedValue;
             dataGridView[4, rowIndex].Value = txtBeslenenMiktar.Text;
