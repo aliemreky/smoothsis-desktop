@@ -265,14 +265,14 @@
             this.siparisListesiMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.UretimKaydiOlusturToolStripMenuItem});
             this.siparisListesiMenu.Name = "siparisListesiMenu";
-            this.siparisListesiMenu.Size = new System.Drawing.Size(185, 26);
+            this.siparisListesiMenu.Size = new System.Drawing.Size(185, 48);
             this.siparisListesiMenu.Opening += new System.ComponentModel.CancelEventHandler(this.siparisListesiMenu_Opening);
             // 
             // UretimKaydiOlusturToolStripMenuItem
             // 
             this.UretimKaydiOlusturToolStripMenuItem.Name = "UretimKaydiOlusturToolStripMenuItem";
             this.UretimKaydiOlusturToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.UretimKaydiOlusturToolStripMenuItem.Text = "Üretim Kaydı Oluştur";
+            this.UretimKaydiOlusturToolStripMenuItem.Text = "Üretim Paneline Giriş";
             this.UretimKaydiOlusturToolStripMenuItem.Click += new System.EventHandler(this.UretimKaydiOlusturToolStripMenuItem_Click);
             // 
             // SiparisListesi
