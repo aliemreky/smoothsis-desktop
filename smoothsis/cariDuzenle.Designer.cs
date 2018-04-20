@@ -64,15 +64,15 @@
             this.hesapDurumuAktif = new System.Windows.Forms.RadioButton();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.kaydetBttn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.kayitSilBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.iptalButton = new System.Windows.Forms.ToolStripButton();
             this.label12 = new System.Windows.Forms.Label();
             this.txtCariKod = new System.Windows.Forms.TextBox();
             this.btnCariListeAc = new System.Windows.Forms.Button();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -354,7 +354,7 @@
             this.panel1.Controls.Add(this.label19);
             this.panel1.Controls.Add(this.hesapDurumuPasif);
             this.panel1.Controls.Add(this.hesapDurumuAktif);
-            this.panel1.Location = new System.Drawing.Point(440, 33);
+            this.panel1.Location = new System.Drawing.Point(440, 39);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(321, 33);
             this.panel1.TabIndex = 13;
@@ -392,7 +392,7 @@
             // 
             // toolStrip1
             // 
-            this.toolStrip1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.toolStrip1.BackColor = System.Drawing.Color.GhostWhite;
             this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -420,38 +420,65 @@
             this.kaydetBttn.ToolTipText = "Değişiklikleri Kaydet";
             this.kaydetBttn.Click += new System.EventHandler(this.kaydetBttn_Click);
             // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.AutoSize = false;
+            this.toolStripSeparator4.BackColor = System.Drawing.Color.White;
+            this.toolStripSeparator4.ForeColor = System.Drawing.Color.White;
+            this.toolStripSeparator4.Margin = new System.Windows.Forms.Padding(1);
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(12, 28);
+            // 
             // toolStripButton1
             // 
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(76, 20);
+            this.toolStripButton1.Size = new System.Drawing.Size(71, 27);
             this.toolStripButton1.Text = "Temizle";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.AutoSize = false;
+            this.toolStripSeparator1.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripSeparator1.ForeColor = System.Drawing.Color.Transparent;
+            this.toolStripSeparator1.Margin = new System.Windows.Forms.Padding(1);
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(12, 28);
             // 
             // kayitSilBtn
             // 
             this.kayitSilBtn.Image = ((System.Drawing.Image)(resources.GetObject("kayitSilBtn.Image")));
             this.kayitSilBtn.ImageTransparentColor = System.Drawing.Color.White;
             this.kayitSilBtn.Name = "kayitSilBtn";
-            this.kayitSilBtn.Size = new System.Drawing.Size(43, 27);
+            this.kayitSilBtn.Size = new System.Drawing.Size(41, 27);
             this.kayitSilBtn.Text = "Sil";
             this.kayitSilBtn.ToolTipText = "Sil";
             this.kayitSilBtn.Click += new System.EventHandler(this.kayitSilBtn_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.AutoSize = false;
+            this.toolStripSeparator5.BackColor = System.Drawing.Color.White;
+            this.toolStripSeparator5.ForeColor = System.Drawing.Color.White;
+            this.toolStripSeparator5.Margin = new System.Windows.Forms.Padding(1);
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(12, 28);
             // 
             // iptalButton
             // 
             this.iptalButton.Image = ((System.Drawing.Image)(resources.GetObject("iptalButton.Image")));
             this.iptalButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.iptalButton.Name = "iptalButton";
-            this.iptalButton.Size = new System.Drawing.Size(57, 20);
+            this.iptalButton.Size = new System.Drawing.Size(54, 27);
             this.iptalButton.Text = "Çıkış";
             this.iptalButton.Click += new System.EventHandler(this.iptalButton_Click);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(36, 44);
+            this.label12.Location = new System.Drawing.Point(36, 47);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(77, 15);
             this.label12.TabIndex = 16;
@@ -460,7 +487,7 @@
             // txtCariKod
             // 
             this.txtCariKod.Enabled = false;
-            this.txtCariKod.Location = new System.Drawing.Point(119, 41);
+            this.txtCariKod.Location = new System.Drawing.Point(119, 44);
             this.txtCariKod.Name = "txtCariKod";
             this.txtCariKod.ReadOnly = true;
             this.txtCariKod.Size = new System.Drawing.Size(254, 23);
@@ -473,33 +500,12 @@
             this.btnCariListeAc.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.btnCariListeAc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCariListeAc.Image = ((System.Drawing.Image)(resources.GetObject("btnCariListeAc.Image")));
-            this.btnCariListeAc.Location = new System.Drawing.Point(379, 40);
+            this.btnCariListeAc.Location = new System.Drawing.Point(379, 43);
             this.btnCariListeAc.Name = "btnCariListeAc";
             this.btnCariListeAc.Size = new System.Drawing.Size(31, 25);
             this.btnCariListeAc.TabIndex = 18;
             this.btnCariListeAc.UseVisualStyleBackColor = true;
             this.btnCariListeAc.Click += new System.EventHandler(this.btnCariListeAc_Click);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.AutoSize = false;
-            this.toolStripSeparator4.Margin = new System.Windows.Forms.Padding(1);
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(12, 28);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.AutoSize = false;
-            this.toolStripSeparator1.Margin = new System.Windows.Forms.Padding(1);
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(12, 28);
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.AutoSize = false;
-            this.toolStripSeparator5.Margin = new System.Windows.Forms.Padding(1);
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(12, 28);
             // 
             // CariDuzenle
             // 

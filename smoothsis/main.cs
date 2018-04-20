@@ -32,80 +32,78 @@ namespace smoothsis
         private void cariEkleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CariOlustur cariKayit = new CariOlustur();
-            cariKayit.ShowDialog();
+            cariKayit.Show();
         }
 
         private void cariListeleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CariListesi cariListe = new CariListesi(0);
-            cariListe.ShowDialog();
+            cariListe.Show();
         }
 
         private void kullaniciEklePage(object sender, EventArgs e)
         {
             KullaniciOlustur kullaniciOlustur = new KullaniciOlustur();
-            kullaniciOlustur.ShowDialog();
+            kullaniciOlustur.Show();
         }
 
         private void kullaniciListesiPage(object sender, EventArgs e)
         {
             KullaniciListeleDuzenle kullaniciListeleDuzenle = new KullaniciListeleDuzenle();
-            kullaniciListeleDuzenle.ShowDialog();
+            kullaniciListeleDuzenle.Show();
         }
 
         private void grupPage(object sender, EventArgs e)
         {
             Grup grup = new Grup();
-            grup.ShowDialog();
+            grup.Show();
         }
 
         private void cariDüzenleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CariDuzenle cariDuzen = new CariDuzenle();
-            cariDuzen.ShowDialog();
+            cariDuzen.Show();
         }
 
         private void siparişEkleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SiparisPaneli siparisPaneli = new SiparisPaneli();
-            siparisPaneli.ShowDialog();
+            siparisPaneli.Show();
         }
 
         private void stokOlusturPage(object sender, EventArgs e)
         {
             StokOlustur stokOlustur = new StokOlustur();
-            stokOlustur.ShowDialog();
+            stokOlustur.Show();
         }
 
         private void stokListeleDuzenlePage(object sender, EventArgs e)
         {
             StokListesi stokListeleDuzenle = new StokListesi(0);
-            stokListeleDuzenle.ShowDialog();
+            stokListeleDuzenle.Show();
         }
 
         private void showDepoOlusturPage(object sender, EventArgs e)
         {
             DepoOlustur depoOlustur = new DepoOlustur();
-            depoOlustur.ShowDialog();
+            depoOlustur.Show();
         }
 
         private void depoListesiToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DepoListesi depoListesi = new DepoListesi();
-            depoListesi.ShowDialog();
+            depoListesi.Show();
         }
 
         private void siparişListesiToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SiparisListesi siparisListesi = new SiparisListesi();
-            siparisListesi.ShowDialog();
+            siparisListesi.Show();
         }
 
         private void cikisToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DialogResult dialogResult = MessageBox.Show("Kapatmak İstediğinize Emin misiniz ?", "UYARI", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-                Application.Exit();
+        {            
+            Application.Exit();
         }
 
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
@@ -118,49 +116,51 @@ namespace smoothsis
         private void stokTransferleriToolStripMenuItem_Click(object sender, EventArgs e)
         {
             StokTransferListesi stokTransferListesi = new StokTransferListesi();
-            stokTransferListesi.ShowDialog();
-        }
-
-        private void makinaOlusturToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MakineOlustur makineOlustur = new MakineOlustur();
-            makineOlustur.ShowDialog();
-        }
-
-        private void makinaListesiToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MakineListesi makineListesi = new MakineListesi();
-            makineListesi.ShowDialog();
-        }
-
-        private void işlemOluşturToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            IslemOlustur islemOlustur = new IslemOlustur();
-            islemOlustur.ShowDialog();
-        }
-
-        private void işlemListesiToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            IslemListesi islemListesi = new IslemListesi();
-            islemListesi.ShowDialog();
+            stokTransferListesi.Show();
         }
 
         private void operatörOluşturToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OperatorOlustur operatorOlustur = new OperatorOlustur();
-            operatorOlustur.ShowDialog();
+            operatorOlustur.Show();
         }
 
         private void operatörListesiToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OperatorListesi operatorListesi = new OperatorListesi();
-            operatorListesi.ShowDialog();
+            operatorListesi.Show();
         }
-        
-        private void üretimListesiToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void MakineOlusturToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MakineOlustur makineOlustur = new MakineOlustur();
+            makineOlustur.Show();
+        }
+
+        private void MakineListesiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MakineListesi makineListesi = new MakineListesi();
+            makineListesi.Show();
+        }
+
+        private void IslemOlusturToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IslemOlustur islemOlustur = new IslemOlustur();
+            islemOlustur.Show();
+        }
+
+        private void IslemListesiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IslemListesi islemListesi = new IslemListesi();
+            islemListesi.Show();
+        }
+
+        private void UretimListesiToolStripMenuItem_Click(object sender, EventArgs e)
         {
             UretimListesi urListesi = new UretimListesi();
-            urListesi.ShowDialog();
+            urListesi.Show();
         }
+
+        
     }
 }

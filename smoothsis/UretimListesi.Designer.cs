@@ -53,6 +53,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.btnUretimListesiGetir);
             this.groupBox2.Controls.Add(this.label8);
@@ -63,7 +65,7 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.txtAramaStokKodu);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(9, 8);
+            this.groupBox2.Location = new System.Drawing.Point(9, 10);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(235, 532);
             this.groupBox2.TabIndex = 26;
@@ -151,8 +153,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.uretimListGridView);
-            this.groupBox1.Location = new System.Drawing.Point(250, 8);
+            this.groupBox1.Location = new System.Drawing.Point(250, 10);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(944, 532);
             this.groupBox1.TabIndex = 25;
@@ -160,6 +165,9 @@
             // 
             // uretimListGridView
             // 
+            this.uretimListGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.uretimListGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.uretimListGridView.ContextMenuStrip = this.contextMenuStrip1;
             this.uretimListGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
@@ -170,6 +178,7 @@
             this.uretimListGridView.Size = new System.Drawing.Size(932, 513);
             this.uretimListGridView.TabIndex = 19;
             this.uretimListGridView.VirtualMode = true;
+            this.uretimListGridView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.uretimListGridView_CellMouseDown);
             // 
             // contextMenuStrip1
             // 
@@ -177,19 +186,20 @@
             this.raporOluşturToolStripMenuItem,
             this.raporListesiToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(176, 48);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // raporOluşturToolStripMenuItem
             // 
             this.raporOluşturToolStripMenuItem.Name = "raporOluşturToolStripMenuItem";
-            this.raporOluşturToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.raporOluşturToolStripMenuItem.Text = "Rapor Oluştur";
+            this.raporOluşturToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.raporOluşturToolStripMenuItem.Text = "Vardiya Rapor Girişi";
             this.raporOluşturToolStripMenuItem.Click += new System.EventHandler(this.raporOlusturToolStripMenuItem_Click);
             // 
             // raporListesiToolStripMenuItem
             // 
             this.raporListesiToolStripMenuItem.Name = "raporListesiToolStripMenuItem";
-            this.raporListesiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.raporListesiToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.raporListesiToolStripMenuItem.Text = "Rapor Listesi";
             this.raporListesiToolStripMenuItem.Click += new System.EventHandler(this.raporListesiToolStripMenuItem_Click);
             // 

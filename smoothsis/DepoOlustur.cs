@@ -40,7 +40,7 @@ namespace smoothsis
                         this.Close();
                     }
                 }
-                catch (Exception ex)
+                catch
                 {
                     Notification.messageBoxError("Bir sorun oluştu, Depo oluşturulamadı.");
                 }

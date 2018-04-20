@@ -48,5 +48,24 @@ namespace smoothsis.Services
 
             }
         }
+
+        // MOVE OPERATOR FUNCTION
+        public static void moveOperator(ListView source, ListView destination)
+        {
+            var insertPos = 0;
+            foreach (ListViewItem s in source.SelectedItems)
+            {
+                s.Remove();
+                var copyCode = int.Parse(s.Text);
+                while (insertPos < destination.Items.Count)
+                {
+                    var itemAtCandidate = int.Parse(destination.Items[insertPos].Text);
+                    if (itemAtCandidate > copyCode)
+                        break;
+                    insertPos++;
+                }
+                destination.Items.Insert(insertPos, s);
+            }
+        }
     }
 }

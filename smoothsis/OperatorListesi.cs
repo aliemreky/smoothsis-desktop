@@ -94,19 +94,9 @@ namespace smoothsis
             if (e.RowIndex != -1)
             {
                 selectedItem = new Tuple<int, DataGridViewCellCollection>(e.RowIndex, operatorListGridView.Rows[e.RowIndex].Cells);
-                if (raporOlustur != null && raporDuzenle == null)
-                {
-                    raporOlustur.addOperatorToRapor(selectedItem.Item2);
-                }
-                else if (raporOlustur == null && raporDuzenle != null)
-                {
-                    raporDuzenle.addOperatorToRapor(selectedItem.Item2);
-                }
-                else
-                {
-                    OperatorDuzenle operatorDuzenle = new OperatorDuzenle(this);
-                    operatorDuzenle.ShowDialog();
-                }
+                
+                OperatorDuzenle operatorDuzenle = new OperatorDuzenle(this);
+                operatorDuzenle.ShowDialog();
             }
         }
 
@@ -158,18 +148,6 @@ namespace smoothsis
                 Search.gridviewArama(cbOperatorDurum.SelectedValue.ToString(), operatorListGridView, "OPERATOR_DURUMU");
             }
         }
-
-        private void RaporaEkleToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            selectedItem = new Tuple<int, DataGridViewCellCollection>(operatorListGridView.SelectedRows[0].Index, operatorListGridView.SelectedRows[0].Cells);
-            if (raporOlustur != null && raporDuzenle == null)
-            {
-                raporOlustur.addOperatorToRapor(selectedItem.Item2);
-            }
-            else if (raporOlustur == null && raporDuzenle != null)
-            {
-                raporDuzenle.addOperatorToRapor(selectedItem.Item2);
-            }
-        }
+        
     }
 }

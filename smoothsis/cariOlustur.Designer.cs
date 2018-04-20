@@ -31,9 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CariOlustur));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.kaydetBttn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.iptalButton = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.tuzelKisiRadio = new System.Windows.Forms.RadioButton();
+            this.gercekKisiRadio = new System.Windows.Forms.RadioButton();
             this.label14 = new System.Windows.Forms.Label();
             this.txtAdres = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -65,21 +70,16 @@
             this.hesapDurumuAktif = new System.Windows.Forms.RadioButton();
             this.hesapDurumuPasif = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.tuzelKisiRadio = new System.Windows.Forms.RadioButton();
-            this.gercekKisiRadio = new System.Windows.Forms.RadioButton();
             this.btnCariKodOlustur = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
             // 
-            this.toolStrip1.BackColor = System.Drawing.SystemColors.Window;
+            this.toolStrip1.BackColor = System.Drawing.Color.GhostWhite;
             this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -105,6 +105,13 @@
             this.kaydetBttn.ToolTipText = "Değişiklikleri Kaydet";
             this.kaydetBttn.Click += new System.EventHandler(this.kaydetBttn_Click);
             // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.AutoSize = false;
+            this.toolStripSeparator5.Margin = new System.Windows.Forms.Padding(1);
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(12, 28);
+            // 
             // toolStripButton1
             // 
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
@@ -113,6 +120,13 @@
             this.toolStripButton1.Size = new System.Drawing.Size(71, 27);
             this.toolStripButton1.Text = "Temizle";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.AutoSize = false;
+            this.toolStripSeparator3.Margin = new System.Windows.Forms.Padding(1);
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(12, 28);
             // 
             // iptalButton
             // 
@@ -156,6 +170,37 @@
             this.groupBox1.Size = new System.Drawing.Size(778, 292);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.tuzelKisiRadio);
+            this.panel2.Controls.Add(this.gercekKisiRadio);
+            this.panel2.Location = new System.Drawing.Point(108, 27);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(291, 34);
+            this.panel2.TabIndex = 13;
+            // 
+            // tuzelKisiRadio
+            // 
+            this.tuzelKisiRadio.AutoSize = true;
+            this.tuzelKisiRadio.Location = new System.Drawing.Point(174, 8);
+            this.tuzelKisiRadio.Name = "tuzelKisiRadio";
+            this.tuzelKisiRadio.Size = new System.Drawing.Size(84, 19);
+            this.tuzelKisiRadio.TabIndex = 12;
+            this.tuzelKisiRadio.Text = "TÜZEL KİŞİ";
+            this.tuzelKisiRadio.UseVisualStyleBackColor = true;
+            // 
+            // gercekKisiRadio
+            // 
+            this.gercekKisiRadio.AutoSize = true;
+            this.gercekKisiRadio.Checked = true;
+            this.gercekKisiRadio.Location = new System.Drawing.Point(26, 8);
+            this.gercekKisiRadio.Name = "gercekKisiRadio";
+            this.gercekKisiRadio.Size = new System.Drawing.Size(91, 19);
+            this.gercekKisiRadio.TabIndex = 13;
+            this.gercekKisiRadio.TabStop = true;
+            this.gercekKisiRadio.Text = "GERÇEK KİŞİ";
+            this.gercekKisiRadio.UseVisualStyleBackColor = true;
             // 
             // label14
             // 
@@ -420,51 +465,6 @@
             this.panel1.Size = new System.Drawing.Size(315, 33);
             this.panel1.TabIndex = 0;
             // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.AutoSize = false;
-            this.toolStripSeparator3.Margin = new System.Windows.Forms.Padding(1);
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(12, 28);
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.AutoSize = false;
-            this.toolStripSeparator5.Margin = new System.Windows.Forms.Padding(1);
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(12, 28);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.tuzelKisiRadio);
-            this.panel2.Controls.Add(this.gercekKisiRadio);
-            this.panel2.Location = new System.Drawing.Point(108, 27);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(291, 34);
-            this.panel2.TabIndex = 13;
-            // 
-            // tuzelKisiRadio
-            // 
-            this.tuzelKisiRadio.AutoSize = true;
-            this.tuzelKisiRadio.Location = new System.Drawing.Point(174, 8);
-            this.tuzelKisiRadio.Name = "tuzelKisiRadio";
-            this.tuzelKisiRadio.Size = new System.Drawing.Size(84, 19);
-            this.tuzelKisiRadio.TabIndex = 12;
-            this.tuzelKisiRadio.Text = "TÜZEL KİŞİ";
-            this.tuzelKisiRadio.UseVisualStyleBackColor = true;
-            // 
-            // gercekKisiRadio
-            // 
-            this.gercekKisiRadio.AutoSize = true;
-            this.gercekKisiRadio.Checked = true;
-            this.gercekKisiRadio.Location = new System.Drawing.Point(26, 8);
-            this.gercekKisiRadio.Name = "gercekKisiRadio";
-            this.gercekKisiRadio.Size = new System.Drawing.Size(91, 19);
-            this.gercekKisiRadio.TabIndex = 13;
-            this.gercekKisiRadio.TabStop = true;
-            this.gercekKisiRadio.Text = "GERÇEK KİŞİ";
-            this.gercekKisiRadio.UseVisualStyleBackColor = true;
-            // 
             // btnCariKodOlustur
             // 
             this.btnCariKodOlustur.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -500,10 +500,10 @@
             this.toolStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

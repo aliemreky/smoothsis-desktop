@@ -99,7 +99,7 @@
             // 
             // txtAramaMakAdi
             // 
-            this.txtAramaMakAdi.Location = new System.Drawing.Point(92, 19);
+            this.txtAramaMakAdi.Location = new System.Drawing.Point(94, 19);
             this.txtAramaMakAdi.Multiline = true;
             this.txtAramaMakAdi.Name = "txtAramaMakAdi";
             this.txtAramaMakAdi.Size = new System.Drawing.Size(306, 25);

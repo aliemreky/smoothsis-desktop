@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OperatorOlustur));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtpIseBaslamaTarih = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
             this.cbOperatorDurum = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtOperatorAdiSoyadi = new System.Windows.Forms.TextBox();
@@ -46,31 +48,52 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dtpIseBaslamaTarih);
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.cbOperatorDurum);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.txtOperatorAdiSoyadi);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(13, 38);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(434, 106);
+            this.groupBox1.Size = new System.Drawing.Size(434, 149);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "OPERATÖR BİLGİLERİ";
+            // 
+            // dtpIseBaslamaTarih
+            // 
+            this.dtpIseBaslamaTarih.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dtpIseBaslamaTarih.Location = new System.Drawing.Point(119, 105);
+            this.dtpIseBaslamaTarih.MinimumSize = new System.Drawing.Size(4, 23);
+            this.dtpIseBaslamaTarih.Name = "dtpIseBaslamaTarih";
+            this.dtpIseBaslamaTarih.Size = new System.Drawing.Size(295, 23);
+            this.dtpIseBaslamaTarih.TabIndex = 3;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label6.Location = new System.Drawing.Point(10, 111);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(103, 15);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "BAŞLAMA TARİHİ";
             // 
             // cbOperatorDurum
             // 
             this.cbOperatorDurum.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbOperatorDurum.FormattingEnabled = true;
-            this.cbOperatorDurum.Location = new System.Drawing.Point(108, 66);
+            this.cbOperatorDurum.Location = new System.Drawing.Point(119, 66);
             this.cbOperatorDurum.Name = "cbOperatorDurum";
-            this.cbOperatorDurum.Size = new System.Drawing.Size(312, 23);
-            this.cbOperatorDurum.TabIndex = 18;
+            this.cbOperatorDurum.Size = new System.Drawing.Size(295, 23);
+            this.cbOperatorDurum.TabIndex = 2;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label10.Location = new System.Drawing.Point(30, 69);
+            this.label10.Location = new System.Drawing.Point(47, 69);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(66, 15);
             this.label10.TabIndex = 19;
@@ -78,16 +101,16 @@
             // 
             // txtOperatorAdiSoyadi
             // 
-            this.txtOperatorAdiSoyadi.Location = new System.Drawing.Point(106, 28);
+            this.txtOperatorAdiSoyadi.Location = new System.Drawing.Point(119, 28);
             this.txtOperatorAdiSoyadi.Name = "txtOperatorAdiSoyadi";
-            this.txtOperatorAdiSoyadi.Size = new System.Drawing.Size(314, 23);
-            this.txtOperatorAdiSoyadi.TabIndex = 0;
+            this.txtOperatorAdiSoyadi.Size = new System.Drawing.Size(295, 23);
+            this.txtOperatorAdiSoyadi.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(14, 31);
+            this.label2.Location = new System.Drawing.Point(31, 31);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 15);
             this.label2.TabIndex = 0;
@@ -95,7 +118,7 @@
             // 
             // toolStrip1
             // 
-            this.toolStrip1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.toolStrip1.BackColor = System.Drawing.Color.GhostWhite;
             this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -158,7 +181,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(460, 155);
+            this.ClientSize = new System.Drawing.Size(460, 200);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -190,5 +213,7 @@
         private System.Windows.Forms.ToolStripButton iptalButton;
         private System.Windows.Forms.ComboBox cbOperatorDurum;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DateTimePicker dtpIseBaslamaTarih;
+        private System.Windows.Forms.Label label6;
     }
 }

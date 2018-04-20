@@ -116,28 +116,23 @@ namespace smoothsis
         private void siparisListesiMenu_Opening(object sender, CancelEventArgs e)
         {
             e.Cancel = this.siparisListGridView.Rows.Count <= 0;
-        }        
+        }
 
         private void siparisListGridView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.RowIndex != -1 && e.ColumnIndex != -1)
+            if (e.RowIndex != -1 && e.ColumnIndex != -1 && (e.Button == MouseButtons.Right) && (siparisListGridView.SelectedRows.Count == 1))
             {
-                if ((e.Button == MouseButtons.Right) && (siparisListGridView.SelectedRows.Count == 1))
-                {
+                gridviewClickedRow = e.RowIndex;
+                gridviewClickedColumn = e.ColumnIndex;
 
-                    gridviewClickedRow = e.RowIndex;
-                    gridviewClickedColumn = e.ColumnIndex;
-
-                    siparisListGridView.ClearSelection();
-                    this.siparisListGridView.Rows[e.RowIndex].Selected = true;
-
-                }
+                siparisListGridView.ClearSelection();
+                this.siparisListGridView.Rows[e.RowIndex].Selected = true;
             }
         }
 
         private void UretimKaydiOlusturToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(siparisListGridView.SelectedRows.Count == 1)
+            if (siparisListGridView.SelectedRows.Count == 1)
             {
                 int siparisInckey = int.Parse(siparisListGridView["SIPARIS_INCKEY", gridviewClickedRow].Value.ToString());
 

@@ -31,16 +31,15 @@ namespace smoothsis
             {
                 try
                 {
-                    sqlCmd = new SqlCommand("INSERT INTO OPERATOR(ADSOYAD, OP_DURUMU)" +
-                        " VALUES(@adsoyad, @op_durumu)", Program.connection);
+                    sqlCmd = new SqlCommand("INSERT INTO OPERATOR(ADSOYAD, OP_DURUMU, ISE_BAS_TARIH)" +
+                        " VALUES(@adsoyad, @op_durumu, @ise_bas_tarih)", Program.connection);
                     sqlCmd.Parameters.Add("@adsoyad", SqlDbType.VarChar).Value = operatorAdiSoyadi;
                     sqlCmd.Parameters.Add("@op_durumu", SqlDbType.VarChar).Value = op_durumu;
-                    int affectedRows = sqlCmd.ExecuteNonQuery();
-                    if (affectedRows > 0)
-                    {
-                        Notification.messageBox("Operatör oluşturuldu.");
-                        this.Close();
-                    }
+                    sqlCmd.Parameters.Add("@ise_bas_tarih", SqlDbType.Date).Value = dtpIseBaslamaTarih.Value;
+                    sqlCmd.ExecuteNonQuery();
+                    
+                    Notification.messageBox("Operatör başarıyla oluşturuldu");
+                    
                 }
                 catch (Exception ex)
                 {
@@ -49,7 +48,7 @@ namespace smoothsis
             }
             else
             {
-                Notification.messageBox("Lütfen zorunlu alanları boş geçmeyin.");
+                Notification.messageBox("Lütfen zorunlu alanları boş geçmeyin !");
             }
         }
 

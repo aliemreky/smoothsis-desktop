@@ -46,7 +46,7 @@
             // 
             // toolStrip1
             // 
-            this.toolStrip1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.toolStrip1.BackColor = System.Drawing.Color.GhostWhite;
             this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -124,7 +124,7 @@
             this.txtDepoLokasyon.Multiline = true;
             this.txtDepoLokasyon.Name = "txtDepoLokasyon";
             this.txtDepoLokasyon.Size = new System.Drawing.Size(314, 66);
-            this.txtDepoLokasyon.TabIndex = 1;
+            this.txtDepoLokasyon.TabIndex = 2;
             // 
             // label10
             // 
@@ -142,7 +142,7 @@
             this.txtDepoAdi.Multiline = true;
             this.txtDepoAdi.Name = "txtDepoAdi";
             this.txtDepoAdi.Size = new System.Drawing.Size(314, 25);
-            this.txtDepoAdi.TabIndex = 0;
+            this.txtDepoAdi.TabIndex = 1;
             // 
             // label2
             // 

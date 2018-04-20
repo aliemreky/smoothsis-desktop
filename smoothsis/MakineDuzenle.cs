@@ -10,12 +10,12 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using smoothsis.Services;
 
-
 namespace smoothsis
 {
     public partial class MakineDuzenle : Form
     {
         private MakineListesi makineListesi;
+
         public MakineDuzenle(MakineListesi makineListesi)
         {
             InitializeComponent();
@@ -56,11 +56,11 @@ namespace smoothsis
                     if (affectedRows > 0)
                     {
                         updateItemOnList();
-                        Notification.messageBox("MAKINE BAŞARIYLA GÜNCELLENDİ.");
+                        Notification.messageBox("Makine başarıyla güncellendi");
                     }
                     else
                     {
-                        Notification.messageBoxError("BİR SORUN OLUŞTU, MAKINE GÜNCELLENEMEDİ.");
+                        Notification.messageBoxError("Bir sorun oluştu, makine bilgileri kaydedilemedi");
                     }
                 }
                 catch (Exception ex)
@@ -92,12 +92,12 @@ namespace smoothsis
                     if (affectedRows > 0)
                     {
                         makineListesi.getDataGrid().Rows.RemoveAt(makineListesi.getSelectedItem().Item1);
-                        Notification.messageBox("Makine silindi.");
+                        Notification.messageBox("Makine silindi");
                         this.Close();
                     }
                     else
                     {
-                        Notification.messageBoxError("Bir sorun oluştu, makine silinemedi.");
+                        Notification.messageBoxError("Bir sorun oluştu, makine silinemedi");
                     }
                 }
             }

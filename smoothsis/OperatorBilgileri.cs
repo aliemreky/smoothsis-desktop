@@ -31,9 +31,5 @@ namespace smoothsis
             txtOperatorBaslamaTarih.Text = operatorBiligleri[3];
         }
 
-        private void iptalButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
     }
 }

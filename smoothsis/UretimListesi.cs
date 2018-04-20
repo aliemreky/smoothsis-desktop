@@ -26,6 +26,7 @@ namespace smoothsis
 
         private void UretimListesi_Load(object sender, EventArgs e)
         {
+            uretimListGridView.ClearSelection();
             getUretimListesi();
         }
 
@@ -90,19 +91,13 @@ namespace smoothsis
 
         private void uretimListGridView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.RowIndex != -1 && e.ColumnIndex != -1)
+            if (e.ColumnIndex != -1 && e.RowIndex != -1 && e.Button == MouseButtons.Right && (uretimListGridView.SelectedRows.Count == 1))
             {
-                contextMenuStrip1.Enabled = true;
-                if ((e.Button == MouseButtons.Right) && (uretimListGridView.SelectedRows.Count == 1))
-                {
-                    selectedItem = new Tuple<int, DataGridViewCellCollection>(e.RowIndex, uretimListGridView.Rows[e.RowIndex].Cells);
-                    uretimListGridView.ClearSelection();
-                    this.uretimListGridView.Rows[e.RowIndex].Selected = true;
-                }
-            }
-            else
-            {
-                contextMenuStrip1.Enabled = false;
+                selectedItem = new Tuple<int, DataGridViewCellCollection>(e.RowIndex, uretimListGridView.Rows[e.RowIndex].Cells);
+
+                uretimListGridView.ClearSelection();
+                this.uretimListGridView.Rows[e.RowIndex].Selected = true;
+
             }
         }
 
@@ -137,6 +132,11 @@ namespace smoothsis
             {
                 Notification.messageBoxError("BİR SORUN OLUŞTU, KAYIT SEÇİLEMEDİ !");
             }
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+            e.Cancel = this.uretimListGridView.Rows.Count <= 0 || this.uretimListGridView.SelectedRows.Count <= 0;
         }
     }
 }

@@ -64,7 +64,7 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.txtAramaKaynakDepo);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(14, 3);
+            this.groupBox2.Location = new System.Drawing.Point(14, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(274, 539);
             this.groupBox2.TabIndex = 23;
@@ -73,7 +73,7 @@
             // 
             // txtAramaKayitYapan
             // 
-            this.txtAramaKayitYapan.Location = new System.Drawing.Point(19, 297);
+            this.txtAramaKayitYapan.Location = new System.Drawing.Point(20, 316);
             this.txtAramaKayitYapan.Name = "txtAramaKayitYapan";
             this.txtAramaKayitYapan.Size = new System.Drawing.Size(227, 23);
             this.txtAramaKayitYapan.TabIndex = 12;
@@ -82,7 +82,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(17, 279);
+            this.label5.Location = new System.Drawing.Point(18, 298);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(104, 15);
             this.label5.TabIndex = 11;
@@ -90,7 +90,7 @@
             // 
             // txtAramaStokAdi
             // 
-            this.txtAramaStokAdi.Location = new System.Drawing.Point(19, 235);
+            this.txtAramaStokAdi.Location = new System.Drawing.Point(20, 250);
             this.txtAramaStokAdi.Name = "txtAramaStokAdi";
             this.txtAramaStokAdi.Size = new System.Drawing.Size(227, 23);
             this.txtAramaStokAdi.TabIndex = 10;
@@ -99,7 +99,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 217);
+            this.label4.Location = new System.Drawing.Point(18, 232);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 15);
             this.label4.TabIndex = 9;
@@ -107,7 +107,7 @@
             // 
             // txtAramaHedefDepo
             // 
-            this.txtAramaHedefDepo.Location = new System.Drawing.Point(19, 177);
+            this.txtAramaHedefDepo.Location = new System.Drawing.Point(20, 189);
             this.txtAramaHedefDepo.Name = "txtAramaHedefDepo";
             this.txtAramaHedefDepo.Size = new System.Drawing.Size(227, 23);
             this.txtAramaHedefDepo.TabIndex = 8;
@@ -116,7 +116,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 159);
+            this.label2.Location = new System.Drawing.Point(17, 171);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 15);
             this.label2.TabIndex = 7;
@@ -136,7 +136,7 @@
             // dtAramaKayitTarih
             // 
             this.dtAramaKayitTarih.CustomFormat = "";
-            this.dtAramaKayitTarih.Location = new System.Drawing.Point(19, 360);
+            this.dtAramaKayitTarih.Location = new System.Drawing.Point(20, 379);
             this.dtAramaKayitTarih.Name = "dtAramaKayitTarih";
             this.dtAramaKayitTarih.Size = new System.Drawing.Size(227, 23);
             this.dtAramaKayitTarih.TabIndex = 6;
@@ -145,7 +145,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 342);
+            this.label3.Location = new System.Drawing.Point(18, 361);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(105, 15);
             this.label3.TabIndex = 0;
@@ -153,7 +153,7 @@
             // 
             // txtAramaKaynakDepo
             // 
-            this.txtAramaKaynakDepo.Location = new System.Drawing.Point(19, 122);
+            this.txtAramaKaynakDepo.Location = new System.Drawing.Point(19, 130);
             this.txtAramaKaynakDepo.Name = "txtAramaKaynakDepo";
             this.txtAramaKaynakDepo.Size = new System.Drawing.Size(227, 23);
             this.txtAramaKaynakDepo.TabIndex = 1;
@@ -162,7 +162,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 104);
+            this.label1.Location = new System.Drawing.Point(17, 112);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 15);
             this.label1.TabIndex = 0;
@@ -180,16 +180,19 @@
             this.stokTransferListGridView.MultiSelect = false;
             this.stokTransferListGridView.Name = "stokTransferListGridView";
             this.stokTransferListGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.stokTransferListGridView.Size = new System.Drawing.Size(734, 513);
+            this.stokTransferListGridView.Size = new System.Drawing.Size(747, 513);
             this.stokTransferListGridView.TabIndex = 24;
             this.stokTransferListGridView.VirtualMode = true;
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.stokTransferListGridView);
-            this.groupBox1.Location = new System.Drawing.Point(295, 3);
+            this.groupBox1.Location = new System.Drawing.Point(295, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(746, 539);
+            this.groupBox1.Size = new System.Drawing.Size(759, 539);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             // 
@@ -198,7 +201,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1052, 547);
+            this.ClientSize = new System.Drawing.Size(1058, 566);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));

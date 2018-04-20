@@ -31,120 +31,102 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RaporOlustur));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbRaporVardiya = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btnOperator = new System.Windows.Forms.Button();
-            this.txtOperator = new System.Windows.Forms.TextBox();
+            this.txtIskartaNedeni = new System.Windows.Forms.TextBox();
             this.txtBeslenenMiktar = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtFireMiktar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpRaporTarih = new System.Windows.Forms.DateTimePicker();
-            this.txtAciklama = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtUretilenMiktar = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtFireNedeni = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtIskartaNedeni = new System.Windows.Forms.TextBox();
             this.txtIskartaMiktar = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtAciklama = new System.Windows.Forms.TextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.kaydetBttn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.temizleBttn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.iptalButton = new System.Windows.Forms.ToolStripButton();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.operator_result = new System.Windows.Forms.ListView();
+            this.operator_result_id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.operator_result_name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.operator_list = new System.Windows.Forms.ListView();
+            this.operator_id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.operator_adi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnComeBackOperator = new System.Windows.Forms.Button();
+            this.btnMoveOperator = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.cbRaporVardiya);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.btnOperator);
-            this.groupBox1.Controls.Add(this.txtOperator);
+            this.groupBox1.Controls.Add(this.txtIskartaNedeni);
             this.groupBox1.Controls.Add(this.txtBeslenenMiktar);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.txtFireMiktar);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.dtpRaporTarih);
-            this.groupBox1.Controls.Add(this.txtAciklama);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtUretilenMiktar);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtFireNedeni);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.txtIskartaNedeni);
             this.groupBox1.Controls.Add(this.txtIskartaMiktar);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 35);
+            this.groupBox1.Location = new System.Drawing.Point(12, 42);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(883, 287);
+            this.groupBox1.Size = new System.Drawing.Size(463, 383);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "RAPOR BİLGİLERİ";
             // 
             // cbRaporVardiya
             // 
             this.cbRaporVardiya.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbRaporVardiya.FormattingEnabled = true;
-            this.cbRaporVardiya.Location = new System.Drawing.Point(125, 80);
+            this.cbRaporVardiya.Location = new System.Drawing.Point(136, 65);
             this.cbRaporVardiya.Name = "cbRaporVardiya";
             this.cbRaporVardiya.Size = new System.Drawing.Size(306, 23);
-            this.cbRaporVardiya.TabIndex = 27;
+            this.cbRaporVardiya.TabIndex = 2;
             // 
-            // label5
+            // txtIskartaNedeni
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(43, 20);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 15);
-            this.label5.TabIndex = 26;
-            this.label5.Text = "OPERATÖR *";
-            // 
-            // btnOperator
-            // 
-            this.btnOperator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnOperator.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnOperator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOperator.Image = ((System.Drawing.Image)(resources.GetObject("btnOperator.Image")));
-            this.btnOperator.Location = new System.Drawing.Point(400, 16);
-            this.btnOperator.Name = "btnOperator";
-            this.btnOperator.Size = new System.Drawing.Size(31, 23);
-            this.btnOperator.TabIndex = 25;
-            this.btnOperator.UseVisualStyleBackColor = true;
-            this.btnOperator.Click += new System.EventHandler(this.btnOperator_Click);
-            // 
-            // txtOperator
-            // 
-            this.txtOperator.Location = new System.Drawing.Point(125, 16);
-            this.txtOperator.Name = "txtOperator";
-            this.txtOperator.ReadOnly = true;
-            this.txtOperator.Size = new System.Drawing.Size(269, 23);
-            this.txtOperator.TabIndex = 24;
-            this.txtOperator.TabStop = false;
+            this.txtIskartaNedeni.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtIskartaNedeni.Location = new System.Drawing.Point(136, 311);
+            this.txtIskartaNedeni.Multiline = true;
+            this.txtIskartaNedeni.Name = "txtIskartaNedeni";
+            this.txtIskartaNedeni.Size = new System.Drawing.Size(306, 57);
+            this.txtIskartaNedeni.TabIndex = 9;
             // 
             // txtBeslenenMiktar
             // 
             this.txtBeslenenMiktar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtBeslenenMiktar.Location = new System.Drawing.Point(125, 114);
+            this.txtBeslenenMiktar.Location = new System.Drawing.Point(136, 103);
             this.txtBeslenenMiktar.Name = "txtBeslenenMiktar";
             this.txtBeslenenMiktar.Size = new System.Drawing.Size(306, 23);
-            this.txtBeslenenMiktar.TabIndex = 23;
+            this.txtBeslenenMiktar.TabIndex = 3;
             this.txtBeslenenMiktar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.decimalValidate);
+            this.txtBeslenenMiktar.Leave += new System.EventHandler(this.txtBeslenenMiktar_Leave);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label10.Location = new System.Drawing.Point(2, 117);
+            this.label10.Location = new System.Drawing.Point(13, 106);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(117, 15);
             this.label10.TabIndex = 17;
@@ -153,17 +135,18 @@
             // txtFireMiktar
             // 
             this.txtFireMiktar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtFireMiktar.Location = new System.Drawing.Point(125, 180);
+            this.txtFireMiktar.Location = new System.Drawing.Point(136, 176);
             this.txtFireMiktar.Name = "txtFireMiktar";
             this.txtFireMiktar.Size = new System.Drawing.Size(306, 23);
-            this.txtFireMiktar.TabIndex = 5;
+            this.txtFireMiktar.TabIndex = 6;
             this.txtFireMiktar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.decimalValidate);
+            this.txtFireMiktar.Leave += new System.EventHandler(this.txtFireMiktar_Leave);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(31, 183);
+            this.label2.Location = new System.Drawing.Point(42, 179);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 15);
             this.label2.TabIndex = 15;
@@ -172,45 +155,27 @@
             // dtpRaporTarih
             // 
             this.dtpRaporTarih.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dtpRaporTarih.Location = new System.Drawing.Point(125, 46);
+            this.dtpRaporTarih.Location = new System.Drawing.Point(136, 27);
             this.dtpRaporTarih.MinimumSize = new System.Drawing.Size(4, 23);
             this.dtpRaporTarih.Name = "dtpRaporTarih";
             this.dtpRaporTarih.Size = new System.Drawing.Size(306, 23);
-            this.dtpRaporTarih.TabIndex = 6;
-            // 
-            // txtAciklama
-            // 
-            this.txtAciklama.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtAciklama.Location = new System.Drawing.Point(564, 128);
-            this.txtAciklama.Multiline = true;
-            this.txtAciklama.Name = "txtAciklama";
-            this.txtAciklama.Size = new System.Drawing.Size(306, 75);
-            this.txtAciklama.TabIndex = 12;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(492, 131);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 15);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "AÇIKLAMA";
+            this.dtpRaporTarih.TabIndex = 1;
             // 
             // txtUretilenMiktar
             // 
             this.txtUretilenMiktar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtUretilenMiktar.Location = new System.Drawing.Point(125, 149);
+            this.txtUretilenMiktar.Location = new System.Drawing.Point(136, 141);
             this.txtUretilenMiktar.Name = "txtUretilenMiktar";
             this.txtUretilenMiktar.Size = new System.Drawing.Size(306, 23);
-            this.txtUretilenMiktar.TabIndex = 3;
+            this.txtUretilenMiktar.TabIndex = 4;
             this.txtUretilenMiktar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.decimalValidate);
+            this.txtUretilenMiktar.Leave += new System.EventHandler(this.txtUretilenMiktar_Leave);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(5, 152);
+            this.label4.Location = new System.Drawing.Point(16, 144);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(114, 15);
             this.label4.TabIndex = 0;
@@ -220,7 +185,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label7.Location = new System.Drawing.Point(41, 222);
+            this.label7.Location = new System.Drawing.Point(54, 217);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(76, 15);
             this.label7.TabIndex = 0;
@@ -230,45 +195,37 @@
             // 
             this.txtFireNedeni.AcceptsReturn = true;
             this.txtFireNedeni.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtFireNedeni.Location = new System.Drawing.Point(125, 219);
+            this.txtFireNedeni.Location = new System.Drawing.Point(136, 210);
             this.txtFireNedeni.Multiline = true;
             this.txtFireNedeni.Name = "txtFireNedeni";
-            this.txtFireNedeni.Size = new System.Drawing.Size(306, 58);
+            this.txtFireNedeni.Size = new System.Drawing.Size(306, 57);
             this.txtFireNedeni.TabIndex = 7;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.Location = new System.Drawing.Point(23, 52);
+            this.label6.Location = new System.Drawing.Point(36, 33);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(94, 15);
             this.label6.TabIndex = 0;
             this.label6.Text = "RAPOR TARİHİ *";
             // 
-            // txtIskartaNedeni
-            // 
-            this.txtIskartaNedeni.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtIskartaNedeni.Location = new System.Drawing.Point(564, 56);
-            this.txtIskartaNedeni.Multiline = true;
-            this.txtIskartaNedeni.Name = "txtIskartaNedeni";
-            this.txtIskartaNedeni.Size = new System.Drawing.Size(306, 58);
-            this.txtIskartaNedeni.TabIndex = 11;
-            // 
             // txtIskartaMiktar
             // 
             this.txtIskartaMiktar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtIskartaMiktar.Location = new System.Drawing.Point(564, 18);
+            this.txtIskartaMiktar.Location = new System.Drawing.Point(136, 277);
             this.txtIskartaMiktar.Name = "txtIskartaMiktar";
             this.txtIskartaMiktar.Size = new System.Drawing.Size(306, 23);
-            this.txtIskartaMiktar.TabIndex = 10;
+            this.txtIskartaMiktar.TabIndex = 8;
             this.txtIskartaMiktar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.decimalValidate);
+            this.txtIskartaMiktar.Leave += new System.EventHandler(this.txtIskartaMiktar_Leave);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label11.Location = new System.Drawing.Point(458, 60);
+            this.label11.Location = new System.Drawing.Point(30, 311);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(100, 15);
             this.label11.TabIndex = 0;
@@ -278,7 +235,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label9.Location = new System.Drawing.Point(446, 21);
+            this.label9.Location = new System.Drawing.Point(18, 280);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(112, 15);
             this.label9.TabIndex = 0;
@@ -288,15 +245,24 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(12, 83);
+            this.label1.Location = new System.Drawing.Point(66, 68);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 15);
+            this.label1.Size = new System.Drawing.Size(64, 15);
             this.label1.TabIndex = 0;
-            this.label1.Text = "RAPOR VARDİYA *";
+            this.label1.Text = "VARDİYA *";
+            // 
+            // txtAciklama
+            // 
+            this.txtAciklama.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtAciklama.Location = new System.Drawing.Point(13, 25);
+            this.txtAciklama.Multiline = true;
+            this.txtAciklama.Name = "txtAciklama";
+            this.txtAciklama.Size = new System.Drawing.Size(420, 110);
+            this.txtAciklama.TabIndex = 10;
             // 
             // toolStrip1
             // 
-            this.toolStrip1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.toolStrip1.BackColor = System.Drawing.Color.GhostWhite;
             this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -308,7 +274,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(10, 1, 2, 1);
-            this.toolStrip1.Size = new System.Drawing.Size(906, 32);
+            this.toolStrip1.Size = new System.Drawing.Size(965, 32);
             this.toolStrip1.TabIndex = 18;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -354,12 +320,120 @@
             this.iptalButton.Text = "Çıkış";
             this.iptalButton.Click += new System.EventHandler(this.iptalButton_Click);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.operator_result);
+            this.groupBox3.Controls.Add(this.operator_list);
+            this.groupBox3.Controls.Add(this.btnComeBackOperator);
+            this.groupBox3.Controls.Add(this.btnMoveOperator);
+            this.groupBox3.Location = new System.Drawing.Point(500, 42);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(449, 222);
+            this.groupBox3.TabIndex = 29;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "OPERATÖR İŞLEMLERİ";
+            // 
+            // operator_result
+            // 
+            this.operator_result.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.operator_result.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.operator_result_id,
+            this.operator_result_name});
+            this.operator_result.FullRowSelect = true;
+            this.operator_result.GridLines = true;
+            this.operator_result.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.operator_result.Location = new System.Drawing.Point(262, 26);
+            this.operator_result.Name = "operator_result";
+            this.operator_result.Size = new System.Drawing.Size(171, 179);
+            this.operator_result.TabIndex = 0;
+            this.operator_result.TabStop = false;
+            this.operator_result.UseCompatibleStateImageBehavior = false;
+            this.operator_result.View = System.Windows.Forms.View.Details;
+            // 
+            // operator_result_id
+            // 
+            this.operator_result_id.Text = "ID";
+            this.operator_result_id.Width = 0;
+            // 
+            // operator_result_name
+            // 
+            this.operator_result_name.Text = "OPERATOR ADI";
+            this.operator_result_name.Width = 147;
+            // 
+            // operator_list
+            // 
+            this.operator_list.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.operator_list.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.operator_id,
+            this.operator_adi});
+            this.operator_list.FullRowSelect = true;
+            this.operator_list.GridLines = true;
+            this.operator_list.Location = new System.Drawing.Point(13, 26);
+            this.operator_list.Name = "operator_list";
+            this.operator_list.Size = new System.Drawing.Size(183, 179);
+            this.operator_list.TabIndex = 0;
+            this.operator_list.TabStop = false;
+            this.operator_list.UseCompatibleStateImageBehavior = false;
+            this.operator_list.View = System.Windows.Forms.View.Details;
+            // 
+            // operator_id
+            // 
+            this.operator_id.Text = "ID";
+            this.operator_id.Width = 0;
+            // 
+            // operator_adi
+            // 
+            this.operator_adi.Text = "OPERATOR ADI";
+            this.operator_adi.Width = 154;
+            // 
+            // btnComeBackOperator
+            // 
+            this.btnComeBackOperator.BackColor = System.Drawing.Color.Tomato;
+            this.btnComeBackOperator.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.btnComeBackOperator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnComeBackOperator.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnComeBackOperator.Location = new System.Drawing.Point(211, 117);
+            this.btnComeBackOperator.Name = "btnComeBackOperator";
+            this.btnComeBackOperator.Size = new System.Drawing.Size(37, 37);
+            this.btnComeBackOperator.TabIndex = 0;
+            this.btnComeBackOperator.TabStop = false;
+            this.btnComeBackOperator.Text = "<";
+            this.btnComeBackOperator.UseVisualStyleBackColor = false;
+            this.btnComeBackOperator.Click += new System.EventHandler(this.btnComeBackOperator_Click);
+            // 
+            // btnMoveOperator
+            // 
+            this.btnMoveOperator.BackColor = System.Drawing.Color.YellowGreen;
+            this.btnMoveOperator.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.btnMoveOperator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMoveOperator.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnMoveOperator.Location = new System.Drawing.Point(211, 61);
+            this.btnMoveOperator.Name = "btnMoveOperator";
+            this.btnMoveOperator.Size = new System.Drawing.Size(37, 37);
+            this.btnMoveOperator.TabIndex = 0;
+            this.btnMoveOperator.TabStop = false;
+            this.btnMoveOperator.Text = ">";
+            this.btnMoveOperator.UseVisualStyleBackColor = false;
+            this.btnMoveOperator.Click += new System.EventHandler(this.btnMoveOperator_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtAciklama);
+            this.groupBox2.Location = new System.Drawing.Point(500, 275);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(449, 150);
+            this.groupBox2.TabIndex = 30;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "RAPOR AÇIKLAMASI";
+            // 
             // RaporOlustur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(906, 331);
+            this.ClientSize = new System.Drawing.Size(965, 440);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -372,6 +446,9 @@
             this.groupBox1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -385,7 +462,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtpRaporTarih;
         private System.Windows.Forms.TextBox txtAciklama;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtUretilenMiktar;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
@@ -403,9 +479,16 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton iptalButton;
         private System.Windows.Forms.TextBox txtBeslenenMiktar;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnOperator;
-        private System.Windows.Forms.TextBox txtOperator;
         private System.Windows.Forms.ComboBox cbRaporVardiya;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.ListView operator_result;
+        private System.Windows.Forms.ColumnHeader operator_result_id;
+        private System.Windows.Forms.ColumnHeader operator_result_name;
+        private System.Windows.Forms.ListView operator_list;
+        private System.Windows.Forms.ColumnHeader operator_id;
+        private System.Windows.Forms.ColumnHeader operator_adi;
+        private System.Windows.Forms.Button btnComeBackOperator;
+        private System.Windows.Forms.Button btnMoveOperator;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

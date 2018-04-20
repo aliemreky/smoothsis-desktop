@@ -73,7 +73,7 @@ namespace smoothsis
                         }
                         else
                         {
-                            Notification.messageBoxError("BİR SORUN OLUŞTU, KULLANICI SİLİNEMEDİ !");
+                            Notification.messageBoxError("Bir sorun oluştu, kullanıcı silinemedi !");
                         }
                     }
                 }
@@ -81,6 +81,9 @@ namespace smoothsis
                 {
                     Notification.messageBoxError(ex.Source);
                 }
+            } else
+            {
+                Notification.messageBoxError("Seçili bir kayıt bulunamadı !");
             }
         }
         
@@ -134,7 +137,7 @@ namespace smoothsis
                     }
                     else
                     {
-                        Notification.messageBoxError("Bir Sorun Oluştu, Kullanıcı Güncellenemedi.");
+                        Notification.messageBoxError("Bir Sorun Oluştu, Kullanıcı Güncellenemedi");
                     }
                 }
                 catch (Exception ex)

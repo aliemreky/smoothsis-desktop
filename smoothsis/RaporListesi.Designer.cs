@@ -60,14 +60,14 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Location = new System.Drawing.Point(11, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(235, 496);
+            this.groupBox2.Size = new System.Drawing.Size(235, 297);
             this.groupBox2.TabIndex = 24;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "ARAMA";
             // 
             // btnRaporListesiGetir
             // 
-            this.btnRaporListesiGetir.Location = new System.Drawing.Point(17, 34);
+            this.btnRaporListesiGetir.Location = new System.Drawing.Point(17, 39);
             this.btnRaporListesiGetir.Name = "btnRaporListesiGetir";
             this.btnRaporListesiGetir.Size = new System.Drawing.Size(195, 43);
             this.btnRaporListesiGetir.TabIndex = 0;
@@ -119,7 +119,7 @@
             this.groupBox1.Controls.Add(this.raporListGridView);
             this.groupBox1.Location = new System.Drawing.Point(252, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1057, 496);
+            this.groupBox1.Size = new System.Drawing.Size(811, 297);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             // 
@@ -135,7 +135,7 @@
             this.raporListGridView.MultiSelect = false;
             this.raporListGridView.Name = "raporListGridView";
             this.raporListGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.raporListGridView.Size = new System.Drawing.Size(1045, 477);
+            this.raporListGridView.Size = new System.Drawing.Size(799, 278);
             this.raporListGridView.TabIndex = 19;
             this.raporListGridView.VirtualMode = true;
             this.raporListGridView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.raporListGridView_CellMouseDown);
@@ -175,14 +175,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1321, 510);
+            this.ClientSize = new System.Drawing.Size(1075, 309);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RaporListesi";
-            this.Text = "SMOOTHSIS [RAPOR LİSTESİ ]";
+            this.Text = "SMOOTHSIS [ RAPOR LİSTESİ ]";
             this.Load += new System.EventHandler(this.RaporListesi_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

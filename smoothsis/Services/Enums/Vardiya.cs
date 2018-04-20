@@ -9,9 +9,11 @@ namespace smoothsis.Services.Enums
 {
     public enum Vardiya
     {
-        [DescriptionAttribute("8_16")]
+        [DescriptionAttribute("00-08")]
         Vardiya1,
-        [DescriptionAttribute("16_22")]
-        Vardiya2
+        [DescriptionAttribute("08-16")]
+        Vardiya2,
+        [DescriptionAttribute("16-24")]
+        Vardiya3
     }
 }

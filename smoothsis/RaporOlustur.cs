@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
 using smoothsis.Services;
+using System.Globalization;
 
 namespace smoothsis
 {
@@ -27,40 +28,6 @@ namespace smoothsis
             selectedUretim = this.uretimListesi.getSelectedItem().Item2;
         }
 
-        private void btnOperator_Click(object sender, EventArgs e)
-        {
-            OperatorListesi operatorListesi = new OperatorListesi(this);
-            operatorListesi.ShowDialog();
-        }
-
-        public void addOperatorToRapor(DataGridViewCellCollection selectedOperator)
-        {
-            if (selectedOperator[3].Value.ToString().Equals("Aktif"))
-            {
-                Operator oprtr = new Operator(
-                    selectedOperator[0].Value.ToString(),
-                    selectedOperator[1].Value.ToString(),
-                    selectedOperator[2].Value.ToString(),
-                    selectedOperator[3].Value.ToString()
-                );
-
-                if (!selectedOperators.Contains(oprtr))
-                {
-                    selectedOperators.Add(oprtr);
-                    txtOperator.Text += selectedOperator[1].Value.ToString() + ", ";
-
-                }
-                else
-                {
-                    Notification.messageBoxError("BU OPERATÖR EKLENMİŞ DURUMDA.");
-                }
-            }
-            else
-            {
-                Notification.messageBoxError("ÜZERİNE RAPOR OLUŞTURULAN OPERATÖR AKTiF DEĞİL.");
-            }
-        }
-
         private void decimalValidate(object sender, KeyPressEventArgs e)
         {
             TextValidate.forceForDecimal(sender, e);
@@ -68,8 +35,7 @@ namespace smoothsis
 
         private void kaydetBttn_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(txtOperator.Text) ||
-                String.IsNullOrEmpty(cbRaporVardiya.SelectedValue.ToString()) ||
+            if (String.IsNullOrEmpty(cbRaporVardiya.SelectedItem.ToString()) ||
                 String.IsNullOrEmpty(txtBeslenenMiktar.Text) ||
                 String.IsNullOrEmpty(txtUretilenMiktar.Text) ||
                 String.IsNullOrEmpty(txtFireMiktar.Text) ||
@@ -80,69 +46,98 @@ namespace smoothsis
             }
             else
             {
-                try
+                if (decimal.Parse(txtBeslenenMiktar.Text) > 0 || decimal.Parse(txtUretilenMiktar.Text) > 0)
                 {
-                    sqlCmd = Program.connection.CreateCommand();
-                    sqlCmd.CommandText = "INSERT INTO " +
-                        "RAPOR(UR_INCKEY, RAPOR_TARIH, RAPOR_VARDIYA, " +
-                        "BESLENEN_MIK, URETILEN_MIK, FIRE_MIK, FIRE_NEDENI, ISKARTA_MIK, " +
-                        "ISKARTA_NEDENI, KAYIT_YAPAN_KUL, ACIKLAMA) " +
-                        "OUTPUT INSERTED.RAPOR_INCKEY " +
-                        "VALUES(@ur_inckey, @rapor_tarih, @rapor_vardiya, " +
-                        "@beslenen_mik, @uretilen_mik, @fire_mik, @fire_nedeni, @iskarta_mik, " +
-                        "@iskarta_nedeni, @kayit_yapan_kul, @aciklama)";
-                    sqlCmd.Parameters.Add("@ur_inckey", SqlDbType.Int).Value = Convert.ToInt32(selectedUretim[0].Value.ToString());
-                    sqlCmd.Parameters.Add("@rapor_tarih", SqlDbType.Date).Value = dtpRaporTarih.Value;
-                    sqlCmd.Parameters.Add("@rapor_vardiya", SqlDbType.VarChar).Value = cbRaporVardiya.SelectedValue.ToString();
-                    sqlCmd.Parameters.Add("@beslenen_mik", SqlDbType.Decimal).Value = decimal.Parse(txtBeslenenMiktar.Text);
-                    sqlCmd.Parameters.Add("@uretilen_mik", SqlDbType.Decimal).Value = decimal.Parse(txtUretilenMiktar.Text);
-                    sqlCmd.Parameters.Add("@fire_mik", SqlDbType.Decimal).Value = decimal.Parse(txtFireMiktar.Text);
-                    sqlCmd.Parameters.Add("@fire_nedeni", SqlDbType.VarChar).Value = txtFireNedeni.Text;
-                    sqlCmd.Parameters.Add("@iskarta_mik", SqlDbType.Decimal).Value = decimal.Parse(txtIskartaMiktar.Text);
-                    sqlCmd.Parameters.Add("@iskarta_nedeni", SqlDbType.VarChar).Value = txtIskartaNedeni.Text;
-                    sqlCmd.Parameters.Add("@kayit_yapan_kul", SqlDbType.Int).Value = Program.kullanici.Item1;
-                    sqlCmd.Parameters.Add("@aciklama", SqlDbType.VarChar).Value = txtAciklama.Text;
-
-                    int raporInckey = (int)sqlCmd.ExecuteScalar();
-
-                    if (raporInckey > 0)
+                    try
                     {
-                        List<int> okeys = new List<int>();
-                        foreach (Operator selectedOperator in selectedOperators)
+                        sqlCmd = Program.connection.CreateCommand();
+                        sqlCmd.CommandText = "INSERT INTO " +
+                            "RAPOR(UR_INCKEY, RAPOR_TARIH, RAPOR_VARDIYA, " +
+                            "BESLENEN_MIK, URETILEN_MIK, FIRE_MIK, FIRE_NEDENI, ISKARTA_MIK, " +
+                            "ISKARTA_NEDENI, KAYIT_YAPAN_KUL, ACIKLAMA) " +
+                            "OUTPUT INSERTED.RAPOR_INCKEY " +
+                            "VALUES(@ur_inckey, @rapor_tarih, @rapor_vardiya, " +
+                            "@beslenen_mik, @uretilen_mik, @fire_mik, @fire_nedeni, @iskarta_mik, " +
+                            "@iskarta_nedeni, @kayit_yapan_kul, @aciklama)";
+                        sqlCmd.Parameters.Add("@ur_inckey", SqlDbType.Int).Value = Convert.ToInt32(selectedUretim[0].Value.ToString());
+                        sqlCmd.Parameters.Add("@rapor_tarih", SqlDbType.Date).Value = dtpRaporTarih.Value;
+                        sqlCmd.Parameters.Add("@rapor_vardiya", SqlDbType.VarChar).Value = cbRaporVardiya.SelectedValue.ToString();
+                        sqlCmd.Parameters.Add("@beslenen_mik", SqlDbType.Decimal).Value = decimal.Parse(txtBeslenenMiktar.Text);
+                        sqlCmd.Parameters.Add("@uretilen_mik", SqlDbType.Decimal).Value = decimal.Parse(txtUretilenMiktar.Text);
+                        sqlCmd.Parameters.Add("@fire_mik", SqlDbType.Decimal).Value = decimal.Parse(txtFireMiktar.Text);
+                        sqlCmd.Parameters.Add("@fire_nedeni", SqlDbType.VarChar).Value = txtFireNedeni.Text;
+                        sqlCmd.Parameters.Add("@iskarta_mik", SqlDbType.Decimal).Value = decimal.Parse(txtIskartaMiktar.Text);
+                        sqlCmd.Parameters.Add("@iskarta_nedeni", SqlDbType.VarChar).Value = txtIskartaNedeni.Text;
+                        sqlCmd.Parameters.Add("@kayit_yapan_kul", SqlDbType.Int).Value = Program.kullanici.Item1;
+                        sqlCmd.Parameters.Add("@aciklama", SqlDbType.VarChar).Value = txtAciklama.Text;
+
+                        int raporInckey = (int)sqlCmd.ExecuteScalar();
+
+                        if (raporInckey > 0)
                         {
-                            string query = "INSERT INTO OPERATOR_TO_RAPOR(OP_INCKEY, RAPOR_INCKEY) " +
-                                "VALUES(@op_inckey, @rapor_inckey)";
-                            sqlCmd = new SqlCommand(query, Program.connection);
-                            sqlCmd.Parameters.Add("@op_inckey", SqlDbType.Int).Value = Convert.ToInt32(selectedOperator.getOpInckey());
-                            sqlCmd.Parameters.Add("@rapor_inckey", SqlDbType.Int).Value = raporInckey;
-                            int state = sqlCmd.ExecuteNonQuery();
-                            okeys.Add(state);
+                            string emailOperatorler = "";
+                            int operatorCount = 0;
+
+                            if (operator_result.Items.Count > 0)
+                            {
+                                foreach (ListViewItem operator_result in operator_result.Items)
+                                {
+                                    string operatorQuery = "INSERT INTO OPERATOR_TO_RAPOR(OP_INCKEY, RAPOR_INCKEY) VALUES (@op_inckey, @rapor_inckey)";
+                                    sqlCmd = new SqlCommand(operatorQuery, Program.connection);
+                                    sqlCmd.Parameters.Add("@op_inckey", SqlDbType.Int).Value = Convert.ToInt32(operator_result.Text);
+                                    sqlCmd.Parameters.Add("@rapor_inckey", SqlDbType.Int).Value = raporInckey;
+                                    sqlCmd.ExecuteNonQuery();
+
+                                    emailOperatorler += operator_result.SubItems[operatorCount].ToString() + ", ";
+                                }
+                            }
+                            
+                            string EmailSubject = DateTime.Now.ToString("dd MMMM yyyy, dddd", CultureInfo.CreateSpecificCulture("tr-TR")) + " TARİHLİ ÜRETİM RAPORU";
+                            string EmailBody = "BESLENEN MİKTAR: "+ txtBeslenenMiktar.Text +
+                                "ÜRETİLEN MİKTAR: "+ txtUretilenMiktar.Text + "\n" +
+                                "FİRE MİKTARI: "+ txtFireMiktar.Text + "\n" +
+                                "FİRE NEDENİ: " + txtFireNedeni.Text + "\n" +
+                                "ISKARTA MİKTARI: " + txtIskartaMiktar.Text + "\n" +
+                                "ISKARTA NEDENİ: " + txtIskartaNedeni.Text + "\n" +
+                                "KAYIT YAPAN KULLANICI: " + Program.kullanici.Item2 + "\n" +
+                                "RAPOR TARİH: " + dtpRaporTarih.Value.ToString("dd MMMM yyyy, dddd", CultureInfo.CreateSpecificCulture("tr-TR")) + "\n" +
+                                "OPERATÖRLER: " + emailOperatorler.Substring(0, emailOperatorler.Length - 2) + "\n" +
+                                "AÇIKLAMA: " + txtAciklama.Text;
+
+                            Email sendingMail = new Email();
+                            string sendMail = "";
+                            if (sendingMail.MultipleEmailSend(EmailSubject, EmailBody))
+                                sendMail = " VE RAPOR MAİL'İ GÖNDERİLDİ";
+
+                            Notification.messageBox("RAPOR BAŞARILI BİR ŞEKİLDE OLUŞTURULDU" + sendMail);
+
+
                         }
 
-                        if (!okeys.Contains(0))
-                        {
-                            Notification.messageBox("RAPOR BAŞARILI BİR ŞEKİLDE OLUŞTURULDU.");
-                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Notification.messageBoxError(ex.Message);
                     }
 
                 }
-                catch (Exception ex)
+                else
                 {
-                    Notification.messageBoxError(ex.Message);
+                    Notification.messageBoxError("BESLENEN MİKTAR VE ÜRETİLEN MİKTAR 0'DAN BÜYÜK OLMALI !");
                 }
+                
             }
         }
 
         private void temizleBttn_Click(object sender, EventArgs e)
         {
-            txtOperator.Clear();
-            txtBeslenenMiktar.Clear();
-            txtUretilenMiktar.Clear();
-            txtFireMiktar.Clear();
-            txtIskartaMiktar.Clear();
+            txtBeslenenMiktar.Text = "0,000";
+            txtUretilenMiktar.Text = "0,000";
+            txtFireMiktar.Text = "0,000";
+            txtIskartaMiktar.Text = "0,000";
             txtFireNedeni.Clear();
             txtIskartaNedeni.Clear();
-            txtAciklama.Clear();
+            txtAciklama.Clear();            
         }
 
         private void iptalButton_Click(object sender, EventArgs e)
@@ -152,7 +147,28 @@ namespace smoothsis
 
         private void RaporOlustur_Load(object sender, EventArgs e)
         {
+            txtBeslenenMiktar.Text = "0,000";
+            txtUretilenMiktar.Text = "0,000";
+            txtFireMiktar.Text = "0,000";
+            txtIskartaMiktar.Text = "0,000";
+
             loadVardiyaComboBox(cbRaporVardiya);
+
+            cbRaporVardiya.SelectedIndex = 0;
+
+            int listviewCount = 0;
+            string operatorFillSQL = "SELECT * FROM OPERATOR WHERE OP_DURUMU=1";
+            sqlCmd = new SqlCommand(operatorFillSQL, Program.connection);
+            SqlDataReader operatorFillReader = sqlCmd.ExecuteReader();
+
+            while (operatorFillReader.Read())
+            {
+                operator_list.Items.Add(operatorFillReader["OP_INCKEY"].ToString());
+                operator_list.Items[listviewCount].SubItems.Add(operatorFillReader["ADSOYAD"].ToString());
+                listviewCount++;
+            }
+
+            operatorFillReader.Close();
         }
 
         public static void loadVardiyaComboBox(ComboBox comboBox)
@@ -168,6 +184,68 @@ namespace smoothsis
                 })
                 .OrderBy(item => item.value)
                 .ToList();
+        }
+
+        private void btnMoveOperator_Click(object sender, EventArgs e)
+        {
+            ActionControl.moveOperator(operator_list, operator_result);
+        }
+
+        private void btnComeBackOperator_Click(object sender, EventArgs e)
+        {
+            ActionControl.moveOperator(operator_result, operator_list);
+        }
+
+        private void txtBeslenenMiktar_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                txtBeslenenMiktar.Text = string.Format("{0:#,##0.000}", decimal.Parse(txtBeslenenMiktar.Text));
+            }
+            catch
+            {
+                Notification.messageBox("YANLIŞ FORMATTA DEĞER GİRİLDİ !");
+                txtBeslenenMiktar.Focus();
+            }
+        }
+
+        private void txtUretilenMiktar_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                txtUretilenMiktar.Text = string.Format("{0:#,##0.000}", decimal.Parse(txtUretilenMiktar.Text));
+            }
+            catch
+            {
+                Notification.messageBox("YANLIŞ FORMATTA DEĞER GİRİLDİ !");
+                txtUretilenMiktar.Focus();
+            }
+        }
+
+        private void txtFireMiktar_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                txtFireMiktar.Text = string.Format("{0:#,##0.000}", decimal.Parse(txtFireMiktar.Text));
+            }
+            catch
+            {
+                Notification.messageBox("YANLIŞ FORMATTA DEĞER GİRİLDİ !");
+                txtFireMiktar.Focus();
+            }
+        }
+
+        private void txtIskartaMiktar_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                txtIskartaMiktar.Text = string.Format("{0:#,##0.000}", decimal.Parse(txtIskartaMiktar.Text));
+            }
+            catch
+            {
+                Notification.messageBox("YANLIŞ FORMATTA DEĞER GİRİLDİ !");
+                txtIskartaMiktar.Focus();
+            }
         }
     }
 }

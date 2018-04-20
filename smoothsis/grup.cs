@@ -59,7 +59,7 @@ namespace smoothsis
             }
             else
             {
-                Notification.messageBox("LÜTFEN GEREKLİ ALANLARI BOŞ GEÇMEYİNİZ.");
+                Notification.messageBox("Lütfen Zorunlu Alanları Boş Bırakmayınız !");
             }
             
         }
@@ -77,7 +77,7 @@ namespace smoothsis
                     listGrup();
                 } else
                 {
-                    Notification.messageBoxError("Bir sorun oluştu, grup kaydedilemedi.");
+                    Notification.messageBoxError("Bir sorun oluştu, yetki grubu kaydedilemedi !");
                 }
             }
             catch (Exception ex)
@@ -96,12 +96,12 @@ namespace smoothsis
                 int affectedRows = command.ExecuteNonQuery();
                 if (affectedRows > 0 )
                 {
-                    Notification.messageBox("GRUP BAŞARIYLA GÜNCELLENDİ.");
+                    Notification.messageBox("Yetki grubu başarıyla güncellendi");
                     grupList[1, rowIndex].Value = grupAdi;
                     
                 } else
                 {
-                    Notification.messageBoxError("Bir sorun oluştu, grup güncellenemedi.");
+                    Notification.messageBoxError("Bir sorun oluştu, grup güncellenemedi !");
                 }
             }
             catch (Exception ex)
@@ -138,11 +138,11 @@ namespace smoothsis
                         {
                             grupList.Rows.RemoveAt(rowIndex);
                             grupAdTB.Clear();
-                            Notification.messageBox("GRUP BAŞARIYLA SİLİNDİ.");
+                            Notification.messageBox("Yetki grubu başarıyla silindi");
                         }
                         else
                         {
-                            Notification.messageBoxError("Bir sorun oluştu, grup silinemedi.");
+                            Notification.messageBoxError("Bir sorun oluştu, grup silinemedi !");
                         }
                     }
                 }
@@ -152,7 +152,7 @@ namespace smoothsis
                 }
             } else
             {
-                Notification.messageBoxError("BİR SORUN OLUŞTU, KAYIT SEÇİLEMEDİ !");
+                Notification.messageBoxError("Seçilen bir kayıt bulunamadı !");
             }
         }
 

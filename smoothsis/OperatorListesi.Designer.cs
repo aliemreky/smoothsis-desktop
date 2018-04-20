@@ -42,7 +42,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtAramaAdiSoyadi = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.raporaEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.operatorListGridView)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -52,9 +51,9 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.operatorListGridView);
-            this.groupBox2.Location = new System.Drawing.Point(15, 83);
+            this.groupBox2.Location = new System.Drawing.Point(15, 107);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(804, 299);
+            this.groupBox2.Size = new System.Drawing.Size(794, 299);
             this.groupBox2.TabIndex = 31;
             this.groupBox2.TabStop = false;
             // 
@@ -70,7 +69,7 @@
             this.operatorListGridView.MultiSelect = false;
             this.operatorListGridView.Name = "operatorListGridView";
             this.operatorListGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.operatorListGridView.Size = new System.Drawing.Size(786, 275);
+            this.operatorListGridView.Size = new System.Drawing.Size(776, 275);
             this.operatorListGridView.TabIndex = 0;
             this.operatorListGridView.TabStop = false;
             this.operatorListGridView.VirtualMode = true;
@@ -80,15 +79,14 @@
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.duzenleToolStripMenuItem,
-            this.raporaEkleToolStripMenuItem});
+            this.duzenleToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(117, 26);
             // 
             // duzenleToolStripMenuItem
             // 
             this.duzenleToolStripMenuItem.Name = "duzenleToolStripMenuItem";
-            this.duzenleToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.duzenleToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.duzenleToolStripMenuItem.Text = "Düzenle";
             this.duzenleToolStripMenuItem.Click += new System.EventHandler(this.operatorDuzenleToolStripMenuItem_Click);
             // 
@@ -104,26 +102,26 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(15, 8);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(804, 69);
+            this.groupBox1.Size = new System.Drawing.Size(794, 93);
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ARAMA";
             // 
             // btnOperatorListesiGetir
             // 
-            this.btnOperatorListesiGetir.Location = new System.Drawing.Point(570, 14);
+            this.btnOperatorListesiGetir.Location = new System.Drawing.Point(605, 30);
             this.btnOperatorListesiGetir.Name = "btnOperatorListesiGetir";
-            this.btnOperatorListesiGetir.Size = new System.Drawing.Size(224, 45);
+            this.btnOperatorListesiGetir.Size = new System.Drawing.Size(179, 41);
             this.btnOperatorListesiGetir.TabIndex = 24;
             this.btnOperatorListesiGetir.TabStop = false;
-            this.btnOperatorListesiGetir.Text = "OPERATÖR LİSTESİNİ YENİLE";
+            this.btnOperatorListesiGetir.Text = "LİSTEYİ YENİLE";
             this.btnOperatorListesiGetir.UseVisualStyleBackColor = true;
             this.btnOperatorListesiGetir.Click += new System.EventHandler(this.btnOperatorListesiGetir_Click);
             // 
             // dtpIseBaslamaTarihi
             // 
             this.dtpIseBaslamaTarihi.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dtpIseBaslamaTarihi.Location = new System.Drawing.Point(363, 36);
+            this.dtpIseBaslamaTarihi.Location = new System.Drawing.Point(411, 48);
             this.dtpIseBaslamaTarihi.MinimumSize = new System.Drawing.Size(4, 23);
             this.dtpIseBaslamaTarihi.Name = "dtpIseBaslamaTarihi";
             this.dtpIseBaslamaTarihi.Size = new System.Drawing.Size(175, 23);
@@ -134,7 +132,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.Location = new System.Drawing.Point(360, 16);
+            this.label6.Location = new System.Drawing.Point(408, 28);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(123, 15);
             this.label6.TabIndex = 22;
@@ -144,9 +142,9 @@
             // 
             this.cbOperatorDurum.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbOperatorDurum.FormattingEnabled = true;
-            this.cbOperatorDurum.Location = new System.Drawing.Point(249, 36);
+            this.cbOperatorDurum.Location = new System.Drawing.Point(286, 48);
             this.cbOperatorDurum.Name = "cbOperatorDurum";
-            this.cbOperatorDurum.Size = new System.Drawing.Size(82, 23);
+            this.cbOperatorDurum.Size = new System.Drawing.Size(92, 23);
             this.cbOperatorDurum.TabIndex = 20;
             this.cbOperatorDurum.SelectedIndexChanged += new System.EventHandler(this.cbOperatorDurum_SelectedIndexChanged);
             // 
@@ -154,7 +152,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label10.Location = new System.Drawing.Point(246, 16);
+            this.label10.Location = new System.Drawing.Point(283, 28);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(58, 15);
             this.label10.TabIndex = 21;
@@ -162,34 +160,27 @@
             // 
             // txtAramaAdiSoyadi
             // 
-            this.txtAramaAdiSoyadi.Location = new System.Drawing.Point(8, 36);
+            this.txtAramaAdiSoyadi.Location = new System.Drawing.Point(16, 48);
             this.txtAramaAdiSoyadi.Name = "txtAramaAdiSoyadi";
-            this.txtAramaAdiSoyadi.Size = new System.Drawing.Size(205, 23);
+            this.txtAramaAdiSoyadi.Size = new System.Drawing.Size(239, 23);
             this.txtAramaAdiSoyadi.TabIndex = 1;
             this.txtAramaAdiSoyadi.TextChanged += new System.EventHandler(this.searchForAdSoyad);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(5, 18);
+            this.label1.Location = new System.Drawing.Point(13, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "ADI SOYADI";
-            // 
-            // raporaEkleToolStripMenuItem
-            // 
-            this.raporaEkleToolStripMenuItem.Name = "raporaEkleToolStripMenuItem";
-            this.raporaEkleToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.raporaEkleToolStripMenuItem.Text = "Rapor\'a Ekle";
-            this.raporaEkleToolStripMenuItem.Click += new System.EventHandler(this.RaporaEkleToolStripMenuItem_Click);
             // 
             // OperatorListesi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(831, 388);
+            this.ClientSize = new System.Drawing.Size(822, 421);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -221,6 +212,5 @@
         private System.Windows.Forms.DateTimePicker dtpIseBaslamaTarihi;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnOperatorListesiGetir;
-        private System.Windows.Forms.ToolStripMenuItem raporaEkleToolStripMenuItem;
     }
 }

@@ -36,6 +36,8 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.iptalButton = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbKdv = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.txtBirimFiyat = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -58,15 +60,13 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtStokAdi = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbKdv = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
             // 
-            this.toolStrip1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.toolStrip1.BackColor = System.Drawing.Color.GhostWhite;
             this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -155,6 +155,26 @@
             this.groupBox1.Size = new System.Drawing.Size(865, 275);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
+            // 
+            // cbKdv
+            // 
+            this.cbKdv.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbKdv.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cbKdv.FormattingEnabled = true;
+            this.cbKdv.Location = new System.Drawing.Point(117, 236);
+            this.cbKdv.Name = "cbKdv";
+            this.cbKdv.Size = new System.Drawing.Size(306, 23);
+            this.cbKdv.TabIndex = 17;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(75, 239);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(31, 15);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "KDV";
             // 
             // txtBirimFiyat
             // 
@@ -361,26 +381,6 @@
             this.label1.Size = new System.Drawing.Size(69, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "STOK ADI *";
-            // 
-            // cbKdv
-            // 
-            this.cbKdv.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbKdv.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.cbKdv.FormattingEnabled = true;
-            this.cbKdv.Location = new System.Drawing.Point(117, 236);
-            this.cbKdv.Name = "cbKdv";
-            this.cbKdv.Size = new System.Drawing.Size(306, 23);
-            this.cbKdv.TabIndex = 17;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(75, 239);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 15);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "KDV";
             // 
             // StokDuzenle
             // 

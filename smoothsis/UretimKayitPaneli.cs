@@ -142,8 +142,7 @@ namespace smoothsis
 
         private void txtUretimMik_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != Convert.ToChar(Keys.Back)) && (e.KeyChar != ','))
-                e.Handled = true;
+            TextValidate.forceForDecimal(sender, e);
         }
 
         private void txtUretimMik_Leave(object sender, EventArgs e)
@@ -154,7 +153,7 @@ namespace smoothsis
             }
             catch
             {
-                Notification.messageBox("YANLIŞ FORMAT GİRİLDİ");
+                Notification.messageBox("YANLIŞ FORMATTA DEĞER GİRİLDİ");
                 txtUretimMik.Focus();
             }
         }
