@@ -83,7 +83,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(10, 1, 2, 1);
-            this.toolStrip1.Size = new System.Drawing.Size(961, 32);
+            this.toolStrip1.Size = new System.Drawing.Size(943, 32);
             this.toolStrip1.TabIndex = 20;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -132,7 +132,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txtAciklama);
-            this.groupBox2.Location = new System.Drawing.Point(500, 268);
+            this.groupBox2.Location = new System.Drawing.Point(477, 274);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(449, 150);
             this.groupBox2.TabIndex = 33;
@@ -154,7 +154,7 @@
             this.groupBox3.Controls.Add(this.operator_list);
             this.groupBox3.Controls.Add(this.btnComeBackOperator);
             this.groupBox3.Controls.Add(this.btnMoveOperator);
-            this.groupBox3.Location = new System.Drawing.Point(500, 35);
+            this.groupBox3.Location = new System.Drawing.Point(477, 41);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(449, 222);
             this.groupBox3.TabIndex = 32;
@@ -262,9 +262,9 @@
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 35);
+            this.groupBox1.Location = new System.Drawing.Point(12, 41);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(463, 383);
+            this.groupBox1.Size = new System.Drawing.Size(446, 383);
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "RAPOR BİLGİLERİ";
@@ -275,7 +275,7 @@
             this.cbRaporVardiya.FormattingEnabled = true;
             this.cbRaporVardiya.Location = new System.Drawing.Point(136, 65);
             this.cbRaporVardiya.Name = "cbRaporVardiya";
-            this.cbRaporVardiya.Size = new System.Drawing.Size(306, 23);
+            this.cbRaporVardiya.Size = new System.Drawing.Size(284, 23);
             this.cbRaporVardiya.TabIndex = 2;
             // 
             // txtIskartaNedeni
@@ -284,7 +284,7 @@
             this.txtIskartaNedeni.Location = new System.Drawing.Point(136, 311);
             this.txtIskartaNedeni.Multiline = true;
             this.txtIskartaNedeni.Name = "txtIskartaNedeni";
-            this.txtIskartaNedeni.Size = new System.Drawing.Size(306, 57);
+            this.txtIskartaNedeni.Size = new System.Drawing.Size(284, 57);
             this.txtIskartaNedeni.TabIndex = 9;
             // 
             // txtBeslenenMiktar
@@ -292,7 +292,7 @@
             this.txtBeslenenMiktar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtBeslenenMiktar.Location = new System.Drawing.Point(136, 103);
             this.txtBeslenenMiktar.Name = "txtBeslenenMiktar";
-            this.txtBeslenenMiktar.Size = new System.Drawing.Size(306, 23);
+            this.txtBeslenenMiktar.Size = new System.Drawing.Size(284, 23);
             this.txtBeslenenMiktar.TabIndex = 3;
             this.txtBeslenenMiktar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.decimalValidate);
             this.txtBeslenenMiktar.Leave += new System.EventHandler(this.txtBeslenenMiktar_Leave);
@@ -312,7 +312,7 @@
             this.txtFireMiktar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtFireMiktar.Location = new System.Drawing.Point(136, 176);
             this.txtFireMiktar.Name = "txtFireMiktar";
-            this.txtFireMiktar.Size = new System.Drawing.Size(306, 23);
+            this.txtFireMiktar.Size = new System.Drawing.Size(284, 23);
             this.txtFireMiktar.TabIndex = 6;
             this.txtFireMiktar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.decimalValidate);
             this.txtFireMiktar.Leave += new System.EventHandler(this.txtFireMiktar_Leave);
@@ -333,7 +333,7 @@
             this.dtpRaporTarih.Location = new System.Drawing.Point(136, 27);
             this.dtpRaporTarih.MinimumSize = new System.Drawing.Size(4, 23);
             this.dtpRaporTarih.Name = "dtpRaporTarih";
-            this.dtpRaporTarih.Size = new System.Drawing.Size(306, 23);
+            this.dtpRaporTarih.Size = new System.Drawing.Size(284, 23);
             this.dtpRaporTarih.TabIndex = 1;
             // 
             // txtUretilenMiktar
@@ -341,7 +341,7 @@
             this.txtUretilenMiktar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtUretilenMiktar.Location = new System.Drawing.Point(136, 141);
             this.txtUretilenMiktar.Name = "txtUretilenMiktar";
-            this.txtUretilenMiktar.Size = new System.Drawing.Size(306, 23);
+            this.txtUretilenMiktar.Size = new System.Drawing.Size(284, 23);
             this.txtUretilenMiktar.TabIndex = 4;
             this.txtUretilenMiktar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.decimalValidate);
             this.txtUretilenMiktar.Leave += new System.EventHandler(this.txtUretilenMiktar_Leave);
@@ -373,7 +373,7 @@
             this.txtFireNedeni.Location = new System.Drawing.Point(136, 210);
             this.txtFireNedeni.Multiline = true;
             this.txtFireNedeni.Name = "txtFireNedeni";
-            this.txtFireNedeni.Size = new System.Drawing.Size(306, 57);
+            this.txtFireNedeni.Size = new System.Drawing.Size(284, 57);
             this.txtFireNedeni.TabIndex = 7;
             // 
             // label6
@@ -391,7 +391,7 @@
             this.txtIskartaMiktar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtIskartaMiktar.Location = new System.Drawing.Point(136, 277);
             this.txtIskartaMiktar.Name = "txtIskartaMiktar";
-            this.txtIskartaMiktar.Size = new System.Drawing.Size(306, 23);
+            this.txtIskartaMiktar.Size = new System.Drawing.Size(284, 23);
             this.txtIskartaMiktar.TabIndex = 8;
             this.txtIskartaMiktar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.decimalValidate);
             this.txtIskartaMiktar.Leave += new System.EventHandler(this.txtIskartaMiktar_Leave);
@@ -431,7 +431,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(961, 430);
+            this.ClientSize = new System.Drawing.Size(943, 440);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);

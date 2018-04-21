@@ -80,6 +80,11 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.labelKullanici = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripDropDownButton5 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.MakineRaporuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.OperatorCalismaRaporuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.StokRaporuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -103,7 +108,9 @@
             this.toolStripSeparator12,
             this.toolStripDropDownButton4,
             this.toolStripSeparator7,
-            this.toolStripDropDownButton7});
+            this.toolStripDropDownButton7,
+            this.toolStripSeparator10,
+            this.toolStripDropDownButton5});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(5, 0, 1, 0);
@@ -227,14 +234,14 @@
             // siparişEkleToolStripMenuItem
             // 
             this.siparişEkleToolStripMenuItem.Name = "siparişEkleToolStripMenuItem";
-            this.siparişEkleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.siparişEkleToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.siparişEkleToolStripMenuItem.Text = "Sipariş Paneli";
             this.siparişEkleToolStripMenuItem.Click += new System.EventHandler(this.siparişEkleToolStripMenuItem_Click);
             // 
             // siparişListesiToolStripMenuItem
             // 
             this.siparişListesiToolStripMenuItem.Name = "siparişListesiToolStripMenuItem";
-            this.siparişListesiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.siparişListesiToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.siparişListesiToolStripMenuItem.Text = "Sipariş Listesi";
             this.siparişListesiToolStripMenuItem.Click += new System.EventHandler(this.siparişListesiToolStripMenuItem_Click);
             // 
@@ -310,45 +317,45 @@
             // MakineOlusturToolStripMenuItem
             // 
             this.MakineOlusturToolStripMenuItem.Name = "MakineOlusturToolStripMenuItem";
-            this.MakineOlusturToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.MakineOlusturToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.MakineOlusturToolStripMenuItem.Text = "Makine Oluştur";
             this.MakineOlusturToolStripMenuItem.Click += new System.EventHandler(this.MakineOlusturToolStripMenuItem_Click);
             // 
             // MakineListesiToolStripMenuItem
             // 
             this.MakineListesiToolStripMenuItem.Name = "MakineListesiToolStripMenuItem";
-            this.MakineListesiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.MakineListesiToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.MakineListesiToolStripMenuItem.Text = "Makine Listesi";
             this.MakineListesiToolStripMenuItem.Click += new System.EventHandler(this.MakineListesiToolStripMenuItem_Click);
             // 
             // toolStripSeparator15
             // 
             this.toolStripSeparator15.Name = "toolStripSeparator15";
-            this.toolStripSeparator15.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator15.Size = new System.Drawing.Size(161, 6);
             // 
             // IslemOlusturToolStripMenuItem
             // 
             this.IslemOlusturToolStripMenuItem.Name = "IslemOlusturToolStripMenuItem";
-            this.IslemOlusturToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.IslemOlusturToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.IslemOlusturToolStripMenuItem.Text = "İşlem Oluştur";
             this.IslemOlusturToolStripMenuItem.Click += new System.EventHandler(this.IslemOlusturToolStripMenuItem_Click);
             // 
             // IslemListesiToolStripMenuItem
             // 
             this.IslemListesiToolStripMenuItem.Name = "IslemListesiToolStripMenuItem";
-            this.IslemListesiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.IslemListesiToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.IslemListesiToolStripMenuItem.Text = "İşlem Listesi";
             this.IslemListesiToolStripMenuItem.Click += new System.EventHandler(this.IslemListesiToolStripMenuItem_Click);
             // 
             // toolStripSeparator9
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator9.Size = new System.Drawing.Size(161, 6);
             // 
             // UretimListesiToolStripMenuItem
             // 
             this.UretimListesiToolStripMenuItem.Name = "UretimListesiToolStripMenuItem";
-            this.UretimListesiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.UretimListesiToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.UretimListesiToolStripMenuItem.Text = "Üretim Listesi";
             this.UretimListesiToolStripMenuItem.Click += new System.EventHandler(this.UretimListesiToolStripMenuItem_Click);
             // 
@@ -405,14 +412,14 @@
             // operatörOluşturToolStripMenuItem
             // 
             this.operatörOluşturToolStripMenuItem.Name = "operatörOluşturToolStripMenuItem";
-            this.operatörOluşturToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.operatörOluşturToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.operatörOluşturToolStripMenuItem.Text = "Operatör Oluştur";
             this.operatörOluşturToolStripMenuItem.Click += new System.EventHandler(this.operatörOluşturToolStripMenuItem_Click);
             // 
             // operatörListesiToolStripMenuItem
             // 
             this.operatörListesiToolStripMenuItem.Name = "operatörListesiToolStripMenuItem";
-            this.operatörListesiToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.operatörListesiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.operatörListesiToolStripMenuItem.Text = "Operatör Listesi";
             this.operatörListesiToolStripMenuItem.Click += new System.EventHandler(this.operatörListesiToolStripMenuItem_Click);
             // 
@@ -497,6 +504,44 @@
             this.labelKullanici.Size = new System.Drawing.Size(51, 22);
             this.labelKullanici.Text = "kullanici";
             // 
+            // toolStripSeparator10
+            // 
+            this.toolStripSeparator10.Name = "toolStripSeparator10";
+            this.toolStripSeparator10.Size = new System.Drawing.Size(6, 30);
+            // 
+            // toolStripDropDownButton5
+            // 
+            this.toolStripDropDownButton5.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MakineRaporuToolStripMenuItem,
+            this.OperatorCalismaRaporuToolStripMenuItem,
+            this.StokRaporuToolStripMenuItem});
+            this.toolStripDropDownButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton5.Image")));
+            this.toolStripDropDownButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton5.Name = "toolStripDropDownButton5";
+            this.toolStripDropDownButton5.Size = new System.Drawing.Size(88, 27);
+            this.toolStripDropDownButton5.Text = "Raporlar";
+            // 
+            // MakineRaporuToolStripMenuItem
+            // 
+            this.MakineRaporuToolStripMenuItem.Name = "MakineRaporuToolStripMenuItem";
+            this.MakineRaporuToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.MakineRaporuToolStripMenuItem.Text = "Makine Raporu";
+            this.MakineRaporuToolStripMenuItem.Click += new System.EventHandler(this.MakineRaporuToolStripMenuItem_Click);
+            // 
+            // OperatorCalismaRaporuToolStripMenuItem
+            // 
+            this.OperatorCalismaRaporuToolStripMenuItem.Name = "OperatorCalismaRaporuToolStripMenuItem";
+            this.OperatorCalismaRaporuToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.OperatorCalismaRaporuToolStripMenuItem.Text = "Operatör Çalışma Raporu";
+            this.OperatorCalismaRaporuToolStripMenuItem.Click += new System.EventHandler(this.OperatorCalismaRaporuToolStripMenuItem_Click);
+            // 
+            // StokRaporuToolStripMenuItem
+            // 
+            this.StokRaporuToolStripMenuItem.Name = "StokRaporuToolStripMenuItem";
+            this.StokRaporuToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.StokRaporuToolStripMenuItem.Text = "Stok Raporu";
+            this.StokRaporuToolStripMenuItem.Click += new System.EventHandler(this.StokRaporuToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -577,5 +622,10 @@
         private System.Windows.Forms.ToolStripMenuItem IslemListesiToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
         private System.Windows.Forms.ToolStripMenuItem UretimListesiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton5;
+        private System.Windows.Forms.ToolStripMenuItem MakineRaporuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem OperatorCalismaRaporuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem StokRaporuToolStripMenuItem;
     }
 }

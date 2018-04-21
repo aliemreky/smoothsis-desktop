@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 using System.Windows.Forms;
+using ClosedXML.Excel;
+using System.IO;
 
 namespace smoothsis.Services
 {
@@ -67,5 +70,31 @@ namespace smoothsis.Services
                 destination.Items.Insert(insertPos, s);
             }
         }
+
+        public static void ExportExcel(string defaultFileName, DataTable ExportTable)
+        {
+            //Exporting to Excel
+            string defaultFolderPath = @"C:\smoothsis\";
+            
+            if (!Directory.Exists(defaultFolderPath))
+            {
+                Directory.CreateDirectory(defaultFolderPath);
+            }
+
+            SaveFileDialog savefileDialog = new SaveFileDialog();
+            savefileDialog.Title = "Dosyayı Kaydet";
+            savefileDialog.Filter = "Excel Çalışma Kitabı (*.xlsx)|*.xlsx | Excel 97-2003 Çalışma Kitabı (*.xls)|*.xls| Tüm Dosyalar (*.*)|*.*";
+            savefileDialog.FileName = defaultFileName;
+            savefileDialog.InitialDirectory = defaultFolderPath;
+            if (savefileDialog.ShowDialog() == DialogResult.OK)
+            {
+                using (XLWorkbook wb = new XLWorkbook())
+                {
+                    wb.Worksheets.Add(ExportTable);
+                    wb.SaveAs(savefileDialog.FileName);
+                }
+            }
+        }
+
     }
 }

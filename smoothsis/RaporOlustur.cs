@@ -46,7 +46,7 @@ namespace smoothsis
             }
             else
             {
-                if (decimal.Parse(txtBeslenenMiktar.Text) > 0 || decimal.Parse(txtUretilenMiktar.Text) > 0)
+                if (decimal.Parse(txtBeslenenMiktar.Text) > 0 && decimal.Parse(txtUretilenMiktar.Text) > 0)
                 {
                     try
                     {
@@ -104,13 +104,22 @@ namespace smoothsis
                                 "OPERATÖRLER: " + emailOperatorler.Substring(0, emailOperatorler.Length - 2) + "\n" +
                                 "AÇIKLAMA: " + txtAciklama.Text;
 
-                            Email sendingMail = new Email();
                             string sendMail = "";
+
+                            /*
+                            Email sendingMail = new Email();
+                            
                             if (sendingMail.MultipleEmailSend(EmailSubject, EmailBody))
                                 sendMail = " VE RAPOR MAİL'İ GÖNDERİLDİ";
+                            
+                             */
 
                             Notification.messageBox("RAPOR BAŞARILI BİR ŞEKİLDE OLUŞTURULDU" + sendMail);
 
+                            temizleBttn.PerformClick();
+
+                            uretimListesi.siparisListe.Clear();
+                            uretimListesi.getUretimListesi();
 
                         }
 
@@ -123,7 +132,7 @@ namespace smoothsis
                 }
                 else
                 {
-                    Notification.messageBoxError("BESLENEN MİKTAR VE ÜRETİLEN MİKTAR 0'DAN BÜYÜK OLMALI !");
+                    Notification.messageBoxError("BESLENEN VE ÜRETİLEN MİKTAR 0'DAN BÜYÜK OLMALI !");
                 }
                 
             }
@@ -137,7 +146,7 @@ namespace smoothsis
             txtIskartaMiktar.Text = "0,000";
             txtFireNedeni.Clear();
             txtIskartaNedeni.Clear();
-            txtAciklama.Clear();            
+            txtAciklama.Clear();
         }
 
         private void iptalButton_Click(object sender, EventArgs e)

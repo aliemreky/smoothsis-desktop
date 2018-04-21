@@ -161,6 +161,20 @@ namespace smoothsis
             urListesi.Show();
         }
 
-        
+        private void MakineRaporuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MakineRaporu makRapor = new MakineRaporu();
+            makRapor.Show();
+        }
+
+        private void OperatorCalismaRaporuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void StokRaporuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

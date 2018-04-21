@@ -18,6 +18,7 @@ namespace smoothsis
         private SqlCommand sqlCmd;
         private SqlDataAdapter sqlDataAdapter;
         private Tuple<int, DataGridViewCellCollection> selectedItem;
+        public DataTable siparisListe;
 
         public UretimListesi()
         {
@@ -32,7 +33,7 @@ namespace smoothsis
 
         public void getUretimListesi()
         {
-            DataTable siparisListe = new DataTable();
+            siparisListe = new DataTable();
             sqlCmd = new SqlCommand("dbo.Uretim_Listesi", Program.connection);
             sqlCmd.CommandType = CommandType.StoredProcedure;
             sqlDataAdapter = new SqlDataAdapter(sqlCmd);
@@ -111,7 +112,7 @@ namespace smoothsis
             }
             else
             {
-                Notification.messageBoxError("BİR SORUN OLUŞTU, KAYIT SEÇİLEMEDİ !");
+                Notification.messageBoxError("Bir sorun oluştu, geçerli bir kayıt seçilemedi !");
             }
         }
 
@@ -130,7 +131,7 @@ namespace smoothsis
             }
             else
             {
-                Notification.messageBoxError("BİR SORUN OLUŞTU, KAYIT SEÇİLEMEDİ !");
+                Notification.messageBoxError("Bir sorun oluştu, geçerli bir kayıt seçilemedi !");
             }
         }
 

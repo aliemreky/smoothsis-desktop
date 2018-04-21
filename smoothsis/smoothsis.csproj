@@ -35,6 +35,12 @@
     <ApplicationIcon>sm-logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ClosedXML">
+      <HintPath>Services\ClosedXml\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml">
+      <HintPath>Services\ClosedXml\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Messaging" />
@@ -156,6 +162,12 @@
     </Compile>
     <Compile Include="MakineOlustur.Designer.cs">
       <DependentUpon>MakineOlustur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MakineRaporu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MakineRaporu.Designer.cs">
+      <DependentUpon>MakineRaporu.cs</DependentUpon>
     </Compile>
     <Compile Include="OperatorBilgileri.cs">
       <SubType>Form</SubType>
@@ -325,6 +337,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MakineOlustur.resx">
       <DependentUpon>MakineOlustur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MakineRaporu.resx">
+      <DependentUpon>MakineRaporu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OperatorBilgileri.resx">
       <DependentUpon>OperatorBilgileri.cs</DependentUpon>
