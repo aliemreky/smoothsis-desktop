@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StokDepoListesi));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.transferYapBttn = new System.Windows.Forms.ToolStripButton();
@@ -43,9 +44,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtStokBirim = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.düzenleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stokDepoListGridView)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -124,6 +128,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.stokDepoListGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.stokDepoListGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.stokDepoListGridView.ContextMenuStrip = this.contextMenuStrip1;
             this.stokDepoListGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.stokDepoListGridView.Location = new System.Drawing.Point(6, 13);
             this.stokDepoListGridView.Name = "stokDepoListGridView";
@@ -132,6 +137,7 @@
             this.stokDepoListGridView.TabIndex = 0;
             this.stokDepoListGridView.VirtualMode = true;
             this.stokDepoListGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.selectRow);
+            this.stokDepoListGridView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.stokDepoListGridView_CellMouseDown);
             // 
             // label12
             // 
@@ -195,6 +201,20 @@
             this.label2.TabIndex = 20;
             this.label2.Text = "BIRIM";
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.düzenleToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(117, 26);
+            // 
+            // düzenleToolStripMenuItem
+            // 
+            this.düzenleToolStripMenuItem.Name = "düzenleToolStripMenuItem";
+            this.düzenleToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.düzenleToolStripMenuItem.Text = "Düzenle";
+            this.düzenleToolStripMenuItem.Click += new System.EventHandler(this.düzenleToolStripMenuItem_Click);
+            // 
             // StokDepoListesi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -220,6 +240,7 @@
             this.toolStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.stokDepoListGridView)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,5 +262,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.TextBox txtStokBirim;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem düzenleToolStripMenuItem;
     }
 }

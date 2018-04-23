@@ -266,6 +266,12 @@
     <Compile Include="SiparisPaneli.Designer.cs">
       <DependentUpon>SiparisPaneli.cs</DependentUpon>
     </Compile>
+    <Compile Include="StokDepoDuzenle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StokDepoDuzenle.Designer.cs">
+      <DependentUpon>StokDepoDuzenle.cs</DependentUpon>
+    </Compile>
     <Compile Include="StokDepoListesi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -422,6 +428,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SiparisPaneli.resx">
       <DependentUpon>SiparisPaneli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StokDepoDuzenle.resx">
+      <DependentUpon>StokDepoDuzenle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StokDepoListesi.resx">
       <DependentUpon>StokDepoListesi.cs</DependentUpon>

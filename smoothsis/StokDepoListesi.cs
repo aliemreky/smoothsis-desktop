@@ -138,5 +138,42 @@ namespace smoothsis
                 stokDepoSelectedItem = new Tuple<int, DataGridViewCellCollection>(e.RowIndex, stokDepoListGridView.Rows[e.RowIndex].Cells);
             }
         }
+
+        public DataGridView getDataGrid()
+        {
+            return stokDepoListGridView;
+        }
+
+        private void stokDepoListGridView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex != -1 && e.ColumnIndex != -1)
+            {
+                contextMenuStrip1.Enabled = true;
+                if ((e.Button == MouseButtons.Right) && (stokDepoListGridView.SelectedRows.Count == 1))
+                {
+                    stokDepoSelectedItem = new Tuple<int, DataGridViewCellCollection>(e.RowIndex, stokDepoListGridView.Rows[e.RowIndex].Cells);
+                    stokDepoListGridView.ClearSelection();
+                    this.stokDepoListGridView.Rows[e.RowIndex].Selected = true;
+                }
+            }
+            else
+            {
+                contextMenuStrip1.Enabled = false;
+            }
+        }
+
+        private void düzenleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (stokDepoListGridView.SelectedRows.Count == 1)
+            {
+                stokDepoSelectedItem = new Tuple<int, DataGridViewCellCollection>(stokDepoListGridView.SelectedRows[0].Index, stokDepoListGridView.SelectedRows[0].Cells);
+                StokDepoDuzenle stokDepoDuzenle = new StokDepoDuzenle(this);
+                stokDepoDuzenle.ShowDialog();
+            }
+            else
+            {
+                Notification.messageBoxError("BİR SORUN OLUŞTU, KAYIT SEÇİLEMEDİ !");
+            }
+        }
     }
 }
