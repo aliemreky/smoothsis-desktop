@@ -495,11 +495,12 @@ namespace smoothsis
                             }
                             else
                             {
+                                
                                 string siparisStokSQL = "INSERT INTO SIPARIS_DETAY (SIPARIS_INCKEY, STOK_DEPO_INCKEY, MIKTAR, MIKTAR_BIRIM)" +
                                         "VALUES (@siparis_inckey, @stok_depo_inckey, @miktar, @miktar_birim)";
                                 sqlCmd = new SqlCommand(siparisStokSQL, Program.connection);
                                 sqlCmd.Parameters.Add("@siparis_inckey", SqlDbType.Int).Value = siparisIncKey;
-                                sqlCmd.Parameters.Add("@stok_depo_inckey", SqlDbType.Int).Value = row.Cells["STOK_DEPO_INCKEY"].Value;
+                                sqlCmd.Parameters.Add("@stok_depo_inckey", SqlDbType.Int).Value = Convert.ToInt32(row.Cells["STOK_DEPO_INCKEY"].Value.ToString());
                                 sqlCmd.Parameters.Add("@miktar", SqlDbType.Float).Value = row.Cells["MIKTAR"].Value;
                                 sqlCmd.Parameters.Add("@miktar_birim", SqlDbType.VarChar).Value = row.Cells["BIRIM"].Value;
                                 sqlCmd.ExecuteNonQuery();
@@ -518,6 +519,7 @@ namespace smoothsis
                 }
                 else
                 {
+
                     try
                     {
                         string siparisKaydetSQL = "INSERT INTO SIPARIS (SIPARIS_KOD, CARI_KOD, PROJE_KOD, PROJE_ADI, OZEL_KOD, SIPARIS_TIPI, SIP_TARIH, TESLIM_TARIH, SIPARIS_TUTAR, KAYIT_YAPAN_KUL, ACIKLAMA1, ACIKLAMA2) " +
@@ -547,7 +549,7 @@ namespace smoothsis
                                     "VALUES (@siparis_inckey, @stok_depo_inckey, @miktar, @miktar_birim)";
                                 sqlCmd = new SqlCommand(siparisStokSQL, Program.connection);
                                 sqlCmd.Parameters.Add("@siparis_inckey", SqlDbType.Int).Value = lastSiparisId;
-                                sqlCmd.Parameters.Add("@stok_depo_inckey", SqlDbType.Int).Value = row.Cells[0].Value;
+                                sqlCmd.Parameters.Add("@stok_depo_inckey", SqlDbType.Int).Value = Convert.ToInt32(row.Cells[0].Value.ToString());
                                 sqlCmd.Parameters.Add("@miktar", SqlDbType.Float).Value = row.Cells["MIKTAR"].Value;
                                 sqlCmd.Parameters.Add("@miktar_birim", SqlDbType.VarChar).Value = row.Cells["BIRIM"].Value;
                                 sqlCmd.ExecuteNonQuery();

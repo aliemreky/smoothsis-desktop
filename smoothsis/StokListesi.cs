@@ -80,7 +80,7 @@ namespace smoothsis
 
         private void searchForStokKodu(object sender, EventArgs e)
         {
-            if (txtAramaStokKodu.Text.Count() > 1)            
+            if (txtAramaStokKodu.Text.Count() > 0)            
                 Search.gridviewArama(txtAramaStokKodu.Text, stokListGridView, "STOK_KODU");            
             else
                 Search.gridviewArama("", stokListGridView);
@@ -88,7 +88,7 @@ namespace smoothsis
 
         private void searchForStokAdi(object sender, EventArgs e)
         {
-            if (txtAramaStokAdi.Text.Count() > 1)
+            if (txtAramaStokAdi.Text.Count() > 0)
                 Search.gridviewArama(txtAramaStokAdi.Text, stokListGridView, "STOK_ADI");
             else
                 Search.gridviewArama("", stokListGridView);
@@ -102,7 +102,7 @@ namespace smoothsis
 
         private void txtAramaMalzemeSerisi_TextChanged(object sender, EventArgs e)
         {
-            if (txtAramaMalzemeSerisi.Text.Count() > 1)
+            if (txtAramaMalzemeSerisi.Text.Count() > 0)
                 Search.gridviewArama(txtAramaMalzemeSerisi.Text, stokListGridView, "MALZEME_SERISI");
             else
                 Search.gridviewArama("", stokListGridView);
@@ -110,7 +110,7 @@ namespace smoothsis
 
         private void txtAramaMalzemeCinsi_TextChanged(object sender, EventArgs e)
         {
-            if (txtAramaMalzemeCinsi.Text.Count() > 1)
+            if (txtAramaMalzemeCinsi.Text.Count() > 0)
                 Search.gridviewArama(txtAramaMalzemeCinsi.Text, stokListGridView, "MALZEME_CINSI");
             else
                 Search.gridviewArama("", stokListGridView);
@@ -159,9 +159,30 @@ namespace smoothsis
 
         private void stokDepoListesiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            selectedItem = new Tuple<int, DataGridViewCellCollection>(stokListGridView.SelectedRows[0].Index, stokListGridView.SelectedRows[0].Cells);
-            StokDepoListesi stokDepoListesi = new StokDepoListesi(this);
-            stokDepoListesi.ShowDialog();
+            if (stokListGridView.SelectedRows.Count == 1)
+            {
+                selectedItem = new Tuple<int, DataGridViewCellCollection>(stokListGridView.SelectedRows[0].Index, stokListGridView.SelectedRows[0].Cells);
+                StokDepoListesi stokDepoListesi = new StokDepoListesi(this);
+                stokDepoListesi.ShowDialog();
+            }
+            else
+            {
+                Notification.messageBoxError("BİR SORUN OLUŞTU, KAYIT SEÇİLEMEDİ !");
+            }
+        }
+
+        private void stokSiparisListesiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (stokListGridView.SelectedRows.Count == 1)
+            {
+                selectedItem = new Tuple<int, DataGridViewCellCollection>(stokListGridView.SelectedRows[0].Index, stokListGridView.SelectedRows[0].Cells);
+                SiparisListesi siparisListesi = new SiparisListesi(Convert.ToInt32(selectedItem.Item2[0].Value.ToString()));
+                siparisListesi.ShowDialog();
+            }
+            else
+            {
+                Notification.messageBoxError("BİR SORUN OLUŞTU, KAYIT SEÇİLEMEDİ !");
+            }
         }
     }
 }

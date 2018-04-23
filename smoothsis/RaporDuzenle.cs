@@ -136,67 +136,89 @@ namespace smoothsis
                 {
                     try
                     {
-                        sqlCmd = Program.connection.CreateCommand();
-                        sqlCmd.CommandText = "UPDATE RAPOR SET " +
-                            "RAPOR_TARIH = @rapor_tarih, RAPOR_VARDIYA = @rapor_vardiya, " +
-                            "BESLENEN_MIK = @beslenen_mik, URETILEN_MIK = @uretilen_mik, FIRE_MIK = @fire_mik, " +
-                            "FIRE_NEDENI = @fire_nedeni, ISKARTA_MIK = @iskarta_mik, " +
-                            "ISKARTA_NEDENI = @iskarta_nedeni, DUZELTME_YAPAN_KUL = @duzeltme_yapan_kul, DUZELTME_TARIH = @duzeltme_tarih, ACIKLAMA = @aciklama " +
-                            "WHERE RAPOR_INCKEY = @rapor_inckey";
-                        sqlCmd.Parameters.Add("@rapor_inckey", SqlDbType.Int).Value = Convert.ToInt32(cellsOfSelectedItem[0].Value.ToString());
-                        sqlCmd.Parameters.Add("@rapor_tarih", SqlDbType.Date).Value = dtpRaporTarih.Value;
-                        sqlCmd.Parameters.Add("@rapor_vardiya", SqlDbType.VarChar).Value = cbRaporVardiya.SelectedValue.ToString();
-                        sqlCmd.Parameters.Add("@beslenen_mik", SqlDbType.Decimal).Value = decimal.Parse(txtBeslenenMiktar.Text);
-                        sqlCmd.Parameters.Add("@uretilen_mik", SqlDbType.Decimal).Value = decimal.Parse(txtUretilenMiktar.Text);
-                        sqlCmd.Parameters.Add("@fire_mik", SqlDbType.Decimal).Value = decimal.Parse(txtFireMiktar.Text);
-                        sqlCmd.Parameters.Add("@fire_nedeni", SqlDbType.VarChar).Value = txtFireNedeni.Text;
-                        sqlCmd.Parameters.Add("@iskarta_mik", SqlDbType.Decimal).Value = decimal.Parse(txtIskartaMiktar.Text);
-                        sqlCmd.Parameters.Add("@iskarta_nedeni", SqlDbType.VarChar).Value = txtIskartaNedeni.Text;
-                        sqlCmd.Parameters.Add("@duzeltme_yapan_kul", SqlDbType.Int).Value = Program.kullanici.Item1;
-                        sqlCmd.Parameters.Add("@duzeltme_tarih", SqlDbType.DateTime).Value = DateTime.Now.ToString();
-                        sqlCmd.Parameters.Add("@aciklama", SqlDbType.VarChar).Value = txtAciklama.Text;
 
-                        if (sqlCmd.ExecuteNonQuery() > 0)
+                        sqlCmd = new SqlCommand("dbo.Kalan_Uretim_Mik", Program.connection);
+                        sqlCmd.CommandType = CommandType.StoredProcedure;
+                        sqlCmd.Parameters.Add("@rapor_inckey", SqlDbType.Int).Value = Convert.ToInt32(cellsOfSelectedItem[0].Value.ToString());
+                        sqlCmd.Parameters.Add("@ur_inckey", SqlDbType.Int).Value = Convert.ToInt32(cellsOfSelectedItem[1].Value.ToString());
+                        var returnParameter = sqlCmd.Parameters.Add("@rt", SqlDbType.Int);
+                        returnParameter.Direction = ParameterDirection.ReturnValue;
+                        sqlCmd.ExecuteNonQuery();
+                        int result = (int)returnParameter.Value;
+
+                        if (
+                            (result == -1) && (Convert.ToDecimal(cellsOfSelectedItem[15].Value.ToString()) >= decimal.Parse(txtUretilenMiktar.Text))
+                            ||
+                            (result != -1) && (Convert.ToDecimal(cellsOfSelectedItem[15].Value.ToString()) >= (result + decimal.Parse(txtUretilenMiktar.Text)))
+                            )
                         {
-                            foreach (ListViewItem list_item in operator_list.Items)
+
+
+                            sqlCmd = Program.connection.CreateCommand();
+                            sqlCmd.CommandText = "UPDATE RAPOR SET " +
+                                "RAPOR_TARIH = @rapor_tarih, RAPOR_VARDIYA = @rapor_vardiya, " +
+                                "BESLENEN_MIK = @beslenen_mik, URETILEN_MIK = @uretilen_mik, FIRE_MIK = @fire_mik, " +
+                                "FIRE_NEDENI = @fire_nedeni, ISKARTA_MIK = @iskarta_mik, " +
+                                "ISKARTA_NEDENI = @iskarta_nedeni, DUZELTME_YAPAN_KUL = @duzeltme_yapan_kul, DUZELTME_TARIH = @duzeltme_tarih, ACIKLAMA = @aciklama " +
+                                "WHERE RAPOR_INCKEY = @rapor_inckey";
+                            sqlCmd.Parameters.Add("@rapor_inckey", SqlDbType.Int).Value = Convert.ToInt32(cellsOfSelectedItem[0].Value.ToString());
+                            sqlCmd.Parameters.Add("@rapor_tarih", SqlDbType.Date).Value = dtpRaporTarih.Value;
+                            sqlCmd.Parameters.Add("@rapor_vardiya", SqlDbType.VarChar).Value = cbRaporVardiya.SelectedValue.ToString();
+                            sqlCmd.Parameters.Add("@beslenen_mik", SqlDbType.Decimal).Value = decimal.Parse(txtBeslenenMiktar.Text);
+                            sqlCmd.Parameters.Add("@uretilen_mik", SqlDbType.Decimal).Value = decimal.Parse(txtUretilenMiktar.Text);
+                            sqlCmd.Parameters.Add("@fire_mik", SqlDbType.Decimal).Value = decimal.Parse(txtFireMiktar.Text);
+                            sqlCmd.Parameters.Add("@fire_nedeni", SqlDbType.VarChar).Value = txtFireNedeni.Text;
+                            sqlCmd.Parameters.Add("@iskarta_mik", SqlDbType.Decimal).Value = decimal.Parse(txtIskartaMiktar.Text);
+                            sqlCmd.Parameters.Add("@iskarta_nedeni", SqlDbType.VarChar).Value = txtIskartaNedeni.Text;
+                            sqlCmd.Parameters.Add("@duzeltme_yapan_kul", SqlDbType.Int).Value = Program.kullanici.Item1;
+                            sqlCmd.Parameters.Add("@duzeltme_tarih", SqlDbType.DateTime).Value = DateTime.Now.ToString();
+                            sqlCmd.Parameters.Add("@aciklama", SqlDbType.VarChar).Value = txtAciklama.Text;
+
+                            if (sqlCmd.ExecuteNonQuery() > 0)
                             {
-                                string operatorDeleteSQL = "SELECT COUNT(*) FROM OPERATOR_TO_RAPOR WHERE OP_INCKEY=@op_inckey AND RAPOR_INCKEY=@rapor_inckey";
-                                sqlCmd = new SqlCommand(operatorDeleteSQL, Program.connection);
-                                sqlCmd.Parameters.AddWithValue("@rapor_inckey", Convert.ToInt32(cellsOfSelectedItem[0].Value.ToString()));
-                                sqlCmd.Parameters.AddWithValue("@op_inckey", Convert.ToInt32(list_item.Text));
-                                int affectedRecordDelete = Convert.ToInt32(sqlCmd.ExecuteScalar());
-                                if (affectedRecordDelete != 0)
+                                foreach (ListViewItem list_item in operator_list.Items)
                                 {
-                                    string deleteExecute = "DELETE FROM OPERATOR_TO_RAPOR WHERE OP_INCKEY=@op_inckey AND RAPOR_INCKEY=@rapor_inckey";
+                                    string operatorDeleteSQL = "SELECT COUNT(*) FROM OPERATOR_TO_RAPOR WHERE OP_INCKEY=@op_inckey AND RAPOR_INCKEY=@rapor_inckey";
+                                    sqlCmd = new SqlCommand(operatorDeleteSQL, Program.connection);
                                     sqlCmd.Parameters.AddWithValue("@rapor_inckey", Convert.ToInt32(cellsOfSelectedItem[0].Value.ToString()));
                                     sqlCmd.Parameters.AddWithValue("@op_inckey", Convert.ToInt32(list_item.Text));
-                                    sqlCmd = new SqlCommand(deleteExecute, Program.connection);
-                                    sqlCmd.ExecuteNonQuery();
-                                }
-                            }
-
-                            if (operator_result.Items.Count > 0)
-                            {
-                                foreach (ListViewItem result_item in operator_result.Items)
-                                {
-                                    string operatorInsertSQL = "SELECT COUNT(*) FROM OPERATOR_TO_RAPOR WHERE OP_INCKEY=@op_inckey AND RAPOR_INCKEY=@rapor_inckey";
-                                    sqlCmd = new SqlCommand(operatorInsertSQL, Program.connection);
-                                    sqlCmd.Parameters.AddWithValue("@rapor_inckey", Convert.ToInt32(cellsOfSelectedItem[0].Value.ToString()));
-                                    sqlCmd.Parameters.AddWithValue("@op_inckey", Convert.ToInt32(result_item.Text));
-                                    int affectedRecordInsert = Convert.ToInt32(sqlCmd.ExecuteScalar());
-                                    if (affectedRecordInsert == 0)
+                                    int affectedRecordDelete = Convert.ToInt32(sqlCmd.ExecuteScalar());
+                                    if (affectedRecordDelete != 0)
                                     {
-                                        string insertExecute = "INSERT INTO OPERATOR_TO_RAPOR(OP_INCKEY, RAPOR_INCKEY) VALUES (@op_inckey, @rapor_inckey)";
+                                        string deleteExecute = "DELETE FROM OPERATOR_TO_RAPOR WHERE OP_INCKEY=@op_inckey AND RAPOR_INCKEY=@rapor_inckey";
                                         sqlCmd.Parameters.AddWithValue("@rapor_inckey", Convert.ToInt32(cellsOfSelectedItem[0].Value.ToString()));
-                                        sqlCmd.Parameters.AddWithValue("@op_inckey", Convert.ToInt32(result_item.Text));
-                                        sqlCmd = new SqlCommand(insertExecute, Program.connection);
+                                        sqlCmd.Parameters.AddWithValue("@op_inckey", Convert.ToInt32(list_item.Text));
+                                        sqlCmd = new SqlCommand(deleteExecute, Program.connection);
                                         sqlCmd.ExecuteNonQuery();
                                     }
                                 }
-                            }                            
 
-                            Notification.messageBox("RAPOR BAŞARIYLA DÜZENLENDİ");
-                            this.Close();
+                                if (operator_result.Items.Count > 0)
+                                {
+                                    foreach (ListViewItem result_item in operator_result.Items)
+                                    {
+                                        string operatorInsertSQL = "SELECT COUNT(*) FROM OPERATOR_TO_RAPOR WHERE OP_INCKEY=@op_inckey AND RAPOR_INCKEY=@rapor_inckey";
+                                        sqlCmd = new SqlCommand(operatorInsertSQL, Program.connection);
+                                        sqlCmd.Parameters.AddWithValue("@rapor_inckey", Convert.ToInt32(cellsOfSelectedItem[0].Value.ToString()));
+                                        sqlCmd.Parameters.AddWithValue("@op_inckey", Convert.ToInt32(result_item.Text));
+                                        int affectedRecordInsert = Convert.ToInt32(sqlCmd.ExecuteScalar());
+                                        if (affectedRecordInsert == 0)
+                                        {
+                                            string insertExecute = "INSERT INTO OPERATOR_TO_RAPOR(OP_INCKEY, RAPOR_INCKEY) VALUES (@op_inckey, @rapor_inckey)";
+                                            sqlCmd.Parameters.AddWithValue("@rapor_inckey", Convert.ToInt32(cellsOfSelectedItem[0].Value.ToString()));
+                                            sqlCmd.Parameters.AddWithValue("@op_inckey", Convert.ToInt32(result_item.Text));
+                                            sqlCmd = new SqlCommand(insertExecute, Program.connection);
+                                            sqlCmd.ExecuteNonQuery();
+                                        }
+                                    }
+                                }
+                                updateItemOnList();
+                                Notification.messageBox("RAPOR BAŞARIYLA DÜZENLENDİ");
+                                this.Close();
+                            }
+                        } else
+                        {
+                            Notification.messageBoxError("PLANLANAN ÜRETİM MİKTARI AŞILAMAZ!");
                         }
 
                     }

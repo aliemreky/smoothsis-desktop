@@ -161,6 +161,10 @@ namespace smoothsis
             urListesi.Show();
         }
 
-        
+        private void sevkListesiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SevkListesi sevkListesi = new SevkListesi();
+            sevkListesi.ShowDialog();
+        }
     }
 }
