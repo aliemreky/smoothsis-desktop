@@ -26,9 +26,9 @@ namespace smoothsis
         }
 
         private void UretimListesi_Load(object sender, EventArgs e)
-        {
-            uretimListGridView.ClearSelection();
+        {            
             getUretimListesi();
+            uretimListGridView.ClearSelection();
         }
 
         public void getUretimListesi()
@@ -106,9 +106,17 @@ namespace smoothsis
         {
             if (uretimListGridView.SelectedRows.Count == 1)
             {
-                selectedItem = new Tuple<int, DataGridViewCellCollection>(uretimListGridView.SelectedRows[0].Index, uretimListGridView.SelectedRows[0].Cells);
-                RaporOlustur raporOlustur = new RaporOlustur(this);
-                raporOlustur.ShowDialog();
+                decimal uretimYuzde = decimal.Parse(selectedItem.Item2["YUZDE"].Value.ToString());
+
+                if (uretimYuzde >= 100)
+                {
+                    Notification.messageBox("Üretim Kapanmıştır. Rapor Girişi Yapılamaz !");
+                }
+                else
+                {                    
+                    RaporOlustur raporOlustur = new RaporOlustur(this);
+                    raporOlustur.ShowDialog();
+                }
             }
             else
             {
@@ -125,7 +133,6 @@ namespace smoothsis
         {
             if (uretimListGridView.SelectedRows.Count == 1)
             {
-                selectedItem = new Tuple<int, DataGridViewCellCollection>(uretimListGridView.SelectedRows[0].Index, uretimListGridView.SelectedRows[0].Cells);
                 RaporListesi raporListesi = new RaporListesi(Convert.ToInt32(selectedItem.Item2[0].Value.ToString()));
                 raporListesi.ShowDialog();
             }
@@ -138,6 +145,27 @@ namespace smoothsis
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
         {
             e.Cancel = this.uretimListGridView.Rows.Count <= 0 || this.uretimListGridView.SelectedRows.Count <= 0;
+        }
+
+        private void uretimListGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            decimal uretimYuzde = decimal.Parse(uretimListGridView.Rows[e.RowIndex].Cells["YUZDE"].Value.ToString());
+
+            if (e.Value != null && uretimYuzde >= 100)
+            {
+                uretimListGridView.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Green;
+                uretimListGridView.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.White;
+            }
+            else if (e.Value != null && uretimYuzde == 0)
+            {
+                uretimListGridView.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.DarkGoldenrod;
+                uretimListGridView.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.White;
+            }
+            else if (e.Value != null && uretimYuzde > 0 | uretimYuzde < 100)
+            {
+                uretimListGridView.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Red;
+                uretimListGridView.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.White;
+            }
         }
     }
 }

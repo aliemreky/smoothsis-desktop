@@ -169,7 +169,8 @@ namespace smoothsis
 
         private void OperatorCalismaRaporuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            OperatorCalismaRaporu operatorCalisma = new OperatorCalismaRaporu();
+            operatorCalisma.Show();
         }
 
         private void StokRaporuToolStripMenuItem_Click(object sender, EventArgs e)

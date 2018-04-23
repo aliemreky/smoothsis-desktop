@@ -178,6 +178,7 @@
             this.uretimListGridView.Size = new System.Drawing.Size(932, 513);
             this.uretimListGridView.TabIndex = 19;
             this.uretimListGridView.VirtualMode = true;
+            this.uretimListGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.uretimListGridView_CellFormatting);
             this.uretimListGridView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.uretimListGridView_CellMouseDown);
             // 
             // contextMenuStrip1

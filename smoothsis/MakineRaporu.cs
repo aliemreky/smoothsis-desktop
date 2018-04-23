@@ -25,28 +25,72 @@ namespace smoothsis
 
         private void excelButton_Click(object sender, EventArgs e)
         {
-            string defaultFileName = DateTime.Now.ToString("ddMMyyyy") + "_MakineRaporu.xlsx";
-            ActionControl.ExportExcel(defaultFileName, makineRaporu);
+            if (makineRaporu.Rows.Count > 0)
+            {
+                string defaultFileName = DateTime.Now.ToString("ddMMyyyy") + "_MakineRaporu.xlsx";
+                ActionControl.ExportExcel(defaultFileName, makineRaporu);
+            }
         }
 
         private void MakineRaporu_Load(object sender, EventArgs e)
         {
-            makineRaporu = new DataTable();
-            sqlCmd = new SqlCommand("dbo.Makine_Raporu", Program.connection);
-            sqlCmd.CommandType = CommandType.StoredProcedure;
-            sqlDataAdapter = new SqlDataAdapter(sqlCmd);
-            sqlDataAdapter.Fill(makineRaporu);
-
-            Styler.gridViewCommonStyle(MakineRaporuGridView);            
-            MakineRaporuGridView.DataSource = makineRaporu;
-            MakineRaporuGridView.Columns[0].Visible = false;
-
-            MakineRaporuGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            TumKayitListe();
         }
 
         private void iptalButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void TumKayitListe()
+        {
+            try
+            {
+                makineRaporu = new DataTable();
+                sqlCmd = new SqlCommand("dbo.Makine_Raporu", Program.connection);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.Parameters.AddWithValue("@STARTDATE", DBNull.Value);
+                sqlCmd.Parameters.AddWithValue("@ENDDATE", DBNull.Value);
+                sqlDataAdapter = new SqlDataAdapter(sqlCmd);
+                sqlDataAdapter.Fill(makineRaporu);
+
+                Styler.gridViewCommonStyle(MakineRaporuGridView);
+                MakineRaporuGridView.DataSource = makineRaporu;
+
+                MakineRaporuGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            }
+            catch (Exception ex)
+            {
+                Notification.messageBoxError(ex.Message);
+            }
+        }
+
+        private void btnListeyiYenile_Click(object sender, EventArgs e)
+        {
+            TumKayitListe();
+        }
+
+        private void btnTarihAraligi_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                makineRaporu = new DataTable();
+                sqlCmd = new SqlCommand("dbo.Makine_Raporu", Program.connection);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.Parameters.AddWithValue("@STARTDATE", dtStartDate.Value);
+                sqlCmd.Parameters.AddWithValue("@ENDDATE", dtEndDate.Value);
+                sqlDataAdapter = new SqlDataAdapter(sqlCmd);
+                sqlDataAdapter.Fill(makineRaporu);
+
+                Styler.gridViewCommonStyle(MakineRaporuGridView);
+                MakineRaporuGridView.DataSource = makineRaporu;
+
+                MakineRaporuGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            }
+            catch (Exception ex)
+            {
+                Notification.messageBoxError(ex.Message);
+            }
         }
     }
 }

@@ -81,6 +81,7 @@ namespace smoothsis
                 {
                     siparisGuncelle = true;
 
+
                     sqlReaderSiparis.Read();
                     txtSiparisTarih.Text = DateTime.Parse(sqlReaderSiparis["SIP_TARIH"].ToString()).ToString("dd.MM.yyyy");
                     txtSiparisTeslimTarih.Text = DateTime.Parse(sqlReaderSiparis["TESLIM_TARIH"].ToString()).ToString("dd.MM.yyyy");
@@ -122,6 +123,7 @@ namespace smoothsis
                     SqlDataReader sqlReaderStok = sqlCmd.ExecuteReader();
 
                     siparisStokList.Clear();
+                    siparisListesiGridView.Rows.Clear();
 
                     while (sqlReaderStok.Read())
                     {
@@ -277,12 +279,21 @@ namespace smoothsis
             if (!String.IsNullOrEmpty(txtBirimFiyat.Text.Trim()) && !String.IsNullOrEmpty(txtStokMiktar.Text.Trim()))
             {
 
-                /* TODO: EĞER STOK MİKTARINDAN FAZLA GİRİLDİYSE DEĞER MAX MİKTARA EŞİTLENECEK
-                if (decimal.Parse(txtStokMiktar.Text.Trim()) > decimal.Parse(selectedItem.Item2["MIKTAR"].Value.ToString()))
+                // TODO: EĞER STOK MİKTARINDAN FAZLA GİRİLDİYSE DEĞER MAX MİKTARA EŞİTLENECEK
+                if (stokGuncelle.Item1)
                 {
-                    txtStokMiktar.Text = selectedItem.Item2["MIKTAR"].Value.ToString();
+                    sqlCmd = new SqlCommand("SELECT SUM(SD.MIKTAR) FROM STOK_DEPO SD WHERE SD.STOK_DEPO_INCKEY = @stok_depo_inckey", Program.connection);
+                    sqlCmd.Parameters.AddWithValue("@stok_depo_inckey", selectedUpdateItem.Item1);
+                    decimal stokMiktarReader = (decimal)sqlCmd.ExecuteScalar();
+
+                    if (decimal.Parse(txtStokMiktar.Text.Trim()) > stokMiktarReader)
+                        txtStokMiktar.Text = stokMiktarReader.ToString();
                 }
-                */
+                else
+                {                    
+                    if (decimal.Parse(txtStokMiktar.Text.Trim()) > decimal.Parse(selectedItem.Item2["MIKTAR"].Value.ToString()))                    
+                        txtStokMiktar.Text = selectedItem.Item2["MIKTAR"].Value.ToString();                    
+                }                                
 
                 decimal toplamFiyat = decimal.Parse(txtStokMiktar.Text.Trim()) * decimal.Parse(txtBirimFiyat.Text.Trim());
                 txtToplamFiyat.Text = toplamFiyat.ToString();
@@ -499,8 +510,8 @@ namespace smoothsis
                                         "VALUES (@siparis_inckey, @stok_depo_inckey, @miktar, @miktar_birim)";
                                 sqlCmd = new SqlCommand(siparisStokSQL, Program.connection);
                                 sqlCmd.Parameters.Add("@siparis_inckey", SqlDbType.Int).Value = siparisIncKey;
-                                sqlCmd.Parameters.Add("@stok_depo_inckey", SqlDbType.Int).Value = row.Cells["STOK_DEPO_INCKEY"].Value;
-                                sqlCmd.Parameters.Add("@miktar", SqlDbType.Float).Value = row.Cells["MIKTAR"].Value;
+                                sqlCmd.Parameters.Add("@stok_depo_inckey", SqlDbType.Int).Value = int.Parse(row.Cells["STOK_DEPO_INCKEY"].Value.ToString());
+                                sqlCmd.Parameters.Add("@miktar", SqlDbType.Float).Value = decimal.Parse(row.Cells["MIKTAR"].Value.ToString());
                                 sqlCmd.Parameters.Add("@miktar_birim", SqlDbType.VarChar).Value = row.Cells["BIRIM"].Value;
                                 sqlCmd.ExecuteNonQuery();
                             }
