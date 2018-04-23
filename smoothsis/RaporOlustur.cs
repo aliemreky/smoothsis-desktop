@@ -60,9 +60,9 @@ namespace smoothsis
                         int result = (int)returnParameter.Value;
 
                         if (
-                            (result == -1) && (Convert.ToDecimal(selectedUretim[7].Value.ToString()) >= decimal.Parse(txtUretilenMiktar.Text))
+                            (result == -1) && (Convert.ToDecimal(selectedUretim[8].Value.ToString()) >= decimal.Parse(txtUretilenMiktar.Text))
                             ||
-                            (result != -1) && (Convert.ToDecimal(selectedUretim[7].Value.ToString()) >= (result + decimal.Parse(txtUretilenMiktar.Text)))
+                            (result != -1) && (Convert.ToDecimal(selectedUretim[8].Value.ToString()) >= (result + decimal.Parse(txtUretilenMiktar.Text)))
                             )
                         {
 
