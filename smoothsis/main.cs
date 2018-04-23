@@ -183,5 +183,10 @@ namespace smoothsis
             EmailAyarlari emailAyarlari = new EmailAyarlari();
             emailAyarlari.Show();
         }
+        private void sevkListesiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SevkListesi sevkListesi = new SevkListesi();
+            sevkListesi.ShowDialog();
+        }
     }
 }

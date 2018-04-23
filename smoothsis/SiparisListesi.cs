@@ -19,11 +19,13 @@ namespace smoothsis
         private SqlDataAdapter sqlDataAdapter;
 
         int gridviewClickedRow, gridviewClickedColumn;
+        int stokInckey = -1;
 
 
-        public SiparisListesi()
+        public SiparisListesi(int stokInckey = -1)
         {
             InitializeComponent();
+            this.stokInckey = stokInckey;
         }
 
         private void SiparisListesi_Load(object sender, EventArgs e)
@@ -31,6 +33,7 @@ namespace smoothsis
             DataTable siparisListe = new DataTable();
             sqlCmd = new SqlCommand("dbo.Siparis_Listesi", Program.connection);
             sqlCmd.CommandType = CommandType.StoredProcedure;
+            sqlCmd.Parameters.AddWithValue("@stok_inckey", stokInckey);
             sqlDataAdapter = new SqlDataAdapter(sqlCmd);
             sqlDataAdapter.Fill(siparisListe);
 
@@ -128,6 +131,58 @@ namespace smoothsis
                 siparisListGridView.ClearSelection();
                 this.siparisListGridView.Rows[e.RowIndex].Selected = true;
             }
+        }
+
+        private void siparisSevkEt(object sender, EventArgs e)
+        {
+            if (siparisListGridView.SelectedRows.Count == 1)
+            {
+                sqlCmd = new SqlCommand("dbo.Siparis_UretimMiktar_Durum", Program.connection);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.Parameters.AddWithValue("@siparis_inckey", Convert.ToInt32(siparisListGridView.SelectedRows[0].Cells[0].Value.ToString()));
+
+                
+                var returnParameter = sqlCmd.Parameters.Add("@rt", SqlDbType.Int);
+                returnParameter.Direction = ParameterDirection.ReturnValue;
+                sqlCmd.ExecuteNonQuery();
+                int result = (int)returnParameter.Value;
+                if (result == -1)
+                {
+                    Notification.messageBoxError("Sipariş'e henüz rapor girilmemiş.");
+                }
+                else if (result == 0)
+                {
+                    DialogResult dialogResult = MessageBox.Show("Sipariş için üretilecek miktara ulaşılamadı, Yine de sevk etmek istoyor musunuz?", "UYARI", MessageBoxButtons.YesNo);
+
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        SevkOlustur sevkOlustur = new SevkOlustur(siparisListGridView.SelectedRows[0].Cells);
+                        sevkOlustur.ShowDialog();
+                    }
+                } else
+                {
+                    SevkOlustur sevkOlustur = new SevkOlustur(siparisListGridView.SelectedRows[0].Cells);
+                    sevkOlustur.ShowDialog();
+                }
+            }
+            else
+            {
+                Notification.messageBoxError("BİR SORUN OLUŞTU, KAYIT SEÇİLEMEDİ !");
+            }
+        }
+
+        private void sevkListesiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (siparisListGridView.SelectedRows.Count == 1)
+            {
+                SevkListesi sevkListesi = new SevkListesi(Convert.ToInt32(siparisListGridView.SelectedRows[0].Cells[0].Value.ToString()));
+                sevkListesi.ShowDialog();
+            }
+            else
+            {
+                Notification.messageBoxError("BİR SORUN OLUŞTU, KAYIT SEÇİLEMEDİ !");
+            }
+            
         }
 
         private void UretimKaydiOlusturToolStripMenuItem_Click(object sender, EventArgs e)

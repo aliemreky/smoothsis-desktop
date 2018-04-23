@@ -86,6 +86,7 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.labelKullanici = new System.Windows.Forms.ToolStripLabel();
+            this.sevkListesiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -233,7 +234,8 @@
             // 
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.siparişEkleToolStripMenuItem,
-            this.siparişListesiToolStripMenuItem});
+            this.siparişListesiToolStripMenuItem,
+            this.sevkListesiToolStripMenuItem});
             this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
@@ -551,6 +553,13 @@
             this.labelKullanici.Size = new System.Drawing.Size(51, 22);
             this.labelKullanici.Text = "kullanici";
             // 
+            // sevkListesiToolStripMenuItem
+            // 
+            this.sevkListesiToolStripMenuItem.Name = "sevkListesiToolStripMenuItem";
+            this.sevkListesiToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.sevkListesiToolStripMenuItem.Text = "Sevk Listesi";
+            this.sevkListesiToolStripMenuItem.Click += new System.EventHandler(this.sevkListesiToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -637,5 +646,6 @@
         private System.Windows.Forms.ToolStripMenuItem OperatorCalismaRaporuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem StokRaporuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ePostaAyarlarıToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sevkListesiToolStripMenuItem;
     }
 }
