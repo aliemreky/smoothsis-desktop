@@ -127,30 +127,28 @@ namespace smoothsis
 
                                 Notification.messageBox("RAPOR BAŞARILI BİR ŞEKİLDE OLUŞTURULDU" + sendMail);
 
-                            temizleBttn.PerformClick();
+                                temizleBttn.PerformClick();
 
-                            uretimListesi.siparisListe.Clear();
-                            uretimListesi.getUretimListesi();
+                                uretimListesi.siparisListe.Clear();
+                                uretimListesi.getUretimListesi();
 
-                        }
                             }
-                        } else
+                        }
+                        else
                         {
                             Notification.messageBoxError("PLANLANAN ÜRETİM MİKTARI AŞILAMAZ!");
                         }
-
                     }
                     catch (Exception ex)
                     {
                         Notification.messageBoxError(ex.Message);
                     }
-
                 }
                 else
                 {
                     Notification.messageBoxError("BESLENEN VE ÜRETİLEN MİKTAR 0'DAN BÜYÜK OLMALI !");
                 }
-                
+
             }
         }
 
