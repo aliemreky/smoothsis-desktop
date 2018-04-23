@@ -161,6 +161,28 @@ namespace smoothsis
             urListesi.Show();
         }
 
+        private void MakineRaporuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MakineRaporu makRapor = new MakineRaporu();
+            makRapor.Show();
+        }
+
+        private void OperatorCalismaRaporuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OperatorCalismaRaporu operatorCalisma = new OperatorCalismaRaporu();
+            operatorCalisma.Show();
+        }
+
+        private void StokRaporuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ePostaAyarlarıToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EmailAyarlari emailAyarlari = new EmailAyarlari();
+            emailAyarlari.Show();
+        }
         private void sevkListesiToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SevkListesi sevkListesi = new SevkListesi();

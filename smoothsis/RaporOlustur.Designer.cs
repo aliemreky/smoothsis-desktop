@@ -89,7 +89,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 42);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(463, 383);
+            this.groupBox1.Size = new System.Drawing.Size(445, 383);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "RAPOR BİLGİLERİ";
@@ -100,7 +100,7 @@
             this.cbRaporVardiya.FormattingEnabled = true;
             this.cbRaporVardiya.Location = new System.Drawing.Point(136, 65);
             this.cbRaporVardiya.Name = "cbRaporVardiya";
-            this.cbRaporVardiya.Size = new System.Drawing.Size(306, 23);
+            this.cbRaporVardiya.Size = new System.Drawing.Size(287, 23);
             this.cbRaporVardiya.TabIndex = 2;
             // 
             // txtIskartaNedeni
@@ -109,7 +109,7 @@
             this.txtIskartaNedeni.Location = new System.Drawing.Point(136, 311);
             this.txtIskartaNedeni.Multiline = true;
             this.txtIskartaNedeni.Name = "txtIskartaNedeni";
-            this.txtIskartaNedeni.Size = new System.Drawing.Size(306, 57);
+            this.txtIskartaNedeni.Size = new System.Drawing.Size(287, 57);
             this.txtIskartaNedeni.TabIndex = 9;
             // 
             // txtBeslenenMiktar
@@ -117,7 +117,7 @@
             this.txtBeslenenMiktar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtBeslenenMiktar.Location = new System.Drawing.Point(136, 103);
             this.txtBeslenenMiktar.Name = "txtBeslenenMiktar";
-            this.txtBeslenenMiktar.Size = new System.Drawing.Size(306, 23);
+            this.txtBeslenenMiktar.Size = new System.Drawing.Size(287, 23);
             this.txtBeslenenMiktar.TabIndex = 3;
             this.txtBeslenenMiktar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.decimalValidate);
             this.txtBeslenenMiktar.Leave += new System.EventHandler(this.txtBeslenenMiktar_Leave);
@@ -137,7 +137,7 @@
             this.txtFireMiktar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtFireMiktar.Location = new System.Drawing.Point(136, 176);
             this.txtFireMiktar.Name = "txtFireMiktar";
-            this.txtFireMiktar.Size = new System.Drawing.Size(306, 23);
+            this.txtFireMiktar.Size = new System.Drawing.Size(287, 23);
             this.txtFireMiktar.TabIndex = 6;
             this.txtFireMiktar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.decimalValidate);
             this.txtFireMiktar.Leave += new System.EventHandler(this.txtFireMiktar_Leave);
@@ -158,7 +158,7 @@
             this.dtpRaporTarih.Location = new System.Drawing.Point(136, 27);
             this.dtpRaporTarih.MinimumSize = new System.Drawing.Size(4, 23);
             this.dtpRaporTarih.Name = "dtpRaporTarih";
-            this.dtpRaporTarih.Size = new System.Drawing.Size(306, 23);
+            this.dtpRaporTarih.Size = new System.Drawing.Size(287, 23);
             this.dtpRaporTarih.TabIndex = 1;
             // 
             // txtUretilenMiktar
@@ -166,7 +166,7 @@
             this.txtUretilenMiktar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtUretilenMiktar.Location = new System.Drawing.Point(136, 141);
             this.txtUretilenMiktar.Name = "txtUretilenMiktar";
-            this.txtUretilenMiktar.Size = new System.Drawing.Size(306, 23);
+            this.txtUretilenMiktar.Size = new System.Drawing.Size(287, 23);
             this.txtUretilenMiktar.TabIndex = 4;
             this.txtUretilenMiktar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.decimalValidate);
             this.txtUretilenMiktar.Leave += new System.EventHandler(this.txtUretilenMiktar_Leave);
@@ -198,7 +198,7 @@
             this.txtFireNedeni.Location = new System.Drawing.Point(136, 210);
             this.txtFireNedeni.Multiline = true;
             this.txtFireNedeni.Name = "txtFireNedeni";
-            this.txtFireNedeni.Size = new System.Drawing.Size(306, 57);
+            this.txtFireNedeni.Size = new System.Drawing.Size(287, 57);
             this.txtFireNedeni.TabIndex = 7;
             // 
             // label6
@@ -216,7 +216,7 @@
             this.txtIskartaMiktar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtIskartaMiktar.Location = new System.Drawing.Point(136, 277);
             this.txtIskartaMiktar.Name = "txtIskartaMiktar";
-            this.txtIskartaMiktar.Size = new System.Drawing.Size(306, 23);
+            this.txtIskartaMiktar.Size = new System.Drawing.Size(287, 23);
             this.txtIskartaMiktar.TabIndex = 8;
             this.txtIskartaMiktar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.decimalValidate);
             this.txtIskartaMiktar.Leave += new System.EventHandler(this.txtIskartaMiktar_Leave);
@@ -254,10 +254,10 @@
             // txtAciklama
             // 
             this.txtAciklama.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtAciklama.Location = new System.Drawing.Point(13, 25);
+            this.txtAciklama.Location = new System.Drawing.Point(17, 25);
             this.txtAciklama.Multiline = true;
             this.txtAciklama.Name = "txtAciklama";
-            this.txtAciklama.Size = new System.Drawing.Size(420, 110);
+            this.txtAciklama.Size = new System.Drawing.Size(403, 110);
             this.txtAciklama.TabIndex = 10;
             // 
             // toolStrip1
@@ -274,7 +274,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(10, 1, 2, 1);
-            this.toolStrip1.Size = new System.Drawing.Size(965, 32);
+            this.toolStrip1.Size = new System.Drawing.Size(925, 32);
             this.toolStrip1.TabIndex = 18;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -326,9 +326,9 @@
             this.groupBox3.Controls.Add(this.operator_list);
             this.groupBox3.Controls.Add(this.btnComeBackOperator);
             this.groupBox3.Controls.Add(this.btnMoveOperator);
-            this.groupBox3.Location = new System.Drawing.Point(500, 42);
+            this.groupBox3.Location = new System.Drawing.Point(473, 42);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(449, 222);
+            this.groupBox3.Size = new System.Drawing.Size(436, 222);
             this.groupBox3.TabIndex = 29;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "OPERATÖR İŞLEMLERİ";
@@ -342,9 +342,9 @@
             this.operator_result.FullRowSelect = true;
             this.operator_result.GridLines = true;
             this.operator_result.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.operator_result.Location = new System.Drawing.Point(262, 26);
+            this.operator_result.Location = new System.Drawing.Point(259, 27);
             this.operator_result.Name = "operator_result";
-            this.operator_result.Size = new System.Drawing.Size(171, 179);
+            this.operator_result.Size = new System.Drawing.Size(161, 179);
             this.operator_result.TabIndex = 0;
             this.operator_result.TabStop = false;
             this.operator_result.UseCompatibleStateImageBehavior = false;
@@ -368,9 +368,9 @@
             this.operator_adi});
             this.operator_list.FullRowSelect = true;
             this.operator_list.GridLines = true;
-            this.operator_list.Location = new System.Drawing.Point(13, 26);
+            this.operator_list.Location = new System.Drawing.Point(17, 28);
             this.operator_list.Name = "operator_list";
-            this.operator_list.Size = new System.Drawing.Size(183, 179);
+            this.operator_list.Size = new System.Drawing.Size(172, 179);
             this.operator_list.TabIndex = 0;
             this.operator_list.TabStop = false;
             this.operator_list.UseCompatibleStateImageBehavior = false;
@@ -392,7 +392,7 @@
             this.btnComeBackOperator.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.btnComeBackOperator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnComeBackOperator.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnComeBackOperator.Location = new System.Drawing.Point(211, 117);
+            this.btnComeBackOperator.Location = new System.Drawing.Point(206, 123);
             this.btnComeBackOperator.Name = "btnComeBackOperator";
             this.btnComeBackOperator.Size = new System.Drawing.Size(37, 37);
             this.btnComeBackOperator.TabIndex = 0;
@@ -407,7 +407,7 @@
             this.btnMoveOperator.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.btnMoveOperator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMoveOperator.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnMoveOperator.Location = new System.Drawing.Point(211, 61);
+            this.btnMoveOperator.Location = new System.Drawing.Point(206, 67);
             this.btnMoveOperator.Name = "btnMoveOperator";
             this.btnMoveOperator.Size = new System.Drawing.Size(37, 37);
             this.btnMoveOperator.TabIndex = 0;
@@ -419,9 +419,9 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txtAciklama);
-            this.groupBox2.Location = new System.Drawing.Point(500, 275);
+            this.groupBox2.Location = new System.Drawing.Point(473, 275);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(449, 150);
+            this.groupBox2.Size = new System.Drawing.Size(436, 150);
             this.groupBox2.TabIndex = 30;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "RAPOR AÇIKLAMASI";
@@ -431,7 +431,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(965, 440);
+            this.ClientSize = new System.Drawing.Size(925, 438);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);

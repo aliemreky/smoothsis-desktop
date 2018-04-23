@@ -54,6 +54,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grupList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grupList.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.grupList.Location = new System.Drawing.Point(9, 22);
             this.grupList.MultiSelect = false;
             this.grupList.Name = "grupList";
@@ -71,6 +72,7 @@
             this.grupAdTB.Name = "grupAdTB";
             this.grupAdTB.Size = new System.Drawing.Size(283, 26);
             this.grupAdTB.TabIndex = 1;
+            this.grupAdTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.grupAdTB_KeyPress);
             // 
             // groupBox1
             // 

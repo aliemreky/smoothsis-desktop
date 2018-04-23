@@ -35,6 +35,12 @@
     <ApplicationIcon>sm-logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ClosedXML">
+      <HintPath>Services\ClosedXml\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml">
+      <HintPath>Services\ClosedXml\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Messaging" />
@@ -90,6 +96,12 @@
     </Compile>
     <Compile Include="DepoStokListesi.Designer.cs">
       <DependentUpon>DepoStokListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmailAyarlari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmailAyarlari.Designer.cs">
+      <DependentUpon>EmailAyarlari.cs</DependentUpon>
     </Compile>
     <Compile Include="Grup.cs">
       <SubType>Form</SubType>
@@ -157,11 +169,23 @@
     <Compile Include="MakineOlustur.Designer.cs">
       <DependentUpon>MakineOlustur.cs</DependentUpon>
     </Compile>
+    <Compile Include="MakineRaporu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MakineRaporu.Designer.cs">
+      <DependentUpon>MakineRaporu.cs</DependentUpon>
+    </Compile>
     <Compile Include="OperatorBilgileri.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="OperatorBilgileri.Designer.cs">
       <DependentUpon>OperatorBilgileri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OperatorCalismaRaporu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OperatorCalismaRaporu.Designer.cs">
+      <DependentUpon>OperatorCalismaRaporu.cs</DependentUpon>
     </Compile>
     <Compile Include="OperatorDuzenle.cs">
       <SubType>Form</SubType>
@@ -311,6 +335,9 @@
     <EmbeddedResource Include="DepoStokListesi.resx">
       <DependentUpon>DepoStokListesi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EmailAyarlari.resx">
+      <DependentUpon>EmailAyarlari.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Grup.resx">
       <DependentUpon>Grup.cs</DependentUpon>
     </EmbeddedResource>
@@ -344,8 +371,14 @@
     <EmbeddedResource Include="MakineOlustur.resx">
       <DependentUpon>MakineOlustur.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MakineRaporu.resx">
+      <DependentUpon>MakineRaporu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OperatorBilgileri.resx">
       <DependentUpon>OperatorBilgileri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OperatorCalismaRaporu.resx">
+      <DependentUpon>OperatorCalismaRaporu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OperatorDuzenle.resx">
       <DependentUpon>OperatorDuzenle.cs</DependentUpon>

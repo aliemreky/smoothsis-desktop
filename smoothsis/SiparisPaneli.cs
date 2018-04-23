@@ -81,6 +81,7 @@ namespace smoothsis
                 {
                     siparisGuncelle = true;
 
+
                     sqlReaderSiparis.Read();
                     txtSiparisTarih.Text = DateTime.Parse(sqlReaderSiparis["SIP_TARIH"].ToString()).ToString("dd.MM.yyyy");
                     txtSiparisTeslimTarih.Text = DateTime.Parse(sqlReaderSiparis["TESLIM_TARIH"].ToString()).ToString("dd.MM.yyyy");
@@ -122,6 +123,7 @@ namespace smoothsis
                     SqlDataReader sqlReaderStok = sqlCmd.ExecuteReader();
 
                     siparisStokList.Clear();
+                    siparisListesiGridView.Rows.Clear();
 
                     while (sqlReaderStok.Read())
                     {
@@ -277,12 +279,21 @@ namespace smoothsis
             if (!String.IsNullOrEmpty(txtBirimFiyat.Text.Trim()) && !String.IsNullOrEmpty(txtStokMiktar.Text.Trim()))
             {
 
-                /* TODO: EĞER STOK MİKTARINDAN FAZLA GİRİLDİYSE DEĞER MAX MİKTARA EŞİTLENECEK
-                if (decimal.Parse(txtStokMiktar.Text.Trim()) > decimal.Parse(selectedItem.Item2["MIKTAR"].Value.ToString()))
+                // TODO: EĞER STOK MİKTARINDAN FAZLA GİRİLDİYSE DEĞER MAX MİKTARA EŞİTLENECEK
+                if (stokGuncelle.Item1)
                 {
-                    txtStokMiktar.Text = selectedItem.Item2["MIKTAR"].Value.ToString();
+                    sqlCmd = new SqlCommand("SELECT SUM(SD.MIKTAR) FROM STOK_DEPO SD WHERE SD.STOK_DEPO_INCKEY = @stok_depo_inckey", Program.connection);
+                    sqlCmd.Parameters.AddWithValue("@stok_depo_inckey", selectedUpdateItem.Item1);
+                    decimal stokMiktarReader = (decimal)sqlCmd.ExecuteScalar();
+
+                    if (decimal.Parse(txtStokMiktar.Text.Trim()) > stokMiktarReader)
+                        txtStokMiktar.Text = stokMiktarReader.ToString();
                 }
-                */
+                else
+                {                    
+                    if (decimal.Parse(txtStokMiktar.Text.Trim()) > decimal.Parse(selectedItem.Item2["MIKTAR"].Value.ToString()))                    
+                        txtStokMiktar.Text = selectedItem.Item2["MIKTAR"].Value.ToString();                    
+                }                                
 
                 decimal toplamFiyat = decimal.Parse(txtStokMiktar.Text.Trim()) * decimal.Parse(txtBirimFiyat.Text.Trim());
                 txtToplamFiyat.Text = toplamFiyat.ToString();
@@ -378,14 +389,14 @@ namespace smoothsis
                     txtStokBirim.Text = selectedItem.Item2["MIKTAR_BIRIM"].Value.ToString();
                     txtBirimFiyat.Text = selectedItem.Item2["BIRIM_FIYAT"].Value.ToString();
 
-                    sqlCmd = new SqlCommand("SELECT D.DEPO_INCKEY, D.DEPO_ADI FROM STOK_DEPO STD JOIN DEPO D ON D.DEPO_INCKEY=STD.DEPO_INCKEY WHERE STD.STOK_INCKEY=@stok_inckey", Program.connection);
+                    sqlCmd = new SqlCommand("SELECT STD.STOK_DEPO_INCKEY, D.DEPO_ADI FROM STOK_DEPO STD JOIN DEPO D ON D.DEPO_INCKEY=STD.DEPO_INCKEY WHERE STD.STOK_INCKEY=@stok_inckey", Program.connection);
                     sqlCmd.Parameters.AddWithValue("@stok_inckey", selectedItem.Item2["STOK_INCKEY"].Value.ToString());
                     SqlDataReader dataReader = sqlCmd.ExecuteReader();
 
                     cbStokDepo.Items.Clear();
                     if (dataReader.HasRows)
                         while (dataReader.Read())
-                            cbStokDepo.Items.Add(dataReader["DEPO_INCKEY"].ToString() + " - " + dataReader["DEPO_ADI"].ToString());
+                            cbStokDepo.Items.Add(dataReader["STOK_DEPO_INCKEY"].ToString() + " - " + dataReader["DEPO_ADI"].ToString());
 
                     cbStokDepo.SelectedIndex = 0;
                     txtStokMiktar.Text = "0";
@@ -408,7 +419,7 @@ namespace smoothsis
                 txtBirimFiyat.Text = siparisListesiGridView["BIRIM_FIYAT", e.RowIndex].Value.ToString();
                 txtToplamFiyat.Text = siparisListesiGridView["TUTAR", e.RowIndex].Value.ToString();
 
-                sqlCmd = new SqlCommand("SELECT D.DEPO_INCKEY, D.DEPO_ADI FROM STOK_DEPO STD JOIN DEPO D ON D.DEPO_INCKEY=STD.DEPO_INCKEY WHERE STD.STOK_INCKEY=@stok_inckey", Program.connection);
+                sqlCmd = new SqlCommand("SELECT STD.STOK_DEPO_INCKEY, D.DEPO_ADI FROM STOK_DEPO STD JOIN DEPO D ON D.DEPO_INCKEY=STD.DEPO_INCKEY WHERE STD.STOK_INCKEY=@stok_inckey", Program.connection);
                 sqlCmd.Parameters.AddWithValue("@stok_inckey", siparisListesiGridView["STOK_INCKEY", e.RowIndex].Value.ToString());
                 SqlDataReader dataReader = sqlCmd.ExecuteReader();
 
@@ -419,7 +430,7 @@ namespace smoothsis
                 {
                     while (dataReader.Read())
                     {
-                        cbStokDepo.Items.Add(dataReader["DEPO_INCKEY"].ToString() + " - " + dataReader["DEPO_ADI"].ToString());
+                        cbStokDepo.Items.Add(dataReader["STOK_DEPO_INCKEY"].ToString() + " - " + dataReader["DEPO_ADI"].ToString());
                         if (dataReader["DEPO_ADI"].ToString().Equals(siparisListesiGridView["DEPO", e.RowIndex].Value.ToString()))
                             cbStokDepo.SelectedIndex = checkIndex;
 
@@ -500,8 +511,8 @@ namespace smoothsis
                                         "VALUES (@siparis_inckey, @stok_depo_inckey, @miktar, @miktar_birim)";
                                 sqlCmd = new SqlCommand(siparisStokSQL, Program.connection);
                                 sqlCmd.Parameters.Add("@siparis_inckey", SqlDbType.Int).Value = siparisIncKey;
-                                sqlCmd.Parameters.Add("@stok_depo_inckey", SqlDbType.Int).Value = Convert.ToInt32(row.Cells["STOK_DEPO_INCKEY"].Value.ToString());
-                                sqlCmd.Parameters.Add("@miktar", SqlDbType.Float).Value = row.Cells["MIKTAR"].Value;
+                                sqlCmd.Parameters.Add("@stok_depo_inckey", SqlDbType.Int).Value = int.Parse(row.Cells["STOK_DEPO_INCKEY"].Value.ToString());
+                                sqlCmd.Parameters.Add("@miktar", SqlDbType.Float).Value = decimal.Parse(row.Cells["MIKTAR"].Value.ToString());
                                 sqlCmd.Parameters.Add("@miktar_birim", SqlDbType.VarChar).Value = row.Cells["BIRIM"].Value;
                                 sqlCmd.ExecuteNonQuery();
                             }

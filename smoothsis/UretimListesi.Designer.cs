@@ -79,7 +79,7 @@
             this.btnUretimListesiGetir.Size = new System.Drawing.Size(195, 43);
             this.btnUretimListesiGetir.TabIndex = 6;
             this.btnUretimListesiGetir.TabStop = false;
-            this.btnUretimListesiGetir.Text = "LİSTEYİ YENİLE";
+            this.btnUretimListesiGetir.Text = "ÜRETİM LİSTEYİ YENİLE";
             this.btnUretimListesiGetir.UseVisualStyleBackColor = true;
             this.btnUretimListesiGetir.Click += new System.EventHandler(this.btnUretimListesiGetir_Click);
             // 
@@ -178,6 +178,7 @@
             this.uretimListGridView.Size = new System.Drawing.Size(932, 513);
             this.uretimListGridView.TabIndex = 19;
             this.uretimListGridView.VirtualMode = true;
+            this.uretimListGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.uretimListGridView_CellFormatting);
             this.uretimListGridView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.uretimListGridView_CellMouseDown);
             // 
             // contextMenuStrip1
@@ -211,6 +212,7 @@
             this.ClientSize = new System.Drawing.Size(1209, 555);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UretimListesi";
