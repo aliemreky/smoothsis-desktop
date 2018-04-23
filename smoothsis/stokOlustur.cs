@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
 using smoothsis.Services;
+using smoothsis.Services.Enums;
 
 namespace smoothsis
 {
@@ -24,7 +25,8 @@ namespace smoothsis
 
         private void StokOlustur_Load(object sender, EventArgs e)
         {
-            cbMiktarBirim.DataSource = Enum.GetNames(typeof(smoothsis.Services.Enums.MalzemeMiktarBirim));
+            cbMiktarBirim.DataSource = Enum.GetNames(typeof(MalzemeMiktarBirim));
+            cbKdv.DataSource = Enum.GetValues(typeof(KDV));
             cbMiktarBirim.SelectedIndex = 0;
             stokDepoCB.DataSource = getDepoDataTableForBindToComboBox();
             stokDepoCB.DisplayMember = "DEPO_ADI";
@@ -81,16 +83,17 @@ namespace smoothsis
                 try
                 {
                     string stokKayitSQL = "INSERT INTO " +
-                        "STOK(STOK_KOD, STOK_ADI, MIKTAR_BIRIM, BIRIM_FIYAT, GELIS_TARIH, AMBALAJ_BILGI," +
+                        "STOK(STOK_KOD, STOK_ADI, MIKTAR_BIRIM, BIRIM_FIYAT, KDV_DAHIL, GELIS_TARIH, AMBALAJ_BILGI," +
                         " MALZ_SERISI, MALZ_CINSI, MALZ_OLCU, ETIKET_BILGI, ACIKLAMA, KAYIT_YAPAN_KUL) " +
                         "OUTPUT INSERTED.STOK_INCKEY VALUES (@stok_kod, @stok_adi, @miktar_birim, @birim_fiyat," +
-                        " @gelis_tarih, @ambalaj_bilgi, @malz_serisi, @malz_cinsi, @malz_olcu, @etiket_bilgi, " +
+                        " @kdv_dahil, @gelis_tarih, @ambalaj_bilgi, @malz_serisi, @malz_cinsi, @malz_olcu, @etiket_bilgi, " +
                         "@aciklama, @kayit_yapan_kul)";
                     sqlCmd = new SqlCommand(stokKayitSQL, Program.connection);
                     sqlCmd.Parameters.Add("@stok_kod", SqlDbType.VarChar).Value = txtStokKod.Text;
                     sqlCmd.Parameters.Add("@stok_adi", SqlDbType.VarChar).Value = txtStokAdi.Text;
                     sqlCmd.Parameters.Add("@miktar_birim", SqlDbType.VarChar).Value = cbMiktarBirim.SelectedValue;
                     sqlCmd.Parameters.Add("@birim_fiyat", SqlDbType.Decimal).Value = decimal.Parse(txtBirimFiyat.Text);
+                    sqlCmd.Parameters.Add("@kdv_dahil", SqlDbType.Bit).Value = (int)cbKdv.SelectedValue;
                     sqlCmd.Parameters.Add("@gelis_tarih", SqlDbType.Date).Value = dtpGelisTarih.Value;
                     sqlCmd.Parameters.Add("@ambalaj_bilgi", SqlDbType.VarChar).Value = txtAmbalajBilgi.Text;
                     sqlCmd.Parameters.Add("@malz_serisi", SqlDbType.VarChar).Value = txtMalzSerisi.Text;

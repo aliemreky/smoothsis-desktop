@@ -63,6 +63,8 @@
             this.temizleBttn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.iptalButton = new System.Windows.Forms.ToolStripButton();
+            this.cbKdv = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -81,6 +83,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbKdv);
+            this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.stokDepoCB);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.btnStokKodOlustur);
@@ -110,7 +114,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 35);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(865, 275);
+            this.groupBox1.Size = new System.Drawing.Size(865, 300);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             // 
@@ -197,7 +201,7 @@
             this.txtAciklama.Location = new System.Drawing.Point(547, 169);
             this.txtAciklama.Multiline = true;
             this.txtAciklama.Name = "txtAciklama";
-            this.txtAciklama.Size = new System.Drawing.Size(306, 88);
+            this.txtAciklama.Size = new System.Drawing.Size(306, 119);
             this.txtAciklama.TabIndex = 12;
             // 
             // label3
@@ -418,12 +422,32 @@
             this.iptalButton.Text = "Çıkış";
             this.iptalButton.Click += new System.EventHandler(this.iptalButton_Click);
             // 
+            // cbKdv
+            // 
+            this.cbKdv.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbKdv.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cbKdv.FormattingEnabled = true;
+            this.cbKdv.Location = new System.Drawing.Point(114, 265);
+            this.cbKdv.Name = "cbKdv";
+            this.cbKdv.Size = new System.Drawing.Size(306, 23);
+            this.cbKdv.TabIndex = 19;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(74, 268);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(31, 15);
+            this.label13.TabIndex = 18;
+            this.label13.Text = "KDV";
+            // 
             // StokOlustur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(889, 318);
+            this.ClientSize = new System.Drawing.Size(889, 342);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -476,5 +500,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ComboBox stokDepoCB;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox cbKdv;
+        private System.Windows.Forms.Label label13;
     }
 }
