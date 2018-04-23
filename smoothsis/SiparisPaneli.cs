@@ -389,14 +389,14 @@ namespace smoothsis
                     txtStokBirim.Text = selectedItem.Item2["MIKTAR_BIRIM"].Value.ToString();
                     txtBirimFiyat.Text = selectedItem.Item2["BIRIM_FIYAT"].Value.ToString();
 
-                    sqlCmd = new SqlCommand("SELECT D.DEPO_INCKEY, D.DEPO_ADI FROM STOK_DEPO STD JOIN DEPO D ON D.DEPO_INCKEY=STD.DEPO_INCKEY WHERE STD.STOK_INCKEY=@stok_inckey", Program.connection);
+                    sqlCmd = new SqlCommand("SELECT STD.STOK_DEPO_INCKEY, D.DEPO_ADI FROM STOK_DEPO STD JOIN DEPO D ON D.DEPO_INCKEY=STD.DEPO_INCKEY WHERE STD.STOK_INCKEY=@stok_inckey", Program.connection);
                     sqlCmd.Parameters.AddWithValue("@stok_inckey", selectedItem.Item2["STOK_INCKEY"].Value.ToString());
                     SqlDataReader dataReader = sqlCmd.ExecuteReader();
 
                     cbStokDepo.Items.Clear();
                     if (dataReader.HasRows)
                         while (dataReader.Read())
-                            cbStokDepo.Items.Add(dataReader["DEPO_INCKEY"].ToString() + " - " + dataReader["DEPO_ADI"].ToString());
+                            cbStokDepo.Items.Add(dataReader["STOK_DEPO_INCKEY"].ToString() + " - " + dataReader["DEPO_ADI"].ToString());
 
                     cbStokDepo.SelectedIndex = 0;
                     txtStokMiktar.Text = "0";
@@ -419,7 +419,7 @@ namespace smoothsis
                 txtBirimFiyat.Text = siparisListesiGridView["BIRIM_FIYAT", e.RowIndex].Value.ToString();
                 txtToplamFiyat.Text = siparisListesiGridView["TUTAR", e.RowIndex].Value.ToString();
 
-                sqlCmd = new SqlCommand("SELECT D.DEPO_INCKEY, D.DEPO_ADI FROM STOK_DEPO STD JOIN DEPO D ON D.DEPO_INCKEY=STD.DEPO_INCKEY WHERE STD.STOK_INCKEY=@stok_inckey", Program.connection);
+                sqlCmd = new SqlCommand("SELECT STD.STOK_DEPO_INCKEY, D.DEPO_ADI FROM STOK_DEPO STD JOIN DEPO D ON D.DEPO_INCKEY=STD.DEPO_INCKEY WHERE STD.STOK_INCKEY=@stok_inckey", Program.connection);
                 sqlCmd.Parameters.AddWithValue("@stok_inckey", siparisListesiGridView["STOK_INCKEY", e.RowIndex].Value.ToString());
                 SqlDataReader dataReader = sqlCmd.ExecuteReader();
 
@@ -430,7 +430,7 @@ namespace smoothsis
                 {
                     while (dataReader.Read())
                     {
-                        cbStokDepo.Items.Add(dataReader["DEPO_INCKEY"].ToString() + " - " + dataReader["DEPO_ADI"].ToString());
+                        cbStokDepo.Items.Add(dataReader["STOK_DEPO_INCKEY"].ToString() + " - " + dataReader["DEPO_ADI"].ToString());
                         if (dataReader["DEPO_ADI"].ToString().Equals(siparisListesiGridView["DEPO", e.RowIndex].Value.ToString()))
                             cbStokDepo.SelectedIndex = checkIndex;
 

@@ -130,6 +130,7 @@ namespace smoothsis
 
         private void StokTransfer_Load(object sender, EventArgs e)
         {
+            txtMiktar.Text = "0,000";
             loadTransferStok();
         }
 
@@ -165,6 +166,24 @@ namespace smoothsis
             stokAdi = reader["STOK_ADI"].ToString();
             sourceStokAdiLabel.Text = stokAdi;
             stokInckey = Convert.ToInt32(reader["STOK_INCKEY"].ToString());
+        }
+
+        private void txtMiktar_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                txtMiktar.Text = string.Format("{0:#,##0.000}", decimal.Parse(txtMiktar.Text));
+            }
+            catch
+            {
+                Notification.messageBox("YANLIŞ FORMAT GİRİLDİ");
+                txtMiktar.Focus();
+            }
+        }
+
+        private void txtMiktar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextValidate.forceForDecimal(sender, e);
         }
     }
 }

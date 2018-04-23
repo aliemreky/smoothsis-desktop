@@ -68,17 +68,13 @@ namespace smoothsis
         {
             try
             {
-                SqlCommand command = new SqlCommand("INSERT INTO GRUP(GRUP_ADI) OUTPUT INSERTED.GRUP_INCKEY VALUES(@grup_adi)", Program.connection);
+                SqlCommand command = new SqlCommand("INSERT INTO GRUP(GRUP_ADI) VALUES(@grup_adi)", Program.connection);
                 command.Parameters.Add("@grup_adi", SqlDbType.VarChar).Value = grupAdi;
-                int newId = (int)command.ExecuteScalar();
-                if (newId > 0)
-                {
-                    grupAdTB.Clear();
-                    listGrup();
-                } else
-                {
-                    Notification.messageBoxError("Bir sorun oluştu, yetki grubu kaydedilemedi !");
-                }
+                command.ExecuteNonQuery();
+                
+                grupAdTB.Clear();
+                listGrup();
+                
             }
             catch (Exception ex)
             {
@@ -166,6 +162,14 @@ namespace smoothsis
             grupAdTB.Clear();
             grupList.ClearSelection();
             isUpdate = false;
+        }
+
+        private void grupAdTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == (char)Keys.Enter)
+            {
+                kaydetBttn.PerformClick();
+            }
         }
     }
 }

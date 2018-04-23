@@ -181,6 +181,8 @@
             this.txtMiktar.Name = "txtMiktar";
             this.txtMiktar.Size = new System.Drawing.Size(147, 23);
             this.txtMiktar.TabIndex = 1;
+            this.txtMiktar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMiktar_KeyPress);
+            this.txtMiktar.Leave += new System.EventHandler(this.txtMiktar_Leave);
             // 
             // label2
             // 

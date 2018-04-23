@@ -177,5 +177,11 @@ namespace smoothsis
         {
 
         }
+
+        private void ePostaAyarlarıToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EmailAyarlari emailAyarlari = new EmailAyarlari();
+            emailAyarlari.Show();
+        }
     }
 }

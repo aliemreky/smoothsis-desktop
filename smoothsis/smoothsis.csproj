@@ -97,6 +97,12 @@
     <Compile Include="DepoStokListesi.Designer.cs">
       <DependentUpon>DepoStokListesi.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmailAyarlari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmailAyarlari.Designer.cs">
+      <DependentUpon>EmailAyarlari.cs</DependentUpon>
+    </Compile>
     <Compile Include="Grup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -310,6 +316,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DepoStokListesi.resx">
       <DependentUpon>DepoStokListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmailAyarlari.resx">
+      <DependentUpon>EmailAyarlari.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grup.resx">
       <DependentUpon>Grup.cs</DependentUpon>
