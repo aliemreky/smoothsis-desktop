@@ -61,19 +61,52 @@ namespace smoothsis
                 {
                     if (remainMiktar != 0)
                     {
-                        string transferQuery = "INSERT INTO STOK_DEPO(STOK_INCKEY, DEPO_INCKEY, MIKTAR) OUTPUT INSERTED.STOK_DEPO_INCKEY VALUES(@stok_inckey, @depo_inckey, @miktar)";
-                        sqlCmd = new SqlCommand(transferQuery, Program.connection);
+                        string anyStokDepoSameQuery = "SELECT COUNT(STOK_DEPO_INCKEY) FROM STOK_DEPO " +
+                            "WHERE STOK_INCKEY = @stok_inckey AND DEPO_INCKEY = @depo_inckey";
+                        sqlCmd = new SqlCommand(anyStokDepoSameQuery, Program.connection);
                         sqlCmd.Parameters.Add("@stok_inckey", SqlDbType.Int).Value = stokInckey;
                         sqlCmd.Parameters.Add("@depo_inckey", SqlDbType.Int).Value = transferDepoInckey;
-                        sqlCmd.Parameters.Add("@miktar", SqlDbType.Decimal).Value = transferMiktar;
-                        addedStokDepoInckey = (int)sqlCmd.ExecuteScalar();
-                        if (addedStokDepoInckey > 0)
+                        if (((int)sqlCmd.ExecuteScalar()) != 0)
                         {
-                            string updateQuery = "UPDATE STOK_DEPO SET MIKTAR = @miktar WHERE STOK_DEPO_INCKEY = @stok_depo_inckey";
-                            sqlCmd = new SqlCommand(updateQuery, Program.connection);
-                            sqlCmd.Parameters.Add("@miktar", SqlDbType.Decimal).Value = remainMiktar;
-                            sqlCmd.Parameters.Add("@stok_depo_inckey", SqlDbType.Int).Value = sourceStokDepoInckey;
+                            string getMiktarQuery = "SELECT MIKTAR FROM STOK_DEPO " +
+                            "WHERE STOK_INCKEY = @stok_inckey AND DEPO_INCKEY = @depo_inckey";
+                            sqlCmd = new SqlCommand(getMiktarQuery, Program.connection);
+                            sqlCmd.Parameters.Add("@stok_inckey", SqlDbType.Int).Value = stokInckey;
+                            sqlCmd.Parameters.Add("@depo_inckey", SqlDbType.Int).Value = transferDepoInckey;
+                            decimal result = (decimal)sqlCmd.ExecuteScalar();
+                            
+                            string transferUpdateQuery = "UPDATE STOK_DEPO SET MIKTAR = @miktar WHERE STOK_INCKEY = @stok_inckey AND DEPO_INCKEY = @depo_inckey";
+                            sqlCmd = new SqlCommand(transferUpdateQuery, Program.connection);
+                            sqlCmd.Parameters.Add("@stok_inckey", SqlDbType.Int).Value = stokInckey;
+                            sqlCmd.Parameters.Add("@depo_inckey", SqlDbType.Int).Value = transferDepoInckey;
+                            sqlCmd.Parameters.Add("@miktar", SqlDbType.Decimal).Value = (result + transferMiktar);
+                            
+                            if (sqlCmd.ExecuteNonQuery() > 0)
+                            {
+                                string updateQuery = "UPDATE STOK_DEPO SET MIKTAR = @miktar WHERE STOK_DEPO_INCKEY = @stok_depo_inckey";
+                                sqlCmd = new SqlCommand(updateQuery, Program.connection);
+                                sqlCmd.Parameters.Add("@miktar", SqlDbType.Decimal).Value = remainMiktar;
+                                sqlCmd.Parameters.Add("@stok_depo_inckey", SqlDbType.Int).Value = sourceStokDepoInckey;
 
+                            }
+                        }
+                        else
+                        {
+
+                            string transferQuery = "INSERT INTO STOK_DEPO(STOK_INCKEY, DEPO_INCKEY, MIKTAR) OUTPUT INSERTED.STOK_DEPO_INCKEY VALUES(@stok_inckey, @depo_inckey, @miktar)";
+                            sqlCmd = new SqlCommand(transferQuery, Program.connection);
+                            sqlCmd.Parameters.Add("@stok_inckey", SqlDbType.Int).Value = stokInckey;
+                            sqlCmd.Parameters.Add("@depo_inckey", SqlDbType.Int).Value = transferDepoInckey;
+                            sqlCmd.Parameters.Add("@miktar", SqlDbType.Decimal).Value = transferMiktar;
+                            addedStokDepoInckey = (int)sqlCmd.ExecuteScalar();
+                            if (addedStokDepoInckey > 0)
+                            {
+                                string updateQuery = "UPDATE STOK_DEPO SET MIKTAR = @miktar WHERE STOK_DEPO_INCKEY = @stok_depo_inckey";
+                                sqlCmd = new SqlCommand(updateQuery, Program.connection);
+                                sqlCmd.Parameters.Add("@miktar", SqlDbType.Decimal).Value = remainMiktar;
+                                sqlCmd.Parameters.Add("@stok_depo_inckey", SqlDbType.Int).Value = sourceStokDepoInckey;
+
+                            }
                         }
                     }
                     else
@@ -87,12 +120,13 @@ namespace smoothsis
 
                     if (sqlCmd.ExecuteNonQuery() > 0)
                     {
-                        string stokDepoTransferQuery = "INSERT INTO STOK_DEPO_TRANSFER(FROM_DEPO, TO_DEPO, STOK_DEPO_INCKEY, KAYIT_YAPAN_KUL) " +
-                            "VALUES(@from_depo, @to_depo, @stok_depo_inckey, @kayit_yapan_kul)";
+                        string stokDepoTransferQuery = "INSERT INTO STOK_DEPO_TRANSFER(FROM_DEPO, TO_DEPO, MIKTAR, STOK_INCKEY, KAYIT_YAPAN_KUL) " +
+                            "VALUES(@from_depo, @to_depo, @miktar, @stok_inckey, @kayit_yapan_kul)";
                         sqlCmd = new SqlCommand(stokDepoTransferQuery, Program.connection);
                         sqlCmd.Parameters.Add("@from_depo", SqlDbType.Int).Value = sourceDepoInckey;
                         sqlCmd.Parameters.Add("@to_depo", SqlDbType.Int).Value = transferDepoInckey;
-                        sqlCmd.Parameters.Add("@stok_depo_inckey", SqlDbType.Int).Value = addedStokDepoInckey;
+                        sqlCmd.Parameters.Add("@stok_inckey", SqlDbType.Int).Value = stokInckey;
+                        sqlCmd.Parameters.Add("@miktar", SqlDbType.Decimal).Value = transferMiktar;
                         sqlCmd.Parameters.Add("@kayit_yapan_kul", SqlDbType.Int).Value = Program.kullanici.Item1;
                         if (sqlCmd.ExecuteNonQuery() > 0)
                         {
@@ -105,6 +139,7 @@ namespace smoothsis
                             {
                                 depoStokListesi.listDepoStok();
                             }
+                            this.Close();
                         }
                     }
                 }
