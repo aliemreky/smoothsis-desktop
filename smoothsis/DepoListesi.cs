@@ -130,5 +130,10 @@ namespace smoothsis
                 contextMenuStrip1.Enabled = false;
             }
         }
+
+        private void DepoListesi_Shown(object sender, EventArgs e)
+        {
+            depoListGridView.ClearSelection();
+        }
     }
 }

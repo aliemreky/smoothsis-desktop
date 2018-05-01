@@ -290,6 +290,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SMOOTHSIS [ DEPO STOK LİSTESİ ]";
             this.Load += new System.EventHandler(this.DepoStokListesi_Load);
+            this.Shown += new System.EventHandler(this.DepoStokListesi_Shown);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);

@@ -155,6 +155,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SMOOTHSIS [ DEPO LİSTESİ ]";
             this.Load += new System.EventHandler(this.DepoListesi_Load);
+            this.Shown += new System.EventHandler(this.DepoListesi_Shown);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.depoListGridView)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);

@@ -126,10 +126,10 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="düzenleToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAACKSURBVEhL7ZC7DYAwDAWzHP8ZYA4KdqBgTjoENAieAUsuQpM4pICTTkpSnMHm5w0qOMH+vClD
-        8RXutwNUpYUcZ1X+hL68vo6mg3LACL3gtWywoQfAQ2aY0IMrJZQ7l0NoXapxOYTX5cxTnPReSwGjxBf4
-        0XgOo8VT6EXQOBE0TtjiGVQjaPzHgjEHpVpsG5zDWJkAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAIpJREFUSEvt
+        kLsNgDAMBbMc/xlgDgp2oGBOOgQ0CJ4BSy5CkzikgJNOSlKcwebnDSo4wf68KUPxFe63A1SlhRxnVf6E
+        vry+jqaDcsAIveC1bLChB8BDZpjQgysllDuXQ2hdqnE5hNflzFOc9F5LAaPEF/jReA6jxVPoRdA4ETRO
+        2OIZVCNo/MeCMQelWmwbnMNYmQAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

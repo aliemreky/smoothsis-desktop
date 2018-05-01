@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CariListesi));
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cariListesiGridView = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtAramaIl = new System.Windows.Forms.TextBox();
@@ -46,22 +45,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtAramaCariKodu = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox2.SuspendLayout();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.cariListesiGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.cariListesiGridView);
-            this.groupBox2.Location = new System.Drawing.Point(267, 10);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(979, 475);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
             // 
             // cariListesiGridView
             // 
@@ -79,7 +67,6 @@
             this.cariListesiGridView.TabStop = false;
             this.cariListesiGridView.VirtualMode = true;
             this.cariListesiGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cariListesiGridView_CellDoubleClick);
-            this.cariListesiGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.cariListesiGridView_CellFormatting);
             // 
             // groupBox1
             // 
@@ -226,6 +213,18 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "CARİ KODU";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.cariListesiGridView);
+            this.groupBox2.Location = new System.Drawing.Point(267, 10);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(979, 475);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            // 
             // CariListesi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -240,17 +239,16 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SMOOTHSIS [ CARİ LİSTESİ ]";
             this.Load += new System.EventHandler(this.CariListesi_Load);
-            this.groupBox2.ResumeLayout(false);
+            this.Shown += new System.EventHandler(this.CariListesi_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.cariListesiGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView cariListesiGridView;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
@@ -267,5 +265,6 @@
         private System.Windows.Forms.TextBox txtAramaAdiSoyadi;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtAramaCariKodu;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

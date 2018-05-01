@@ -113,6 +113,11 @@ namespace smoothsis
                 contextMenuStrip1.Enabled = false;
             }
         }
+
+        private void MakineListesi_Shown(object sender, EventArgs e)
+        {
+            makListGridView.ClearSelection();
+        }
     }
 }
 

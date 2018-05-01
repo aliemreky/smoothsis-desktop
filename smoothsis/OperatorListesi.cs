@@ -148,6 +148,10 @@ namespace smoothsis
                 Search.gridviewArama(cbOperatorDurum.SelectedValue.ToString(), operatorListGridView, "OPERATOR_DURUMU");
             }
         }
-        
+
+        private void OperatorListesi_Shown(object sender, EventArgs e)
+        {
+            operatorListGridView.ClearSelection();
+        }
     }
 }

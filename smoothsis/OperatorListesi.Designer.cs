@@ -191,6 +191,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SMOOTHSIS [ OPERATÖR LİSTESİ ]";
             this.Load += new System.EventHandler(this.OperatorListesi_Load);
+            this.Shown += new System.EventHandler(this.OperatorListesi_Shown);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.operatorListGridView)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);

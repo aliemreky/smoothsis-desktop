@@ -73,6 +73,7 @@ namespace smoothsis.Services
 
         public static void ExportExcel(string defaultFileName, DataTable ExportTable)
         {
+
             //Exporting to Excel
             string defaultFolderPath = @"C:\smoothsis\";
             
@@ -90,7 +91,7 @@ namespace smoothsis.Services
             {
                 using (XLWorkbook wb = new XLWorkbook())
                 {
-                    wb.Worksheets.Add(ExportTable);
+                    wb.Worksheets.Add(ExportTable, "Sheet1");
                     wb.SaveAs(savefileDialog.FileName);
                 }
             }

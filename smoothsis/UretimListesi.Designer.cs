@@ -44,8 +44,8 @@
             this.uretimListGridView = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.raporOluşturToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.raporListesiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.raporListesiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uretimListGridView)).BeginInit();
@@ -200,6 +200,11 @@
             this.raporOluşturToolStripMenuItem.Text = "Vardiya Rapor Girişi";
             this.raporOluşturToolStripMenuItem.Click += new System.EventHandler(this.raporOlusturToolStripMenuItem_Click);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(172, 6);
+            // 
             // raporListesiToolStripMenuItem
             // 
             this.raporListesiToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("raporListesiToolStripMenuItem.Image")));
@@ -207,11 +212,6 @@
             this.raporListesiToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.raporListesiToolStripMenuItem.Text = "Rapor Listesi";
             this.raporListesiToolStripMenuItem.Click += new System.EventHandler(this.raporListesiToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(172, 6);
             // 
             // UretimListesi
             // 
@@ -228,6 +228,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SMOOTHSIS [ ÜRETİM LİSTESİ ]";
             this.Load += new System.EventHandler(this.UretimListesi_Load);
+            this.Shown += new System.EventHandler(this.UretimListesi_Shown);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using smoothsis.Services;
+using System.Reflection;
 
 namespace smoothsis
 {
@@ -42,6 +43,13 @@ namespace smoothsis
 
                 Styler.gridViewCommonStyle(OperatorRaporuGridView);
                 OperatorRaporuGridView.DataSource = operatorRaporTable;
+
+                typeof(DataGridView).InvokeMember(
+                   "DoubleBuffered",
+                   BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetProperty,
+                   null,
+                   OperatorRaporuGridView,
+                   new object[] { true });
 
                 OperatorRaporuGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
@@ -79,6 +87,13 @@ namespace smoothsis
 
                 Styler.gridViewCommonStyle(OperatorRaporuGridView);
                 OperatorRaporuGridView.DataSource = operatorRaporTable;
+
+                typeof(DataGridView).InvokeMember(
+                   "DoubleBuffered",
+                   BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetProperty,
+                   null,
+                   OperatorRaporuGridView,
+                   new object[] { true });
 
                 OperatorRaporuGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }

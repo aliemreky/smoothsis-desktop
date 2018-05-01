@@ -132,6 +132,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SMOOTHSIS [ İŞLEM LİSTESİ ]";
             this.Load += new System.EventHandler(this.IslemListesi_Load);
+            this.Shown += new System.EventHandler(this.IslemListesi_Shown);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.islemListGridView)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);

@@ -34,6 +34,7 @@
             this.stokListGridView = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.stokDuzenleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.stokDepoListesiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stokSiparişListesiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -50,7 +51,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtAramaStokKodu = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stokListGridView)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -104,6 +104,11 @@
             this.stokDuzenleToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.stokDuzenleToolStripMenuItem.Text = "Düzenle";
             this.stokDuzenleToolStripMenuItem.Click += new System.EventHandler(this.stokDuzenleToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(166, 6);
             // 
             // stokDepoListesiToolStripMenuItem
             // 
@@ -260,11 +265,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "STOK KODU";
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(166, 6);
-            // 
             // StokListesi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -282,6 +282,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SMOOTHSIS [ STOK LİSTESİ ]";
             this.Load += new System.EventHandler(this.StokListele_Load);
+            this.Shown += new System.EventHandler(this.StokListesi_Shown);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.stokListGridView)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);

@@ -211,6 +211,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SMOOTHSIS [ STOK TRANSFER LİSTESİ ]";
             this.Load += new System.EventHandler(this.StokTransferListesi_Load);
+            this.Shown += new System.EventHandler(this.StokTransferListesi_Shown);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stokTransferListGridView)).EndInit();

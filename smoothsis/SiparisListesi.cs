@@ -199,6 +199,11 @@ namespace smoothsis
             
         }
 
+        private void SiparisListesi_Shown(object sender, EventArgs e)
+        {
+            siparisListGridView.ClearSelection();
+        }
+
         private void UretimKaydiOlusturToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (siparisListGridView.SelectedRows.Count == 1)

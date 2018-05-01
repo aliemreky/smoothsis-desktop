@@ -40,9 +40,9 @@
             this.raporListGridView = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.düzenleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.üretimBilgileriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.operatörBilgıleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.raporListGridView)).BeginInit();
@@ -159,6 +159,11 @@
             this.düzenleToolStripMenuItem.Text = "Düzenle";
             this.düzenleToolStripMenuItem.Click += new System.EventHandler(this.duzenleToolStripMenuItem_Click);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(160, 6);
+            // 
             // üretimBilgileriToolStripMenuItem
             // 
             this.üretimBilgileriToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("üretimBilgileriToolStripMenuItem.Image")));
@@ -175,11 +180,6 @@
             this.operatörBilgıleriToolStripMenuItem.Text = "Operatör Bilgileri";
             this.operatörBilgıleriToolStripMenuItem.Click += new System.EventHandler(this.operatorBilgileriToolStripMenuItem_Click);
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(160, 6);
-            // 
             // RaporListesi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -194,6 +194,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SMOOTHSIS [ RAPOR LİSTESİ ]";
             this.Load += new System.EventHandler(this.RaporListesi_Load);
+            this.Shown += new System.EventHandler(this.RaporListesi_Shown);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);

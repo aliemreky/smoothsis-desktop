@@ -122,20 +122,9 @@ namespace smoothsis
             }
         }
 
-        private void cariListesiGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void CariListesi_Shown(object sender, EventArgs e)
         {
-            /*
-            if (e.ColumnIndex == 14)
-            {
-                if (e.Value is bool)
-                {
-                    bool value = (bool)e.Value;
-                    e.Value = (value) ? "AKTİF" : "PASİF";
-                    e.FormattingApplied = true;
-                }
-            }
-            */
+            cariListesiGridView.ClearSelection();
         }
-        
     }
 }

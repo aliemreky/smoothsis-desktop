@@ -90,5 +90,10 @@ namespace smoothsis
         {
             listStokTransfer();
         }
+
+        private void StokTransferListesi_Shown(object sender, EventArgs e)
+        {
+            stokTransferListGridView.ClearSelection();
+        }
     }
 }

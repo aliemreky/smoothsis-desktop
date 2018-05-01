@@ -167,5 +167,10 @@ namespace smoothsis
                 uretimListGridView.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.White;
             }
         }
+
+        private void UretimListesi_Shown(object sender, EventArgs e)
+        {
+            uretimListGridView.ClearSelection();
+        }
     }
 }

@@ -12,6 +12,8 @@ namespace smoothsis.Services
     {
         public static void gridViewCommonStyle(DataGridView gridview)
         {
+            gridview.DefaultCellStyle.BackColor = Color.GhostWhite;
+            gridview.BackgroundColor = Color.GhostWhite;
             gridview.AllowUserToResizeRows = false;
             gridview.AllowUserToAddRows = false;
             gridview.RowHeadersVisible = false;

@@ -185,6 +185,10 @@ namespace smoothsis
                 Notification.messageBoxError("BİR SORUN OLUŞTU, KAYIT SEÇİLEMEDİ !");
             }
         }
-        
+
+        private void StokListesi_Shown(object sender, EventArgs e)
+        {
+            stokListGridView.ClearSelection();
+        }
     }
 }

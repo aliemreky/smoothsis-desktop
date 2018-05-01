@@ -123,19 +123,19 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="raporOluşturToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAD8SURBVEhL3ZRBCsJADEUHF3o/QVEUz6QgeAdFj6SIegjd6P9gIDS/nWnRTR88KCTpQCaT1HtG
-        cAVP8ApfX/l9hEvInE7M4AO+M97hFBYzgDuoftbkFrI2S5efmzykEbZFFbZxAiW8rFzPDRUzb3AIA5wW
-        VeA1VMy7gAGOokr2GirmPcAAZ1slew0V815ggA+omlhKte4JA38/4JctOsMAd4tK9hoq5t3DABeXSvYa
-        KuadwwAfGheXKjANFTPZavnQCLeiKmrjGDbChaUKS9zALFy5XQ5Zw6J1bXArcnGpn3nZ82xb6uBlcXFx
-        t/D58wFRzjlHkdNSe6F9IKUPjfgUxQQd0fwAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAPxJREFUSEvd
+        lEEKwkAMRQcXej9BURTPpCB4B0WPpIh6CN3o/2AgNL+dadFNHzwoJOlAJpPUe0ZwBU/wCl9f+X2ES8ic
+        TszgA74z3uEUFjOAO6h+1uQWsjZLl5+bPKQRtkUVtnECJbysXM8NFTNvcAgDnBZV4DVUzLuAAY6iSvYa
+        KuY9wABnWyV7DRXzXmCAD6iaWEq17gkDfz/gly06wwB3i0r2Girm3cMAF5dK9hoq5p3DAB8aF5cqMA0V
+        M9lq+dAIt6IqauMYNsKFpQpL3MAsXLldDlnDonVtcCtycamfednzbFvq4GVxcXG38PnzAVHOOUeR01J7
+        oX0gpQ+N+BTFBB3R/AAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="raporListesiToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAABCSURBVEhLYxgFgwowArE3FIPYVAcgg/9DMYgNAjA+qRgroLkFNA+ioQ9GUxEyxgpGUxFBMJqK
-        kDFWMJqKhiVgYAAASGhmtU6PBj8AAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAEJJREFUSEtj
+        GAWDCjACsTcUg9hUByCD/0MxiA0CMD6pGCuguQU0D6KhD0ZTETLGCkZTEUEwmoqQMVYwmoqGJWBgAABI
+        aGa1To8GPwAAAABJRU5ErkJggg==
 </value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

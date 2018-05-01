@@ -180,5 +180,10 @@ namespace smoothsis
         {
             listDepoStok();
         }
+
+        private void DepoStokListesi_Shown(object sender, EventArgs e)
+        {
+            depoStokListGridView.ClearSelection();
+        }
     }
 }

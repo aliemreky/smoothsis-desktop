@@ -130,6 +130,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SMOOTHSIS [ MAKİNE LİSTESİ ]";
             this.Load += new System.EventHandler(this.MakineListesi_Load);
+            this.Shown += new System.EventHandler(this.MakineListesi_Shown);
             this.contextMenuStrip1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.makListGridView)).EndInit();

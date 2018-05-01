@@ -50,10 +50,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.siparisListGridView = new System.Windows.Forms.DataGridView();
             this.siparisListesiMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.UretimKaydiOlusturToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.siparişİSevkEtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sevkListesiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.UretimKaydiOlusturToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.siparişİSevkEtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.siparisListGridView)).BeginInit();
@@ -274,6 +274,19 @@
             this.siparisListesiMenu.Size = new System.Drawing.Size(185, 76);
             this.siparisListesiMenu.Opening += new System.ComponentModel.CancelEventHandler(this.siparisListesiMenu_Opening);
             // 
+            // sevkListesiToolStripMenuItem
+            // 
+            this.sevkListesiToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("sevkListesiToolStripMenuItem.Image")));
+            this.sevkListesiToolStripMenuItem.Name = "sevkListesiToolStripMenuItem";
+            this.sevkListesiToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.sevkListesiToolStripMenuItem.Text = "Sevk Listesi";
+            this.sevkListesiToolStripMenuItem.Click += new System.EventHandler(this.sevkListesiToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(181, 6);
+            // 
             // UretimKaydiOlusturToolStripMenuItem
             // 
             this.UretimKaydiOlusturToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("UretimKaydiOlusturToolStripMenuItem.Image")));
@@ -290,19 +303,6 @@
             this.siparişİSevkEtToolStripMenuItem.Text = "Sipariş\' i Sevk Et";
             this.siparişİSevkEtToolStripMenuItem.Click += new System.EventHandler(this.siparisSevkEt);
             // 
-            // sevkListesiToolStripMenuItem
-            // 
-            this.sevkListesiToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("sevkListesiToolStripMenuItem.Image")));
-            this.sevkListesiToolStripMenuItem.Name = "sevkListesiToolStripMenuItem";
-            this.sevkListesiToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.sevkListesiToolStripMenuItem.Text = "Sevk Listesi";
-            this.sevkListesiToolStripMenuItem.Click += new System.EventHandler(this.sevkListesiToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(181, 6);
-            // 
             // SiparisListesi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -317,6 +317,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SMOOTHSIS [ SİPARİŞ LİSTESİ ]";
             this.Load += new System.EventHandler(this.SiparisListesi_Load);
+            this.Shown += new System.EventHandler(this.SiparisListesi_Shown);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);

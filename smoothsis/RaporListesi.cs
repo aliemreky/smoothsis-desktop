@@ -28,6 +28,7 @@ namespace smoothsis
         {
             Styler.gridViewCommonStyle(raporListGridView);
             listRapor();
+            üretimBilgileriToolStripMenuItem.Visible = false;
         }
         
         private void listRapor()
@@ -146,6 +147,11 @@ namespace smoothsis
             operatorListesi.Text = "SMOOTHSIS [ " + selectedItem.Item2[3].Value.ToString() + " VARDİYA RAPORU OPERATÖR LİSTESİ ]";
             operatorListesi.ShowDialog();
             operatorListesi.listOperator(query);
+        }
+
+        private void RaporListesi_Shown(object sender, EventArgs e)
+        {
+            raporListGridView.ClearSelection();
         }
     }
 }
