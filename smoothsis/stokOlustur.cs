@@ -26,7 +26,17 @@ namespace smoothsis
         private void StokOlustur_Load(object sender, EventArgs e)
         {
             cbMiktarBirim.DataSource = Enum.GetNames(typeof(MalzemeMiktarBirim));
-            cbKdv.DataSource = Enum.GetValues(typeof(KDV));
+            cbKdv.DisplayMember = "Description";
+            cbKdv.ValueMember = "Value";
+            cbKdv.DataSource = Enum.GetValues(typeof(KDV))
+                .Cast<Enum>()
+                .Select(value => new
+                {
+                    (Attribute.GetCustomAttribute(value.GetType().GetField(value.ToString()), typeof(DescriptionAttribute)) as DescriptionAttribute).Description,
+                    value
+                })
+                .OrderBy(item => item.value)
+                .ToList();
             cbMiktarBirim.SelectedIndex = 0;
             stokDepoCB.DataSource = getDepoDataTableForBindToComboBox();
             stokDepoCB.DisplayMember = "DEPO_ADI";
@@ -139,6 +149,32 @@ namespace smoothsis
         private void numericValidate(object sender, KeyPressEventArgs e)
         {
             TextValidate.forceForDecimal(sender, e);
+        }
+
+        private void txtMiktar_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                txtMiktar.Text = string.Format("{0:#,##0.000}", decimal.Parse(txtMiktar.Text));
+            }
+            catch
+            {
+                Notification.messageBox("YANLIŞ FORMAT GİRİLDİ");
+                txtMiktar.Focus();
+            }
+        }
+
+        private void txtBirimFiyat_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                txtBirimFiyat.Text = string.Format("{0:#,##0.000}", decimal.Parse(txtBirimFiyat.Text));
+            }
+            catch
+            {
+                Notification.messageBox("YANLIŞ FORMAT GİRİLDİ");
+                txtBirimFiyat.Focus();
+            }
         }
     }
 }

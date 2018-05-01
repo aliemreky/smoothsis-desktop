@@ -42,7 +42,8 @@ namespace smoothsis
             {
                 DataTable stokListDepoTable = new DataTable();
                 string query = "SELECT STOK_DEPO.STOK_DEPO_INCKEY, DEPO.DEPO_ADI, DEPO.DEPO_LOKASYON, " +
-                    "STOK_DEPO.MIKTAR, STOK_DEPO.DEPO_INCKEY FROM STOK_DEPO " +
+                    "STOK_DEPO.MIKTAR, STOK_DEPO.DEPO_INCKEY, STOK.MIKTAR_BIRIM BIRIM FROM STOK_DEPO " +
+                    "INNER JOIN STOK ON STOK_DEPO.STOK_INCKEY = STOK.STOK_INCKEY "+
                     "INNER JOIN DEPO ON STOK_DEPO.DEPO_INCKEY = DEPO.DEPO_INCKEY " +
                     "WHERE STOK_DEPO.STOK_INCKEY = @stok_inckey ORDER BY STOK_DEPO_INCKEY DESC";
                 sqlCmd = new SqlCommand(query, Program.connection);
@@ -108,6 +109,7 @@ namespace smoothsis
                                 sqlCmd = new SqlCommand("DELETE FROM STOK WHERE STOK_INCKEY = @stok_inckey", Program.connection);
                                 sqlCmd.Parameters.Add("@stok_inckey", SqlDbType.Int).Value = Convert.ToInt32(cellsOfSelectedItem[0].Value.ToString());
                                 sqlCmd.ExecuteNonQuery();
+                                stokListesi.getDataGrid().Rows.RemoveAt(stokListesi.getSelectedItem().Item1);
                             }
 
                             stokDepoListGridView.Rows.RemoveAt(rowIndex);

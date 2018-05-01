@@ -38,7 +38,6 @@ namespace smoothsis
                     if (affectedRows > 0)
                     {
                         Notification.messageBox("İşlem oluşturuldu.");
-                        this.Close();
                     }
                 }
                 catch (Exception ex)

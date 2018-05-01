@@ -125,14 +125,15 @@ namespace smoothsis
         {
             if (e.RowIndex != -1 && e.ColumnIndex != -1)
             {
-                contextMenuStrip1.Enabled = true;
                 if ((e.Button == MouseButtons.Right) && (stokListGridView.SelectedRows.Count == 1))
                 {
+                    contextMenuStrip1.Enabled = true;
                     selectedItem = new Tuple<int, DataGridViewCellCollection>(e.RowIndex, stokListGridView.Rows[e.RowIndex].Cells);
                     stokListGridView.ClearSelection();
                     this.stokListGridView.Rows[e.RowIndex].Selected = true;
                 }
-            } else
+            }
+            else
             {
                 contextMenuStrip1.Enabled = false;
             }
@@ -140,7 +141,7 @@ namespace smoothsis
 
         private void allStokList_Click(object sender, EventArgs e)
         {
-            StokListele_Load(sender, e);
+            listStok();
         }
         
         private void stokDuzenleToolStripMenuItem_Click(object sender, EventArgs e)
@@ -184,5 +185,6 @@ namespace smoothsis
                 Notification.messageBoxError("BİR SORUN OLUŞTU, KAYIT SEÇİLEMEDİ !");
             }
         }
+        
     }
 }
