@@ -37,7 +37,6 @@ namespace smoothsis
                     if (affectedRows > 0)
                     {
                         Notification.messageBox("Depo oluşturuldu.");
-                        this.Close();
                     }
                 }
                 catch

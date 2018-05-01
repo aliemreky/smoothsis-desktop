@@ -65,7 +65,7 @@ namespace smoothsis
         private void OperatorOlustur_Load(object sender, EventArgs e)
         {
             cbOperatorDurum.DataSource = Enum.GetValues(typeof(Condition));
-            cbOperatorDurum.SelectedIndex = 0;
+            cbOperatorDurum.SelectedIndex = 1;
         }
     }
 }

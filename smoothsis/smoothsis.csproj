@@ -227,6 +227,7 @@
     </Compile>
     <Compile Include="Services\ActionControl.cs" />
     <Compile Include="Services\Email.cs" />
+    <Compile Include="Services\Enums\GetDesc.cs" />
     <Compile Include="Services\Enums\Vardiya.cs" />
     <Compile Include="Services\Enums\KDV.cs" />
     <Compile Include="Services\Enums\Condition.cs" />

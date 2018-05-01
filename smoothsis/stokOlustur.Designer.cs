@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StokOlustur));
             this.btnStokKodOlustur = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbKdv = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.stokDepoCB = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtBirimFiyat = new System.Windows.Forms.TextBox();
@@ -63,8 +65,6 @@
             this.temizleBttn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.iptalButton = new System.Windows.Forms.ToolStripButton();
-            this.cbKdv = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -118,6 +118,26 @@
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             // 
+            // cbKdv
+            // 
+            this.cbKdv.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbKdv.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cbKdv.FormattingEnabled = true;
+            this.cbKdv.Location = new System.Drawing.Point(114, 265);
+            this.cbKdv.Name = "cbKdv";
+            this.cbKdv.Size = new System.Drawing.Size(306, 23);
+            this.cbKdv.TabIndex = 19;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(74, 268);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(31, 15);
+            this.label13.TabIndex = 18;
+            this.label13.Text = "KDV";
+            // 
             // stokDepoCB
             // 
             this.stokDepoCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -145,6 +165,7 @@
             this.txtBirimFiyat.Size = new System.Drawing.Size(306, 23);
             this.txtBirimFiyat.TabIndex = 5;
             this.txtBirimFiyat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numericValidate);
+            this.txtBirimFiyat.Leave += new System.EventHandler(this.txtBirimFiyat_Leave);
             // 
             // label2
             // 
@@ -232,6 +253,7 @@
             this.txtMiktar.Size = new System.Drawing.Size(153, 23);
             this.txtMiktar.TabIndex = 3;
             this.txtMiktar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numericValidate);
+            this.txtMiktar.Leave += new System.EventHandler(this.txtMiktar_Leave);
             // 
             // label4
             // 
@@ -421,26 +443,6 @@
             this.iptalButton.Size = new System.Drawing.Size(54, 27);
             this.iptalButton.Text = "Çıkış";
             this.iptalButton.Click += new System.EventHandler(this.iptalButton_Click);
-            // 
-            // cbKdv
-            // 
-            this.cbKdv.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbKdv.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.cbKdv.FormattingEnabled = true;
-            this.cbKdv.Location = new System.Drawing.Point(114, 265);
-            this.cbKdv.Name = "cbKdv";
-            this.cbKdv.Size = new System.Drawing.Size(306, 23);
-            this.cbKdv.TabIndex = 19;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(74, 268);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(31, 15);
-            this.label13.TabIndex = 18;
-            this.label13.Text = "KDV";
             // 
             // StokOlustur
             // 

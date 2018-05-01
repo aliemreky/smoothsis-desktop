@@ -8,7 +8,9 @@ namespace smoothsis.Services.Enums
 {
     public enum KDV
     {
+        [System.ComponentModel.Description("KDV Dahil Değil")]
         DahilDegil = 0,
+        [System.ComponentModel.Description("KDV Dahil")]
         Dahil = 1
     }
 }

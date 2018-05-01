@@ -37,7 +37,6 @@ namespace smoothsis
                     if (affectedRows > 0)
                     {
                         Notification.messageBox("Makina oluşturuldu.");
-                        this.Close();
                     }
                 }
                 catch (Exception ex)

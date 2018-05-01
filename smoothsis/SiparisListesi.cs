@@ -175,8 +175,24 @@ namespace smoothsis
         {
             if (siparisListGridView.SelectedRows.Count == 1)
             {
-                SevkListesi sevkListesi = new SevkListesi(Convert.ToInt32(siparisListGridView.SelectedRows[0].Cells[0].Value.ToString()));
-                sevkListesi.ShowDialog();
+                int siparisInckey = Convert.ToInt32(siparisListGridView.SelectedRows[0].Cells[0].Value.ToString());
+                
+                string query = "SELECT COUNT(SEVK_INCKEY) NUMBER_OF_SEVK FROM SEVK " +
+                    "WHERE SIPARIS_INCKEY = @siparis_inckey";
+                sqlCmd = new SqlCommand(query, Program.connection);
+                sqlCmd.Parameters.Add("@siparis_inckey", SqlDbType.Int).Value = siparisInckey;
+                SqlDataReader reader = sqlCmd.ExecuteReader();
+                reader.Read();
+                if (((int)reader["NUMBER_OF_SEVK"]) > 0)
+                {
+                    SevkListesi sevkListesi = new SevkListesi(siparisInckey);
+                    sevkListesi.ShowDialog();
+                } else
+                {
+                    Notification.messageBox("BU SİPARİŞ E AİT SEVK BULUNMAMAKTADIR.");
+                }
+
+                
             }
             else
             {

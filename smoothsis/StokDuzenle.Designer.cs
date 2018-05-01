@@ -184,6 +184,7 @@
             this.txtBirimFiyat.Size = new System.Drawing.Size(306, 23);
             this.txtBirimFiyat.TabIndex = 3;
             this.txtBirimFiyat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numericValidate);
+            this.txtBirimFiyat.Leave += new System.EventHandler(this.txtBirimFiyat_Leave);
             // 
             // label2
             // 

@@ -53,7 +53,6 @@ namespace smoothsis
                     if (affectedRows > 0)
                     {
                         Notification.messageBox("Kullanıcı oluşturuldu.");
-                        this.Close();
                     } else
                     {
                         Notification.messageBoxError("Bir sorun oluştu, Kullanıcı oluşturulamadı.");

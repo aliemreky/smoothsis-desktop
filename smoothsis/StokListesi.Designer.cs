@@ -35,6 +35,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.stokDuzenleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stokDepoListesiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stokSiparişListesiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnStokListesiGetir = new System.Windows.Forms.Button();
             this.dtAramaGelisTarih = new System.Windows.Forms.DateTimePicker();
@@ -49,7 +50,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtAramaStokKodu = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.stokSiparişListesiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stokListGridView)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -108,6 +108,13 @@
             this.stokDepoListesiToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.stokDepoListesiToolStripMenuItem.Text = "Stok Depo Listesi";
             this.stokDepoListesiToolStripMenuItem.Click += new System.EventHandler(this.stokDepoListesiToolStripMenuItem_Click);
+            // 
+            // stokSiparişListesiToolStripMenuItem
+            // 
+            this.stokSiparişListesiToolStripMenuItem.Name = "stokSiparişListesiToolStripMenuItem";
+            this.stokSiparişListesiToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.stokSiparişListesiToolStripMenuItem.Text = "Stok Sipariş Listesi";
+            this.stokSiparişListesiToolStripMenuItem.Click += new System.EventHandler(this.stokSiparisListesiToolStripMenuItem_Click);
             // 
             // groupBox2
             // 
@@ -247,13 +254,6 @@
             this.label1.Size = new System.Drawing.Size(73, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "STOK KODU";
-            // 
-            // stokSiparişListesiToolStripMenuItem
-            // 
-            this.stokSiparişListesiToolStripMenuItem.Name = "stokSiparişListesiToolStripMenuItem";
-            this.stokSiparişListesiToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
-            this.stokSiparişListesiToolStripMenuItem.Text = "Stok Sipariş Listesi";
-            this.stokSiparişListesiToolStripMenuItem.Click += new System.EventHandler(this.stokSiparisListesiToolStripMenuItem_Click);
             // 
             // StokListesi
             // 
