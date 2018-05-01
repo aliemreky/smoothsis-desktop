@@ -175,7 +175,8 @@ namespace smoothsis
 
         private void StokRaporuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            StokRaporu stokRaporu = new StokRaporu();
+            stokRaporu.Show();
         }
 
         private void ePostaAyarlarıToolStripMenuItem_Click(object sender, EventArgs e)

@@ -121,6 +121,13 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="stokListesiToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAABQSURBVEhL7Y8xDgAgEMLu/5/WlQATOBhjk050YT5XsQ4r8IBxosADxomCixofxN1sFHjAOFHg
+        AeNEwUWND+JuNgo8YJwo8IBxouCixs8VzGxFaOMdh7JJVAAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAAAAAAAEAIABaMQAAZgAAAICAAAABACAAKAgBAMAxAABAQAAAAQAgAChCAADoOQEAMDAAAAEA

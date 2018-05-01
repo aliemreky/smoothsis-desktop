@@ -38,6 +38,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.depoStokListGridView = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnStokListesiGetir = new System.Windows.Forms.Button();
+            this.dtAramaGelisTarih = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
             this.txtAramaStokAdi = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtAramaMiktar = new System.Windows.Forms.TextBox();
@@ -47,9 +50,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dtAramaGelisTarih = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btnStokListesiGetir = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.depoStokListGridView)).BeginInit();
@@ -162,6 +162,35 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "ARAMA";
             // 
+            // btnStokListesiGetir
+            // 
+            this.btnStokListesiGetir.Location = new System.Drawing.Point(16, 22);
+            this.btnStokListesiGetir.Name = "btnStokListesiGetir";
+            this.btnStokListesiGetir.Size = new System.Drawing.Size(189, 43);
+            this.btnStokListesiGetir.TabIndex = 9;
+            this.btnStokListesiGetir.TabStop = false;
+            this.btnStokListesiGetir.Text = "STOK LİSTESİNİ YENİLE";
+            this.btnStokListesiGetir.UseVisualStyleBackColor = true;
+            this.btnStokListesiGetir.Click += new System.EventHandler(this.btnStokListesiGetir_Click);
+            // 
+            // dtAramaGelisTarih
+            // 
+            this.dtAramaGelisTarih.CustomFormat = "";
+            this.dtAramaGelisTarih.Location = new System.Drawing.Point(16, 273);
+            this.dtAramaGelisTarih.Name = "dtAramaGelisTarih";
+            this.dtAramaGelisTarih.Size = new System.Drawing.Size(189, 23);
+            this.dtAramaGelisTarih.TabIndex = 8;
+            this.dtAramaGelisTarih.ValueChanged += new System.EventHandler(this.searchForGelisTarih);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(13, 253);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(79, 15);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "GELİŞ TARİHİ";
+            // 
             // txtAramaStokAdi
             // 
             this.txtAramaStokAdi.Location = new System.Drawing.Point(16, 159);
@@ -244,35 +273,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "DEPO BİLGİLERİ";
             // 
-            // dtAramaGelisTarih
-            // 
-            this.dtAramaGelisTarih.CustomFormat = "";
-            this.dtAramaGelisTarih.Location = new System.Drawing.Point(16, 273);
-            this.dtAramaGelisTarih.Name = "dtAramaGelisTarih";
-            this.dtAramaGelisTarih.Size = new System.Drawing.Size(189, 23);
-            this.dtAramaGelisTarih.TabIndex = 8;
-            this.dtAramaGelisTarih.ValueChanged += new System.EventHandler(this.searchForGelisTarih);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(13, 253);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 15);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "GELİŞ TARİHİ";
-            // 
-            // btnStokListesiGetir
-            // 
-            this.btnStokListesiGetir.Location = new System.Drawing.Point(16, 22);
-            this.btnStokListesiGetir.Name = "btnStokListesiGetir";
-            this.btnStokListesiGetir.Size = new System.Drawing.Size(189, 43);
-            this.btnStokListesiGetir.TabIndex = 9;
-            this.btnStokListesiGetir.TabStop = false;
-            this.btnStokListesiGetir.Text = "STOK LİSTESİNİ YENİLE";
-            this.btnStokListesiGetir.UseVisualStyleBackColor = true;
-            this.btnStokListesiGetir.Click += new System.EventHandler(this.btnStokListesiGetir_Click);
-            // 
             // DepoStokListesi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -287,6 +287,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DepoStokListesi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SMOOTHSIS [ DEPO STOK LİSTESİ ]";
             this.Load += new System.EventHandler(this.DepoStokListesi_Load);
             this.toolStrip1.ResumeLayout(false);

@@ -45,6 +45,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.raporOluşturToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.raporListesiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uretimListGridView)).BeginInit();
@@ -185,13 +186,15 @@
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.raporOluşturToolStripMenuItem,
+            this.toolStripSeparator1,
             this.raporListesiToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(176, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(176, 54);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // raporOluşturToolStripMenuItem
             // 
+            this.raporOluşturToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("raporOluşturToolStripMenuItem.Image")));
             this.raporOluşturToolStripMenuItem.Name = "raporOluşturToolStripMenuItem";
             this.raporOluşturToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.raporOluşturToolStripMenuItem.Text = "Vardiya Rapor Girişi";
@@ -199,10 +202,16 @@
             // 
             // raporListesiToolStripMenuItem
             // 
+            this.raporListesiToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("raporListesiToolStripMenuItem.Image")));
             this.raporListesiToolStripMenuItem.Name = "raporListesiToolStripMenuItem";
             this.raporListesiToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.raporListesiToolStripMenuItem.Text = "Rapor Listesi";
             this.raporListesiToolStripMenuItem.Click += new System.EventHandler(this.raporListesiToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(172, 6);
             // 
             // UretimListesi
             // 
@@ -216,6 +225,7 @@
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UretimListesi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SMOOTHSIS [ ÜRETİM LİSTESİ ]";
             this.Load += new System.EventHandler(this.UretimListesi_Load);
             this.groupBox2.ResumeLayout(false);
@@ -244,5 +254,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem raporOluşturToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem raporListesiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }

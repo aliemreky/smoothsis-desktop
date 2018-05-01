@@ -121,6 +121,28 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="stokDuzenleToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAACKSURBVEhL7ZC7DYAwDAWzHP8ZYA4KdqBgTjoENAieAUsuQpM4pICTTkpSnMHm5w0qOMH+vClD
+        8RXutwNUpYUcZ1X+hL68vo6mg3LACL3gtWywoQfAQ2aY0IMrJZQ7l0NoXapxOYTX5cxTnPReSwGjxBf4
+        0XgOo8VT6EXQOBE0TtjiGVQjaPzHgjEHpVpsG5zDWJkAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="stokDepoListesiToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAABDSURBVEhL7c+xCgBACALQ/v+n75YCERwcCx84BDZYEfu8zpjbjcQFfHJyGE/E2U4kLuCTk8N4
+        Is52InEBn5xE7FH1AT+nX6HG1K/oAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="stokSiparişListesiToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAABQSURBVEhL7Y8xDgAgEMLu/5/WlQATOBhjk050YT5XsQ4r8IBxosADxomCixofxN1sFHjAOFHg
+        AeNEwUWND+JuNgo8YJwo8IBxouCixs8VzGxFaOMdh7JJVAAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAAAAAAAEAIABaMQAAZgAAAICAAAABACAAKAgBAMAxAABAQAAAAQAgAChCAADoOQEAMDAAAAEA

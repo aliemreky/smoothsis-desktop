@@ -50,6 +50,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtAramaStokKodu = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stokListGridView)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -90,13 +91,15 @@
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.stokDuzenleToolStripMenuItem,
+            this.toolStripSeparator1,
             this.stokDepoListesiToolStripMenuItem,
             this.stokSiparişListesiToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(170, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(170, 76);
             // 
             // stokDuzenleToolStripMenuItem
             // 
+            this.stokDuzenleToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("stokDuzenleToolStripMenuItem.Image")));
             this.stokDuzenleToolStripMenuItem.Name = "stokDuzenleToolStripMenuItem";
             this.stokDuzenleToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.stokDuzenleToolStripMenuItem.Text = "Düzenle";
@@ -104,6 +107,7 @@
             // 
             // stokDepoListesiToolStripMenuItem
             // 
+            this.stokDepoListesiToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("stokDepoListesiToolStripMenuItem.Image")));
             this.stokDepoListesiToolStripMenuItem.Name = "stokDepoListesiToolStripMenuItem";
             this.stokDepoListesiToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.stokDepoListesiToolStripMenuItem.Text = "Stok Depo Listesi";
@@ -111,6 +115,7 @@
             // 
             // stokSiparişListesiToolStripMenuItem
             // 
+            this.stokSiparişListesiToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("stokSiparişListesiToolStripMenuItem.Image")));
             this.stokSiparişListesiToolStripMenuItem.Name = "stokSiparişListesiToolStripMenuItem";
             this.stokSiparişListesiToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.stokSiparişListesiToolStripMenuItem.Text = "Stok Sipariş Listesi";
@@ -255,6 +260,11 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "STOK KODU";
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(166, 6);
+            // 
             // StokListesi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -269,6 +279,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StokListesi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SMOOTHSIS [ STOK LİSTESİ ]";
             this.Load += new System.EventHandler(this.StokListele_Load);
             this.groupBox1.ResumeLayout(false);
@@ -301,5 +312,6 @@
         private System.Windows.Forms.ToolStripMenuItem stokDuzenleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stokDepoListesiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stokSiparişListesiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }

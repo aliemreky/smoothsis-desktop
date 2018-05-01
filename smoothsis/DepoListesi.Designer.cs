@@ -82,6 +82,7 @@
             // 
             // stokListesiToolStripMenuItem
             // 
+            this.stokListesiToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("stokListesiToolStripMenuItem.Image")));
             this.stokListesiToolStripMenuItem.Name = "stokListesiToolStripMenuItem";
             this.stokListesiToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.stokListesiToolStripMenuItem.Text = "Stok Listesi";
@@ -151,6 +152,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DepoListesi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SMOOTHSIS [ DEPO LİSTESİ ]";
             this.Load += new System.EventHandler(this.DepoListesi_Load);
             this.groupBox2.ResumeLayout(false);

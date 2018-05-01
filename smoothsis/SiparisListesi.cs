@@ -190,9 +190,7 @@ namespace smoothsis
                 } else
                 {
                     Notification.messageBox("BU SİPARİŞ E AİT SEVK BULUNMAMAKTADIR.");
-                }
-
-                
+                }                
             }
             else
             {

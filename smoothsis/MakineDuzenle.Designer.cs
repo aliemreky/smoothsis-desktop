@@ -165,6 +165,7 @@
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MakineDuzenle";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SMOOTHSIS [ MAKİNE DÜZENLE / SİL ] ";
             this.Load += new System.EventHandler(this.MakineDuzenle_Load);
             this.toolStrip1.ResumeLayout(false);

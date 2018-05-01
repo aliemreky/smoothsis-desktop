@@ -42,6 +42,7 @@
             this.düzenleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.üretimBilgileriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.operatörBilgıleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.raporListGridView)).BeginInit();
@@ -144,13 +145,15 @@
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.düzenleToolStripMenuItem,
+            this.toolStripSeparator1,
             this.üretimBilgileriToolStripMenuItem,
             this.operatörBilgıleriToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(164, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(164, 76);
             // 
             // düzenleToolStripMenuItem
             // 
+            this.düzenleToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("düzenleToolStripMenuItem.Image")));
             this.düzenleToolStripMenuItem.Name = "düzenleToolStripMenuItem";
             this.düzenleToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.düzenleToolStripMenuItem.Text = "Düzenle";
@@ -158,6 +161,7 @@
             // 
             // üretimBilgileriToolStripMenuItem
             // 
+            this.üretimBilgileriToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("üretimBilgileriToolStripMenuItem.Image")));
             this.üretimBilgileriToolStripMenuItem.Name = "üretimBilgileriToolStripMenuItem";
             this.üretimBilgileriToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.üretimBilgileriToolStripMenuItem.Text = "Üretim Bilgileri";
@@ -165,10 +169,16 @@
             // 
             // operatörBilgıleriToolStripMenuItem
             // 
+            this.operatörBilgıleriToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("operatörBilgıleriToolStripMenuItem.Image")));
             this.operatörBilgıleriToolStripMenuItem.Name = "operatörBilgıleriToolStripMenuItem";
             this.operatörBilgıleriToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.operatörBilgıleriToolStripMenuItem.Text = "Operatör Bilgileri";
             this.operatörBilgıleriToolStripMenuItem.Click += new System.EventHandler(this.operatorBilgileriToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(160, 6);
             // 
             // RaporListesi
             // 
@@ -181,6 +191,7 @@
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RaporListesi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SMOOTHSIS [ RAPOR LİSTESİ ]";
             this.Load += new System.EventHandler(this.RaporListesi_Load);
             this.groupBox2.ResumeLayout(false);
@@ -206,5 +217,6 @@
         private System.Windows.Forms.ToolStripMenuItem düzenleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem üretimBilgileriToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem operatörBilgıleriToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }

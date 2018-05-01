@@ -338,6 +338,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StokTransfer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SMOOTHSIS [ STOK TRANSFER ]";
             this.Load += new System.EventHandler(this.StokTransfer_Load);
             this.toolStrip1.ResumeLayout(false);

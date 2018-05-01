@@ -456,6 +456,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StokOlustur";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SMOOTHSIS [ STOK OLUŞTUR ]";
             this.Load += new System.EventHandler(this.StokOlustur_Load);
             this.groupBox1.ResumeLayout(false);

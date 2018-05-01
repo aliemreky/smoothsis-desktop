@@ -92,5 +92,6 @@ namespace smoothsis
             if (Keys.Enter == e.KeyCode)
                 btnGirisYap.PerformClick();
         }
+
     }
 }

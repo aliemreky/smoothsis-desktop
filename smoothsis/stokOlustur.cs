@@ -55,28 +55,26 @@ namespace smoothsis
 
         private void btnStokKodOlustur_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(txtStokKod.Text))
+            try
             {
-                try
+                sqlCmd = new SqlCommand("SELECT TOP 1 STOK_INCKEY FROM STOK ORDER BY STOK_INCKEY DESC", Program.connection);
+                SqlDataReader sqlReader = sqlCmd.ExecuteReader();
+                if (sqlReader.HasRows)
                 {
-                    sqlCmd = new SqlCommand("SELECT TOP 1 STOK_INCKEY FROM STOK ORDER BY STOK_INCKEY DESC", Program.connection);
-                    SqlDataReader sqlReader = sqlCmd.ExecuteReader();
-                    if (sqlReader.HasRows)
-                    {
-                        sqlReader.Read();
-                        txtStokKod.Text = "S" + (int.Parse(sqlReader["STOK_INCKEY"].ToString()) + 1).ToString("D8");
-                        sqlReader.Close();
-                    }
-                    else
-                    {
-                        txtStokKod.Text = "S00000001";
-                    }
+                    sqlReader.Read();
+                    txtStokKod.Text = "S" + (int.Parse(sqlReader["STOK_INCKEY"].ToString()) + 1).ToString("D8");
+                    sqlReader.Close();
                 }
-                catch (Exception ex)
+                else
                 {
-                    Notification.messageBoxError(ex.Message);
+                    txtStokKod.Text = "S00000001";
                 }
             }
+            catch (Exception ex)
+            {
+                Notification.messageBoxError(ex.Message);
+            }
+
         }
 
         private void kaydetBttn_Click(object sender, EventArgs e)
@@ -84,7 +82,7 @@ namespace smoothsis
             if (String.IsNullOrEmpty(txtStokKod.Text) ||
                 String.IsNullOrEmpty(txtStokAdi.Text) ||
                 String.IsNullOrEmpty(txtMiktar.Text) ||
-                String.IsNullOrEmpty(txtBirimFiyat.Text) )
+                String.IsNullOrEmpty(txtBirimFiyat.Text))
             {
                 Notification.messageBoxError("LÜTFEN *'LI ALANLARI BOŞ BIRAKMAYINIZ !");
             }
@@ -124,7 +122,8 @@ namespace smoothsis
                         sqlCmd.Parameters.Add("@depo_inckey", SqlDbType.Int).Value = depoInckey;
                         sqlCmd.Parameters.Add("@miktar", SqlDbType.Decimal).Value = decimal.Parse(txtMiktar.Text);
 
-                        if (sqlCmd.ExecuteNonQuery() > 0 ) {
+                        if (sqlCmd.ExecuteNonQuery() > 0)
+                        {
                             Notification.messageBox("STOK BAŞARIYLA OLUŞTURULDU");
                         }
                     }
@@ -138,14 +137,14 @@ namespace smoothsis
 
         private void temizleBttn_Click(object sender, EventArgs e)
         {
-           ActionControl.ActionAllControls(this, "clear");
+            ActionControl.ActionAllControls(this, "clear");
         }
 
         private void iptalButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        
+
         private void numericValidate(object sender, KeyPressEventArgs e)
         {
             TextValidate.forceForDecimal(sender, e);

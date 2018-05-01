@@ -38,14 +38,14 @@
             this.iptalButton = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.stokDepoListGridView = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.düzenleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label12 = new System.Windows.Forms.Label();
             this.txtStokKod = new System.Windows.Forms.TextBox();
             this.txtStokAdi = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtStokBirim = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.düzenleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stokDepoListGridView)).BeginInit();
@@ -139,6 +139,21 @@
             this.stokDepoListGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.selectRow);
             this.stokDepoListGridView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.stokDepoListGridView_CellMouseDown);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.düzenleToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(117, 26);
+            // 
+            // düzenleToolStripMenuItem
+            // 
+            this.düzenleToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("düzenleToolStripMenuItem.Image")));
+            this.düzenleToolStripMenuItem.Name = "düzenleToolStripMenuItem";
+            this.düzenleToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.düzenleToolStripMenuItem.Text = "Düzenle";
+            this.düzenleToolStripMenuItem.Click += new System.EventHandler(this.düzenleToolStripMenuItem_Click);
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -201,20 +216,6 @@
             this.label2.TabIndex = 20;
             this.label2.Text = "BIRIM";
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.düzenleToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(117, 26);
-            // 
-            // düzenleToolStripMenuItem
-            // 
-            this.düzenleToolStripMenuItem.Name = "düzenleToolStripMenuItem";
-            this.düzenleToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
-            this.düzenleToolStripMenuItem.Text = "Düzenle";
-            this.düzenleToolStripMenuItem.Click += new System.EventHandler(this.düzenleToolStripMenuItem_Click);
-            // 
             // StokDepoListesi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -234,6 +235,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StokDepoListesi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SMOOTHSISI [ STOK DEPO LİSTESİ ]";
             this.Load += new System.EventHandler(this.StokDepoListesi_Load);
             this.toolStrip1.ResumeLayout(false);

@@ -201,6 +201,7 @@
             this.gercekKisiRadio.TabStop = true;
             this.gercekKisiRadio.Text = "GERÇEK KİŞİ";
             this.gercekKisiRadio.UseVisualStyleBackColor = true;
+            this.gercekKisiRadio.CheckedChanged += new System.EventHandler(this.gercekKisiRadio_CheckedChanged);
             // 
             // label14
             // 
@@ -494,6 +495,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CariOlustur";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SMOOTHSIS [ CARI KAYDI OLUSTUR ]";
             this.Load += new System.EventHandler(this.CariOlustur_Load);
             this.toolStrip1.ResumeLayout(false);

@@ -53,6 +53,7 @@
             this.UretimKaydiOlusturToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.siparişİSevkEtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sevkListesiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.siparisListGridView)).BeginInit();
@@ -265,15 +266,17 @@
             // siparisListesiMenu
             // 
             this.siparisListesiMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sevkListesiToolStripMenuItem,
+            this.toolStripSeparator1,
             this.UretimKaydiOlusturToolStripMenuItem,
-            this.siparişİSevkEtToolStripMenuItem,
-            this.sevkListesiToolStripMenuItem});
+            this.siparişİSevkEtToolStripMenuItem});
             this.siparisListesiMenu.Name = "siparisListesiMenu";
-            this.siparisListesiMenu.Size = new System.Drawing.Size(185, 92);
+            this.siparisListesiMenu.Size = new System.Drawing.Size(185, 76);
             this.siparisListesiMenu.Opening += new System.ComponentModel.CancelEventHandler(this.siparisListesiMenu_Opening);
             // 
             // UretimKaydiOlusturToolStripMenuItem
             // 
+            this.UretimKaydiOlusturToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("UretimKaydiOlusturToolStripMenuItem.Image")));
             this.UretimKaydiOlusturToolStripMenuItem.Name = "UretimKaydiOlusturToolStripMenuItem";
             this.UretimKaydiOlusturToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.UretimKaydiOlusturToolStripMenuItem.Text = "Üretim Paneline Giriş";
@@ -281,6 +284,7 @@
             // 
             // siparişİSevkEtToolStripMenuItem
             // 
+            this.siparişİSevkEtToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("siparişİSevkEtToolStripMenuItem.Image")));
             this.siparişİSevkEtToolStripMenuItem.Name = "siparişİSevkEtToolStripMenuItem";
             this.siparişİSevkEtToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.siparişİSevkEtToolStripMenuItem.Text = "Sipariş\' i Sevk Et";
@@ -288,10 +292,16 @@
             // 
             // sevkListesiToolStripMenuItem
             // 
+            this.sevkListesiToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("sevkListesiToolStripMenuItem.Image")));
             this.sevkListesiToolStripMenuItem.Name = "sevkListesiToolStripMenuItem";
             this.sevkListesiToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.sevkListesiToolStripMenuItem.Text = "Sevk Listesi";
             this.sevkListesiToolStripMenuItem.Click += new System.EventHandler(this.sevkListesiToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(181, 6);
             // 
             // SiparisListesi
             // 
@@ -304,6 +314,7 @@
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SiparisListesi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SMOOTHSIS [ SİPARİŞ LİSTESİ ]";
             this.Load += new System.EventHandler(this.SiparisListesi_Load);
             this.groupBox2.ResumeLayout(false);
@@ -340,5 +351,6 @@
         private System.Windows.Forms.ToolStripMenuItem UretimKaydiOlusturToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem siparişİSevkEtToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sevkListesiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }

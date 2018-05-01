@@ -208,6 +208,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StokTransferListesi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SMOOTHSIS [ STOK TRANSFER LİSTESİ ]";
             this.Load += new System.EventHandler(this.StokTransferListesi_Load);
             this.groupBox2.ResumeLayout(false);

@@ -32,9 +32,9 @@ namespace smoothsis
             sqlCmd.Parameters.AddWithValue("@siparis_inckey", Convert.ToInt32(selectedSiparisItem[0].Value.ToString()));
             SqlDataReader reader = sqlCmd.ExecuteReader();
             reader.Read();
-            totalUretimMiktar = (decimal)reader["TOTAL"];
-            string siparisKod = (string)reader["SIPARIS_KOD"];
-            string birim = (string)reader["MIKTAR_BIRIM"];
+            totalUretimMiktar = decimal.Parse(reader["TOTAL"].ToString());
+            string siparisKod = reader["SIPARIS_KOD"].ToString();
+            string birim = reader["MIKTAR_BIRIM"].ToString();
             txtSevkMiktari.Text = totalUretimMiktar.ToString() + " " + birim;
             txtSiparisKod.Text = siparisKod;
         }

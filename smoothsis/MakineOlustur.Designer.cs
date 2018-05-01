@@ -166,6 +166,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MakineOlustur";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SMOOTHSIS [ MAKİNE OLUŞTUR ]";
             this.Load += new System.EventHandler(this.MakineOlustur_Load);
             this.toolStrip1.ResumeLayout(false);

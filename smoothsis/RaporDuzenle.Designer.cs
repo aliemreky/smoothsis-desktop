@@ -440,6 +440,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RaporDuzenle";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SMOOTHSIS [ RAPOR DÜZENLE ]";
             this.Load += new System.EventHandler(this.RaporDuzenle_Load);
             this.toolStrip1.ResumeLayout(false);

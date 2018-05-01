@@ -166,6 +166,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DepoDuzenle";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SMOOTHSIS [ DEPO DÜZENLE ]";
             this.Load += new System.EventHandler(this.DepoDuzenle_Load);
             this.toolStrip1.ResumeLayout(false);

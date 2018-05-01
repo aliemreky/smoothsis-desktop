@@ -109,7 +109,7 @@ namespace smoothsis
                                 }
 
                                 string EmailSubject = DateTime.Now.ToString("dd MMMM yyyy, dddd", CultureInfo.CreateSpecificCulture("tr-TR")) + " TARİHLİ ÜRETİM RAPORU";
-                                string EmailBody = "BESLENEN MİKTAR: " + txtBeslenenMiktar.Text +
+                                string EmailBody = "BESLENEN MİKTAR: " + txtBeslenenMiktar.Text + "\n" +
                                     "ÜRETİLEN MİKTAR: " + txtUretilenMiktar.Text + "\n" +
                                     "FİRE MİKTARI: " + txtFireMiktar.Text + "\n" +
                                     "FİRE NEDENİ: " + txtFireNedeni.Text + "\n" +

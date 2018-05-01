@@ -52,6 +52,7 @@
             // 
             // duzenleToolStripMenuItem
             // 
+            this.duzenleToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("duzenleToolStripMenuItem.Image")));
             this.duzenleToolStripMenuItem.Name = "duzenleToolStripMenuItem";
             this.duzenleToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.duzenleToolStripMenuItem.Text = "Düzenle";
@@ -126,6 +127,7 @@
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MakineListesi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SMOOTHSIS [ MAKİNE LİSTESİ ]";
             this.Load += new System.EventHandler(this.MakineListesi_Load);
             this.contextMenuStrip1.ResumeLayout(false);

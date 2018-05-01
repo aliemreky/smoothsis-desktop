@@ -34,21 +34,21 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.iptalButton = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtEmailHost = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtEmailPort = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtEmailGonderenMail = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtEmailGonderenSifre = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtEmailGonderAdSoyad = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.btnListEkle = new System.Windows.Forms.Button();
             this.listGonderilecekAdresler = new System.Windows.Forms.ListBox();
             this.txtListEkle = new System.Windows.Forms.TextBox();
+            this.txtEmailGonderenSifre = new System.Windows.Forms.TextBox();
+            this.txtEmailGonderAdSoyad = new System.Windows.Forms.TextBox();
+            this.txtEmailGonderenMail = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnListEkle = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtEmailPort = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtEmailHost = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -121,94 +121,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "E-Posta Ayarları";
             // 
-            // txtEmailHost
+            // btnListEkle
             // 
-            this.txtEmailHost.Location = new System.Drawing.Point(140, 26);
-            this.txtEmailHost.Name = "txtEmailHost";
-            this.txtEmailHost.Size = new System.Drawing.Size(291, 23);
-            this.txtEmailHost.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 15);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Email Host";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 64);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 15);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Email Port";
-            // 
-            // txtEmailPort
-            // 
-            this.txtEmailPort.Location = new System.Drawing.Point(140, 61);
-            this.txtEmailPort.Name = "txtEmailPort";
-            this.txtEmailPort.Size = new System.Drawing.Size(291, 23);
-            this.txtEmailPort.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 135);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 15);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Gönderen Mail";
-            // 
-            // txtEmailGonderenMail
-            // 
-            this.txtEmailGonderenMail.Location = new System.Drawing.Point(140, 132);
-            this.txtEmailGonderenMail.Name = "txtEmailGonderenMail";
-            this.txtEmailGonderenMail.Size = new System.Drawing.Size(291, 23);
-            this.txtEmailGonderenMail.TabIndex = 4;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 171);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 15);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Gönderen Şifre";
-            // 
-            // txtEmailGonderenSifre
-            // 
-            this.txtEmailGonderenSifre.Location = new System.Drawing.Point(140, 168);
-            this.txtEmailGonderenSifre.Name = "txtEmailGonderenSifre";
-            this.txtEmailGonderenSifre.Size = new System.Drawing.Size(291, 23);
-            this.txtEmailGonderenSifre.TabIndex = 5;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 101);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(113, 15);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Gönderen Ad Soyad";
-            // 
-            // txtEmailGonderAdSoyad
-            // 
-            this.txtEmailGonderAdSoyad.Location = new System.Drawing.Point(140, 98);
-            this.txtEmailGonderAdSoyad.Name = "txtEmailGonderAdSoyad";
-            this.txtEmailGonderAdSoyad.Size = new System.Drawing.Size(291, 23);
-            this.txtEmailGonderAdSoyad.TabIndex = 3;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(21, 203);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(154, 15);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Email Gönderilecek Adresler";
+            this.btnListEkle.Location = new System.Drawing.Point(350, 330);
+            this.btnListEkle.Name = "btnListEkle";
+            this.btnListEkle.Size = new System.Drawing.Size(81, 24);
+            this.btnListEkle.TabIndex = 7;
+            this.btnListEkle.Text = "EKLE";
+            this.btnListEkle.UseVisualStyleBackColor = true;
+            this.btnListEkle.Click += new System.EventHandler(this.btnListEkle_Click);
             // 
             // listGonderilecekAdresler
             // 
@@ -228,6 +149,36 @@
             this.txtListEkle.TabIndex = 6;
             this.txtListEkle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtListEkle_KeyPress);
             // 
+            // txtEmailGonderenSifre
+            // 
+            this.txtEmailGonderenSifre.Location = new System.Drawing.Point(140, 168);
+            this.txtEmailGonderenSifre.Name = "txtEmailGonderenSifre";
+            this.txtEmailGonderenSifre.Size = new System.Drawing.Size(291, 23);
+            this.txtEmailGonderenSifre.TabIndex = 5;
+            // 
+            // txtEmailGonderAdSoyad
+            // 
+            this.txtEmailGonderAdSoyad.Location = new System.Drawing.Point(140, 98);
+            this.txtEmailGonderAdSoyad.Name = "txtEmailGonderAdSoyad";
+            this.txtEmailGonderAdSoyad.Size = new System.Drawing.Size(291, 23);
+            this.txtEmailGonderAdSoyad.TabIndex = 3;
+            // 
+            // txtEmailGonderenMail
+            // 
+            this.txtEmailGonderenMail.Location = new System.Drawing.Point(140, 132);
+            this.txtEmailGonderenMail.Name = "txtEmailGonderenMail";
+            this.txtEmailGonderenMail.Size = new System.Drawing.Size(291, 23);
+            this.txtEmailGonderenMail.TabIndex = 4;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(21, 203);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(154, 15);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Email Gönderilecek Adresler";
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -236,15 +187,64 @@
             this.label7.Size = new System.Drawing.Size(0, 15);
             this.label7.TabIndex = 2;
             // 
-            // btnListEkle
+            // label4
             // 
-            this.btnListEkle.Location = new System.Drawing.Point(350, 330);
-            this.btnListEkle.Name = "btnListEkle";
-            this.btnListEkle.Size = new System.Drawing.Size(81, 24);
-            this.btnListEkle.TabIndex = 7;
-            this.btnListEkle.Text = "EKLE";
-            this.btnListEkle.UseVisualStyleBackColor = true;
-            this.btnListEkle.Click += new System.EventHandler(this.btnListEkle_Click);
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(21, 171);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(86, 15);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Gönderen Şifre";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(21, 101);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(113, 15);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Gönderen Ad Soyad";
+            // 
+            // txtEmailPort
+            // 
+            this.txtEmailPort.Location = new System.Drawing.Point(140, 61);
+            this.txtEmailPort.Name = "txtEmailPort";
+            this.txtEmailPort.Size = new System.Drawing.Size(291, 23);
+            this.txtEmailPort.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(21, 135);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(85, 15);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Gönderen Mail";
+            // 
+            // txtEmailHost
+            // 
+            this.txtEmailHost.Location = new System.Drawing.Point(140, 26);
+            this.txtEmailHost.Name = "txtEmailHost";
+            this.txtEmailHost.Size = new System.Drawing.Size(291, 23);
+            this.txtEmailHost.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(21, 64);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(61, 15);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Email Port";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(18, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 15);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Email Host";
             // 
             // EmailAyarlari
             // 
@@ -257,6 +257,7 @@
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EmailAyarlari";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SMOOTHSIS [ E-POSTA PANELİ ]";
             this.Load += new System.EventHandler(this.EmailAyarlari_Load);
             this.toolStrip1.ResumeLayout(false);

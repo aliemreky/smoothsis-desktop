@@ -236,6 +236,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "KullaniciOlustur";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SMOOTHSIS [ KULLANICI OLUŞTUR]";
             this.Load += new System.EventHandler(this.KullaniciOlustur_Load);
             this.groupBox1.ResumeLayout(false);

@@ -197,6 +197,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Grup";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SMOOTHSIS [ GRUP ]";
             this.Load += new System.EventHandler(this.Grup_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grupList)).EndInit();

@@ -85,6 +85,7 @@
             // 
             // duzenleToolStripMenuItem
             // 
+            this.duzenleToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("duzenleToolStripMenuItem.Image")));
             this.duzenleToolStripMenuItem.Name = "duzenleToolStripMenuItem";
             this.duzenleToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.duzenleToolStripMenuItem.Text = "Düzenle";
@@ -109,9 +110,9 @@
             // 
             // btnOperatorListesiGetir
             // 
-            this.btnOperatorListesiGetir.Location = new System.Drawing.Point(605, 30);
+            this.btnOperatorListesiGetir.Location = new System.Drawing.Point(605, 36);
             this.btnOperatorListesiGetir.Name = "btnOperatorListesiGetir";
-            this.btnOperatorListesiGetir.Size = new System.Drawing.Size(179, 41);
+            this.btnOperatorListesiGetir.Size = new System.Drawing.Size(179, 35);
             this.btnOperatorListesiGetir.TabIndex = 24;
             this.btnOperatorListesiGetir.TabStop = false;
             this.btnOperatorListesiGetir.Text = "LİSTEYİ YENİLE";
@@ -187,6 +188,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "OperatorListesi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SMOOTHSIS [ OPERATÖR LİSTESİ ]";
             this.Load += new System.EventHandler(this.OperatorListesi_Load);
             this.groupBox2.ResumeLayout(false);

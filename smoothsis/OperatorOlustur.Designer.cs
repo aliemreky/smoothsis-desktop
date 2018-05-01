@@ -188,6 +188,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "OperatorOlustur";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SMOOTHSISI [ OPERATÖR OLUŞTUR ]";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.OperatorOlustur_Load);

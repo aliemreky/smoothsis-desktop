@@ -169,6 +169,7 @@
             // 
             // düzenleToolStripMenuItem
             // 
+            this.düzenleToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("düzenleToolStripMenuItem.Image")));
             this.düzenleToolStripMenuItem.Name = "düzenleToolStripMenuItem";
             this.düzenleToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.düzenleToolStripMenuItem.Text = "Düzenle";
@@ -186,6 +187,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SevkListesi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SMOOTHSIS [ SEVK LİSTESİ ]";
             this.Load += new System.EventHandler(this.SevkListesi_Load);
             this.groupBox2.ResumeLayout(false);

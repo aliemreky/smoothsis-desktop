@@ -32,15 +32,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IslemListesi));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.islemListGridView = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.duzenleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtAramaIslemAdi = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.duzenleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.islemListGridView)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -70,6 +70,20 @@
             this.islemListGridView.VirtualMode = true;
             this.islemListGridView.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.showIslem);
             this.islemListGridView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.islemListGridView_CellMouseDown);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.duzenleToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(117, 26);
+            // 
+            // duzenleToolStripMenuItem
+            // 
+            this.duzenleToolStripMenuItem.Name = "duzenleToolStripMenuItem";
+            this.duzenleToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.duzenleToolStripMenuItem.Text = "Düzenle";
+            this.duzenleToolStripMenuItem.Click += new System.EventHandler(this.makineDuzenleToolStripMenuItem_Click);
             // 
             // groupBox1
             // 
@@ -103,20 +117,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "İŞLEM ADI";
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.duzenleToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(117, 26);
-            // 
-            // duzenleToolStripMenuItem
-            // 
-            this.duzenleToolStripMenuItem.Name = "duzenleToolStripMenuItem";
-            this.duzenleToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
-            this.duzenleToolStripMenuItem.Text = "Düzenle";
-            this.duzenleToolStripMenuItem.Click += new System.EventHandler(this.makineDuzenleToolStripMenuItem_Click);
-            // 
             // IslemListesi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -129,13 +129,14 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "IslemListesi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SMOOTHSIS [ İŞLEM LİSTESİ ]";
             this.Load += new System.EventHandler(this.IslemListesi_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.islemListGridView)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -297,6 +297,12 @@
     <Compile Include="StokOlustur.Designer.cs">
       <DependentUpon>StokOlustur.cs</DependentUpon>
     </Compile>
+    <Compile Include="StokRaporu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StokRaporu.Designer.cs">
+      <DependentUpon>StokRaporu.cs</DependentUpon>
+    </Compile>
     <Compile Include="StokTransfer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -445,6 +451,9 @@
     <EmbeddedResource Include="StokOlustur.resx">
       <DependentUpon>StokOlustur.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="StokRaporu.resx">
+      <DependentUpon>StokRaporu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StokTransfer.resx">
       <DependentUpon>StokTransfer.cs</DependentUpon>
     </EmbeddedResource>
@@ -475,6 +484,7 @@
     <None Include="assets\icons\ic_delete_forever_black_24dp_1x.png" />
     <None Include="assets\icons\ic_highlight_off_black_24dp_1x.png" />
     <None Include="assets\icons\ic_dns_black_24dp_1x.png" />
+    <None Include="assets\icons\multiple-users-silhouette.png" />
     <Content Include="sm-logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
