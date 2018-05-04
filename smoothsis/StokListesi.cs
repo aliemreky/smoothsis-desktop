@@ -190,5 +190,10 @@ namespace smoothsis
         {
             stokListGridView.ClearSelection();
         }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+            e.Cancel = this.stokListGridView.Rows.Count <= 0 || this.stokListGridView.SelectedRows.Count <= 0;
+        }
     }
 }

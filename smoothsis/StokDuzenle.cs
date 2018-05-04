@@ -46,7 +46,7 @@ namespace smoothsis
             txtStokAdi.Text = cellsOfSelectedItem[2].Value.ToString();
             cbMiktarBirim.SelectedIndex = cbMiktarBirim.FindString(cellsOfSelectedItem[3].Value.ToString());
             txtBirimFiyat.Text = cellsOfSelectedItem[5].Value.ToString();
-            cbKdv.SelectedIndex = cbKdv.FindStringExact(Convert.ToBoolean(cellsOfSelectedItem[6].Value.ToString()) == true ? GetDesc.GetEnumDescription(KDV.Dahil) : GetDesc.GetEnumDescription(KDV.DahilDegil));
+            cbKdv.SelectedIndex = cbKdv.FindStringExact(Convert.ToBoolean(cellsOfSelectedItem[6].Value.ToString())? GetDesc.GetEnumDescription(KDV.Dahil) : GetDesc.GetEnumDescription(KDV.DahilDegil));
 
             dtpGelisTarih.Value = DateTime.Parse(cellsOfSelectedItem[7].Value.ToString());
             txtAmbalajBilgi.Text = cellsOfSelectedItem[8].Value.ToString();

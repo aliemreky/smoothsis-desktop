@@ -95,26 +95,27 @@
             this.stokDepoListesiToolStripMenuItem,
             this.stokSiparişListesiToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(170, 76);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 98);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // stokDuzenleToolStripMenuItem
             // 
             this.stokDuzenleToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("stokDuzenleToolStripMenuItem.Image")));
             this.stokDuzenleToolStripMenuItem.Name = "stokDuzenleToolStripMenuItem";
-            this.stokDuzenleToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.stokDuzenleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.stokDuzenleToolStripMenuItem.Text = "Düzenle";
             this.stokDuzenleToolStripMenuItem.Click += new System.EventHandler(this.stokDuzenleToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(166, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // stokDepoListesiToolStripMenuItem
             // 
             this.stokDepoListesiToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("stokDepoListesiToolStripMenuItem.Image")));
             this.stokDepoListesiToolStripMenuItem.Name = "stokDepoListesiToolStripMenuItem";
-            this.stokDepoListesiToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.stokDepoListesiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.stokDepoListesiToolStripMenuItem.Text = "Stok Depo Listesi";
             this.stokDepoListesiToolStripMenuItem.Click += new System.EventHandler(this.stokDepoListesiToolStripMenuItem_Click);
             // 
@@ -122,7 +123,7 @@
             // 
             this.stokSiparişListesiToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("stokSiparişListesiToolStripMenuItem.Image")));
             this.stokSiparişListesiToolStripMenuItem.Name = "stokSiparişListesiToolStripMenuItem";
-            this.stokSiparişListesiToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.stokSiparişListesiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.stokSiparişListesiToolStripMenuItem.Text = "Stok Sipariş Listesi";
             this.stokSiparişListesiToolStripMenuItem.Click += new System.EventHandler(this.stokSiparisListesiToolStripMenuItem_Click);
             // 

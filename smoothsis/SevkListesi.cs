@@ -115,5 +115,10 @@ namespace smoothsis
                 Notification.messageBoxError("BİR SORUN OLUŞTU, KAYIT SEÇİLEMEDİ !");
             }
         }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+            e.Cancel = this.sevkListGridView.Rows.Count <= 0 || this.sevkListGridView.SelectedRows.Count <= 0;
+        }
     }
 }

@@ -36,6 +36,7 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.iptalButton = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtMiktarBirim = new System.Windows.Forms.TextBox();
             this.txtMiktar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
@@ -56,7 +57,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(10, 1, 2, 1);
-            this.toolStrip1.Size = new System.Drawing.Size(455, 32);
+            this.toolStrip1.Size = new System.Drawing.Size(389, 32);
             this.toolStrip1.TabIndex = 15;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -104,21 +105,35 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtMiktarBirim);
             this.groupBox1.Controls.Add(this.txtMiktar);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(13, 42);
+            this.groupBox1.Location = new System.Drawing.Point(9, 41);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(434, 70);
+            this.groupBox1.Size = new System.Drawing.Size(367, 70);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Stok Miktarı Güncelle";
+            // 
+            // txtMiktarBirim
+            // 
+            this.txtMiktarBirim.Enabled = false;
+            this.txtMiktarBirim.Location = new System.Drawing.Point(282, 28);
+            this.txtMiktarBirim.Multiline = true;
+            this.txtMiktarBirim.Name = "txtMiktarBirim";
+            this.txtMiktarBirim.ReadOnly = true;
+            this.txtMiktarBirim.Size = new System.Drawing.Size(65, 25);
+            this.txtMiktarBirim.TabIndex = 2;
+            this.txtMiktarBirim.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtMiktar
             // 
-            this.txtMiktar.Location = new System.Drawing.Point(106, 28);
+            this.txtMiktar.Location = new System.Drawing.Point(91, 28);
             this.txtMiktar.Multiline = true;
             this.txtMiktar.Name = "txtMiktar";
-            this.txtMiktar.Size = new System.Drawing.Size(314, 25);
+            this.txtMiktar.Size = new System.Drawing.Size(185, 25);
             this.txtMiktar.TabIndex = 1;
+            this.txtMiktar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMiktar_KeyPress);
             // 
             // label2
             // 
@@ -126,16 +141,16 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.Location = new System.Drawing.Point(6, 31);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 15);
+            this.label2.Size = new System.Drawing.Size(79, 15);
             this.label2.TabIndex = 0;
-            this.label2.Text = "STOK MİKTARI *";
+            this.label2.Text = "Stok Miktarı *";
             // 
             // StokDepoDuzenle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(455, 123);
+            this.ClientSize = new System.Drawing.Size(389, 123);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -165,5 +180,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtMiktar;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtMiktarBirim;
     }
 }
