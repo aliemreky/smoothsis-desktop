@@ -31,12 +31,19 @@ namespace smoothsis
             sqlCmd.CommandType = CommandType.StoredProcedure;
             sqlCmd.Parameters.AddWithValue("@siparis_inckey", Convert.ToInt32(selectedSiparisItem[0].Value.ToString()));
             SqlDataReader reader = sqlCmd.ExecuteReader();
-            reader.Read();
-            totalUretimMiktar = decimal.Parse(reader["TOTAL"].ToString());
-            string siparisKod = reader["SIPARIS_KOD"].ToString();
-            string birim = reader["MIKTAR_BIRIM"].ToString();
-            txtSevkMiktari.Text = totalUretimMiktar.ToString() + " " + birim;
-            txtSiparisKod.Text = siparisKod;
+            if (reader.HasRows)
+            {
+                reader.Read();
+                totalUretimMiktar = decimal.Parse(reader["TOTAL"].ToString());
+                string siparisKod = reader["SIPARIS_KOD"].ToString();
+                string birim = reader["MIKTAR_BIRIM"].ToString();
+                txtSevkMiktari.Text = totalUretimMiktar.ToString() + " " + birim;
+                txtSiparisKod.Text = siparisKod;
+            } else
+            {
+                Notification.messageBoxError("SON SEVK TEN SONRA HERHANGİ BİR RAPOR GİRİLMEMİŞ.");
+                this.Close();
+            }
         }
 
         private void kaydetBttn_Click(object sender, EventArgs e)
@@ -50,13 +57,15 @@ namespace smoothsis
             {
                 try
                 {
-                    string bugunSevkVarmiSQL = "SELECT COUNT(SEVK_INCKEY) FROM SEVK " +
-                        "WHERE SIPARIS_INCKEY = @siparis_inckey AND SEVK = @sevk_tarih";
+                    string bugunSevkVarmiSQL = "SELECT COUNT(SEVK_INCKEY) COUNT_RESULT FROM SEVK " +
+                        "WHERE SIPARIS_INCKEY = @siparis_inckey AND SEVK_TARIH = @sevk_tarih";
                     sqlCmd = new SqlCommand(bugunSevkVarmiSQL, Program.connection);
                     sqlCmd.Parameters.Add("@siparis_inckey", SqlDbType.Int).Value = Convert.ToInt32(selectedSiparisItem[0].Value.ToString());
                     sqlCmd.Parameters.Add("@sevk_tarih", SqlDbType.Date).Value = dtpSevkTarih.Value;
+                    SqlDataReader reader = sqlCmd.ExecuteReader();
+                    reader.Read();
 
-                    if (sqlCmd.ExecuteNonQuery() == 0)
+                    if (((int) reader["COUNT_RESULT"]) == 0)
                     {
                         string sevkOlusturSQL = "INSERT INTO " +
                             "SEVK(SIPARIS_INCKEY, IRSALIYE_NO, SEVK_MIKTAR, SEVK_TARIH, SEVK_NOT) " +

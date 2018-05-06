@@ -65,7 +65,9 @@ namespace smoothsis
                             (result != -1) && (Convert.ToDecimal(selectedUretim[8].Value.ToString()) >= (result + decimal.Parse(txtUretilenMiktar.Text)))
                             )
                         {
-
+                            int urInckey = Convert.ToInt32(selectedUretim[0].Value.ToString());
+                            decimal beslenenMiktar = decimal.Parse(txtBeslenenMiktar.Text);
+                            decimal uretilenMiktar = decimal.Parse(txtUretilenMiktar.Text);
                             sqlCmd = Program.connection.CreateCommand();
                             sqlCmd.CommandText = "INSERT INTO " +
                                 "RAPOR(UR_INCKEY, RAPOR_TARIH, RAPOR_VARDIYA, " +
@@ -75,11 +77,11 @@ namespace smoothsis
                                 "VALUES(@ur_inckey, @rapor_tarih, @rapor_vardiya, " +
                                 "@beslenen_mik, @uretilen_mik, @fire_mik, @fire_nedeni, @iskarta_mik, " +
                                 "@iskarta_nedeni, @kayit_yapan_kul, @aciklama)";
-                            sqlCmd.Parameters.Add("@ur_inckey", SqlDbType.Int).Value = Convert.ToInt32(selectedUretim[0].Value.ToString());
+                            sqlCmd.Parameters.Add("@ur_inckey", SqlDbType.Int).Value = urInckey;
                             sqlCmd.Parameters.Add("@rapor_tarih", SqlDbType.Date).Value = dtpRaporTarih.Value;
                             sqlCmd.Parameters.Add("@rapor_vardiya", SqlDbType.VarChar).Value = cbRaporVardiya.SelectedValue.ToString();
-                            sqlCmd.Parameters.Add("@beslenen_mik", SqlDbType.Decimal).Value = decimal.Parse(txtBeslenenMiktar.Text);
-                            sqlCmd.Parameters.Add("@uretilen_mik", SqlDbType.Decimal).Value = decimal.Parse(txtUretilenMiktar.Text);
+                            sqlCmd.Parameters.Add("@beslenen_mik", SqlDbType.Decimal).Value = beslenenMiktar;
+                            sqlCmd.Parameters.Add("@uretilen_mik", SqlDbType.Decimal).Value = uretilenMiktar;
                             sqlCmd.Parameters.Add("@fire_mik", SqlDbType.Decimal).Value = decimal.Parse(txtFireMiktar.Text);
                             sqlCmd.Parameters.Add("@fire_nedeni", SqlDbType.VarChar).Value = txtFireNedeni.Text;
                             sqlCmd.Parameters.Add("@iskarta_mik", SqlDbType.Decimal).Value = decimal.Parse(txtIskartaMiktar.Text);
@@ -91,46 +93,70 @@ namespace smoothsis
 
                             if (raporInckey > 0)
                             {
-                                string emailOperatorler = "";
-                                int operatorCount = 0;
+                                // Reduce uretilen miktar from stok
+                                string getStokDepoInckeyQuery = "SELECT STOK_DEPO.STOK_DEPO_INCKEY, STOK_DEPO.MIKTAR FROM URETIM " +
+                                    "INNER JOIN SIPARIS_DETAY ON SIPARIS_DETAY.SIP_DETAY_INCKEY = URETIM.SIP_DETAY_INCKEY " +
+                                    "INNER JOIN STOK_DEPO ON STOK_DEPO.STOK_DEPO_INCKEY = SIPARIS_DETAY.STOK_DEPO_INCKEY " +
+                                    "WHERE URETIM.UR_INCKEY = @ur_inckey";
+                                sqlCmd = new SqlCommand(getStokDepoInckeyQuery, Program.connection);
+                                sqlCmd.Parameters.Add("@ur_inckey", SqlDbType.Int).Value = urInckey;
+                                SqlDataReader reader = sqlCmd.ExecuteReader();
+                                reader.Read();
+                                int stokDepoInckey = (int)reader["STOK_DEPO_INCKEY"];
+                                decimal initialMiktar = (decimal)reader["MIKTAR"];
 
-                                if (operator_result.Items.Count > 0)
+                                string updateStokDepoQuery = "UPDATE STOK_DEPO SET MIKTAR = @miktar " +
+                                    "WHERE STOK_DEPO_INCKEY = @stok_depo_inckey";
+                                sqlCmd = new SqlCommand(updateStokDepoQuery, Program.connection);
+                                sqlCmd.Parameters.Add("@stok_depo_inckey", SqlDbType.Int).Value = stokDepoInckey;
+                                sqlCmd.Parameters.Add("@miktar", SqlDbType.Decimal).Value = (initialMiktar - beslenenMiktar);
+                                if (sqlCmd.ExecuteNonQuery() > 0)
                                 {
-                                    foreach (ListViewItem operator_result in operator_result.Items)
+
+                                    string emailOperatorler = "";
+                                    int operatorCount = 0;
+
+                                    if (operator_result.Items.Count > 0)
                                     {
-                                        string operatorQuery = "INSERT INTO OPERATOR_TO_RAPOR(OP_INCKEY, RAPOR_INCKEY) VALUES (@op_inckey, @rapor_inckey)";
-                                        sqlCmd = new SqlCommand(operatorQuery, Program.connection);
-                                        sqlCmd.Parameters.Add("@op_inckey", SqlDbType.Int).Value = Convert.ToInt32(operator_result.Text);
-                                        sqlCmd.Parameters.Add("@rapor_inckey", SqlDbType.Int).Value = raporInckey;
-                                        sqlCmd.ExecuteNonQuery();
+                                        foreach (ListViewItem operator_result in operator_result.Items)
+                                        {
+                                            string operatorQuery = "INSERT INTO OPERATOR_TO_RAPOR(OP_INCKEY, RAPOR_INCKEY) VALUES (@op_inckey, @rapor_inckey)";
+                                            sqlCmd = new SqlCommand(operatorQuery, Program.connection);
+                                            sqlCmd.Parameters.Add("@op_inckey", SqlDbType.Int).Value = Convert.ToInt32(operator_result.Text);
+                                            sqlCmd.Parameters.Add("@rapor_inckey", SqlDbType.Int).Value = raporInckey;
+                                            sqlCmd.ExecuteNonQuery();
 
-                                        emailOperatorler += operator_result.SubItems[operatorCount].ToString() + ", ";
+                                            emailOperatorler += operator_result.SubItems[operatorCount].ToString() + ", ";
+                                        }
                                     }
+
+                                    string EmailSubject = DateTime.Now.ToString("dd MMMM yyyy, dddd", CultureInfo.CreateSpecificCulture("tr-TR")) + " TARİHLİ ÜRETİM RAPORU";
+                                    string EmailBody = "BESLENEN MİKTAR: " + txtBeslenenMiktar.Text + "\n" +
+                                        "ÜRETİLEN MİKTAR: " + txtUretilenMiktar.Text + "\n" +
+                                        "FİRE MİKTARI: " + txtFireMiktar.Text + "\n" +
+                                        "FİRE NEDENİ: " + txtFireNedeni.Text + "\n" +
+                                        "ISKARTA MİKTARI: " + txtIskartaMiktar.Text + "\n" +
+                                        "ISKARTA NEDENİ: " + txtIskartaNedeni.Text + "\n" +
+                                        "KAYIT YAPAN KULLANICI: " + Program.kullanici.Item2 + "\n" +
+                                        "RAPOR TARİH: " + dtpRaporTarih.Value.ToString("dd MMMM yyyy, dddd", CultureInfo.CreateSpecificCulture("tr-TR")) + "\n" +
+                                        "OPERATÖRLER: " + emailOperatorler.Substring(0, emailOperatorler.Length - 2) + "\n" +
+                                        "AÇIKLAMA: " + txtAciklama.Text;
+
+                                    Email sendingMail = new Email();
+                                    string sendMail = "";
+                                    if (sendingMail.MultipleEmailSend(EmailSubject, EmailBody))
+                                        sendMail = " VE RAPOR MAİL'İ GÖNDERİLDİ";
+
+                                    Notification.messageBox("RAPOR BAŞARILI BİR ŞEKİLDE OLUŞTURULDU" + sendMail);
+
+                                    temizleBttn.PerformClick();
+
+                                    uretimListesi.siparisListe.Clear();
+                                    uretimListesi.getUretimListesi();
+                                } else
+                                {
+                                    Notification.messageBoxError("BİR SORUN OLUŞTU.");
                                 }
-
-                                string EmailSubject = DateTime.Now.ToString("dd MMMM yyyy, dddd", CultureInfo.CreateSpecificCulture("tr-TR")) + " TARİHLİ ÜRETİM RAPORU";
-                                string EmailBody = "BESLENEN MİKTAR: " + txtBeslenenMiktar.Text + "\n" +
-                                    "ÜRETİLEN MİKTAR: " + txtUretilenMiktar.Text + "\n" +
-                                    "FİRE MİKTARI: " + txtFireMiktar.Text + "\n" +
-                                    "FİRE NEDENİ: " + txtFireNedeni.Text + "\n" +
-                                    "ISKARTA MİKTARI: " + txtIskartaMiktar.Text + "\n" +
-                                    "ISKARTA NEDENİ: " + txtIskartaNedeni.Text + "\n" +
-                                    "KAYIT YAPAN KULLANICI: " + Program.kullanici.Item2 + "\n" +
-                                    "RAPOR TARİH: " + dtpRaporTarih.Value.ToString("dd MMMM yyyy, dddd", CultureInfo.CreateSpecificCulture("tr-TR")) + "\n" +
-                                    "OPERATÖRLER: " + emailOperatorler.Substring(0, emailOperatorler.Length - 2) + "\n" +
-                                    "AÇIKLAMA: " + txtAciklama.Text;
-
-                                Email sendingMail = new Email();
-                                string sendMail = "";
-                                if (sendingMail.MultipleEmailSend(EmailSubject, EmailBody))
-                                    sendMail = " VE RAPOR MAİL'İ GÖNDERİLDİ";
-
-                                Notification.messageBox("RAPOR BAŞARILI BİR ŞEKİLDE OLUŞTURULDU" + sendMail);
-
-                                temizleBttn.PerformClick();
-
-                                uretimListesi.siparisListe.Clear();
-                                uretimListesi.getUretimListesi();
 
                             }
                         }
