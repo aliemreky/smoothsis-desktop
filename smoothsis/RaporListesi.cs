@@ -139,14 +139,28 @@ namespace smoothsis
 
         private void operatorBilgileriToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string query = "SELECT OPERATOR.OP_INCKEY, OPERATOR.ADSOYAD ADI_SOYADI, CASE WHEN OPERATOR.OP_DURUMU = 1 THEN 'Aktif' ELSE 'Pasif' END AS OPERATOR_DURUMU, " +
-                        "FORMAT(OPERATOR.ISE_BAS_TARIH, 'dd.MM.yyyy') ISE_BASLAMA_TARIHI FROM OPERATOR_TO_RAPOR " +
+            string countQuery = "SELECT COUNT(OPERATOR_TO_RAPOR.OP_RAPOR_INCKEY) TOTAL FROM OPERATOR_TO_RAPOR " +
                         "INNER JOIN OPERATOR ON OPERATOR_TO_RAPOR.OP_INCKEY = OPERATOR.OP_INCKEY " +
-                        "WHERE OPERATOR_TO_RAPOR.RAPOR_INCKEY = " + Convert.ToInt32(selectedItem.Item2[0].Value.ToString()) + " ORDER BY OPERATOR.OP_INCKEY DESC";
-            OperatorListesi operatorListesi = new OperatorListesi();
-            operatorListesi.Text = "SMOOTHSIS [ " + selectedItem.Item2[3].Value.ToString() + " VARDİYA RAPORU OPERATÖR LİSTESİ ]";
-            operatorListesi.ShowDialog();
-            operatorListesi.listOperator(query);
+                        "WHERE OPERATOR_TO_RAPOR.RAPOR_INCKEY = " + Convert.ToInt32(selectedItem.Item2[0].Value.ToString());
+            sqlCmd = new SqlCommand(countQuery, Program.connection);
+            SqlDataReader reader = sqlCmd.ExecuteReader();
+            reader.Read();
+            if (((int) reader["TOTAL"]) > 0)
+            {
+                selectedItem = new Tuple<int, DataGridViewCellCollection>(raporListGridView.SelectedRows[0].Index, raporListGridView.SelectedRows[0].Cells);
+                OperatorListesi operatorListesi = new OperatorListesi(this);
+
+                operatorListesi.query = "SELECT OPERATOR.OP_INCKEY, OPERATOR.ADSOYAD ADI_SOYADI, CASE WHEN OPERATOR.OP_DURUMU = 1 THEN 'Aktif' ELSE 'Pasif' END AS OPERATOR_DURUMU, " +
+                            "FORMAT(OPERATOR.ISE_BAS_TARIH, 'dd.MM.yyyy') ISE_BASLAMA_TARIHI FROM OPERATOR_TO_RAPOR " +
+                            "INNER JOIN OPERATOR ON OPERATOR_TO_RAPOR.OP_INCKEY = OPERATOR.OP_INCKEY " +
+                            "WHERE OPERATOR_TO_RAPOR.RAPOR_INCKEY = " + Convert.ToInt32(selectedItem.Item2[0].Value.ToString()) + " ORDER BY OPERATOR.OP_INCKEY DESC";
+                operatorListesi.Text = "SMOOTHSIS [ " + selectedItem.Item2[3].Value.ToString() + " VARDİYA RAPORU OPERATÖR LİSTESİ ]";
+                operatorListesi.ShowDialog();
+            } else
+            {
+                Notification.messageBox("BU RAPORA AİT OPERATÖR BULUNMUYOR.");
+            }
+            
         }
 
         private void RaporListesi_Shown(object sender, EventArgs e)

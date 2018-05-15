@@ -18,6 +18,7 @@ namespace smoothsis
         private Tuple<int, DataGridViewCellCollection> selectedItem;
         private RaporOlustur raporOlustur;
         private RaporDuzenle raporDuzenle;
+        public string query = null;
 
         public OperatorListesi(Form rapor = null)
         {
@@ -28,7 +29,7 @@ namespace smoothsis
             } else if (rapor is RaporDuzenle)
             {
                 this.raporDuzenle = (RaporDuzenle)rapor;
-            }
+            } 
 
         }
 
@@ -39,17 +40,17 @@ namespace smoothsis
             listOperator();
         }
 
-        public void listOperator(string query = null)
+        public void listOperator()
         {
             try
             {
                 DataTable operatorListDTable = new DataTable();
-                if (query == null)
+                if (this.query == null)
                 {
-                    query = "SELECT OP_INCKEY, ADSOYAD ADI_SOYADI, FORMAT(ISE_BAS_TARIH, 'dd.MM.yyyy') ISE_BASLAMA_TARIHI, CASE WHEN OP_DURUMU = 1 THEN 'Aktif' ELSE 'Pasif' END AS OPERATOR_DURUMU " +
+                    this.query = "SELECT OP_INCKEY, ADSOYAD ADI_SOYADI, FORMAT(ISE_BAS_TARIH, 'dd.MM.yyyy') ISE_BASLAMA_TARIHI, CASE WHEN OP_DURUMU = 1 THEN 'Aktif' ELSE 'Pasif' END AS OPERATOR_DURUMU " +
                         "FROM OPERATOR " +
                         "ORDER BY OP_INCKEY DESC";
-                }
+                } 
                 SqlCommand command = new SqlCommand(query, Program.connection);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(operatorListDTable);
