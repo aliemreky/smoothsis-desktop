@@ -155,6 +155,7 @@
             // dtpRaporTarih
             // 
             this.dtpRaporTarih.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dtpRaporTarih.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpRaporTarih.Location = new System.Drawing.Point(136, 27);
             this.dtpRaporTarih.MinimumSize = new System.Drawing.Size(4, 23);
             this.dtpRaporTarih.Name = "dtpRaporTarih";

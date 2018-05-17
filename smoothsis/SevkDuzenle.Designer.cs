@@ -36,8 +36,6 @@
             this.txtSevkMiktari = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtSiparisKod = new System.Windows.Forms.TextBox();
-            this.dtpSevkTarih = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
             this.txtIrsaliyeNo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -58,13 +56,11 @@
             this.groupBox1.Controls.Add(this.txtSevkMiktari);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.txtSiparisKod);
-            this.groupBox1.Controls.Add(this.dtpSevkTarih);
-            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtIrsaliyeNo);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(9, 31);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(822, 168);
+            this.groupBox1.Size = new System.Drawing.Size(822, 131);
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             // 
@@ -74,7 +70,7 @@
             this.txtSevkNotu.Location = new System.Drawing.Point(509, 19);
             this.txtSevkNotu.Multiline = true;
             this.txtSevkNotu.Name = "txtSevkNotu";
-            this.txtSevkNotu.Size = new System.Drawing.Size(306, 136);
+            this.txtSevkNotu.Size = new System.Drawing.Size(306, 99);
             this.txtSevkNotu.TabIndex = 19;
             // 
             // label2
@@ -126,25 +122,6 @@
             this.txtSiparisKod.ReadOnly = true;
             this.txtSiparisKod.Size = new System.Drawing.Size(305, 23);
             this.txtSiparisKod.TabIndex = 0;
-            // 
-            // dtpSevkTarih
-            // 
-            this.dtpSevkTarih.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dtpSevkTarih.Location = new System.Drawing.Point(103, 132);
-            this.dtpSevkTarih.MinimumSize = new System.Drawing.Size(4, 23);
-            this.dtpSevkTarih.Name = "dtpSevkTarih";
-            this.dtpSevkTarih.Size = new System.Drawing.Size(306, 23);
-            this.dtpSevkTarih.TabIndex = 4;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.Location = new System.Drawing.Point(22, 138);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 15);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "SEVK TARİHİ";
             // 
             // txtIrsaliyeNo
             // 
@@ -229,7 +206,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(839, 205);
+            this.ClientSize = new System.Drawing.Size(839, 168);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -257,8 +234,6 @@
         private System.Windows.Forms.TextBox txtSevkMiktari;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtSiparisKod;
-        private System.Windows.Forms.DateTimePicker dtpSevkTarih;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtIrsaliyeNo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStrip toolStrip1;

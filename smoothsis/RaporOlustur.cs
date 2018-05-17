@@ -78,7 +78,7 @@ namespace smoothsis
                                 "@beslenen_mik, @uretilen_mik, @fire_mik, @fire_nedeni, @iskarta_mik, " +
                                 "@iskarta_nedeni, @kayit_yapan_kul, @aciklama)";
                             sqlCmd.Parameters.Add("@ur_inckey", SqlDbType.Int).Value = urInckey;
-                            sqlCmd.Parameters.Add("@rapor_tarih", SqlDbType.Date).Value = dtpRaporTarih.Value;
+                            sqlCmd.Parameters.Add("@rapor_tarih", SqlDbType.DateTime).Value = dtpRaporTarih.Value;
                             sqlCmd.Parameters.Add("@rapor_vardiya", SqlDbType.VarChar).Value = cbRaporVardiya.SelectedValue.ToString();
                             sqlCmd.Parameters.Add("@beslenen_mik", SqlDbType.Decimal).Value = beslenenMiktar;
                             sqlCmd.Parameters.Add("@uretilen_mik", SqlDbType.Decimal).Value = uretilenMiktar;
@@ -196,6 +196,7 @@ namespace smoothsis
 
         private void RaporOlustur_Load(object sender, EventArgs e)
         {
+            dtpRaporTarih.CustomFormat = "dd MMMM yyyy HH:mm";
             txtBeslenenMiktar.Text = "0,000";
             txtUretilenMiktar.Text = "0,000";
             txtFireMiktar.Text = "0,000";
