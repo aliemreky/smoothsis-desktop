@@ -18,14 +18,14 @@ namespace smoothsis
     {
         private SqlCommand sqlCmd;
         private List<Operator> selectedOperators = new List<Operator>();
-        private DataGridViewCellCollection selectedUretim;
+        private static DataGridViewCellCollection selectedUretim;
         private UretimListesi uretimListesi;
 
         public RaporOlustur(UretimListesi uretimListesi)
         {
             InitializeComponent();
             this.uretimListesi = uretimListesi;
-            selectedUretim = this.uretimListesi.getSelectedItem().Item2;
+            RaporOlustur.selectedUretim = this.uretimListesi.getSelectedItem().Item2;
         }
 
         private void decimalValidate(object sender, KeyPressEventArgs e)
@@ -50,24 +50,25 @@ namespace smoothsis
                 {
                     try
                     {
-
                         sqlCmd = new SqlCommand("dbo.Kalan_Uretim_Mik", Program.connection);
                         sqlCmd.CommandType = CommandType.StoredProcedure;
-                        sqlCmd.Parameters.Add("@ur_inckey", SqlDbType.Int).Value = Convert.ToInt32(selectedUretim[0].Value.ToString());
+                        sqlCmd.Parameters.Add("@ur_inckey", SqlDbType.Int).Value = Convert.ToInt32(RaporOlustur.selectedUretim[0].Value.ToString());
                         var returnParameter = sqlCmd.Parameters.Add("@rt", SqlDbType.Int);
                         returnParameter.Direction = ParameterDirection.ReturnValue;
                         sqlCmd.ExecuteNonQuery();
                         int result = (int)returnParameter.Value;
 
                         if (
-                            (result == -1) && (Convert.ToDecimal(selectedUretim[8].Value.ToString()) >= decimal.Parse(txtUretilenMiktar.Text))
+                            (result == -1) && (Convert.ToDecimal(RaporOlustur.selectedUretim[8].Value.ToString()) >= decimal.Parse(txtUretilenMiktar.Text))
                             ||
-                            (result != -1) && (Convert.ToDecimal(selectedUretim[8].Value.ToString()) >= (result + decimal.Parse(txtUretilenMiktar.Text)))
+                            (result != -1) && (Convert.ToDecimal(RaporOlustur.selectedUretim[8].Value.ToString()) >= (result + decimal.Parse(txtUretilenMiktar.Text)))
                             )
                         {
-                            int urInckey = Convert.ToInt32(selectedUretim[0].Value.ToString());
+                            int urInckey = Convert.ToInt32(RaporOlustur.selectedUretim[0].Value.ToString());
                             decimal beslenenMiktar = decimal.Parse(txtBeslenenMiktar.Text);
                             decimal uretilenMiktar = decimal.Parse(txtUretilenMiktar.Text);
+                            decimal fireMiktar = decimal.Parse(txtFireMiktar.Text);
+                            decimal iskartaMiktar = decimal.Parse(txtIskartaMiktar.Text);
                             sqlCmd = Program.connection.CreateCommand();
                             sqlCmd.CommandText = "INSERT INTO " +
                                 "RAPOR(UR_INCKEY, RAPOR_TARIH, RAPOR_VARDIYA, " +
@@ -150,9 +151,7 @@ namespace smoothsis
                                     Notification.messageBox("RAPOR BAŞARILI BİR ŞEKİLDE OLUŞTURULDU" + sendMail);
 
                                     temizleBttn.PerformClick();
-
-                                    uretimListesi.siparisListe.Clear();
-                                    uretimListesi.getUretimListesi();
+                                    updateUretimList(uretilenMiktar, beslenenMiktar, fireMiktar, iskartaMiktar);
                                 } else
                                 {
                                     Notification.messageBoxError("BİR SORUN OLUŞTU.");
@@ -176,6 +175,25 @@ namespace smoothsis
                 }
 
             }
+        }
+
+        public void updateUretimList(decimal uretilenMiktar, decimal beslenenMiktar, decimal fireMiktar, decimal iskartaMiktar) {
+            DataGridView dataGridView = uretimListesi.getDataGrid();
+            int rowIndex = uretimListesi.getSelectedItem().Item1;
+            decimal beforeUretilen = decimal.Parse(dataGridView.Rows[rowIndex].Cells["URETILEN"].Value.ToString());
+            decimal beforeBeslenen = decimal.Parse(dataGridView.Rows[rowIndex].Cells["BESLENEN"].Value.ToString());
+            decimal beforeFire = decimal.Parse(dataGridView.Rows[rowIndex].Cells["FIRE"].Value.ToString());
+            decimal beforeIskarta = decimal.Parse(dataGridView.Rows[rowIndex].Cells["ISKARTA"].Value.ToString());
+            decimal planUretMik = decimal.Parse(dataGridView.Rows[rowIndex].Cells["URETIM_MIK"].Value.ToString());
+            decimal totalUretilen = beforeUretilen + uretilenMiktar;
+            decimal yuzdeTotalUretilen = Math.Round((((beforeUretilen + uretilenMiktar) * 100) / planUretMik), 3);
+            dataGridView.Rows[rowIndex].Cells["URETILEN"].Value = totalUretilen;
+            dataGridView.Rows[rowIndex].Cells["BESLENEN"].Value = beforeBeslenen + beslenenMiktar;
+            dataGridView.Rows[rowIndex].Cells["FIRE"].Value = beforeFire + fireMiktar;
+            dataGridView.Rows[rowIndex].Cells["ISKARTA"].Value = beforeIskarta + iskartaMiktar;
+            dataGridView.Rows[rowIndex].Cells["YUZDE"].Value = yuzdeTotalUretilen;
+            dataGridView.ClearSelection();
+            uretimListesi.updateColors(rowIndex);
         }
 
         private void temizleBttn_Click(object sender, EventArgs e)

@@ -95,7 +95,6 @@ namespace smoothsis
             if (e.ColumnIndex != -1 && e.RowIndex != -1 && e.Button == MouseButtons.Right && (uretimListGridView.SelectedRows.Count == 1))
             {
                 selectedItem = new Tuple<int, DataGridViewCellCollection>(e.RowIndex, uretimListGridView.Rows[e.RowIndex].Cells);
-
                 uretimListGridView.ClearSelection();
                 this.uretimListGridView.Rows[e.RowIndex].Selected = true;
 
@@ -113,7 +112,8 @@ namespace smoothsis
                     Notification.messageBox("Üretim Kapanmıştır. Rapor Girişi Yapılamaz !");
                 }
                 else
-                {                    
+                {
+                    selectedItem = new Tuple<int, DataGridViewCellCollection>(uretimListGridView.SelectedRows[0].Index, uretimListGridView.SelectedRows[0].Cells);
                     RaporOlustur raporOlustur = new RaporOlustur(this);
                     raporOlustur.ShowDialog();
                 }
@@ -168,9 +168,35 @@ namespace smoothsis
             }
         }
 
+        public void updateColors(int RowIndex)
+        {
+            decimal uretimYuzde = decimal.Parse(uretimListGridView.Rows[RowIndex].Cells["YUZDE"].Value.ToString());
+
+            if (uretimYuzde >= 100)
+            {
+                uretimListGridView.Rows[RowIndex].DefaultCellStyle.BackColor = Color.Green;
+                uretimListGridView.Rows[RowIndex].DefaultCellStyle.ForeColor = Color.White;
+            }
+            else if (uretimYuzde == 0)
+            {
+                uretimListGridView.Rows[RowIndex].DefaultCellStyle.BackColor = Color.DarkGoldenrod;
+                uretimListGridView.Rows[RowIndex].DefaultCellStyle.ForeColor = Color.White;
+            }
+            else if (uretimYuzde > 0 | uretimYuzde < 100)
+            {
+                uretimListGridView.Rows[RowIndex].DefaultCellStyle.BackColor = Color.Red;
+                uretimListGridView.Rows[RowIndex].DefaultCellStyle.ForeColor = Color.White;
+            }
+        }
+
         private void UretimListesi_Shown(object sender, EventArgs e)
         {
             uretimListGridView.ClearSelection();
+        }
+
+        public DataGridView getDataGrid()
+        {
+            return uretimListGridView;
         }
     }
 }
