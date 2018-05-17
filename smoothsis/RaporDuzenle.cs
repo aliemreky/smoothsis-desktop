@@ -30,6 +30,7 @@ namespace smoothsis
 
         private void RaporDuzenle_Load(object sender, EventArgs e)
         {
+            dtpRaporTarih.CustomFormat = "dd MMMM yyyy HH:mm";
             RaporOlustur.loadVardiyaComboBox(cbRaporVardiya);
             this.cellsOfSelectedItem = raporListesi.getSelectedItem().Item2;
             loadRaporInfos();

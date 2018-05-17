@@ -42,7 +42,7 @@ namespace smoothsis
                     sqlCmd.CommandType = CommandType.StoredProcedure;
                 } else
                 {
-                    string query = "SELECT RAPOR.RAPOR_INCKEY, URETIM.UR_INCKEY, FORMAT(RAPOR.RAPOR_TARIH, 'dd.MM.yyyy') RAPOR_TARIHI, " +
+                    string query = "SELECT RAPOR.RAPOR_INCKEY, URETIM.UR_INCKEY, FORMAT(RAPOR.RAPOR_TARIH, 'dd MMMM yyyy HH:mm') RAPOR_TARIHI, " +
                                     "RAPOR.RAPOR_VARDIYA, RAPOR.BESLENEN_MIK BESLENEN_MIKTAR, RAPOR.URETILEN_MIK URETILEN_MIKTAR, RAPOR.FIRE_MIK FIRE_MIKTAR, " +
                                     "RAPOR.FIRE_NEDENI, RAPOR.ISKARTA_MIK ISKARTA_MIKTAR, RAPOR.ISKARTA_NEDENI, RAPOR.ACIKLAMA, K1.ADSOYAD KAYIT_YAPAN_KULLANICI, " +
                                     "FORMAT(RAPOR.KAYIT_TARIH, 'dd.MM.yyyy') KAYIT_TARIHI, K2.ADSOYAD DUZELTME_YAPAN_KULLANICI, FORMAT(RAPOR.DUZELTME_TARIH, 'dd.MM.yyyy') DUZELTME_TARIHI, URETIM.PLAN_URET_MIK " +

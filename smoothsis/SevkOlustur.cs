@@ -61,20 +61,19 @@ namespace smoothsis
                         "WHERE SIPARIS_INCKEY = @siparis_inckey AND SEVK_TARIH = @sevk_tarih";
                     sqlCmd = new SqlCommand(bugunSevkVarmiSQL, Program.connection);
                     sqlCmd.Parameters.Add("@siparis_inckey", SqlDbType.Int).Value = Convert.ToInt32(selectedSiparisItem[0].Value.ToString());
-                    sqlCmd.Parameters.Add("@sevk_tarih", SqlDbType.Date).Value = dtpSevkTarih.Value;
+                    sqlCmd.Parameters.Add("@sevk_tarih", SqlDbType.DateTime).Value = DateTime.Now.ToString();
                     SqlDataReader reader = sqlCmd.ExecuteReader();
                     reader.Read();
 
                     if (((int) reader["COUNT_RESULT"]) == 0)
                     {
                         string sevkOlusturSQL = "INSERT INTO " +
-                            "SEVK(SIPARIS_INCKEY, IRSALIYE_NO, SEVK_MIKTAR, SEVK_TARIH, SEVK_NOT) " +
-                            "VALUES (@siparis_inckey, @irsaliye_no, @sevk_miktar, @sevk_tarih, @sevk_not)";
+                            "SEVK(SIPARIS_INCKEY, IRSALIYE_NO, SEVK_MIKTAR, SEVK_NOT) " +
+                            "VALUES (@siparis_inckey, @irsaliye_no, @sevk_miktar, @sevk_not)";
                         sqlCmd = new SqlCommand(sevkOlusturSQL, Program.connection);
                         sqlCmd.Parameters.Add("@siparis_inckey", SqlDbType.Int).Value = Convert.ToInt32(selectedSiparisItem[0].Value.ToString());
                         sqlCmd.Parameters.Add("@irsaliye_no", SqlDbType.VarChar).Value = txtIrsaliyeNo.Text;
                         sqlCmd.Parameters.Add("@sevk_miktar", SqlDbType.Decimal).Value = totalUretimMiktar;
-                        sqlCmd.Parameters.Add("@sevk_tarih", SqlDbType.Date).Value = dtpSevkTarih.Value;
                         sqlCmd.Parameters.Add("@sevk_not", SqlDbType.VarChar).Value = txtSevkNotu.Text;
                         if (sqlCmd.ExecuteNonQuery() > 0)
                         {

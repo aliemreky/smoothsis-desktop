@@ -63,7 +63,6 @@ namespace smoothsis
             txtSiparisKod.Text = selectedItem.Item2[2].Value.ToString();
             txtIrsaliyeNo.Text = selectedItem.Item2[3].Value.ToString();
             txtSevkMiktari.Text = selectedItem.Item2[4].Value.ToString() + " " + selectedItem.Item2[5].Value.ToString();
-            dtpSevkTarih.Value = DateTime.Parse(selectedItem.Item2[6].Value.ToString());
             txtSevkNotu.Text = selectedItem.Item2[7].Value.ToString();
         }
 
@@ -85,7 +84,7 @@ namespace smoothsis
                     sqlCmd = new SqlCommand(sevkGuncelleSQL, Program.connection);
                     sqlCmd.Parameters.Add("@sevk_inckey", SqlDbType.Int).Value = Convert.ToInt32(selectedItem.Item2[0].Value.ToString());
                     sqlCmd.Parameters.Add("@irsaliye_no", SqlDbType.VarChar).Value = txtIrsaliyeNo.Text;
-                    sqlCmd.Parameters.Add("@sevk_tarih", SqlDbType.Date).Value = dtpSevkTarih.Value;
+                    sqlCmd.Parameters.Add("@sevk_tarih", SqlDbType.DateTime).Value = DateTime.Now.ToString();
                     sqlCmd.Parameters.Add("@sevk_not", SqlDbType.VarChar).Value = txtSevkNotu.Text;
                     if (sqlCmd.ExecuteNonQuery() > 0)
                     {
@@ -105,7 +104,6 @@ namespace smoothsis
             DataGridView dataGridView = sevkListesi.getDataGrid();
             int rowIndex = selectedItem.Item1;
             dataGridView[3, rowIndex].Value = txtIrsaliyeNo.Text;
-            dataGridView[6, rowIndex].Value = dtpSevkTarih.Value;
             dataGridView[7, rowIndex].Value = txtSevkNotu.Text;
         }
     }
