@@ -37,7 +37,7 @@ namespace smoothsis
                 totalUretimMiktar = decimal.Parse(reader["TOTAL"].ToString());
                 string siparisKod = reader["SIPARIS_KOD"].ToString();
                 string birim = reader["MIKTAR_BIRIM"].ToString();
-                txtSevkMiktari.Text = totalUretimMiktar.ToString() + " " + birim;
+                txtSevkMiktari.Text = string.Format("{0:#,##0.000}", decimal.Parse(totalUretimMiktar.ToString()))  + " " + birim;
                 txtSiparisKod.Text = siparisKod;
             } else
             {

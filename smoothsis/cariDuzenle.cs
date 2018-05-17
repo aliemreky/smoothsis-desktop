@@ -177,7 +177,7 @@ namespace smoothsis
                 SqlDataReader sqlReader = sqlCmd.ExecuteReader();
                 sqlReader.Read();
 
-                if (!String.IsNullOrEmpty(sqlReader["TC_NO"].ToString()))
+                if (!String.IsNullOrEmpty(sqlReader["TC_NO"].ToString().Trim()))
                 {
                     gercekKisiRadio.Checked = true;
                     tuzelKisiRadio.Checked = false;

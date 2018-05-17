@@ -118,7 +118,7 @@ namespace smoothsis
 
         private void siparisListesiMenu_Opening(object sender, CancelEventArgs e)
         {
-            e.Cancel = this.siparisListGridView.Rows.Count <= 0;
+            e.Cancel = this.siparisListGridView.Rows.Count <= 0 || this.siparisListGridView.SelectedRows.Count <= 0;
         }
 
         private void siparisListGridView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
