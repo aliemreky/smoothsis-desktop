@@ -12,6 +12,8 @@ namespace smoothsis
 {
     public partial class Main : Form
     {
+        private bool formClosed = false;
+
         public Main()
         {
             InitializeComponent();
@@ -22,10 +24,20 @@ namespace smoothsis
             labelKullanici.Text = Program.kullanici.Item2;
             labelSirket.Text = Program.sirket;
             labelTarih.Text = DateTime.Now.ToString("dd.MM.yyyy, dddd");
+
+            if(Program.kullanici.Item1 != 1)
+            {
+                ePostaAyarlarıToolStripMenuItem.Visible = false;
+                kullaniciEkleToolStripMenuItem.Visible = false;
+                kullaniciListesiToolStripMenuItem.Visible = false;
+                grupToolStripMenuItem.Visible = false;
+                toolStripSeparator3.Visible = false;
+            }
         }
 
         private void veritabaniDeğişikliğiToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            formClosed = true;
             this.Close();
         }
 
@@ -106,13 +118,6 @@ namespace smoothsis
             Application.Exit();
         }
 
-        private void Main_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            DialogResult dialogResult = MessageBox.Show("Kapatmak İstediğinize Emin misiniz ?", "UYARI", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-                Application.Exit();
-        }
-
         private void stokTransferleriToolStripMenuItem_Click(object sender, EventArgs e)
         {
             StokTransferListesi stokTransferListesi = new StokTransferListesi();
@@ -188,6 +193,21 @@ namespace smoothsis
         {
             SevkListesi sevkListesi = new SevkListesi();
             sevkListesi.ShowDialog();
+        }
+
+        private void Main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!formClosed)
+            {
+                DialogResult dialogResult = MessageBox.Show("Kapatmak İstediğinize Emin misiniz ?", "UYARI", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    formClosed = true;
+                    Application.Exit();
+                }
+                else
+                    e.Cancel = true;
+            }
         }
     }
 }

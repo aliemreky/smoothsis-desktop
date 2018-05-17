@@ -120,16 +120,33 @@
   <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="transferYapBttn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACUSURBVEhL7ZNLCoAwDES78l6uvJZbL6rH0AxUKDIhTUxX
+        +uChBDJT/JSfylqvwzjFVyUI6DFcwsKYwx5VKNyzEArHqYZwh3s9xEU0iRZAlHShPaI27Ik2V2EvLrWA
+        kVLQhkQ0YUseTdiSRxN8amzRqwp+FlYyV59zzW52EQttAWZpbGJ7MohZGpOIQJwa4h6zT1DKBQxap2BT
+        lHulAAAAAElFTkSuQmCC
+</value>
+  </data>
   <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>122, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="düzenleToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAIpJREFUSEvt
         kLsNgDAMBbMc/xlgDgp2oGBOOgQ0CJ4BSy5CkzikgJNOSlKcwebnDSo4wf68KUPxFe63A1SlhRxnVf6E
         vry+jqaDcsAIveC1bLChB8BDZpjQgysllDuXQ2hdqnE5hNflzFOc9F5LAaPEF/jReA6jxVPoRdA4ETRO
         2OIZVCNo/MeCMQelWmwbnMNYmQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="transferYapToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAACUSURBVEhL7ZNLCoAwDES78l6uvJZbL6rH0AxUKDIhTUxX+uChBDJT/JSfylqvwzjFVyUI6DFc
+        wsKYwx5VKNyzEArHqYZwh3s9xEU0iRZAlHShPaI27Ik2V2EvLrWAkVLQhkQ0YUseTdiSRxN8amzRqwp+
+        FlYyV59zzW52EQttAWZpbGJ7MohZGpOIQJwa4h6zT1DKBQxap2BTlHulAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

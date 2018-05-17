@@ -182,5 +182,10 @@ namespace smoothsis
         {
             stokDepoListGridView.ClearSelection();
         }
+
+        private void transferYapToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            transferYapBttn.PerformClick();
+        }
     }
 }

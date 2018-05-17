@@ -25,6 +25,9 @@ namespace smoothsis
 
         private void StokOlustur_Load(object sender, EventArgs e)
         {
+            txtMiktar.Text = "0.000";
+            txtBirimFiyat.Text = "0.000";
+
             cbMiktarBirim.DataSource = Enum.GetNames(typeof(MalzemeMiktarBirim));
             cbKdv.DisplayMember = "Description";
             cbKdv.ValueMember = "Value";

@@ -46,6 +46,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtStokBirim = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.transferYapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stokDepoListGridView)).BeginInit();
@@ -72,7 +73,7 @@
             // 
             // transferYapBttn
             // 
-            this.transferYapBttn.Image = global::smoothsis.Properties.Resources.ic_save_black_24dp_1x;
+            this.transferYapBttn.Image = ((System.Drawing.Image)(resources.GetObject("transferYapBttn.Image")));
             this.transferYapBttn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.transferYapBttn.Name = "transferYapBttn";
             this.transferYapBttn.Size = new System.Drawing.Size(100, 27);
@@ -142,9 +143,10 @@
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.düzenleToolStripMenuItem});
+            this.düzenleToolStripMenuItem,
+            this.transferYapToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(183, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(183, 70);
             // 
             // düzenleToolStripMenuItem
             // 
@@ -216,6 +218,14 @@
             this.label2.TabIndex = 20;
             this.label2.Text = "BIRIM";
             // 
+            // transferYapToolStripMenuItem
+            // 
+            this.transferYapToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("transferYapToolStripMenuItem.Image")));
+            this.transferYapToolStripMenuItem.Name = "transferYapToolStripMenuItem";
+            this.transferYapToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.transferYapToolStripMenuItem.Text = "Transfer Yap";
+            this.transferYapToolStripMenuItem.Click += new System.EventHandler(this.transferYapToolStripMenuItem_Click);
+            // 
             // StokDepoListesi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -267,5 +277,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem düzenleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem transferYapToolStripMenuItem;
     }
 }

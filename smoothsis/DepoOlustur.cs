@@ -39,9 +39,9 @@ namespace smoothsis
                         Notification.messageBox("Depo oluşturuldu.");
                     }
                 }
-                catch
+                catch(Exception ex)
                 {
-                    Notification.messageBoxError("Bir sorun oluştu, Depo oluşturulamadı.");
+                    Notification.messageBoxError("Bir sorun oluştu, Depo oluşturulamadı." + ex.Message);
                 }
             }
             else
